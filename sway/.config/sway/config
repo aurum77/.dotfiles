@@ -1,0 +1,271 @@
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod1
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Start a terminal
+bindsym $mod+Return exec $term
+
+# Kill focused window
+bindsym $mod+q kill
+
+# Start your launcher
+bindsym $mod+d exec $menu
+
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Exit sway (logs you out of your Wayland session)
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+#
+# Moving around:
+#
+    # Move your focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+    # Or use $mod+[up|down|left|right]
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+    # Ditto, with arrow keys
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+
+#
+# Workspaces:
+#
+    # Switch to workspace
+    bindsym $mod+1 workspace number 1
+    bindsym $mod+2 workspace number 2
+    bindsym $mod+3 workspace number 3
+    bindsym $mod+4 workspace number 4
+    bindsym $mod+5 workspace number 5
+    bindsym $mod+6 workspace number 6
+    bindsym $mod+7 workspace number 7
+    bindsym $mod+8 workspace number 8
+    bindsym $mod+9 workspace number 9
+    bindsym $mod+0 workspace number 10
+    # Move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace number 1
+    bindsym $mod+Shift+2 move container to workspace number 2
+    bindsym $mod+Shift+3 move container to workspace number 3
+    bindsym $mod+Shift+4 move container to workspace number 4
+    bindsym $mod+Shift+5 move container to workspace number 5
+    bindsym $mod+Shift+6 move container to workspace number 6
+    bindsym $mod+Shift+7 move container to workspace number 7
+    bindsym $mod+Shift+8 move container to workspace number 8
+    bindsym $mod+Shift+9 move container to workspace number 9
+    bindsym $mod+Shift+0 move container to workspace number 10
+    # Note: workspaces can have any name you want, not just numbers.
+    # We just use 1-10 as the default.
+
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
+
+    # Switch the current container between different layout styles
+    bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+space focus mode_toggle
+
+    # Move focus to the parent container
+    bindsym $mod+a focus parent
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+minus scratchpad show
+
+
+
+include /etc/sway/config.d/*
+
+# My configurations
+# -----------------
+
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+
+# Change sway-bar colors and add i3status
+#bar {
+#    position bottom
+#
+#    # When the status_command prints a new line to stdout, swaybar updates.
+#    # The default just shows the current date and time.
+#    #status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+#    status_command i3status -c ~/.config/i3status/i3status.conf
+#
+#    colors {
+#        statusline #ffffff
+#        background #222d32
+#	focused_workspace #117d8d #117d8d #ffffff
+#        inactive_workspace #222d32 #222d32 #777777
+#    }
+#}
+
+# Set xfce4-terminal as default
+set $term xfce4-terminal
+
+# Set wallpaper
+output * bg ~/Pictures/3840x2160-dark-linux.png fill
+
+# set primary gruvbox colorscheme colors
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
+set $white #fbf1c7
+
+bar {
+    # Set the position of the bar
+    position bottom
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    status_command i3status -c ~/.config/i3status/i3status.conf
+
+    # Set some colors
+    colors {
+        # bar background color
+        background $bg
+        # text color used for blocks that do not have a color specified.
+        statusline $yellow
+        # workspaces section
+        #                    border  backgr. text
+        focused_workspace    $aqua $aqua $darkgray
+        inactive_workspace   $darkgray $darkgray $yellow
+        active_workspace     $darkgray $darkgray $yellow
+        urgent_workspace     $red $red $bg
+    }
+}
+
+# Blue gruvbox
+# class                 border|backgr|text|indicator|child_border
+client.focused          $blue $blue $darkgray $yellow $blue
+client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+client.urgent           $red $red $white $red $red
+
+
+# Green gruvbox
+# class                 border|backgr|text|indicator|child_border
+#client.focused          $green $green $darkgray $purple $darkgray
+#client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+#client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+#client.urgent           $red $red $white $red $red
+
+# Colored window borders
+default_border pixel 3
+
+# Change the color of the borders
+#               mavi    mavi    beyaz   açık     mavi
+#client.focused #117d8d #117d8d #ffffff #00bcd4 #117d8d
+
+# Bind for lockscreen
+bindsym $mod+x exec swaylock -i ~/Pictures/3840x2160-dark-linux-blur.png
+
+# Set i3status font
+font pango:JetBrainsMono Nerd Font Medium 10
+
+# Set input language
+input type:keyboard {
+	xkb_layout tr(alt)
+}
+input type:keyboard xkb_model "pc86"
+
+# Bind the laptop context menu to start thunar
+bindcode 135 exec thunar
+
+#bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master +5%
+#bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master -5%
+#bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle
+
+# Volume control
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# Screenshots, requires wl-clipboard and jq
+bindsym $mod+Print exec grim -g "$(slurp -d)" - | wl-copy
+bindsym Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')
+
+# use wofi instead of dmenu, requires wofi
+set $menu wofi --show=drun --insensitive --width=25% --fork --no-actions
+
+# Set cursor theme, requires capitaine-cursors
+seat seat0 xcursor_theme "capitaine-cursors"
+exec_always gsettings set org.gnome.desktop.interface cursor-theme "capitaine-cursors"
+
+
+# Resizing containers:
+mode "resize" {
+	bindsym $left resize grow width 20px
+	bindsym $down resize shrink height 20px
+	bindsym $up resize grow height 20px
+	bindsym $right resize shrink width 20px
+
+	# Same, with arrow keys
+	bindsym Left resize grow width 20px
+	bindsym Down resize shrink height 20px
+	bindsym Up resize grow height 20px
+	bindsym Right resize shrink width 20px
+
+	# Return to default mode
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Add outer gaps
+gaps outer 10
