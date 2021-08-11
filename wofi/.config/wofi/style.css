@@ -1,0 +1,47 @@
+*{
+    font-family: JetBrainsMono;
+    font-size: 14px;
+}
+window {
+margin: 0px;
+border: 2px solid #458588;
+background-color: #282828;
+}
+
+#input {
+margin: 5px;
+border: none;
+color: #f8f8f2;
+background-color: #504945;
+}
+
+#inner-box {
+margin: 5px;
+border: none;
+background-color: #282828;
+}
+
+#outer-box {
+margin: 5px;
+border: none;
+background-color: #282828;
+}
+
+#scroll {
+margin: 7px;
+border: none;
+}
+
+#text {
+margin: 5px;
+border: none;
+color: #d5c4a1;
+}
+
+#entry:selected {
+color: #bdae93;
+}
+
+#text:selected {
+color: #1d2021;
+}

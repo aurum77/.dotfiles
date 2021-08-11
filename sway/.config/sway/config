@@ -12,12 +12,6 @@ set $right l
 # Start a terminal
 bindsym $mod+Return exec $term
 
-# Kill focused window
-bindsym $mod+q kill
-
-# Start your launcher
-bindsym $mod+d exec $menu
-
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
 # Despite the name, also works for non-floating windows.
@@ -27,9 +21,6 @@ floating_modifier $mod normal
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
-
-# Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
 #
 # Moving around:
@@ -109,18 +100,6 @@ bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. 
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
-#
-# Scratchpad:
-#
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
-
-    # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+minus move scratchpad
-
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+minus scratchpad show
 
 
 
@@ -129,32 +108,17 @@ include /etc/sway/config.d/*
 # My configurations
 # -----------------
 
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-
-# Change sway-bar colors and add i3status
-#bar {
-#    position bottom
-#
-#    # When the status_command prints a new line to stdout, swaybar updates.
-#    # The default just shows the current date and time.
-#    #status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-#    status_command i3status -c ~/.config/i3status/i3status.conf
-#
-#    colors {
-#        statusline #ffffff
-#        background #222d32
-#	focused_workspace #117d8d #117d8d #ffffff
-#        inactive_workspace #222d32 #222d32 #777777
-#    }
-#}
-
 # Set xfce4-terminal as default
 set $term xfce4-terminal
 
+# Start the launcher
+bindsym $mod+d exec $menu
+
+# Kill focused window
+bindsym $mod+q kill
+
 # Set wallpaper
-output * bg ~/Pictures/3840x2160-dark-linux.png fill
+output * bg ~/Pictures/wall.png fill
 
 # set primary gruvbox colorscheme colors
 set $bg #282828
@@ -197,23 +161,11 @@ client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
 client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
 client.urgent           $red $red $white $red $red
 
-
-# Green gruvbox
-# class                 border|backgr|text|indicator|child_border
-#client.focused          $green $green $darkgray $purple $darkgray
-#client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
-#client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
-#client.urgent           $red $red $white $red $red
-
 # Colored window borders
 default_border pixel 3
 
-# Change the color of the borders
-#               mavi    mavi    beyaz   açık     mavi
-#client.focused #117d8d #117d8d #ffffff #00bcd4 #117d8d
-
 # Bind for lockscreen
-bindsym $mod+x exec swaylock -i ~/Pictures/3840x2160-dark-linux-blur.png
+bindsym $mod+x exec ~/.config/sway/scripts/powermenu.sh #swaylock -i ~/Pictures/3840x2160-dark-linux-blur.png
 
 # Set i3status font
 font pango:JetBrainsMono Nerd Font Medium 10
@@ -240,8 +192,8 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym $mod+Print exec grim -g "$(slurp -d)" - | wl-copy
 bindsym Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')
 
-# use wofi instead of dmenu, requires wofi
-set $menu wofi --show=drun --insensitive --width=25% --fork --no-actions
+# Use wofi instead of dmenu, requires wofi
+set $menu wofi --show=drun --insensitive --allow-images --width=25% --fork --no-actions
 
 # Set cursor theme, requires capitaine-cursors
 seat seat0 xcursor_theme "capitaine-cursors"
@@ -267,5 +219,6 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# Add outer gaps
-gaps outer 10
+# Scratchpad binds
+bindsym $mod+Shift+tab move scratchpad
+bindsym $mod+tab scratchpad show
