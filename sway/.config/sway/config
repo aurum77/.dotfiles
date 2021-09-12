@@ -176,6 +176,12 @@ input type:keyboard {
 }
 input type:keyboard xkb_model "pc86"
 
+# Enable tap to click
+input type:touchpad {
+	tap enabled
+	natural_scroll enabled
+}
+
 # Bind the laptop context menu to start thunar
 bindcode 135 exec thunar
 
@@ -195,10 +201,20 @@ bindsym Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focus
 # Use wofi instead of dmenu, requires wofi
 set $menu wofi --show=drun --insensitive --allow-images --width=25% --fork --no-actions
 
-# Set cursor theme, requires capitaine-cursors
-seat seat0 xcursor_theme "capitaine-cursors"
-exec_always gsettings set org.gnome.desktop.interface cursor-theme "capitaine-cursors"
+# Set themes
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'gruvbox-dark-gtk'
+    gsettings set $gnome-schema icon-theme 'Papirus-Dark'
+    gsettings set $gnome-schema cursor-theme 'capitaine-cursors'
+}
 
+# Set seat cursor theme
+seat seat0 xcursor_theme "capitaine-cursors"
+
+
+# Reload xwindow themes with sway reload
+exec_always xsettingsd
 
 # Resizing containers:
 mode "resize" {
@@ -222,3 +238,7 @@ bindsym $mod+r mode "resize"
 # Scratchpad binds
 bindsym $mod+Shift+tab move scratchpad
 bindsym $mod+tab scratchpad show
+
+# Brightness control using brightnessctl
+bindsym XF86MonBrightnessUp exec brightnessctl set +10
+bindsym XF86MonBrightnessDown exec brightnessctl set 10-
