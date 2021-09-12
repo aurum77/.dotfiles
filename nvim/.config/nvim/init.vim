@@ -59,9 +59,6 @@ tnoremap fd <C-\><C-n>
 " Bind Ctrl + c to escape so line numbers change properly
 imap <C-c> <ESC>
 
-" Insert spaces instead of tab characters
-set expandtab
-
 " Yank directly to the clipboard
 set clipboard=unnamedplus
 
