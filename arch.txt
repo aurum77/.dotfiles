@@ -1,0 +1,21 @@
+arch minimal install with just sway and stow installed using archinstall
+
+brightnessctl -> needed for brightness control
+xdg-desktop-portal-wlr -> wayland stuff
+xdg-user-dirs -> user direcotries
+xorg-xwayland -> non-wayland program support
+i3-status -> minimal bar
+lsd -> cool ls replacementf
+thunar -> file manager
+xfce4-terminal -> terminal emulator
+wofi -> wayland native dmenu alternative
+paru -> aur helper
+gruvbox-dark-gtk -> gruvbox style dark background for gtk apps
+papirus-icon-theme -> nice icons
+capitaine-cursors -> nice cursors
+xsettingsd -> theming for programs using xwayland
+grim -> wayland screenshots
+slurp -> wayland area screenshots
+gvfs-mtp -> support for mtp devices
+wl-clipboard -> clipboard for wayland
+jq -> neede fpr time stamping on screenshots
