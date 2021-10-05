@@ -4,10 +4,11 @@
 [[ $- != *i* ]] && return
 
 # Aliases
-alias l='lsd'     # needs lsd
-alias ls='lsd'     # needs lsd
-alias la='lsd -a'     # needs lsd
-alias ll='lsd -la'     # needs lsd
+alias l='exa'		# needs exa
+alias ls='exa'		# needs exa
+alias la='exa -a'	# needs exa
+alias ll='exa -la'	# needs exa
+alias tree='exa --tree' # needs exa
 alias v='nvim'     # needs nvim
 alias c='clear'
 alias sudo='sudo ' # for sudo use with other aliases if needed

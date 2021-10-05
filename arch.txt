@@ -4,8 +4,8 @@ brightnessctl -> needed for brightness control
 xdg-desktop-portal-wlr -> wayland stuff
 xdg-user-dirs -> user direcotries
 xorg-xwayland -> non-wayland program support
-i3-status -> minimal bar
-lsd -> cool ls replacementf
+i3status -> minimal bar
+exa -> cool and fast ls replacementf
 thunar -> file manager
 xfce4-terminal -> terminal emulator
 wofi -> wayland native dmenu alternative
@@ -18,4 +18,6 @@ grim -> wayland screenshots
 slurp -> wayland area screenshots
 gvfs-mtp -> support for mtp devices
 wl-clipboard -> clipboard for wayland
-jq -> neede fpr time stamping on screenshots
+jq -> neede for time stamping on screenshots
+nerd-fonts-jetbrains-mono -> font for swaybar
+bash-completion -> self explanatory
