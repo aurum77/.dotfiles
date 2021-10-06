@@ -1,5 +1,8 @@
 arch minimal install with just sway and stow installed using archinstall
 
+git -> to clone paru
+paru -> aur helper
+stow -> dotfile deployment
 brightnessctl -> needed for brightness control
 xdg-desktop-portal-wlr -> wayland stuff
 xdg-user-dirs -> user direcotries
@@ -9,7 +12,6 @@ exa -> cool and fast ls replacementf
 thunar -> file manager
 xfce4-terminal -> terminal emulator
 wofi -> wayland native dmenu alternative
-paru -> aur helper
 gruvbox-dark-gtk -> gruvbox style dark background for gtk apps
 papirus-icon-theme -> nice icons
 capitaine-cursors -> nice cursors
@@ -21,3 +23,5 @@ wl-clipboard -> clipboard for wayland
 jq -> neede for time stamping on screenshots
 nerd-fonts-jetbrains-mono -> font for swaybar
 bash-completion -> self explanatory
+bluez bluez-utils blueman -> bluetooth stuff
+wlsunset -> night light 

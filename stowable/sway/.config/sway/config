@@ -194,7 +194,7 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Screenshots, requires wl-clipboard and jq
-bindsym $mod+Print exec grim -g "$(slurp -d)" - | wl-copy
+bindsym $mod+Shift+s exec grim -g "$(slurp -d)" - | wl-copy
 bindsym Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')
 
 # Set themes
@@ -242,3 +242,6 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 10-
 # Lock on lid close
 set $lock 'swaylock -i ~/Pictures/lock.png'
 bindswitch --reload --locked lid:on exec $lock
+
+# Night light
+exec wlsunset -l 41 -L 28

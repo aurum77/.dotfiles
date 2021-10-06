@@ -10,3 +10,4 @@ export XDG_CURRENT_DESKTOP=sway
 # Needed for intellij to work properly
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+[[ $XDG_VTNR -le 2 ]] && tbsm
