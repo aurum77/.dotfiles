@@ -13,7 +13,7 @@ thunar -> file manager
 xfce4-terminal -> terminal emulator
 wofi -> wayland native dmenu alternative
 gruvbox-dark-gtk -> gruvbox style dark background for gtk apps
-papirus-icon-theme -> nice icons
+gruvbox-dark-icons-gtk -> nice icons
 capitaine-cursors -> nice cursors
 xsettingsd -> theming for programs using xwayland
 grim -> wayland screenshots
@@ -25,3 +25,5 @@ nerd-fonts-jetbrains-mono -> font for swaybar
 bash-completion -> self explanatory
 bluez bluez-utils blueman -> bluetooth stuff
 wlsunset -> night light 
+mate-calc -> self explanatory
+seahorse -> gui for keyrings
