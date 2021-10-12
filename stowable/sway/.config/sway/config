@@ -201,7 +201,7 @@ bindsym Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focus
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema gtk-theme 'gruvbox-dark-gtk'
-    gsettings set $gnome-schema icon-theme 'Papirus-Dark'
+    gsettings set $gnome-schema icon-theme 'gruvbox-dark-icons-gtk'
     gsettings set $gnome-schema cursor-theme 'capitaine-cursors'
 }
 
@@ -245,3 +245,8 @@ bindswitch --reload --locked lid:on exec $lock
 
 # Night light
 exec wlsunset -l 41 -L 28
+
+# Start keyring
+exec eval $(gnome-keyring-daemon --start)
+exec export SSH_AUTH_SOCK
+
