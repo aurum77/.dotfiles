@@ -8,7 +8,7 @@ xdg-desktop-portal-wlr -> wayland stuff
 xdg-user-dirs -> user direcotries
 xorg-xwayland -> non-wayland program support
 i3status -> minimal bar
-exa -> cool and fast ls replacementf
+exa -> cool and fast ls replacement
 thunar -> file manager
 xfce4-terminal -> terminal emulator
 wofi -> wayland native dmenu alternative
@@ -22,8 +22,10 @@ gvfs-mtp -> support for mtp devices
 wl-clipboard -> clipboard for wayland
 jq -> neede for time stamping on screenshots
 nerd-fonts-jetbrains-mono -> font for swaybar
+ttf-jetbrains-mono -> font for wofi
 bash-completion -> self explanatory
 bluez bluez-utils blueman -> bluetooth stuff
 wlsunset -> night light 
 mate-calc -> self explanatory
+gnome-keyring -> keyring
 seahorse -> gui for keyrings
