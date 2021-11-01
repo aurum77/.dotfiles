@@ -136,26 +136,30 @@ set $darkgray #1d2021
 set $white #fbf1c7
 
 bar {
-    # Set the position of the bar
-    position bottom
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    status_command i3status -c ~/.config/i3status/i3status.conf
-
-    # Set some colors
-    colors {
-        # bar background color
-        background $bg
-        # text color used for blocks that do not have a color specified.
-        statusline $yellow
-        # workspaces section
-        #                    border  backgr. text
-        focused_workspace    $aqua $aqua $darkgray
-        inactive_workspace   $darkgray $darkgray $yellow
-        active_workspace     $darkgray $darkgray $yellow
-        urgent_workspace     $red $red $bg
-    }
+    swaybar_command waybar
 }
+
+#bar {
+#    # Set the position of the bar
+#    position bottom
+#
+#    # When the status_command prints a new line to stdout, swaybar updates.
+#    status_command i3status -c ~/.config/i3status/i3status.conf
+#
+#    # Set some colors
+#    colors {
+#        # bar background color
+#        background $bg
+#        # text color used for blocks that do not have a color specified.
+#        statusline $yellow
+#        # workspaces section
+#        #                    border  backgr. text
+#        focused_workspace    $aqua $aqua $darkgray
+#        inactive_workspace   $darkgray $darkgray $yellow
+#        active_workspace     $darkgray $darkgray $yellow
+#        urgent_workspace     $red $red $bg
+#    }
+#}
 
 # Blue gruvbox
 # class                 border|backgr|text|indicator|child_border
@@ -175,14 +179,15 @@ font pango:JetBrainsMono Nerd Font Medium 10
 
 # Set input language
 input type:keyboard {
-	xkb_layout tr(alt)
+    xkb_layout tr(alt)
 }
 input type:keyboard xkb_model "pc101"
 
 # Enable tap to click and natural scroll
 input type:touchpad {
-	tap enabled
-	natural_scroll enabled
+    tap enabled
+    natural_scroll enabled
+    drag_lock enabled
 }
 
 # Bind the laptop context menu to start thunar
@@ -214,20 +219,20 @@ exec_always xsettingsd
 
 # Resizing containers:
 mode "resize" {
-	bindsym $left resize grow width 20px
-	bindsym $down resize shrink height 20px
-	bindsym $up resize grow height 20px
-	bindsym $right resize shrink width 20px
-
-	# Same, with arrow keys
-	bindsym Left resize grow width 20px
-	bindsym Down resize shrink height 20px
-	bindsym Up resize grow height 20px
-	bindsym Right resize shrink width 20px
-
-	# Return to default mode
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    bindsym $left resize grow width 20px
+    bindsym $down resize shrink height 20px
+    bindsym $up resize grow height 20px
+    bindsym $right resize shrink width 20px
+    
+    # Same, with arrow keys
+    bindsym Left resize grow width 20px
+    bindsym Down resize shrink height 20px
+    bindsym Up resize grow height 20px
+    bindsym Right resize shrink width 20px
+    
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
@@ -250,3 +255,5 @@ exec wlsunset -l 41 -L 28
 exec eval $(gnome-keyring-daemon --start)
 exec export SSH_AUTH_SOCK
 
+# Start bluetooth manager applet
+exec blueman-applet

@@ -15,9 +15,6 @@ alias ll='exa -la'
 alias tree='exa --tree'
 alias v='nvim'     	# needs nvim
 alias c='clear'
-alias bon='bluetoothctl power on'
-alias boff='bluetoothctl power off'
-alias bconnect='bluetoothctl connect C4:02:F0:7D:A7:16'
 
 # enables directory change without using cd
 shopt -s autocd

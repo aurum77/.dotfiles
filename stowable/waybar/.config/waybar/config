@@ -1,0 +1,92 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "bottom", // Waybar at the bottom of your screen
+    "height": 5, // Waybar height
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["sway/workspaces", "sway/window"],
+    "modules-center": ["clock#1", "clock#2"],
+    "modules-right": ["pulseaudio", "network", "backlight", "battery", "temperature", "memory", "tray", "custom/tux"],
+    // Modules configuration
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        // "persistent_workspaces": {
+        //     "1": [],
+        //     "2": [],
+        //     "3": [],
+        //     "4": [],
+        //     "5": [],
+        //     "6": [],
+        //     "7": [],
+        //     "8": [],
+        //     "9": []
+        // },
+        "format": "{name}"
+    },
+    "tray": {
+	    "icon-size": 18,
+        "spacing": 10
+    },
+	"clock#1": {
+		"format": "{: %B %d, %A}"
+	},
+	"clock#2": {
+		"format": "{: %H:%M}"
+	},
+    "memory": {
+        "format": " {used:0.1f} GiB",
+	    "on-click": "xfce4-terminal -e htop"
+    },
+    "network": {
+        "interface": "wlan0",
+        "format-wifi": "  {signalStrength}% {essid}",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-disconnected": "Disconnected ⚠"
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "  {icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "headset": "",
+            "default": ["", "", "墳"]
+        },
+        "on-click": "pavucontrol"
+    },
+    "temperature": {
+        "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+        "critical-threshold": 90,
+        "format-critical": " {temperatureC}°C",
+        "format": " {temperatureC}°C"
+    },
+    "battery": {
+        "bat": "BAT1",
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "max-length": 25
+    },
+    "backlight": {
+        "device": "amdgpu_bl0",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", ""]
+    },
+   "sway/window": {
+       "format": "{}",
+       "max-length": 50,
+       "rewrite": {
+            "(.*) - Google Chrome": "$1"
+      }
+    },
+    "custom/tux": {
+        "format": "  "
+    }
+}
