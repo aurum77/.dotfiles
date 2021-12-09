@@ -13,8 +13,8 @@ alias ls='exa'
 alias la='exa -a'
 alias ll='exa -la'
 alias tree='exa --tree'
-alias v='nvim'     	# needs nvim
+alias v='vim'     	# needs nvim
 alias c='clear'
 
-# enables directory change without using cd
+# Enables directory change without using cd
 shopt -s autocd
