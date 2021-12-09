@@ -9,6 +9,9 @@ set $down j
 set $up k
 set $right l
 
+# Set xfce4-terminal as default
+set $term /bin/xfce4-terminal
+
 # Start a terminal
 bindsym $mod+Return exec $term
 
@@ -108,13 +111,9 @@ include /etc/sway/config.d/*
 # My configurations
 # -----------------
 
-# Use wofi instead of dmenu, requires wofi
-set $menu wofi --show=drun --insensitive --allow-images --width=25% --fork --no-actions
-
-# Set xfce4-terminal as default
-set $term xfce4-terminal
-
-# Start the launcher
+# Use sway-launcher-desktop, requires sway-launcher-desktop
+for_window [title="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
+set $menu exec $term --title=launcher -e /bin/sway-launcher-desktop
 bindsym $mod+d exec $menu
 
 # Kill focused window
@@ -136,30 +135,26 @@ set $darkgray #1d2021
 set $white #fbf1c7
 
 bar {
-    swaybar_command waybar
-}
+    # Set the position of the bar
+    position bottom
 
-#bar {
-#    # Set the position of the bar
-#    position bottom
-#
-#    # When the status_command prints a new line to stdout, swaybar updates.
-#    status_command i3status -c ~/.config/i3status/i3status.conf
-#
-#    # Set some colors
-#    colors {
-#        # bar background color
-#        background $bg
-#        # text color used for blocks that do not have a color specified.
-#        statusline $yellow
-#        # workspaces section
-#        #                    border  backgr. text
-#        focused_workspace    $aqua $aqua $darkgray
-#        inactive_workspace   $darkgray $darkgray $yellow
-#        active_workspace     $darkgray $darkgray $yellow
-#        urgent_workspace     $red $red $bg
-#    }
-#}
+    # When the status_command prints a new line to stdout,i3status updates.
+    status_command i3status -c ~/.config/i3status/i3status.conf
+
+    # Set gruvbox colors
+    colors {
+        # bar background color
+        background $bg
+        # text color used for blocks that do not have a color specified.
+        statusline $yellow
+        # workspaces section
+        #                    border  backgr. text
+        focused_workspace    $aqua $aqua $darkgray
+        inactive_workspace   $darkgray $darkgray $yellow
+        active_workspace     $darkgray $darkgray $yellow
+        urgent_workspace     $red $red $bg
+    }
+}
 
 # Blue gruvbox
 # class                 border|backgr|text|indicator|child_border
@@ -170,9 +165,6 @@ client.urgent           $red $red $white $red $red
 
 # Colored window borders
 default_border pixel 3
-
-# Bind for power options
-bindsym $mod+x exec ~/.config/sway/scripts/powermenu.sh
 
 # Set i3status font
 font pango:JetBrainsMono Nerd Font Medium 10
@@ -255,5 +247,6 @@ exec wlsunset -l 41 -L 28
 exec eval $(gnome-keyring-daemon --start)
 exec export SSH_AUTH_SOCK
 
-# Start bluetooth manager applet
-exec blueman-applet
+# Enable gaps
+gaps outer 8
+gaps inner 4
