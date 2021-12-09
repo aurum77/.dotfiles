@@ -16,5 +16,12 @@ alias tree='exa --tree'
 alias v='vim'     	# needs nvim
 alias c='clear'
 
+# git specific aliases
+alias ga='git add '
+alias gd='git diff '
+alias gc='git commit '
+alias gst='git status '
+
+
 # Enables directory change without using cd
 shopt -s autocd
