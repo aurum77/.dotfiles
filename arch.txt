@@ -11,7 +11,7 @@ i3status -> minimal bar
 exa -> cool and fast ls replacement
 thunar -> file manager
 xfce4-terminal -> terminal emulator
-wofi -> wayland native dmenu alternative
+sway-launcher-desktop -> terminal launcher
 gruvbox-dark-gtk -> gruvbox style dark background for gtk apps
 gruvbox-dark-icons-gtk -> nice icons
 capitaine-cursors -> nice cursors
