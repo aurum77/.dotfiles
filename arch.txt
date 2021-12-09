@@ -18,6 +18,7 @@ capitaine-cursors -> nice cursors
 xsettingsd -> theming for programs using xwayland
 grim -> wayland screenshots
 slurp -> wayland area screenshots
+wf-recorder -> record video 
 gvfs-mtp -> support for mtp devices
 wl-clipboard -> clipboard for wayland
 jq -> neede for time stamping on screenshots
