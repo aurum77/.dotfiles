@@ -182,13 +182,22 @@ input type:touchpad {
     drag_lock enabled
 }
 
+# Disable mouse accel
+input type:pointer {
+    accel_profile flat
+    pointer_accel 0
+}
+
 # Bind the laptop context menu to start thunar
 bindcode 135 exec thunar
 
-# Volume control
+# Volume and Spotify control
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioPlay exec playerctl --player=spotify play-pause
+bindsym XF86AudioNext exec playerctl --player=spotify next
+bindsym XF86AudioPrev exec playerctl --player=spotify previous
 
 # Screenshots, requires wl-clipboard and jq
 bindsym $mod+Shift+s exec grim -g "$(slurp -d)" - | wl-copy
@@ -253,3 +262,6 @@ exec export SSH_AUTH_SOCK
 # Enable gaps
 gaps outer 8
 gaps inner 4
+
+# Enable floating for UltiMC
+for_window [title="^UltimMC$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
