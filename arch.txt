@@ -11,7 +11,7 @@ i3status -> minimal bar
 exa -> cool and fast ls replacement
 thunar -> file manager
 xfce4-terminal -> terminal emulator
-sway-launcher-desktop -> terminal launcher
+sway-launcher-desktop -> terminal based application launcher
 gruvbox-dark-gtk -> gruvbox style dark background for gtk apps
 gruvbox-dark-icons-gtk -> nice icons
 capitaine-cursors -> nice cursors
@@ -23,10 +23,16 @@ gvfs-mtp -> support for mtp devices
 wl-clipboard -> clipboard for wayland
 jq -> neede for time stamping on screenshots
 nerd-fonts-jetbrains-mono -> font for swaybar
-ttf-jetbrains-mono -> font for wofi
 bash-completion -> self explanatory
 bluez bluez-utils blueman -> bluetooth stuff
 wlsunset -> night light 
 mate-calc -> self explanatory
 gnome-keyring -> keyring
 seahorse -> gui for keyrings
+playerctl -> spotify sound control
+ani-cli -> cli anime client
+mpv -> minimal video player, required by ani-cli
+cpupower -> manipulate cpu governor and frequency
+cpupower-gui -> gui for cpupower
+
+don't forget to uninstall waybar, light, alacritty and dmenu that come with archinstall's sway preset

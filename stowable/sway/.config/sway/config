@@ -53,30 +53,39 @@ bindsym $mod+Shift+c reload
 #
 # Workspaces:
 #
+    # Set workspaces with names
+    set $ws1 "1:  "
+    set $ws2 "2:  "
+    set $ws3 "3:  "
+    set $ws4 "4:  "
+    set $ws5 "5:  "
+    set $ws6 "6:  "
+    set $ws7 "7:  "
+    set $ws8 "8:  "
+    set $ws9 "9:  "
+
     # Switch to workspace
-    bindsym $mod+1 workspace number 1
-    bindsym $mod+2 workspace number 2
-    bindsym $mod+3 workspace number 3
-    bindsym $mod+4 workspace number 4
-    bindsym $mod+5 workspace number 5
-    bindsym $mod+6 workspace number 6
-    bindsym $mod+7 workspace number 7
-    bindsym $mod+8 workspace number 8
-    bindsym $mod+9 workspace number 9
-    bindsym $mod+0 workspace number 10
+    bindsym $mod+1 workspace $ws1
+    bindsym $mod+2 workspace $ws2
+    bindsym $mod+3 workspace $ws3
+    bindsym $mod+4 workspace $ws4
+    bindsym $mod+5 workspace $ws5
+    bindsym $mod+6 workspace $ws6
+    bindsym $mod+7 workspace $ws7
+    bindsym $mod+8 workspace $ws8
+    bindsym $mod+9 workspace $ws9
+
     # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace number 1
-    bindsym $mod+Shift+2 move container to workspace number 2
-    bindsym $mod+Shift+3 move container to workspace number 3
-    bindsym $mod+Shift+4 move container to workspace number 4
-    bindsym $mod+Shift+5 move container to workspace number 5
-    bindsym $mod+Shift+6 move container to workspace number 6
-    bindsym $mod+Shift+7 move container to workspace number 7
-    bindsym $mod+Shift+8 move container to workspace number 8
-    bindsym $mod+Shift+9 move container to workspace number 9
-    bindsym $mod+Shift+0 move container to workspace number 10
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
+    bindsym $mod+Shift+1 move container to workspace $ws1
+    bindsym $mod+Shift+2 move container to workspace $ws2
+    bindsym $mod+Shift+3 move container to workspace $ws3
+    bindsym $mod+Shift+4 move container to workspace $ws4
+    bindsym $mod+Shift+5 move container to workspace $ws5
+    bindsym $mod+Shift+6 move container to workspace $ws6
+    bindsym $mod+Shift+7 move container to workspace $ws7
+    bindsym $mod+Shift+8 move container to workspace $ws8
+    bindsym $mod+Shift+9 move container to workspace $ws9
+    bindsym $mod+Shift+0 move container to workspace $ws10
 
 #
 # Layout stuff:
@@ -111,8 +120,17 @@ include /etc/sway/config.d/*
 # My configurations
 # -----------------
 
-# Use sway-launcher-desktop, requires sway-launcher-desktop
+# Window rules
+# Enable floating for the sway-launcher-desktop window
 for_window [title="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
+#
+# Enable floating for UltiMC
+for_window [title="^UltimMC$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
+
+# Enable floating for cpupower-gui
+for_window [title="^cpupower-gui$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
+
+# Use sway-launcher-desktop, requires sway-launcher-desktop
 set $menu exec $term --title=launcher -e /bin/sway-launcher-desktop
 bindsym $mod+d exec $menu
 
@@ -165,6 +183,7 @@ client.urgent           $red $red $white $red $red
 
 # Colored window borders
 default_border pixel 3
+smart_borders no_gaps
 
 # Set i3status font
 font pango:JetBrainsMono Nerd Font Medium 10
@@ -241,8 +260,14 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Scratchpad binds
-bindsym $mod+Shift+tab move scratchpad
-bindsym $mod+tab scratchpad show
+#bindsym $mod+Shift+tab move scratchpad
+#bindsym $mod+tab scratchpad show
+
+# Fast workspace switch binds
+workspace_auto_back_and_forth yes
+bindsym $mod+Tab workspace next_on_output
+bindsym $mod+Shift+Tab workspace prev_on_output
+
 
 # Brightness control using brightnessctl
 bindsym XF86MonBrightnessUp exec brightnessctl set +10
@@ -262,6 +287,4 @@ exec export SSH_AUTH_SOCK
 # Enable gaps
 gaps outer 8
 gaps inner 4
-
-# Enable floating for UltiMC
-for_window [title="^UltimMC$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
+smart_gaps on
