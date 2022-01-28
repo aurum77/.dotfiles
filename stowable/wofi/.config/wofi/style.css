@@ -1,0 +1,46 @@
+*{
+    font-family: Cascadia Mono;
+    font-size: 14px;
+}
+
+window {
+margin: 0px;
+border: 2px solid #61afef;
+background-color: #282c34;
+}
+
+#input {
+border: none;
+font-style: italic;
+color: #f8f8f2;
+background-color: #282c34;
+}
+
+#inner-box {
+margin: 10px;
+border: none;
+background-color: #282c34;
+}
+
+#outer-box {
+margin: 10px;
+background-color: #282c34;
+}
+
+#scroll {
+border: none;
+}
+
+#text {
+margin: 5px;
+border: none;
+color: #56b6c2;
+}
+
+#entry:selected {
+color: #bdae93;
+}
+
+#text:selected {
+color: #353b45;
+}
