@@ -2,6 +2,8 @@ arch minimal install with just sway and stow installed using archinstall
 
 git -> to clone paru
 paru -> aur helper
+cpupower-gui -> gui for cpupower
+wlsunset -> night light 
 stow -> dotfile deployment
 brightnessctl -> needed for brightness control
 xdg-desktop-portal-wlr -> wayland stuff
@@ -11,9 +13,8 @@ i3status -> minimal bar
 exa -> cool and fast ls replacement
 thunar -> file manager
 xfce4-terminal -> terminal emulator
-sway-launcher-desktop -> terminal based application launcher
-gruvbox-dark-gtk -> gruvbox style dark background for gtk apps
-gruvbox-dark-icons-gtk -> nice icons
+papirus-icon-theme -> icon theme
+arc-solid-gtk-theme -> gtk theme
 capitaine-cursors -> nice cursors
 xsettingsd -> theming for programs using xwayland
 grim -> wayland screenshots
@@ -22,17 +23,17 @@ wf-recorder -> record video
 gvfs-mtp -> support for mtp devices
 wl-clipboard -> clipboard for wayland
 jq -> neede for time stamping on screenshots
-nerd-fonts-jetbrains-mono -> font for swaybar
 bash-completion -> self explanatory
 bluez bluez-utils blueman -> bluetooth stuff
-wlsunset -> night light 
 mate-calc -> self explanatory
 gnome-keyring -> keyring
 seahorse -> gui for keyrings
-playerctl -> spotify sound control
+playerctl -> media sound control
 ani-cli -> cli anime client
 mpv -> minimal video player, required by ani-cli
-cpupower -> manipulate cpu governor and frequency
-cpupower-gui -> gui for cpupower
+swaylock -> lock screen
+ttf-cascadia-code -> nice monospaced font
+noto-fonts-emoji -> google's emoji font
+pulseaudio -> we need sound don't we ?
 
 don't forget to uninstall waybar, light, alacritty and dmenu that come with archinstall's sway preset
