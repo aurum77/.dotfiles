@@ -135,7 +135,7 @@ bindsym $mod+d exec $menu
 bindsym $mod+q kill
 
 # Set wallpaper
-output * bg ~/Pictures/wall.png fill
+output * bg ~/Pictures/wall.jpg fill
 
 ## Base16 OneDark
 # Author: Lalit Magant (http://github.com/tilal6991)
@@ -284,7 +284,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +10
 bindsym XF86MonBrightnessDown exec brightnessctl set 10-
 
 # Lock on lid close
-set $lock 'swaylock -i ~/Pictures/lock.png'
+set $lock 'swaylock -i ~/Pictures/lock.jpg'
 bindswitch --reload --locked lid:on exec $lock
 
 # Night light
