@@ -4,6 +4,10 @@ git -> to clone paru
 paru -> aur helper
 cpupower-gui -> gui for cpupower
 wlsunset -> night light 
+systemd-zram -> enable zram
+ani-cli-git -> cli anime client
+visual-studio-code-bin -> code editor
+google-chrome -> browser
 stow -> dotfile deployment
 brightnessctl -> needed for brightness control
 xdg-desktop-portal-wlr -> wayland stuff
@@ -29,11 +33,9 @@ mate-calc -> self explanatory
 gnome-keyring -> keyring
 seahorse -> gui for keyrings
 playerctl -> media sound control
-ani-cli -> cli anime client
 mpv -> minimal video player, required by ani-cli
 swaylock -> lock screen
 ttf-cascadia-code -> nice monospaced font
 noto-fonts-emoji -> google's emoji font
 pulseaudio -> we need sound don't we ?
-
-don't forget to uninstall waybar, light, alacritty and dmenu that come with archinstall's sway preset
+pulseaudio-alsa -> alsa configuration

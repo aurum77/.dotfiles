@@ -9,11 +9,17 @@ set $down j
 set $up k
 set $right l
 
+# Set border size
+set $bordersize 3
+
 # Set xfce4-terminal as default
 set $term /bin/xfce4-terminal
 
 # Start a terminal
 bindsym $mod+Return exec $term
+
+# Start a floating terminal
+bindsym $mod+Ctrl+Return exec $term --title=floater
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -85,7 +91,6 @@ bindsym $mod+Shift+c reload
     bindsym $mod+Shift+7 move container to workspace $ws7
     bindsym $mod+Shift+8 move container to workspace $ws8
     bindsym $mod+Shift+9 move container to workspace $ws9
-    bindsym $mod+Shift+0 move container to workspace $ws10
 
 #
 # Layout stuff:
@@ -122,14 +127,28 @@ include /etc/sway/config.d/*
 
 # Window rules
 # Enable floating for UltiMC
-for_window [title="^UltimMC$"] floating enable, resize set 30 ppt 60 ppt, border pixel 3
+for_window [title="^UltimMC$"] floating enable, resize set 30 ppt 60 ppt, border pixel $bordersize
 
 # Enable floating for cpupower-gui
-for_window [title="^cpupower-gui$"] floating enable, resize set 30 ppt 60 ppt, border pixel 3
+for_window [title="^cpupower-gui$"] floating enable, border pixel $bordersize
+
+# Enable floating for thunar progress bars 
+for_window [title="^File Operation Progress$"] floating enable, border pixel $bordersize
+
+# Enable floating for floating terminal with custom window name
+for_window [title="^floater$"] floating enable, border pixel $bordersize
+
+for_window [app_id="^pavucontrol$"] floating enable, resize set 30 ppt 30 ppt, border pixel $bordersize
+
+# Enable floating for windows with the pop-up role such as sign in pop-ups
+for_window [window_role="^pop-up$"] floating enable, border pixel $bordersize
 
 # Use wofi, requires wofi
 set $menu wofi --show=drun --insensitive --allow-images --width=25% --fork --no-actions --hide-scroll --prompt="Search for Applications"
 bindsym $mod+d exec $menu
+
+# Use wofi for emoji
+bindsym $mod+Period exec $HOME/.dotfiles/stowable/wofi/.config/wofi/scripts/wofi-emoji.sh
 
 # Kill focused window
 bindsym $mod+q kill
@@ -190,11 +209,11 @@ client.placeholder      $base00 $base00 $base05 $base00 $base00
 client.background       $base07
 
 # Colored window borders
-default_border pixel 3
+default_border pixel $bordersize
 smart_borders no_gaps
 
 # Set i3status font
-font pango:Cascadia Mono Medium 10
+font pango:IBM Plex Mono Medium 10
 
 # Set input language
 input type:keyboard {
@@ -254,13 +273,13 @@ mode "resize" {
     bindsym $down resize shrink height 20px
     bindsym $up resize grow height 20px
     bindsym $right resize shrink width 20px
-    
+
     # Same, with arrow keys
     bindsym Left resize grow width 20px
     bindsym Down resize shrink height 20px
     bindsym Up resize grow height 20px
     bindsym Right resize shrink width 20px
-    
+
     # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -272,11 +291,8 @@ bindsym $mod+r mode "resize"
 #bindsym $mod+tab scratchpad show
 
 # Fast workspace switch binds
-workspace_auto_back_and_forth yes
-bindsym $mod+Control+Right workspace next_on_output
-bindsym $mod+Control+Left workspace prev_on_output
-bindsym $mod+Control+Shift+Right move container to workspace next_on_output; workspace next_on_output
-bindsym $mod+Control+Shift+Left move container to workspace prev_on_output; workspace prev_on_output
+bindsym $mod+x workspace next_on_output
+bindsym $mod+z workspace prev_on_output
 
 
 # Brightness control using brightnessctl

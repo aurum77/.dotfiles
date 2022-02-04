@@ -13,13 +13,14 @@ alias ls='exa'
 alias la='exa -a'
 alias ll='exa -la'
 alias tree='exa --tree'
-alias v='vim'     	# needs nvim
+alias v='vim'     	# needs vim
 alias c='clear'
 
 # git specific aliases
 alias ga='git add '
 alias gd='git diff '
 alias gc='git commit '
+alias gl='git log '
 alias gst='git status '
 
 
