@@ -11,10 +11,6 @@ export PATH="$PATH:$HOME/.local/bin/"
 export XDG_CURRENT_DESKTOP=sway
 # Needed for Intellij to work properly
 export _JAVA_AWT_WM_NONREPARENTING=1
-# Enable wayland support in Firefox
-export MOZ_ENABLE_WAYLAND=1
-# Set terminal emulator for sway-launcher-desktop
-export TERMINAL_COMMAND="xfce4-terminal -e"
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 

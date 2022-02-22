@@ -149,6 +149,7 @@ bindsym $mod+d exec $menu
 
 # Use wofi for emoji
 bindsym $mod+Period exec $HOME/.dotfiles/stowable/wofi/.config/wofi/scripts/wofi-emoji.sh
+bindsym $mod+Shift+q exec $HOME/.dotfiles/stowable/wofi/.config/wofi/scripts/wofi-power.sh
 
 # Kill focused window
 bindsym $mod+q kill
@@ -213,7 +214,7 @@ default_border pixel $bordersize
 smart_borders no_gaps
 
 # Set i3status font
-font pango:IBM Plex Mono Medium 10
+font pango:Cascadia Mono 10
 
 # Set input language
 input type:keyboard {
@@ -287,8 +288,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Scratchpad binds
-#bindsym $mod+Shift+tab move scratchpad
-#bindsym $mod+tab scratchpad show
+bindsym $mod+Shift+tab move scratchpad
+bindsym $mod+tab scratchpad show
 
 # Fast workspace switch binds
 bindsym $mod+x workspace next_on_output
@@ -304,11 +305,10 @@ set $lock 'swaylock -i ~/Pictures/lock.jpg'
 bindswitch --reload --locked lid:on exec $lock
 
 # Night light
-exec wlsunset -l 41 -L 28
+exec /bin/gammastep -v -l 41:28 -t 6500:4000 2> /tmp/gammastep.log
 
-# Start keyring
+# Start keyring daemon
 exec eval $(gnome-keyring-daemon --start)
-exec export SSH_AUTH_SOCK
 
 # Enable gaps
 gaps outer 8

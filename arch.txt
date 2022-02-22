@@ -3,7 +3,7 @@ arch minimal install with just sway and stow installed using archinstall
 git -> to clone paru
 paru -> aur helper
 cpupower-gui -> gui for cpupower
-wlsunset -> night light 
+gammastep -> night light 
 systemd-zram -> enable zram
 ani-cli-git -> cli anime client
 visual-studio-code-bin -> code editor
@@ -39,3 +39,5 @@ ttf-cascadia-code -> nice monospaced font
 noto-fonts-emoji -> google's emoji font
 pulseaudio -> we need sound don't we ?
 pulseaudio-alsa -> alsa configuration
+pavucontrol -> sound control gui
+wofi -> application launcher
