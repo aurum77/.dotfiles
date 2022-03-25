@@ -36,7 +36,7 @@ sway -> window manager
 swaylock -> lock screen
 ttf-cascadia-code -> nice monospaced font
 noto-fonts-emoji -> google's emoji font
-pulseaudio -> we need sound don't we ?
-pulseaudio-pulse -> pulse configuration
+pipewire -> we need sound don't we ?
+pipewire-pulse -> pulse configuration
 pavucontrol -> sound control gui
 wofi -> application launcher
