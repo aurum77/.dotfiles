@@ -1,5 +1,3 @@
-arch minimal install with just sway and stow installed using archinstall
-
 git -> to clone paru
 paru -> aur helper
 cpupower-gui -> gui for cpupower
@@ -17,8 +15,8 @@ i3status -> minimal bar
 exa -> cool and fast ls replacement
 thunar -> file manager
 xfce4-terminal -> terminal emulator
-papirus-icon-theme -> icon theme
-arc-solid-gtk-theme -> gtk theme
+gruvbox-dark-gtk -> gruvbox gtk theme
+gruvbox-dark-icons-gtk -> gruvbox icon theme
 capitaine-cursors -> nice cursors
 xsettingsd -> theming for programs using xwayland
 grim -> wayland screenshots
@@ -34,10 +32,11 @@ gnome-keyring -> keyring
 seahorse -> gui for keyrings
 playerctl -> media sound control
 mpv -> minimal video player, required by ani-cli
+sway -> window manager
 swaylock -> lock screen
 ttf-cascadia-code -> nice monospaced font
 noto-fonts-emoji -> google's emoji font
 pulseaudio -> we need sound don't we ?
-pulseaudio-alsa -> alsa configuration
+pulseaudio-pulse -> pulse configuration
 pavucontrol -> sound control gui
 wofi -> application launcher
