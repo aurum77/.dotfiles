@@ -11,6 +11,11 @@ export PATH="$PATH:$HOME/.local/bin/"
 export XDG_CURRENT_DESKTOP=sway
 # Needed for Intellij to work properly
 export _JAVA_AWT_WM_NONREPARENTING=1
+# Needed for Flutter framework
+export CHROME_EXECUTABLE=google-chrome-stable
+# Start ssh-agent
+eval $(ssh-agent)
+
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
