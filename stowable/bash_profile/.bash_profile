@@ -1,6 +1,8 @@
 #
-# ~/.bash_profile
+# ~/.bash_profile, executed on login
 #
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # Add flutter to PATH
 export PATH="$PATH:$HOME/.apps/flutter/bin"
@@ -13,13 +15,18 @@ export XDG_CURRENT_DESKTOP=sway
 export _JAVA_AWT_WM_NONREPARENTING=1
 # Needed for Flutter framework
 export CHROME_EXECUTABLE=google-chrome-stable
-# Start ssh-agent
-eval $(ssh-agent)
+# Only show the last 3 directories on the path prompt
+export PROMPT_DIRTRIM=3
 
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+# Start ssh-agent if it's not running
+if ! pgrep ssh-agent;
+  then
+    # Start ssh-agent
+    eval $(ssh-agent)
+fi
 
-# Start sway if the first tty is used for login and start logging
+# Start sway if tty1 is used for login and start logging
 if [[ "$(tty)" == "/dev/tty1" ]]
   then
     exec sway --verbose 2> /tmp/sway.log
