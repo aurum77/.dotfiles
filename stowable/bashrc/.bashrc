@@ -23,6 +23,5 @@ alias gc='git commit '
 alias gl='git log '
 alias gst='git status '
 
-
 # Enables directory change without using cd
 shopt -s autocd

@@ -28,10 +28,11 @@ MiscUseShiftArrowsToScroll=FALSE
 MiscSlimTabs=FALSE
 MiscNewTabAdjacent=FALSE
 MiscSearchDialogOpacity=100
-MiscShowUnsafePasteDialog=TRUE
-FontName=Cascadia Mono 11
+MiscShowUnsafePasteDialog=FALSE
+FontName=JetBrains Mono NL 11
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 BackgroundDarkness=0.950000
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 TabActivityColor=#bf4040
+MiscRightClickAction=TERMINAL_RIGHT_CLICK_ACTION_CONTEXT_MENU
 

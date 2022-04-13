@@ -13,19 +13,16 @@ set $right l
 set $bordersize 3
 
 # Set xfce4-terminal as default
-set $term /bin/xfce4-terminal
+set $term xfce4-terminal
 
 # Start a terminal
 bindsym $mod+Return exec $term
 
 # Start a floating terminal
-bindsym $mod+ctrl+Return exec $term --title=floater
+bindsym $mod+Ctrl+Return exec $term --title=floating_terminal
 
-# Drag floating windows by holding down $mod and left mouse button.
-# Resize them with right mouse button + $mod.
-# Despite the name, also works for non-floating windows.
-# Change normal to inverse to use left mouse button for resizing and right
-# mouse button for dragging.
+# Move floating windows using alt and left click,
+# resize them with right click
 floating_modifier $mod normal
 
 # Reload the configuration file
@@ -39,22 +36,12 @@ bindsym $mod+Shift+c reload
     bindsym $mod+$down focus down
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
-    # Or use $mod+[up|down|left|right]
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
 
     # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
-    # Ditto, with arrow keys
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
+    bindsym $mod+Shift+$left move left 25px
+    bindsym $mod+Shift+$down move down 25px
+    bindsym $mod+Shift+$up move up 25px
+    bindsym $mod+Shift+$right move right 25px
 
 #
 # Workspaces:
@@ -125,20 +112,21 @@ include /etc/sway/config.d/*
 # My configurations
 # -----------------
 
-# Window rules
-for_window [title="^UltimMC$"] floating enable, resize set 30 ppt 60 ppt, border pixel $bordersize
+# Window rules, set bordersize for all windows
+for_window [title=".*"] border pixel $bordersize
+for_window [title="floating_terminal"] floating enable
+for_window [title="^UltimMC$"] floating enable, resize set 30 ppt 60 ppt
 
-for_window [title="^cpupower-gui$"] floating enable, border pixel $bordersize
+for_window [title="^cpupower-gui$"] floating enable
 
-for_window [title="^File Operation Progress$"] floating enable, border pixel $bordersize
+for_window [title="^File Operation Progress$"] floating enable
 
-for_window [title="^floater$"] floating enable, border pixel $bordersize
+for_window [app_id="^pavucontrol$"] floating enable, resize set 30 ppt 30 ppt
 
-for_window [app_id="^pavucontrol$"] floating enable, resize set 30 ppt 30 ppt, border pixel $bordersize
+for_window [window_role="^pop-up$"] floating enable
 
-for_window [app_id="^catfish$"] floating enable, border pixel $bordersize
-
-for_window [window_role="^pop-up$"] floating enable, border pixel $bordersize
+for_window [app_id="Thunar"] floating enable
+for_window [app_id="thunar"] floating enable
 
 # Workspace rules
 # devl
@@ -146,9 +134,6 @@ assign [class="Code"] workspace $ws2
 
 # docs
 assign [app_id="org.pwmt.zathura"] workspace $ws3
-
-# file
-assign [app_id="thunar"] workspace $ws5
 
 # chat
 assign [class="discord"] workspace $ws7
@@ -162,14 +147,11 @@ bindsym $mod+d exec $menu
 bindsym $mod+Period exec $HOME/.dotfiles/stowable/wofi/.config/wofi/scripts/wofi-emoji.sh
 bindsym $mod+Shift+q exec $HOME/.dotfiles/stowable/wofi/.config/wofi/scripts/wofi-power.sh
 
-# File search
-bindsym $mod+shift+f exec /bin/catfish
+# Use wofi for file search
+bindsym $mod+Shift+f exec find $HOME -not -path '*/.*' | sed 's/\/home\/borab/~/g' | wofi --show=dmenu --insensitive --width=35% --no-actions --hide-scroll --cache-file=/dev/null --prompt="Search for Files" | sed 's/~/\/home\/borab/g' | xargs exo-open
 
 # Kill focused window
 bindsym $mod+q kill
-
-# Set wallpaper
-output * bg ~/Pictures/wall.png fill
 
 # set primary gruvbox colorscheme colors
 set $bg #282828
@@ -183,12 +165,16 @@ set $gray #a89984
 set $darkgray #1d2021
 set $white #fbf1c7
 
+# Set wallpaper
+#output * bg ~/Pictures/wall.jpg fill
+output * bg $bg solid_color 
+
 bar {
     # Set the position of the bar
     position bottom
 
     # When the status_command prints a new line to stdout,i3status updates.
-    status_command i3status -c ~/.config/i3status/i3status.conf
+    status_command LANG=tr_TR.UTF-8 i3status -c ~/.config/i3status/i3status.conf
 
     # Hide workspace numbers
     strip_workspace_numbers yes
@@ -202,7 +188,7 @@ bar {
         # workspaces section
         #                    border  backgr. text
         focused_workspace    $aqua $aqua $darkgray
-        inactive_workspace   $darkgray $darkgray $yellow
+        inactive_workspace   $bg $bg $yellow
         active_workspace     $darkgray $darkgray $yellow
         urgent_workspace     $red $red $bg
     }
@@ -220,7 +206,7 @@ default_border pixel $bordersize
 smart_borders no_gaps
 
 # Set i3status font
-font pango:Cascadia Mono 10
+font pango:JetBrains Mono 10
 
 # Set input language
 input type:keyboard {
@@ -270,26 +256,20 @@ exec_always {
 # Set seat cursor theme
 seat seat0 xcursor_theme "capitaine-cursors"
 
-
 # Reload xwindow themes with sway reload
 exec_always xsettingsd
 
 # Resizing containers:
 mode "resize" {
-    bindsym $left resize grow width 20px
-    bindsym $down resize shrink height 20px
-    bindsym $up resize grow height 20px
-    bindsym $right resize shrink width 20px
-
-    # Same, with arrow keys
-    bindsym Left resize grow width 20px
-    bindsym Down resize shrink height 20px
-    bindsym Up resize grow height 20px
-    bindsym Right resize shrink width 20px
+    bindsym $left resize shrink width 25px
+    bindsym $down resize shrink height 25px
+    bindsym $up resize grow height 25px
+    bindsym $right resize grow width 25px
 
     # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
 
@@ -307,20 +287,21 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +10
 bindsym XF86MonBrightnessDown exec brightnessctl set 10-
 
 # CPU Governor control using cpupower-gui
-bindsym $mod+ctrl+b exec cpupower-gui pr Balanced
-bindsym $mod+ctrl+p exec cpupower-gui pr Performance
+bindsym $mod+Ctrl+b exec cpupower-gui pr Balanced
+bindsym $mod+Ctrl+p exec cpupower-gui pr Performance
 
 # Lock on lid close
-set $lock 'swaylock -i ~/Pictures/lock.png'
+#set $lock 'swaylock -i ~/Pictures/lock.jpg'
+set $lock 'swaylock'
 bindswitch --reload --locked lid:on exec $lock
 
 # Night light
-exec /bin/gammastep -v -l 41:28 -t 6500:4000 2> /tmp/gammastep.log
+exec gammastep -v -l 41:28 -t 6500:4000 2> /tmp/gammastep.log
 
 # Start keyring daemon
-exec eval $(/bin/gnome-keyring-daemon --start)
+exec eval $(gnome-keyring-daemon --start)
 
 # Enable gaps
-gaps outer 8
-gaps inner 4
+gaps outer 4
+gaps inner 2
 smart_gaps on

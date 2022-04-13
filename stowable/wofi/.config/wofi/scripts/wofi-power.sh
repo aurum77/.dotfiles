@@ -12,5 +12,6 @@ case $selected in
   logout)
     exec loginctl terminate-session $XDG_SESSION_ID;;
   lock)
-    exec swaylock -i ~/Pictures/lock.jpg;;
+    exec swaylock;;
+    #exec swaylock -i ~/Pictures/lock.jpg;;
 esac
