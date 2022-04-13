@@ -34,9 +34,12 @@ playerctl -> media sound control
 mpv -> minimal video player, required by ani-cli
 sway -> window manager
 swaylock -> lock screen
-ttf-cascadia-code -> nice monospaced font
+ttf-jetbrains-mono -> nice monospaced font
 noto-fonts-emoji -> google's emoji font
+noto-fonts -> google's font
 pipewire -> we need sound don't we ?
 pipewire-pulse -> pulse configuration
 pavucontrol -> sound control gui
 wofi -> application launcher
+zathura -> pdf reader
+libreoffice-fresh -> office suite
