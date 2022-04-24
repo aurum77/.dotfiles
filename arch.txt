@@ -24,7 +24,7 @@ slurp -> wayland area screenshots
 wf-recorder -> record video 
 gvfs-mtp -> support for mtp devices
 wl-clipboard -> clipboard for wayland
-jq -> neede for time stamping on screenshots
+jq -> needed for parsing the swaymsg json
 bash-completion -> self explanatory
 bluez bluez-utils blueman -> bluetooth stuff
 mate-calc -> self explanatory
@@ -42,4 +42,5 @@ pipewire-pulse -> pulse configuration
 pavucontrol -> sound control gui
 wofi -> application launcher
 zathura -> pdf reader
+zathura-pdf-mupdf -> pdf plugin for zathura
 libreoffice-fresh -> office suite
