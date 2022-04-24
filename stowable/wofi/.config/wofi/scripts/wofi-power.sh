@@ -2,7 +2,7 @@
 
 entries="🔌 Shutdown\n↩️ Reboot\n🚪 Logout\n🔒 Lock"
 
-selected=$(echo -e $entries|wofi --show dmenu -i --width=25% --height=150 --hide-scroll --cache-file=/dev/null --prompt="Choose Power Options" | awk '{print tolower($2)}')
+selected=$(echo -e $entries | wofi --show dmenu -i --width=25% --height=150 --hide-scroll --cache-file=/dev/null --prompt="Choose Power Options" | awk '{print tolower($2)}')
 
 case $selected in
   shutdown)
@@ -12,6 +12,5 @@ case $selected in
   logout)
     exec loginctl terminate-session $XDG_SESSION_ID;;
   lock)
-    exec swaylock;;
-    #exec swaylock -i ~/Pictures/lock.jpg;;
+    exec swaylock -i ~/Pictures/lock.jpg;;
 esac

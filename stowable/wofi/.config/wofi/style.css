@@ -5,20 +5,20 @@
 
 window {
 margin: 0px;
-border: 2px solid #458588;
+border: 3px solid #458588;
 background-color: #282828;
 }
 
 #input {
 border: none;
+margin: 5px;
 font-style: italic;
 color: #f8f8f2;
 background-color: #504945;
 }
 
 #inner-box {
-margin: 10px;
-border: none;
+margin: 5px;
 background-color: #282828;
 }
 
