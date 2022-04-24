@@ -4,7 +4,7 @@
 	<icon>utilities-terminal</icon>
 	<name>Open a Floating Terminal Here</name>
 	<unique-id>1645184356713445-1</unique-id>
-	<command>DISPLAY=:0.0 /bin/xfce4-terminal --title floater</command>
+	<command>DISPLAY=:0.0 /bin/xfce4-terminal --title floating_terminal</command>
 	<description>Opens a floating terminal with DISPLAY=:0.0 set</description>
 	<patterns>*</patterns>
 	<startup-notify/>

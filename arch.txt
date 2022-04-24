@@ -1,5 +1,4 @@
 git -> to clone paru
-paru -> aur helper
 cpupower-gui -> gui for cpupower
 gammastep -> night light 
 systemd-zram -> enable zram

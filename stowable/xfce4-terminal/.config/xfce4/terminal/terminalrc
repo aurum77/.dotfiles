@@ -21,7 +21,7 @@ MiscTabCloseMiddleClick=FALSE
 MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
 MiscMiddleClickOpensUri=FALSE
-MiscCopyOnSelect=FALSE
+MiscCopyOnSelect=TRUE
 MiscShowRelaunchDialog=TRUE
 MiscRewrapOnResize=TRUE
 MiscUseShiftArrowsToScroll=FALSE
@@ -35,4 +35,5 @@ BackgroundDarkness=0.950000
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 TabActivityColor=#bf4040
 MiscRightClickAction=TERMINAL_RIGHT_CLICK_ACTION_CONTEXT_MENU
+ScrollingUnlimited=TRUE
 
