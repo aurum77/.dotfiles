@@ -1,0 +1,11 @@
+#!/bin/bash
+
+i3status -c $HOME/.config/i3status/i3status.conf | while :
+do
+  read i3status
+  mic=`pactl list short | grep 'alsa_input' | awk '{print tolower($7)}'`
+  media=`playerctl metadata --format "🎵 {{trunc(artist, 20)}}: {{ trunc(title, 20) }}"`
+  media=${media:-'🎵 No media playing'}
+
+  echo "$media | 🎤 Mic: ${mic^} | $i3status" || exit 1
+done
