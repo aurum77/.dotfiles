@@ -121,9 +121,10 @@ for_window [class="(jetbrains|java-util)-(.*)" title="win0"] floating enable
 
 for_window [window_role="^pop-up$"] floating enable
 
-for_window [app_id=pavucontrol|Thunar|thunar|mpv|gnome-pomodoro] floating enable
+for_window [app_id=Thunar|thunar|mpv|gnome-pomodoro] floating enable
+for_window [app_id=pavucontrol] floating enable, resize set width 800
 
-for_window [title="^Android Emulator - .+$"] resize set width 75 ppt
+for_window [title="on QEMU/KVM$"] floating enable
 
 # Workspace rules
 # devl
@@ -132,12 +133,15 @@ assign [class="Code"] workspace $ws2
 # docs
 assign [app_id="org.pwmt.zathura"] workspace $ws3
 
+# virt
+assign [app_id="virt-manager"] workspace $ws6
+
 # chat
 assign [class="discord"] workspace $ws7
 assign [app_id="telegramdesktop"] workspace $ws7
 
 # Use wofi as app launcher
-set $menu wofi --show=drun --insensitive --allow-images --width=25% --lines=12 --fork --no-actions --hide-scroll --prompt="Search for Applications"
+set $menu wofi --show=drun --insensitive --allow-images --width=25% --lines=12 --no-actions --hide-scroll --prompt="Search for Applications"
 bindsym $mod+d exec $menu
 
 # Use wofi for scripts
@@ -171,7 +175,8 @@ bar {
     position bottom
 
     # When the status_command prints a new line to stdout,i3status updates.
-    status_command LANG=tr_TR.UTF-8 i3status -c $HOME/.config/i3status/i3status.conf
+    #status_command LANG=tr_TR.UTF-8 i3status -c $HOME/.config/i3status/i3status.conf
+    status_command $HOME/.config/i3status/i3status
 
     # Hide workspace numbers
     strip_workspace_numbers no
