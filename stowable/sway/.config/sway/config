@@ -145,9 +145,8 @@ set $menu wofi --show=drun --insensitive --allow-images --width=25% --lines=12 -
 bindsym $mod+d exec $menu
 
 # Use wofi for scripts
-bindsym $mod+Period exec $HOME/.dotfiles/stowable/wofi/.config/wofi/scripts/wofi-emoji.sh
-bindsym $mod+Shift+q exec $HOME/.dotfiles/stowable/wofi/.config/wofi/scripts/wofi-power.sh
-bindsym $mod+Shift+s exec $HOME/.dotfiles/stowable/wofi/.config/wofi/scripts/wofi-capture.sh
+bindsym $mod+Period exec $HOME/.config/wofi/scripts/wofi-emoji.sh
+bindsym $mod+Shift+q exec $HOME/.config/wofi/scripts/wofi-power.sh
 
 # Use wofi for file search
 bindsym $mod+Shift+f exec find $HOME -not -path '*/.*' | sed 's/\/home\/borab/~/g' | wofi --show=dmenu --insensitive --no-actions --hide-scroll --cache-file=/dev/null --prompt="Search for Files" | sed 's/~/\/home\/borab/g; s/\ /\\ /g' | xargs -I{dir_or_file} exo-open \"{dir_or_file}\"
@@ -241,7 +240,11 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Screenshots, requires wl-clipboard and jq
+bindsym $mod+Shift+s exec grim -g "$(slurp -d)" - | wl-copy
 bindsym Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')
+
+# Recording bind
+bindsym $mod+Shift+r exec sh $HOME/.config/sway/scripts/recorder.sh
 
 # Set themes (not all gtk applications abide by this, so we use xsettingsd as well)
 set $gnome-schema org.gnome.desktop.interface
@@ -297,7 +300,10 @@ exec gammastep -v -l 41:28 -t 6500:4000 2> /tmp/gammastep.log
 # Start keyring daemon
 exec eval $(gnome-keyring-daemon --start)
 
+exec_always i3-gnome-pomodoro daemon 7 9
+
 # Enable gaps
 gaps outer 4
 gaps inner 2
 smart_gaps on
+
