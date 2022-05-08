@@ -11,8 +11,8 @@ background-color: #282828;
 
 #input {
 border: none;
+border-radius: 0px;
 margin: 5px;
-font-style: italic;
 color: #f8f8f2;
 background-color: #504945;
 }
@@ -38,6 +38,7 @@ color: #d5c4a1;
 }
 
 #entry:selected {
+border-radius: 0px;
 color: #bdae93;
 }
 

@@ -4,7 +4,7 @@
 [[ $- != *i* ]] && return
 
 # Prompt
-PS1="\n\[\033[0;36m\]\u\[\033[0;31m\]@\[\033[0;32m\]\h \[\033[0;35m\]\$( git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(git:\1) /')\n\[\033[1;33m\]\w\[\033[00m\] \[\033[1;33m\]>\[\033[0;00m\] "
+PS1="\[\033[0;36m\]\u\[\033[0;31m\]@\[\033[0;32m\]\h \[\033[0;35m\]\$( git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(git:\1) /')\n\[\033[1;33m\]\w\[\033[00m\] \[\033[1;33m\]>\[\033[0;00m\] "
 
 # Aliases
 alias sudo='sudo '	# for sudo use with other aliases if needed
@@ -13,7 +13,7 @@ alias ls='exa'
 alias la='exa -a'
 alias ll='exa -la'
 alias tree='exa --tree'
-alias v='vim'     	# needs vim
+alias v='nvim'     	# needs neovim
 alias c='clear'
 
 # git specific aliases

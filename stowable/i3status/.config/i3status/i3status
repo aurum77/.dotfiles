@@ -1,11 +1,11 @@
 #!/bin/bash
 
-i3status -c $HOME/.config/i3status/i3status.conf | while :
+LANG=tr_TR.UTF-8 i3status -c $HOME/.config/i3status/i3status.conf | while :
 do
   read i3status
-  mic=`pactl list short | grep 'alsa_input' | awk '{print tolower($7)}'`
-  media=`playerctl metadata --format "🎵 {{trunc(artist, 20)}}: {{ trunc(title, 20) }}"`
-  media=${media:-'🎵 No media playing'}
+  i3status=`echo $i3status | sed 's|wlan: |wlan:|g'`
+  media=`playerctl metadata --format "{{trunc(artist, 55)}} {{trunc(title, 59)}}"`
+  media=${media:-'no media'}
 
-  echo "$media | 🎤 Mic: ${mic^} | $i3status" || exit 1
+  echo "${media,,} | ${i3status,,}" || exit 1
 done
