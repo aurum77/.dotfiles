@@ -2,14 +2,13 @@ git -> to clone paru
 cpupower-gui -> gui for cpupower
 gammastep -> night light 
 systemd-zram -> enable zram
-ani-cli-git -> cli anime client
-visual-studio-code-bin -> code editor
+visual-studio-code-bin -> decent code editor
 google-chrome -> browser
 stow -> dotfile deployment
 brightnessctl -> needed for brightness control
 xdg-desktop-portal-wlr -> wayland stuff
 xdg-user-dirs -> user direcotries
-xorg-xwayland -> non-wayland program support
+xorg-xwayland -> non-wayland application support
 i3status -> minimal bar
 exa -> cool and fast ls replacement
 thunar -> file manager
@@ -17,9 +16,9 @@ xfce4-terminal -> terminal emulator
 gruvbox-dark-gtk -> gruvbox gtk theme
 gruvbox-dark-icons-gtk -> gruvbox icon theme
 capitaine-cursors -> nice cursors
-xsettingsd -> theming for programs using xwayland
+xsettingsd -> theming for applications using xwayland
 grim -> wayland screenshots
-slurp -> wayland area screenshots
+slurp -> allows taking coordinates of areas in wayland for screenshots
 wf-recorder -> record video 
 gvfs-mtp -> support for mtp devices
 wl-clipboard -> clipboard for wayland
@@ -43,3 +42,6 @@ wofi -> application launcher
 zathura -> pdf reader
 zathura-pdf-mupdf -> pdf plugin for zathura
 libreoffice-fresh -> office suite
+superproductivity-bin -> pomodoro/todo app
+dunst -> notification daemon
+alacritty -> GPU accelerated terminal emulator
