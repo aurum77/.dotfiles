@@ -12,8 +12,8 @@ set $right l
 # Set border size
 set $bordersize 3
 
-# Set xfce4-terminal as default
-set $term xfce4-terminal
+# Set alacritty as default
+set $term alacritty
 
 # Start a terminal
 bindsym $mod+Return exec $term
@@ -47,15 +47,15 @@ bindsym $mod+Shift+c reload
 # Workspaces:
 #
     # Set workspaces with names
-    set $ws1 "1:www"
-    set $ws2 "2:devl"
-    set $ws3 "3:docs"
-    set $ws4 "4:term"
-    set $ws5 "5:file"
-    set $ws6 "6:virt"
-    set $ws7 "7:chat"
-    set $ws8 "8:music"
-    set $ws9 "9:video"
+    set $ws1 "1"
+    set $ws2 "2"
+    set $ws3 "3"
+    set $ws4 "4"
+    set $ws5 "5"
+    set $ws6 "6"
+    set $ws7 "7"
+    set $ws8 "8"
+    set $ws9 "9"
 
     # Switch to workspace
     bindsym $mod+1 workspace $ws1
@@ -112,44 +112,27 @@ include /etc/sway/config.d/*
 # My configurations
 # -----------------
 
-# Window rule
-for_window [title=".*"] border pixel $bordersize
+# Window rules
+for_window [window_role="^pop-up$"] floating enable
 
+for_window [title=".*"] border pixel $bordersize
 for_window [title=floating_terminal|UltimMC|cpupower-gui] floating enable
 for_window [title="^File Operation Progress$"] floating enable
-for_window [class="(jetbrains|java-util)-(.*)" title="win0"] floating enable
+for_window [title="on QEMU/KVM$"] floating enable
 
-for_window [window_role="^pop-up$"] floating enable
+for_window [class="(jetbrains|java-util)-(.*)" title="win0"] floating enable
+for_window [class="superProductivity"] floating enable
 
 for_window [app_id=Thunar|thunar|mpv|gnome-pomodoro] floating enable
 for_window [app_id=pavucontrol] floating enable, resize set width 800
 
-for_window [title="on QEMU/KVM$"] floating enable
-
-# Workspace rules
-# devl
-assign [class="Code"] workspace $ws2
-
-# docs
-assign [app_id="org.pwmt.zathura"] workspace $ws3
-
-# virt
-assign [app_id="virt-manager"] workspace $ws6
-
-# chat
-assign [class="discord"] workspace $ws7
-assign [app_id="telegramdesktop"] workspace $ws7
-
 # Use wofi as app launcher
-set $menu wofi --show=drun --insensitive --allow-images --width=25% --lines=12 --no-actions --hide-scroll --prompt="Search for Applications"
+set $menu wofi --term=alacritty --show=drun --insensitive --allow-images --width=20% --lines=12 --no-actions --hide-scroll --prompt="Search for Applications"
 bindsym $mod+d exec $menu
 
 # Use wofi for scripts
 bindsym $mod+Period exec $HOME/.config/wofi/scripts/wofi-emoji.sh
 bindsym $mod+Shift+q exec $HOME/.config/wofi/scripts/wofi-power.sh
-
-# Use wofi for file search
-bindsym $mod+Shift+f exec find $HOME -not -path '*/.*' | sed 's/\/home\/borab/~/g' | wofi --show=dmenu --insensitive --no-actions --hide-scroll --cache-file=/dev/null --prompt="Search for Files" | sed 's/~/\/home\/borab/g; s/\ /\\ /g' | xargs -I{dir_or_file} exo-open \"{dir_or_file}\"
 
 # Kill focused window
 bindsym $mod+q kill
@@ -167,14 +150,13 @@ set $darkgray #1d2021
 set $white #fbf1c7
 
 # Set wallpaper
-output * bg $HOME/Pictures/wall.jpg fill
+output * bg #282828 solid_color
 
 bar {
     # Set the position of the bar
     position bottom
 
     # When the status_command prints a new line to stdout,i3status updates.
-    #status_command LANG=tr_TR.UTF-8 i3status -c $HOME/.config/i3status/i3status.conf
     status_command $HOME/.config/i3status/i3status
 
     # Hide workspace numbers
@@ -204,10 +186,10 @@ client.urgent           $red $red $white $red $red
 
 # Colored window borders
 default_border pixel $bordersize
-smart_borders no_gaps
+smart_borders on
 
 # Set i3status font
-font pango:JetBrains Mono 10
+font pango:JetBrains Mono NL Bold 10
 
 # Set input language
 input type:keyboard {
@@ -231,22 +213,17 @@ input type:pointer {
 # Bind the laptop context menu to start thunar
 bindcode 135 exec thunar
 
-# Volume and media control
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-
 # Screenshots, requires wl-clipboard and jq
 bindsym $mod+Shift+s exec grim -g "$(slurp -d)" - | wl-copy
 bindsym Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')
 
+# Book search
+bindsym $mod+Shift+b exec find $(xdg-user-dir DOCUMENTS)/books -not -path '*/.*' | tail -n +2 |sed 's|/home/borab/docs/books/||g;' | wofi --show=dmenu --insensitive --no-actions --hide-scroll --lines=10 --width=30% --cache-file=/dev/null --prompt="Search for Books" | sed 's|\ |\\ |g' | xargs -I{dir_or_file} exo-open \"${HOME}/docs/books/{dir_or_file}\"
+
 # Recording bind
 bindsym $mod+Shift+r exec sh $HOME/.config/sway/scripts/recorder.sh
 
-# Set themes (not all gtk applications abide by this, so we use xsettingsd as well)
+# Set themes and default terminal (not all gtk applications abide by the theme, so I use xsettingsd as well)
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema gtk-theme 'gruvbox-dark-gtk'
@@ -282,28 +259,33 @@ bindsym $mod+tab scratchpad show
 bindsym $mod+x workspace next_on_output
 bindsym $mod+z workspace prev_on_output
 
-# Brightness control using brightnessctl
-bindsym XF86MonBrightnessUp exec brightnessctl set +10
-bindsym XF86MonBrightnessDown exec brightnessctl set 10-
+# Brightness control using brightnessctl, with dunst for notification
+bindsym XF86MonBrightnessUp exec $HOME/.config/dunst/scripts/brightness.sh up
+bindsym XF86MonBrightnessDown exec $HOME/.config/dunst/scripts/brightness.sh down
+
+# Volume and media control, with dunst for notification
+bindsym XF86AudioRaiseVolume exec $HOME/.config/dunst/scripts/sound.sh up
+bindsym XF86AudioLowerVolume exec $HOME/.config/dunst/scripts/sound.sh down
+bindsym XF86AudioMute exec $HOME/.config/dunst/scripts/sound.sh mute
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # CPU Governor control using cpupower-gui
 bindsym $mod+Ctrl+b exec cpupower-gui pr Balanced
 bindsym $mod+Ctrl+p exec cpupower-gui pr Performance
 
 # Lock on lid close
-set $lock 'swaylock -i $HOME/Pictures/lock.jpg'
+#set $lock 'swaylock -i $HOME/pics/lock.jpg'
+set $lock 'swaylock -c 282828'
 bindswitch --reload --locked lid:on exec $lock
 
 # Night light
-exec gammastep -v -l 41:28 -t 6500:4000 2> /tmp/gammastep.log
+exec gammastep -v -l 41:28 -t 6700:4000 2> /tmp/gammastep.log
 
 # Start keyring daemon
 exec eval $(gnome-keyring-daemon --start)
 
-exec_always i3-gnome-pomodoro daemon 7 9
-
-# Enable gaps
-gaps outer 4
-gaps inner 2
-smart_gaps on
+# Start dunst for notifications
+exec dunst -conf $HOME/.config/dunst/dunstrc
 
