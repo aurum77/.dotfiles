@@ -1,7 +1,3 @@
-#
-# ~/.bash_profile, executed on login
-#
-
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # Add flutter to PATH
@@ -17,13 +13,17 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export CHROME_EXECUTABLE=google-chrome-stable
 # Only show the last 3 directories on the path prompt
 export PROMPT_DIRTRIM=3
-
+# Add java to path if installed
+if [[ -f /etc/profile.d/jre.sh ]];
+  then
+    source /etc/profile.d/jre.sh
+fi
 
 # Start ssh-agent if it's not running
-if ! pgrep ssh-agent;
+if ! pgrep ssh-agent 1> /dev/null;
   then
     # Start ssh-agent
-    eval $(ssh-agent)
+    eval $(ssh-agent) > /dev/null 2>&1
 fi
 
 # Start sway if tty1 is used for login and start logging
