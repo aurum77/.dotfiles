@@ -12,7 +12,6 @@ xorg-xwayland -> non-wayland application support
 i3status -> minimal bar
 exa -> cool and fast ls replacement
 thunar -> file manager
-xfce4-terminal -> terminal emulator
 gruvbox-dark-gtk -> gruvbox gtk theme
 gruvbox-dark-icons-gtk -> gruvbox icon theme
 capitaine-cursors -> nice cursors
@@ -24,13 +23,13 @@ gvfs-mtp -> support for mtp devices
 wl-clipboard -> clipboard for wayland
 jq -> needed for parsing the swaymsg json
 bash-completion -> self explanatory
-bluez bluez-utils blueman -> bluetooth stuff
 mate-calc -> self explanatory
 gnome-keyring -> keyring
 seahorse -> gui for keyrings
 playerctl -> media sound control
 mpv -> minimal video player, required by ani-cli
 sway -> window manager
+swaybg -> for swaywm background
 swaylock -> lock screen
 ttf-jetbrains-mono -> nice monospaced font
 noto-fonts-emoji -> google's emoji font
@@ -45,3 +44,5 @@ libreoffice-fresh -> office suite
 superproductivity-bin -> pomodoro/todo app
 dunst -> notification daemon
 alacritty -> GPU accelerated terminal emulator
+man-db -> manual pages
+man-pages -> > manual pages
