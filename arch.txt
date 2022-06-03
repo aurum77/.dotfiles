@@ -31,7 +31,7 @@ mpv -> minimal video player, required by ani-cli
 sway -> window manager
 swaybg -> for swaywm background
 swaylock -> lock screen
-ttf-jetbrains-mono -> nice monospaced font
+ttf-jetbrains-mono -> fnice monospaced font
 noto-fonts-emoji -> google's emoji font
 noto-fonts -> google's font
 pipewire -> we need sound don't we ?
@@ -46,3 +46,5 @@ dunst -> notification daemon
 alacritty -> GPU accelerated terminal emulator
 man-db -> manual pages
 man-pages -> > manual pages
+neovim -> code editor
+nodejs -> for vim auto complete

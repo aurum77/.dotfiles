@@ -13,7 +13,7 @@ alias ls='exa'
 alias la='exa -a'
 alias ll='exa -la'
 alias tree='exa --tree'
-alias v='nvim'     	# needs neovim
+alias v='nvim'
 alias c='clear'
 
 # git specific aliases

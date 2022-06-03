@@ -194,8 +194,8 @@ font pango:JetBrains Mono NL Bold 10
 # Set input language
 input type:keyboard {
     xkb_layout tr(alt)
+    xkb_model "pc101"
 }
-input type:keyboard xkb_model "pc101"
 
 # Enable tap to click and natural scroll
 input type:touchpad {
