@@ -46,5 +46,3 @@ dunst -> notification daemon
 alacritty -> GPU accelerated terminal emulator
 man-db -> manual pages
 man-pages -> > manual pages
-neovim -> code editor
-nodejs -> for vim auto complete
