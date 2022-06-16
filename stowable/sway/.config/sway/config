@@ -10,7 +10,7 @@ set $up k
 set $right l
 
 # Set border size
-set $bordersize 3
+set $bordersize 4
 
 # Set alacritty as default
 set $term alacritty
@@ -138,16 +138,19 @@ bindsym $mod+Shift+q exec $HOME/.config/wofi/scripts/wofi-power.sh
 bindsym $mod+q kill
 
 # Set gruvbox colorscheme colors
-set $bg #282828
-set $red #cc241d
-set $green #98971a
-set $yellow #d79921
-set $blue #458588
-set $purple #b16286
-set $aqua #689d68
-set $gray #a89984
-set $darkgray #1d2021
-set $white #fbf1c7
+set {
+  $bg #282828
+  $red #cc241d
+  $green #98971a
+  $yellow #d79921
+  $blue #458588
+  $purple #b16286
+  $aqua #689d68
+  $orange #d65d0e
+  $gray #a89984
+  $darkgray #1d2021
+  $white #fbf1c7
+}
 
 # Set wallpaper
 output * bg #282828 solid_color
@@ -180,8 +183,8 @@ bar {
 # Blue gruvbox
 # class                 border|backgr|text|indicator|child_border
 client.focused          $blue $blue $darkgray $yellow $blue
-client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
-client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+client.focused_inactive $darkgray $darkgray $yellow $orange $darkgray
+client.unfocused        $darkgray $darkgray $yellow $orange $darkgray
 client.urgent           $red $red $white $red $red
 
 # Colored window borders
@@ -189,7 +192,7 @@ default_border pixel $bordersize
 smart_borders on
 
 # Set i3status font
-font pango:JetBrains Mono NL Bold 10
+font pango:Fira Mono Medium 10
 
 # Set input language
 input type:keyboard {
@@ -210,7 +213,7 @@ input type:pointer {
     pointer_accel 0
 }
 
-# Bind the laptop context menu to start thunar
+# Bind the laptop context menu button to start thunar
 bindcode 135 exec thunar
 
 # Screenshots, requires wl-clipboard and jq
@@ -223,7 +226,7 @@ bindsym $mod+Shift+b exec find $(xdg-user-dir DOCUMENTS)/books -not -path '*/.*'
 # Recording bind
 bindsym $mod+Shift+r exec sh $HOME/.config/sway/scripts/recorder.sh
 
-# Set themes and default terminal (not all gtk applications abide by the theme, so I use xsettingsd as well)
+# Set themes (not all gtk applications abide by the theme, so I use xsettingsd as well)
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema gtk-theme 'gruvbox-dark-gtk'
