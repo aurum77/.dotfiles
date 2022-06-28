@@ -1,9 +1,10 @@
 #!/bin/bash
-lines_before=`cat install.sh | wc -l`
 
 if [ -f "install.sh" ]; then
+  lines_before=`cat install.sh | wc -l`
   rm install.sh
 else
+  lines_before=0
   touch install.sh
 fi
 
