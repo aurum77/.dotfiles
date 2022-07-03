@@ -242,7 +242,7 @@ exec_always {
     gsettings set $gnome-schema gtk-theme 'gruvbox-dark-gtk'
     gsettings set $gnome-schema icon-theme 'gruvbox-dark-icons-gtk'
     gsettings set $gnome-schema cursor-theme 'capitaine-cursors'
-    gsettings set $gnome-schema font-name 'Iosevka '
+    gsettings set $gnome-schema font-name 'Iosevka'
 }
 
 # Set seat cursor theme
