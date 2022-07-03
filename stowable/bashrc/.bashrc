@@ -13,7 +13,8 @@ alias ls='exa'
 alias la='exa -a'
 alias ll='exa -la'
 alias tree='exa --tree'
-alias v='vim'
+alias v='nvim'
+alias vc='nvim ~/.config/nvim/init.vim'
 alias c='clear'
 
 # git specific aliases

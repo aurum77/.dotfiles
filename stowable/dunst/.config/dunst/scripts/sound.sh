@@ -50,13 +50,13 @@ case $1 in
   up)
     exit_if_muted
     if [[ $(get_volume_level) -lt $soundlimit ]]; then
-      pactl set-sink-volume @DEFAULT_SINK@ +5%
+      pactl set-sink-volume @DEFAULT_SINK@ +2%
     fi
     volume_notification
     ;;
   down)
     exit_if_muted
-    pactl set-sink-volume @DEFAULT_SINK@ -5%
+    pactl set-sink-volume @DEFAULT_SINK@ -2%
     volume_notification
     ;;
   mute)

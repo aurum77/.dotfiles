@@ -3,7 +3,7 @@ cpupower-gui -> gui for cpupower
 gammastep -> night light 
 systemd-zram -> enable zram
 visual-studio-code-bin -> decent code editor
-google-chrome -> browser
+firefox -> browser
 stow -> dotfile deployment
 brightnessctl -> needed for brightness control
 xdg-desktop-portal-wlr -> wayland stuff
@@ -31,9 +31,8 @@ mpv -> minimal video player, required by ani-cli
 sway -> window manager
 swaybg -> for swaywm background
 swaylock -> lock screen
-ttf-fira-mono -> nice monospaced font
-noto-fonts-emoji -> google's emoji font
-noto-fonts -> google's font
+ttc-iosevka -> cool condensed font
+noto-fonts-emoji -> google's emojis
 pipewire -> we need sound don't we ?
 pipewire-pulse -> pulse configuration
 pavucontrol -> sound control gui
@@ -47,3 +46,5 @@ alacritty -> GPU accelerated terminal emulator
 man-db -> manual pages
 man-pages -> > manual pages
 htop -> system info
+nodejs -> needed for nvim intellisense
+fd -> needed for nvim file explorer

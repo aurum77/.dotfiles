@@ -12,5 +12,5 @@ case $selected in
   logout)
     exec loginctl terminate-session $XDG_SESSION_ID;;
   lock)
-    exec swaylock -c 282828;;
+    exec swaylock -i $HOME/pics/forest-hut.png;;
 esac

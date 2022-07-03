@@ -3,9 +3,9 @@
 LANG=tr_TR.UTF-8 i3status -c $HOME/.config/i3status/i3status.conf | while :
 do
   read i3status
-  i3status=`echo $i3status | sed 's|wlan: |wlan:|g'`
-  media=`playerctl metadata --format "{{trunc(artist, 50)}}:{{trunc(title, 50)}}"`
-  media=${media:-'no media'}
+  i3status=`echo $i3status`
+  media=`playerctl metadata --format "| {{trunc(title, 50)}}" 2> /dev/null`
+  media=${media:-'| no media'}
 
   echo "${media,,} | ${i3status,,}" || exit 1
 done

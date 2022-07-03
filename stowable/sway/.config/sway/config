@@ -38,10 +38,10 @@ bindsym $mod+Shift+c reload
     bindsym $mod+$right focus right
 
     # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+$left move left 25px
-    bindsym $mod+Shift+$down move down 25px
-    bindsym $mod+Shift+$up move up 25px
-    bindsym $mod+Shift+$right move right 25px
+    bindsym $mod+Shift+$left move left 40px
+    bindsym $mod+Shift+$down move down 40px
+    bindsym $mod+Shift+$up move up 40px
+    bindsym $mod+Shift+$right move right 40px
 
 #
 # Workspaces:
@@ -113,11 +113,12 @@ include /etc/sway/config.d/*
 # -----------------
 
 # Window rules
-for_window [window_role="^pop-up$"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="Organizer"] floating enable, resize set width 1200, resize set height 800
 
 for_window [title=".*"] border pixel $bordersize
 for_window [title=floating_terminal|UltimMC|cpupower-gui] floating enable
-for_window [title="^File Operation Progress$"] floating enable
+for_window [title="File Operation Progress"] floating enable
 for_window [title="on QEMU/KVM$"] floating enable
 
 for_window [class="(jetbrains|java-util)-(.*)" title="win0"] floating enable
@@ -125,6 +126,7 @@ for_window [class="superProductivity"] floating enable
 
 for_window [app_id=Thunar|thunar|mpv|gnome-pomodoro] floating enable
 for_window [app_id=pavucontrol] floating enable, resize set width 800
+for_window [app_id=zenity] floating enable
 
 # Use wofi as app launcher
 set $menu wofi --term=alacritty --show=drun --insensitive --allow-images --width=20% --lines=12 --no-actions --hide-scroll --prompt="Search for Applications"
@@ -140,6 +142,7 @@ bindsym $mod+q kill
 # Set gruvbox colorscheme colors
 set {
   $bg #282828
+  $bg_alpha #282828F2
   $red #cc241d
   $green #98971a
   $yellow #d79921
@@ -153,13 +156,16 @@ set {
 }
 
 # Set wallpaper
-output * bg #282828 solid_color
+output * bg $HOME/pics/forest-hut.png fill
 
 bar {
     # Set the position of the bar
     position bottom
 
-    # When the status_command prints a new line to stdout,i3status updates.
+    # Set bar gaps
+    gaps 6px 
+
+    # When the status_command prints a new line to stdout, i3status updates.
     status_command $HOME/.config/i3status/i3status
 
     # Hide workspace numbers
@@ -168,13 +174,13 @@ bar {
     # Set some colors
     colors {
         # bar background color
-        background $bg
+        background $bg_alpha
         # text color used for blocks that do not have a color specified.
         statusline $yellow
         # workspaces section
         #                    border  backgr. text
         focused_workspace    $aqua $aqua $darkgray
-        inactive_workspace   $bg $bg $yellow
+        inactive_workspace   $bg_alpha $bg_alpha $yellow
         active_workspace     $darkgray $darkgray $yellow
         urgent_workspace     $red $red $bg
     }
@@ -191,8 +197,12 @@ client.urgent           $red $red $white $red $red
 default_border pixel $bordersize
 smart_borders on
 
+# Set gaps
+gaps outer 6
+gaps bottom 0
+
 # Set i3status font
-font pango:Fira Mono Medium 10
+font pango:Iosevka Medium 11
 
 # Set input language
 input type:keyboard {
@@ -221,7 +231,7 @@ bindsym $mod+Shift+s exec grim -g "$(slurp -d)" - | wl-copy
 bindsym Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')
 
 # Book search
-bindsym $mod+Shift+b exec find $(xdg-user-dir DOCUMENTS)/books -not -path '*/.*' | tail -n +2 |sed 's|/home/borab/docs/books/||g;' | wofi --show=dmenu --insensitive --no-actions --hide-scroll --lines=10 --width=30% --cache-file=/dev/null --prompt="Search for Books" | sed 's|\ |\\ |g' | xargs -I{dir_or_file} exo-open \"${HOME}/docs/books/{dir_or_file}\"
+bindsym $mod+Shift+b exec find $(xdg-user-dir DOCUMENTS)/books -not -path '*/.*' | tail -n +2 | sed 's|/home/borab/docs/books/||g;' | wofi --show=dmenu --insensitive --no-actions --hide-scroll --lines=10 --width=30% --cache-file=/dev/null --prompt="Search for Books" | sed 's|\ |\\ |g' | xargs -I{dir_or_file} exo-open \"${HOME}/docs/books/{dir_or_file}\"
 
 # Recording bind
 bindsym $mod+Shift+r exec sh $HOME/.config/sway/scripts/recorder.sh
@@ -232,6 +242,7 @@ exec_always {
     gsettings set $gnome-schema gtk-theme 'gruvbox-dark-gtk'
     gsettings set $gnome-schema icon-theme 'gruvbox-dark-icons-gtk'
     gsettings set $gnome-schema cursor-theme 'capitaine-cursors'
+    gsettings set $gnome-schema font-name 'Iosevka '
 }
 
 # Set seat cursor theme
@@ -279,8 +290,7 @@ bindsym $mod+Ctrl+b exec cpupower-gui pr Balanced
 bindsym $mod+Ctrl+p exec cpupower-gui pr Performance
 
 # Lock on lid close
-#set $lock 'swaylock -i $HOME/pics/lock.jpg'
-set $lock 'swaylock -c 282828'
+set $lock 'swaylock -i $HOME/pics/forest-hut.png'
 bindswitch --reload --locked lid:on exec $lock
 
 # Night light
