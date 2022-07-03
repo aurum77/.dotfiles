@@ -1,9 +1,10 @@
 /stowable/nvim/.config/nvim/plugged/
-/stowable/xfce4-terminal/.config/xfce4/terminal/accels.scm
-/stowable/xfce4-terminal/.config/xfce4/xfconf/
-/stowable/xfce4-terminal/.config/xfce4/help.rc
 /stowable/thunar/.config/Thunar/renamerrc
 stowable/thunar/.config/Thunar/accels.scm
 /stowable/symlinks/.local/share/
 /stowable/symlinks/.local/state/
+/stowable/symlinks/.local/include/
+/stowable/symlinks/.local/lib/
+/stowable/symlinks/.local/bin/wheel
+/stowable/symlinks/.local/bin/flask
 /install.sh
