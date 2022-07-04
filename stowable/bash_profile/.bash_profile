@@ -29,5 +29,5 @@ fi
 if [[ "$(tty)" == "/dev/tty1" ]]
   then
     echo "Welcome !"
-    exec sway --verbose 2> /tmp/sway.log
+    exec sway
 fi

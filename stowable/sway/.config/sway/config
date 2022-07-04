@@ -300,7 +300,7 @@ set $lock 'swaylock -i $HOME/pics/forest-hut.png'
 bindswitch --reload --locked lid:on exec $lock
 
 # Night light
-exec gammastep -v -l 41:28 -t 6700:4000 2> /tmp/gammastep.log
+exec gammastep -l 41:28 -t 6700:4000
 
 # Start keyring daemon
 exec eval $(gnome-keyring-daemon --start)
