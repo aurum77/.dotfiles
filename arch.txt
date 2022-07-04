@@ -31,7 +31,7 @@ mpv -> minimal video player, required by ani-cli
 sway -> window manager
 swaybg -> for swaywm background
 swaylock -> lock screen
-ttc-iosevka -> cool condensed font
+ttf-iosevka-nerd -> cool condensed font
 noto-fonts-emoji -> google's emojis
 pipewire -> we need sound don't we ?
 pipewire-pulse -> pulse configuration
@@ -46,5 +46,10 @@ alacritty -> GPU accelerated terminal emulator
 man-db -> manual pages
 man-pages -> > manual pages
 htop -> system info
-nodejs -> needed for nvim intellisense
-fd -> needed for nvim file explorer
+nodejs -> needed for nvim 
+fd -> needed for nvim 
+npm -> needed for nvim 
+yarn -> needed for nvim 
+python-pip -> needed for nvim
+lsb-release -> needed for nvim
+neofetch -> pretty system info

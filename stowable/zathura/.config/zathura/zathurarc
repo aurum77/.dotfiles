@@ -1,3 +1,7 @@
+set font "Iosevka Nerd Font 12"
+set statusbar-home-tilde true
+set selection-clipboard clipboard
+
 set notification-error-bg       "#282828" # bg
 set notification-error-fg       "#fb4934" # bright:red
 set notification-warning-bg     "#282828" # bg
@@ -38,5 +42,3 @@ set recolor-lightcolor          "#282828" # bg
 set recolor-darkcolor           "#ebdbb2" # fg
 set recolor                     "true"
 # set recolor-keephue             true      # keep original color
-
-set font "Iosevka 12"
