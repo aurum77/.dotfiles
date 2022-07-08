@@ -1,5 +1,0 @@
-{
-"javascript.suggest.autoImports" : true, 
-"typescript.suggest.autoImports" : true,
-"explorer.icon.enableNerdfont"   : true
-}
