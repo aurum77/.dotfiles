@@ -3,37 +3,7 @@ if not status_ok then
   return
 end
 
-local colors = require("gruvbox-baby.colors").config()
-
-vim.api.nvim_set_hl(0, "PmenuSel", { fg = colors.bg, bg = colors.medium_gray })
-
-local kind_icons = {
-  Text = "",
-  Method = "",
-  Function = "",
-  Constructor = "",
-  Field = "",
-  Variable = "",
-  Class = "",
-  Interface = "",
-  Module = "",
-  Property = "",
-  Unit = "",
-  Value = "",
-  Enum = "",
-  Keyword = "",
-  Snippet = "",
-  Color = "",
-  File = "",
-  Reference = "",
-  Folder = "",
-  EnumMember = "",
-  Constant = "",
-  Struct = "",
-  Event = "",
-  Operator = "",
-  TypeParameter = "",
-}
+local border = { '┌', '─', '┐', '│', '┘', '─', '└', '│' }
 
 cmp.setup {
   snippet = {
@@ -44,21 +14,24 @@ cmp.setup {
   view = {
     entries = { name = 'custom', selection_order = 'near_cursor' },
   },
-
   formatting = {
-    fields = { "menu", "abbr", "kind" },
-    format = function(entry, vim_item)
-      vim_item.kind = string.format("%s %s ", kind_icons[vim_item.kind], vim_item.kind),
-
-          vim_item.menu == ({
-            nvim_lsp = "[lsp]",
-            treesitter = "[treesitter]",
-            luasnip = "[snip]",
-            path = "[path]",
-            buffer = "[buffer]",
-          })[entry.source.name]
-      return vim_item
-    end,
+    fields = { "abbr", "kind", "menu" },
+    format = require("lspkind").cmp_format(
+      {
+        with_text = true,
+        menu = ({
+          buffer = "[Buffer]",
+          nvim_lsp = "[LSP]",
+          luasnip = "[LuaSnip]",
+          path = "[Path]",
+          treesitter = "[Treesitter]"
+        })
+      }
+    )
+  },
+  window = {
+    completion = { cmp.config.window.bordered(), border = border },
+    documentation = { cmp.config.window.bordered(), border = border },
   },
   mapping = cmp.mapping.preset.insert({
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),

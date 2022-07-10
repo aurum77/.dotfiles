@@ -14,6 +14,9 @@ nvim_tree.setup {
   sync_root_with_cwd = true,
   disable_netrw = true,
   hijack_netrw = true,
+  filters = {
+    dotfiles = true,
+  },
   hijack_directories = {
     enable = false,
   },
@@ -21,6 +24,7 @@ nvim_tree.setup {
   open_on_setup = true,
   renderer = {
     root_folder_modifier = ":t",
+    symlink_destination = false,
     icons = {
       symlink_arrow = "  ",
       padding = "  ",
@@ -51,6 +55,9 @@ nvim_tree.setup {
         { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
         { key = "h", cb = tree_cb "close_node" },
         { key = "v", cb = tree_cb "vsplit" },
+        { key = "d", cb = tree_cb "trash" },
+        { key = "D", cb = tree_cb "remove" },
+        { key = "f", action = "" },
       },
     },
   },
@@ -69,7 +76,7 @@ nvim_tree.setup {
       window_picker = {
         enable = true,
         chars = "HJKLASDF",
-      }
-    }
-  }
+      },
+    },
+  },
 }

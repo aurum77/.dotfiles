@@ -4,7 +4,13 @@ if not status_ok then
 end
 
 configs.setup {
-  ensure_installed = { "javascript", "lua" },
+  ensure_installed = {
+    "javascript",
+    "lua",
+    "markdown",
+    "python",
+    "typescript",
+  },
   highlight = {
     enable = true,
     disable = {},

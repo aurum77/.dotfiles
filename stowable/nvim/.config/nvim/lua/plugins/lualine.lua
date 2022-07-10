@@ -19,7 +19,6 @@ local filename = {
 local diagnostics = {
   "diagnostics",
   update_in_insert = true,
-  always_visible = true
 }
 
 lualine.setup {
@@ -34,9 +33,9 @@ lualine.setup {
     lualine_a = { "mode" },
     lualine_b = { "branch", "diff", diagnostics },
     lualine_c = { "%=", filename },
-    lualine_x = { fileformat, "filetype" },
+    lualine_x = { "filetype" },
     lualine_y = { "progress" },
-    lualine_z = { "location" }
+    lualine_z = { fileformat }
   },
   inactive_sections = {
     lualine_a = {},

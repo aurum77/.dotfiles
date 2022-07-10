@@ -19,7 +19,7 @@ end
 vim.cmd [[
 augroup packer_user_config
 autocmd!
-autocmd BufWritePost plugins.lua source <afile> | PackerSync
+autocmd BufWritePost packer_init.lua source <afile> | PackerSync
 augroup end
 ]]
 
@@ -40,11 +40,11 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
-
   use { "wbthomason/packer.nvim" }
   use { "nvim-lua/plenary.nvim" }
   use { "nvim-telescope/telescope.nvim" }
   use { "nvim-treesitter/nvim-treesitter" }
+  use { "nvim-treesitter/nvim-treesitter-context" }
   use { "luisiacc/gruvbox-baby" }
   use { "kyazdani42/nvim-tree.lua" }
   use { "kyazdani42/nvim-web-devicons" }
@@ -63,7 +63,9 @@ return packer.startup(function(use)
   use { "williamboman/nvim-lsp-installer" }
   use { "iamcco/markdown-preview.nvim", run = "cd app && npm install",
     setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, }
-  use { 'lewis6991/impatient.nvim' }
+  use { "lewis6991/impatient.nvim" }
+  use { "onsails/lspkind.nvim" }
+  use { "numToStr/Comment.nvim" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
