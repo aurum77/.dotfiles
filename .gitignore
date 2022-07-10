@@ -1,6 +1,7 @@
 /stowable/nvim/.config/nvim/plugged/
 /stowable/thunar/.config/Thunar/renamerrc
 stowable/thunar/.config/Thunar/accels.scm
+/stowable/applications/.local/share/
 /stowable/symlinks/.local/share/
 /stowable/symlinks/.local/state/
 /stowable/symlinks/.local/include/
