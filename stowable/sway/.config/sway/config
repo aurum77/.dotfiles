@@ -1,4 +1,4 @@
-### Variables
+### Variable
 #
 # Logo key. Use Mod1 for Alt.
 set $mod Mod1
@@ -10,7 +10,7 @@ set $up k
 set $right l
 
 # Set border size
-set $bordersize 4
+set $bordersize 2
 
 # Set alacritty as default
 set $term alacritty
@@ -116,7 +116,6 @@ include /etc/sway/config.d/*
 for_window [title=".*"] border pixel $bordersize
 
 for_window [instance="Places"] floating enable, resize set width 1200, resize set height 800
-for_window [title="^Oturum açın - Google Hesapları"] floating enable, resize set width 700, resize set height 800
 
 
 for_window [title=floating_terminal|UltimMC|cpupower-gui] floating enable
@@ -159,14 +158,17 @@ set {
 }
 
 # Set wallpaper
-output * bg $HOME/pics/forest-hut.png fill
+output * bg $HOME/pics/a-frame-wood-cabin-in-forest.jpg fill
 
 bar {
     # Set the position of the bar
     position bottom
 
     # Set bar gaps
-    gaps 8px 
+    gaps 8px
+
+    # Modifier to show bar
+    modifier $mod
 
     # When the status_command prints a new line to stdout, i3status updates.
     status_command exec i3status -c $HOME/.config/i3status/i3status.conf
@@ -279,24 +281,24 @@ bindsym $mod+tab scratchpad show
 bindsym $mod+x workspace next_on_output
 bindsym $mod+z workspace prev_on_output
 
-# Brightness control using brightnessctl, with dunst for notification
-bindsym XF86MonBrightnessUp exec $HOME/.config/dunst/scripts/brightness.sh up
-bindsym XF86MonBrightnessDown exec $HOME/.config/dunst/scripts/brightness.sh down
+# Brightness control using brightnessctl
+bindsym XF86MonBrightnessUp exec brightnessctl set +20
+bindsym XF86MonBrightnessDown exec brightnessctl set 20-
 
-# Volume and media control, with dunst for notification
-bindsym XF86AudioRaiseVolume exec $HOME/.config/dunst/scripts/sound.sh up
-bindsym XF86AudioLowerVolume exec $HOME/.config/dunst/scripts/sound.sh down
-bindsym XF86AudioMute exec $HOME/.config/dunst/scripts/sound.sh mute
+# Volume and media control
+bindsym XF86AudioRaiseVolume exec $HOME/.config/sway/scripts/sound.sh up
+bindsym XF86AudioLowerVolume exec $HOME/.config/sway/scripts/sound.sh down
+bindsym XF86AudioMute exec $HOME/.config/sway/scripts/sound.sh mute
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # CPU Governor control using cpupower-gui
-bindsym $mod+Ctrl+b exec cpupower-gui pr Balanced
+bindsym $mod+Ctrl+b exec cpupower-gui pr Conservative
 bindsym $mod+Ctrl+p exec cpupower-gui pr Performance
 
 # Lock on lid close
-set $lock 'swaylock -i $HOME/pics/forest-hut.png'
+set $lock 'swaylock -i $HOME/pics/a-frame-wood-cabin-in-forest.jpg'
 bindswitch --reload --locked lid:on exec $lock
 
 # Night light
@@ -304,7 +306,3 @@ exec gammastep -l 41:28 -t 6700:4000
 
 # Start keyring daemon
 exec eval $(gnome-keyring-daemon --start)
-
-# Start dunst for notifications
-exec dunst -conf $HOME/.config/dunst/dunstrc
-

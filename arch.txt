@@ -41,7 +41,6 @@ zathura -> pdf reader
 zathura-pdf-mupdf -> pdf plugin for zathura
 libreoffice-fresh -> office suite
 superproductivity-bin -> pomodoro/todo app
-dunst -> notification daemon
 alacritty -> GPU accelerated terminal emulator
 man-db -> manual pages
 man-pages -> > manual pages
@@ -51,5 +50,5 @@ fd -> needed for nvim
 npm -> needed for nvim 
 yarn -> needed for nvim 
 python-pip -> needed for nvim
-lsb-release -> needed for nvim
+ripgrep -> needed for nvim
 neofetch -> pretty system info
