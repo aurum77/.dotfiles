@@ -186,6 +186,11 @@ _G.packer_plugins = {
     path = "/home/borab/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["rest.nvim"] = {
+    loaded = true,
+    path = "/home/borab/.local/share/nvim/site/pack/packer/start/rest.nvim",
+    url = "https://github.com/NTBBloodbath/rest.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/borab/.local/share/nvim/site/pack/packer/start/telescope.nvim",

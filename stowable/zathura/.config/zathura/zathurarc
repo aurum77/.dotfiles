@@ -1,4 +1,4 @@
-set font "Iosevka Nerd Font 12"
+set font "BlexMono Nerd Font 11"
 set statusbar-home-tilde true
 set selection-clipboard clipboard
 

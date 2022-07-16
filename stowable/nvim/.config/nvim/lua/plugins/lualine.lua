@@ -3,9 +3,14 @@ if not status_ok then
   return
 end
 
-local fileformat = {
-  "fileformat",
-  icons_enabled = false
+local mode = {
+  "mode",
+  fmt = function(str) return str:sub(1, 1) end,
+}
+
+local diagnostics = {
+  "diagnostics",
+  update_in_insert = true,
 }
 
 local filename = {
@@ -16,9 +21,15 @@ local filename = {
   },
 }
 
-local diagnostics = {
-  "diagnostics",
-  update_in_insert = true,
+local filetype = {
+  "filetype",
+  icon_only = true
+}
+
+local fileformat = {
+  "fileformat",
+  fmt = string.upper,
+  icons_enabled = false
 }
 
 lualine.setup {
@@ -30,10 +41,10 @@ lualine.setup {
     section_separators = { left = "", right = "" },
   },
   sections = {
-    lualine_a = { "mode" },
+    lualine_a = { mode },
     lualine_b = { "branch", "diff", diagnostics },
     lualine_c = { "%=", filename },
-    lualine_x = { "filetype" },
+    lualine_x = { filetype},
     lualine_y = { "progress" },
     lualine_z = { fileformat }
   },

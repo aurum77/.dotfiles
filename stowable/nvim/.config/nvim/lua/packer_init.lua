@@ -33,7 +33,7 @@ end
 packer.init {
   display = {
     open_fn = function()
-      return require("packer.util").float { border = "rounded" }
+      return require("packer.util").float { border="single"}
     end,
   },
 }
@@ -66,6 +66,7 @@ return packer.startup(function(use)
   use { "lewis6991/impatient.nvim" }
   use { "onsails/lspkind.nvim" }
   use { "numToStr/Comment.nvim" }
+  use { "NTBBloodbath/rest.nvim" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

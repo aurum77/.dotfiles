@@ -11,9 +11,11 @@ end
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
-  sync_root_with_cwd = true,
   disable_netrw = true,
   hijack_netrw = true,
+  sync_root_with_cwd = true,
+  auto_reload_on_write = true,
+  reload_on_bufenter = true,
   filters = {
     dotfiles = true,
   },
@@ -27,19 +29,16 @@ nvim_tree.setup {
     symlink_destination = false,
     icons = {
       symlink_arrow = "  ",
-      padding = "  ",
+      padding = " ",
       glyphs = {
-        git = {
-          untracked = "留",
-        },
       },
     },
     indent_markers = {
       enable = true,
       icons = {
-        corner = "└ ",
-        edge = "│ ",
-        none = "  ",
+        corner = "└",
+        edge = "│",
+        none = " ",
       },
     },
   },
@@ -57,6 +56,8 @@ nvim_tree.setup {
         { key = "v", cb = tree_cb "vsplit" },
         { key = "d", cb = tree_cb "trash" },
         { key = "D", cb = tree_cb "remove" },
+        -- { key = "c", cb = tree_cb "cut" },
+        -- { key = "p", cb = tree_cb "paste" },
         { key = "f", action = "" },
       },
     },
@@ -65,10 +66,10 @@ nvim_tree.setup {
     enable = true,
     show_on_dirs = true,
     icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
+      error = "",
+      warning = "",
+      hint = "",
+      info = "",
     },
   },
   actions = {

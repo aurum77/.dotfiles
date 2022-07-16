@@ -1,5 +1,7 @@
-### Variable
-#
+# Start systemd-user service for sway
+exec_always "systemctl --user import-environment; systemctl --user start sway-session.target"
+
+# Variables
 # Logo key. Use Mod1 for Alt.
 set $mod Mod1
 
@@ -19,7 +21,7 @@ set $term alacritty
 bindsym $mod+Return exec $term
 
 # Start a floating terminal
-bindsym $mod+Ctrl+Return exec $term --title=floating_terminal
+bindsym $mod+Ctrl+Return exec $term --class=floating_terminal
 
 # Move floating windows using alt and left click,
 # resize them with right click
@@ -118,17 +120,19 @@ for_window [title=".*"] border pixel $bordersize
 for_window [instance="Places"] floating enable, resize set width 1200, resize set height 800
 
 
-for_window [title=floating_terminal|UltimMC|cpupower-gui] floating enable
+for_window [app_id=floating_terminal] floating enable
+for_window [app_id=cpupower-gui] floating enable
+for_window [app_id=vimiv] floating enable
+for_window [app_id=Thunar|thunar|mpv|gnome-pomodoro] floating enable
+for_window [app_id=pavucontrol] floating enable, resize set width 800
+for_window [app_id=zenity] floating enable
+
 for_window [title="File Operation Progress"] floating enable
 for_window [title="on QEMU/KVM$"] floating enable
 for_window [title="Virtual Machine Manager"] floating enable, resize set width 800, resize set height 600
 
 for_window [class="(jetbrains|java-util)-(.*)" title="win0"] floating enable
 for_window [class="superProductivity"] floating enable
-
-for_window [app_id=Thunar|thunar|mpv|gnome-pomodoro] floating enable
-for_window [app_id=pavucontrol] floating enable, resize set width 800
-for_window [app_id=zenity] floating enable
 
 # Use wofi as app launcher
 set $menu wofi --term=alacritty --show=drun --insensitive --allow-images --width=20% --lines=12 --no-actions --hide-scroll --prompt="Search for Applications"
@@ -206,8 +210,8 @@ smart_borders on
 gaps outer 8
 gaps bottom 0
 
-# Set i3status font
-font pango:Iosevka Nerd Font Medium 11
+# Set swaywm font
+font pango:BlexMono Nerd Font Medium 11
 
 # Set input language
 input type:keyboard {
@@ -235,8 +239,10 @@ mouse_warping container
 bindcode 135 exec thunar
 
 # Screenshots, requires wl-clipboard and jq
-bindsym $mod+Shift+s exec grim -g "$(slurp -d)" - | wl-copy
-bindsym Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')
+bindsym $mod+Ctrl+s exec grim -g "$(slurp -d)" - | wl-copy
+bindsym $mod+Shift+s exec grim -g "$(slurp -d)"
+bindsym Ctrl+Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy
+bindsym Shift+Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')
 
 # Book search
 bindsym $mod+Shift+b exec find $(xdg-user-dir DOCUMENTS)/books -not -path '*/.*' | tail -n +2 | sed 's|/home/borab/docs/books/||g;' | wofi --show=dmenu --insensitive --no-actions --hide-scroll --lines=10 --width=30% --cache-file=/dev/null --prompt="Search for Books" | sed 's|\ |\\ |g' | xargs -I{dir_or_file} exo-open \"${HOME}/docs/books/{dir_or_file}\"
@@ -249,12 +255,12 @@ set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema gtk-theme 'gruvbox-dark-gtk'
     gsettings set $gnome-schema icon-theme 'gruvbox-dark-icons-gtk'
-    gsettings set $gnome-schema cursor-theme 'capitaine-cursors'
-    gsettings set $gnome-schema font-name 'Iosevka Nerd Font'
+    gsettings set $gnome-schema cursor-theme 'Adwaita'
+    gsettings set $gnome-schema font-name 'Hack Nerd Font 11'
 }
 
 # Set seat cursor theme
-seat seat0 xcursor_theme "capitaine-cursors"
+seat seat0 xcursor_theme "Adwaita"
 
 # Reload xwindow themes with sway reload
 exec_always xsettingsd
@@ -294,15 +300,12 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # CPU Governor control using cpupower-gui
-bindsym $mod+Ctrl+b exec cpupower-gui pr Conservative
+bindsym $mod+Ctrl+b exec cpupower-gui pr Balanced
 bindsym $mod+Ctrl+p exec cpupower-gui pr Performance
 
 # Lock on lid close
 set $lock 'swaylock -i $HOME/pics/a-frame-wood-cabin-in-forest.jpg'
 bindswitch --reload --locked lid:on exec $lock
-
-# Night light
-exec gammastep -l 41:28 -t 6700:4000
 
 # Start keyring daemon
 exec eval $(gnome-keyring-daemon --start)

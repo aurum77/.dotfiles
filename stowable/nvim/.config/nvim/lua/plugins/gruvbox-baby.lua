@@ -12,7 +12,7 @@ vim.g.gruvbox_baby_highlights = {
   LineNrAbove = { fg = colors.comment, bg = "NONE", style = "NONE" },
   LineNrBelow = { fg = colors.comment, bg = "NONE", style = "NONE" },
   TreesitterContext = { fg = "NONE", bg = colors.bg_light, style = "NONE" },
-  TreesitterContextLineNumber = { fg = "NONE", bg = colors.bg_light, style = "NONE" },
+  TreesitterContextLineNumber = { fg = colors.comment, bg = colors.bg_light, style = "NONE" },
   IncSearch = { fg = colors.bright_yellow, bg = colors.background, style = "inverse" },
   Search = { fg = colors.bright_yellow, bg = colors.background, style = "inverse" },
   Visual = { fg = "NONE", bg = colors.medium_gray, style = "NONE" },
@@ -22,7 +22,7 @@ vim.g.gruvbox_baby_highlights = {
   NvimTreeWinSeparator = { fg = colors.medium_gray, bg = "NONE" },
   QuickFixLine = { fg = "NONE", bg = colors.medium_gray },
   SneakLabel = { fg = colors.bright_yellow, bg = colors.medium_gray, bold = true },
-  TelescopePromptPrefix = { fg = colors.light_blue, bg = "NONE", bold = true },
-  TelescopeSelectionCaret = { fg = colors.light_blue, bg = colors.medium_gray, bold = true },
+  TelescopePromptPrefix = { fg = colors.bright_yellow, bg = "NONE", bold = true },
+  TelescopeSelectionCaret = { fg = colors.bright_yellow, bg = colors.medium_gray, bold = true },
   TelescopePromptCounter = { fg = colors.foreground, bg = colors.bg_light, bold = true },
 }

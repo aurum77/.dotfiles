@@ -1,3 +1,3 @@
 Net/ThemeName "gruvbox-dark-gtk"
 Net/IconThemeName "gruvbox-dark-icons-gtk"
-Gtk/CursorThemeName "capitaine-cursors"
+Gtk/FontName "BlexMono Nerd Font 11"

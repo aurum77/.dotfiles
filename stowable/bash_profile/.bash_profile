@@ -27,7 +27,7 @@ if ! pgrep ssh-agent 1> /dev/null;
     eval $(ssh-agent) > /dev/null 2>&1
 fi
 
-# Start sway if tty1 is used for login and start logging
+# Start sway if tty1 is used for login
 if [[ "$(tty)" == "/dev/tty1" ]]
   then
     echo "Welcome !"

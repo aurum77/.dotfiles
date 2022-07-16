@@ -19,6 +19,7 @@ require("plugins.luasnip")
 require("plugins.impatient")
 require("plugins.telescope")
 require("plugins.comment")
+require("plugins.lspkind")
 
 -- Core settings
 require("core.options")

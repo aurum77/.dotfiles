@@ -3,6 +3,11 @@ if not status_ok then
   return
 end
 
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
   vim.lsp.handlers.hover, {
   border = "single"
@@ -10,6 +15,7 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
 )
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
@@ -30,10 +36,10 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', '<Leader>f', vim.lsp.buf.formatting, bufopts)
-  vim.keymap.set('n', 'gi', '<cmd>Telescope lsp_implementations<CR>', bufopts)
-  vim.keymap.set('n', 'gd', '<cmd>Telescope lsp_definitions<CR>', bufopts)
-  vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<CR>', bufopts)
-  vim.keymap.set('n', '<Leader>fd', '<cmd>Telescope diagnostics<CR>', bufopts)
+  vim.keymap.set('n', 'gi', '<Cmd>Telescope lsp_implementations<CR>', bufopts)
+  vim.keymap.set('n', 'gd', '<Cmd>Telescope lsp_definitions<CR>', bufopts)
+  vim.keymap.set('n', 'gr', '<Cmd>Telescope lsp_references<CR>', bufopts)
+  vim.keymap.set('n', '<Leader>fd', '<Cmd>Telescope diagnostics<CR>', bufopts)
 end
 
 lspconfig.tsserver.setup {
@@ -46,7 +52,22 @@ lspconfig.jedi_language_server.setup {
   on_attach = on_attach
 }
 
-lspconfig.clangd.setup {
+lspconfig.ccls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+
+lspconfig.jdtls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+
+lspconfig.html.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+
+lspconfig.cssls.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }
@@ -54,7 +75,7 @@ lspconfig.clangd.setup {
 lspconfig.emmet_ls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
-    filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'javascript', 'typescript' },
+  filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'javascript', 'typescript' },
 }
 
 lspconfig.sumneko_lua.setup {
@@ -62,9 +83,6 @@ lspconfig.sumneko_lua.setup {
   on_attach = on_attach,
   settings = {
     Lua = {
-      runtime = {
-        version = 'LuaJIT',
-      },
       diagnostics = {
         globals = { 'vim', 'telescope' },
       },

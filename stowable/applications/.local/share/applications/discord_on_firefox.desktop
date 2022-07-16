@@ -1,8 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Version=1.0
-Type=Application
-Terminal=false
-Exec=firefox --new-window=https://discord.com/app
-Name=Discord on Firefox
-Icon=discord

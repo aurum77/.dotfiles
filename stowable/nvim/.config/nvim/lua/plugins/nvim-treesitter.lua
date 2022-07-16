@@ -10,6 +10,9 @@ configs.setup {
     "markdown",
     "python",
     "typescript",
+    "c",
+    "cpp",
+    "java",
   },
   highlight = {
     enable = true,

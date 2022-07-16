@@ -9,9 +9,12 @@ nvim_lsp_installer.setup {
     "tsserver",
     "jedi_language_server",
     "emmet_ls",
+    "jdtls",
+    "cssls",
+    "html",
   },
-  automatic_installation = true,
-  ui ={
+  automatic_installation = false,
+  ui = {
     border = "single",
     icons = {
       server_installed = "✓",

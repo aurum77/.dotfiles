@@ -1,11 +1,5 @@
-/stowable/nvim/.config/nvim/plugged/
+/stowable/nvim/.config/nvim/plugin/packer_compiled.lua
 /stowable/thunar/.config/Thunar/renamerrc
-stowable/thunar/.config/Thunar/accels.scm
-/stowable/applications/.local/share/
-/stowable/symlinks/.local/share/
-/stowable/symlinks/.local/state/
-/stowable/symlinks/.local/include/
-/stowable/symlinks/.local/lib/
-/stowable/symlinks/.local/bin/wheel
-/stowable/symlinks/.local/bin/flask
+/stowable/thunar/.config/Thunar/accels.scm
+/stowable/nvim/.config/nvim/plugin/packer_compiled.lua
 /install.sh
