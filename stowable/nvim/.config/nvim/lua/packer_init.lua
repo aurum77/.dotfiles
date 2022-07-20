@@ -45,9 +45,8 @@ return packer.startup(function(use)
   use { "nvim-telescope/telescope.nvim" }
   use { "nvim-treesitter/nvim-treesitter" }
   use { "nvim-treesitter/nvim-treesitter-context" }
-  use { "luisiacc/gruvbox-baby" }
+  use { "ellisonleao/gruvbox.nvim" }
   use { "kyazdani42/nvim-tree.lua" }
-  use { "kyazdani42/nvim-web-devicons" }
   use { "windwp/nvim-autopairs" }
   use { "nvim-lualine/lualine.nvim" }
   use { "lukas-reineke/indent-blankline.nvim" }
@@ -64,9 +63,9 @@ return packer.startup(function(use)
   use { "iamcco/markdown-preview.nvim", run = "cd app && npm install",
     setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, }
   use { "lewis6991/impatient.nvim" }
-  use { "onsails/lspkind.nvim" }
   use { "numToStr/Comment.nvim" }
   use { "NTBBloodbath/rest.nvim" }
+  use { "xiyaowong/nvim-transparent" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

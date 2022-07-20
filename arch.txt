@@ -32,7 +32,6 @@ sway -> window manager
 swaybg -> for swaywm background
 swaylock -> lock screen
 noto-fonts -> fonts for general ui
-nerd-fonts-ibm-plex-mono -> good font with glyphs
 noto-fonts-emoji -> google's emojis
 pipewire -> we need sound don't we ?
 pipewire-pulse -> pulse configuration
@@ -46,13 +45,13 @@ alacritty -> GPU accelerated terminal emulator
 man-db -> manual pages
 man-pages -> > manual pages
 htop -> system info
-nodejs -> needed for nvim 
-fd -> needed for nvim 
-npm -> needed for nvim 
-yarn -> needed for nvim 
+nodejs -> nice to have
+yarn -> needed for nvim
 python-pip -> needed for nvim
-python-pynvim -> needed for nvim 
+python-pynvim -> needed for nvim
 ripgrep -> needed for nvim
 ccls -> needed for nvim
+unzip -> needed for nvim
+python-pip -> nice to have
 vimiv -> image viewer
 neofetch -> pretty system info

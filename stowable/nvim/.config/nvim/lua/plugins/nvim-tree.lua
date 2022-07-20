@@ -28,9 +28,26 @@ nvim_tree.setup {
     root_folder_modifier = ":t",
     symlink_destination = false,
     icons = {
-      symlink_arrow = "  ",
+      show = {
+        folder = false,
+        file = false
+      },
+      symlink_arrow = " -> ",
       padding = " ",
       glyphs = {
+        folder = {
+          arrow_closed = ">",
+          arrow_open = "v"
+        },
+        git = {
+          unstaged = "U",
+          staged = "S",
+          unmerged = "UM",
+          renamed = "R",
+          untracked = "UT",
+          deleted = "D",
+          ignored = "I"
+        }
       },
     },
     indent_markers = {
@@ -66,10 +83,10 @@ nvim_tree.setup {
     enable = true,
     show_on_dirs = true,
     icons = {
-      error = "",
-      warning = "",
-      hint = "",
-      info = "",
+      error = "E",
+      warning = "W",
+      hint = "H",
+      info = "I",
     },
   },
   actions = {

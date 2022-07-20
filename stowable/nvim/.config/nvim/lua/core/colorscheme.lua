@@ -1,2 +1,2 @@
 vim.opt.background = "dark"
-vim.cmd [[colorscheme gruvbox-baby]]
+vim.cmd[[colorscheme gruvbox]]

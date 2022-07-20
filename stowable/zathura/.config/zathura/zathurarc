@@ -1,4 +1,4 @@
-set font "BlexMono Nerd Font 11"
+set font "Noto Sans Mono 11"
 set statusbar-home-tilde true
 set selection-clipboard clipboard
 

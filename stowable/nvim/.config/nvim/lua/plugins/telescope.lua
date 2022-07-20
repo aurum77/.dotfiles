@@ -13,8 +13,8 @@ telescope.setup {
     },
     border = true,
     borderchars = borderchars,
-    selection_caret = "   ",
-    prompt_prefix = "   ",
+    selection_caret = " > ",
+    prompt_prefix = " > ",
     layout_config = {
       horizontal = { prompt_position = "bottom", results_width = 0.6 },
     },

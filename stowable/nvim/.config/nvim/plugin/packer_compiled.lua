@@ -104,10 +104,10 @@ _G.packer_plugins = {
     path = "/home/borab/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["gruvbox-baby"] = {
+  ["gruvbox.nvim"] = {
     loaded = true,
-    path = "/home/borab/.local/share/nvim/site/pack/packer/start/gruvbox-baby",
-    url = "https://github.com/luisiacc/gruvbox-baby"
+    path = "/home/borab/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
   ["impatient.nvim"] = {
     loaded = true,
@@ -118,11 +118,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/borab/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
-  },
-  ["lspkind.nvim"] = {
-    loaded = true,
-    path = "/home/borab/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
-    url = "https://github.com/onsails/lspkind.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -156,6 +151,11 @@ _G.packer_plugins = {
     path = "/home/borab/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-transparent"] = {
+    loaded = true,
+    path = "/home/borab/.local/share/nvim/site/pack/packer/start/nvim-transparent",
+    url = "https://github.com/xiyaowong/nvim-transparent"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/borab/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -170,11 +170,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/borab/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
-  },
-  ["nvim-web-devicons"] = {
-    loaded = true,
-    path = "/home/borab/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
-    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,

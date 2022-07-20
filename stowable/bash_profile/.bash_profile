@@ -30,6 +30,5 @@ fi
 # Start sway if tty1 is used for login
 if [[ "$(tty)" == "/dev/tty1" ]]
   then
-    echo "Welcome !"
     exec sway
 fi

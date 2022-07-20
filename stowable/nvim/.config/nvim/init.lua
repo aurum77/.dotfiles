@@ -2,8 +2,6 @@
 require("packer_init")
 
 -- Plugin specific settings
-require("plugins.nvim-web-devicons")
-require("plugins.gruvbox-baby")
 require("plugins.lualine")
 require("plugins.nvim-autopairs")
 require("plugins.nvim-tree")
@@ -19,7 +17,8 @@ require("plugins.luasnip")
 require("plugins.impatient")
 require("plugins.telescope")
 require("plugins.comment")
-require("plugins.lspkind")
+require("plugins.gruvbox")
+require("plugins.nvim-transparent")
 
 -- Core settings
 require("core.options")

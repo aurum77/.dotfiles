@@ -148,7 +148,7 @@ bindsym $mod+q kill
 # Set gruvbox colorscheme colors
 set {
   $bg #282828
-  $bg_alpha #282828F2
+  $bg_alpha #282828D9
   $red #cc241d
   $green #98971a
   $yellow #d79921
@@ -211,7 +211,7 @@ gaps outer 8
 gaps bottom 0
 
 # Set swaywm font
-font pango:BlexMono Nerd Font Medium 11
+font pango:Noto Sans Mono Medium 11
 
 # Set input language
 input type:keyboard {
@@ -256,7 +256,7 @@ exec_always {
     gsettings set $gnome-schema gtk-theme 'gruvbox-dark-gtk'
     gsettings set $gnome-schema icon-theme 'gruvbox-dark-icons-gtk'
     gsettings set $gnome-schema cursor-theme 'Adwaita'
-    gsettings set $gnome-schema font-name 'Hack Nerd Font 11'
+    gsettings set $gnome-schema font-name 'Noto Sans 11'
 }
 
 # Set seat cursor theme

@@ -16,18 +16,6 @@ cmp.setup {
   },
   formatting = {
     fields = { "abbr", "kind", "menu" },
-    format = require("lspkind").cmp_format(
-      {
-        with_text = true,
-        menu = ({
-          buffer = "[Buffer]",
-          nvim_lsp = "[LSP]",
-          luasnip = "[LuaSnip]",
-          path = "[Path]",
-          treesitter = "[Treesitter]"
-        })
-      }
-    )
   },
   window = {
     completion = { cmp.config.window.bordered(), border = border },

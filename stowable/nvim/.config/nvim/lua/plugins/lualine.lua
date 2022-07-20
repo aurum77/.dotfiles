@@ -13,13 +13,6 @@ local diagnostics = {
   update_in_insert = true,
 }
 
-local filename = {
-  "filename",
-  symbols = {
-    modified = ' ',
-    readonly = ' '
-  },
-}
 
 local filetype = {
   "filetype",
@@ -35,15 +28,15 @@ local fileformat = {
 lualine.setup {
   options = {
     globalstatus = true,
-    icons_enabled = true,
-    theme = "gruvbox-baby",
+    icons_enabled = false,
+    theme = "gruvbox",
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
   },
   sections = {
     lualine_a = { mode },
     lualine_b = { "branch", "diff", diagnostics },
-    lualine_c = { "%=", filename },
+    lualine_c = { "%=", "filename"},
     lualine_x = { filetype},
     lualine_y = { "progress" },
     lualine_z = { fileformat }
