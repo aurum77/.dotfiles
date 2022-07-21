@@ -11,7 +11,6 @@ nvim_lsp_installer.setup {
     "emmet_ls",
     "cssls",
     "html",
-    "csharp_ls"
   },
   automatic_installation = false,
   ui = {

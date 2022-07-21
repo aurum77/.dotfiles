@@ -1,6 +1,6 @@
 #!/bin/bash
 
-entries=" Shutdown\n Reboot\n Logout\n Lock"
+entries="Shutdown\nReboot\nLogout\nLock"
 
 selected=$(echo -e $entries | wofi --show dmenu -i --width=15% --lines=4 --hide-scroll --cache-file=/dev/null --prompt="Choose Power Options" | awk '{print tolower($1)}')
 

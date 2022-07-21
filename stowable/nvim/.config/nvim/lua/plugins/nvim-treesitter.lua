@@ -13,7 +13,6 @@ configs.setup {
     "c",
     "cpp",
     "java",
-    "c_sharp"
   },
   highlight = {
     enable = true,

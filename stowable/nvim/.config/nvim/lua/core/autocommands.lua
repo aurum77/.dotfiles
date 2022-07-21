@@ -25,20 +25,31 @@ vim.api.nvim_create_autocmd("WinLeave", {
 })
 
 -- Disable relative line numbers on focus leave and window focus
-local change_line_number_style = vim.api.nvim_create_augroup("LineNumberStyle", { clear = true })
+local change_line_number_style_group = vim.api.nvim_create_augroup("LineNumberStyle", { clear = true })
 vim.api.nvim_create_autocmd("WinEnter", {
   command = "lua if not vim.opt.number['_value'] == false then vim.opt.relativenumber = true end",
-  group = change_line_number_style
+  group = change_line_number_style_group
 })
 vim.api.nvim_create_autocmd("WinLeave", {
   command = "lua vim.opt.relativenumber = false",
-  group = change_line_number_style
+  group = change_line_number_style_group
 })
 vim.api.nvim_create_autocmd("FocusGained", {
   command = "lua if not vim.opt.number['_value'] == false then vim.opt.relativenumber = true end",
-  group = change_line_number_style
+  group = change_line_number_style_group
 })
 vim.api.nvim_create_autocmd("FocusLost", {
   command = "lua vim.opt.relativenumber = false",
-  group = change_line_number_style
+  group = change_line_number_style_group
+})
+
+
+local per_filetype_indentation_group = vim.api.nvim_create_augroup("PerFiletypeIndentation", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "cs",
+  callback = function()
+    vim.opt_local.tabstop = 4
+    vim.opt_local.shiftwidth = 4
+  end;
+  group = per_filetype_indentation_group
 })
