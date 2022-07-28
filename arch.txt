@@ -50,8 +50,10 @@ yarn -> needed for nvim
 python-pip -> needed for nvim
 python-pynvim -> needed for nvim
 ripgrep -> needed for nvim
-ccls -> needed for nvim
 unzip -> needed for nvim
+wget -> needed for nvim
+npm -> needed for nvim
 python-pip -> nice to have
 vimiv -> image viewer
 neofetch -> pretty system info
+libva-mesa-driver -> gallium video decode driver
