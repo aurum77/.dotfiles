@@ -20,10 +20,13 @@ alias c='clear'
 # git specific aliases
 alias ga='git add '
 alias gd='git diff '
-alias gc='git commit -m '
+alias gc='git commit '
 alias gcl='git clone '
 alias gl='git log '
 alias gst='git status '
+
+# termbin pastebin
+alias tb="nc termbin.com 9999"
 
 # Enables directory change without using cd
 shopt -s autocd

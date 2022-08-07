@@ -15,7 +15,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
+-- Autocomand that reloads neovim whenever you save the plugins.lua file
 vim.cmd [[
 augroup packer_user_config
 autocmd!
@@ -33,39 +33,115 @@ end
 packer.init {
   display = {
     open_fn = function()
-      return require("packer.util").float { border = "single" }
+      return require("packer.util").float { border = "none" }
     end,
   },
+  profile = {
+    enable = true,
+    threshold = 0,
+  }
 }
 
 -- Install your plugins here
 return packer.startup(function(use)
-  use { "wbthomason/packer.nvim" }
-  use { "nvim-lua/plenary.nvim" }
-  use { "nvim-telescope/telescope.nvim" }
-  use { "nvim-treesitter/nvim-treesitter" }
-  use { "nvim-treesitter/nvim-treesitter-context" }
-  use { "ellisonleao/gruvbox.nvim" }
-  use { "kyazdani42/nvim-tree.lua" }
-  use { "windwp/nvim-autopairs" }
-  use { "nvim-lualine/lualine.nvim" }
-  use { "lukas-reineke/indent-blankline.nvim" }
-  use { "justinmk/vim-sneak" }
-  use { "neovim/nvim-lspconfig" }
-  use { "hrsh7th/nvim-cmp" }
-  use { "hrsh7th/cmp-nvim-lsp" }
-  use { "hrsh7th/cmp-buffer" }
-  use { "hrsh7th/cmp-path" }
-  use { "ray-x/cmp-treesitter" }
-  use { "saadparwaiz1/cmp_luasnip" }
-  use { "L3MON4D3/LuaSnip" }
-  use { "williamboman/nvim-lsp-installer" }
-  use { "iamcco/markdown-preview.nvim", run = "cd app && npm install",
-    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, }
-  use { "lewis6991/impatient.nvim" }
-  use { "numToStr/Comment.nvim" }
-  use { "NTBBloodbath/rest.nvim" }
-  use { "xiyaowong/nvim-transparent" }
+  use {
+    "wbthomason/packer.nvim"
+  }
+  use {
+    "nvim-lua/plenary.nvim"
+  }
+  use {
+    "nvim-telescope/telescope.nvim"
+  }
+  use {
+    "nvim-treesitter/nvim-treesitter"
+  }
+  use {
+    "nvim-treesitter/nvim-treesitter-context"
+  }
+  use {
+    "ellisonleao/gruvbox.nvim"
+  }
+  use {
+    "kyazdani42/nvim-tree.lua"
+  }
+  use {
+    "windwp/nvim-autopairs"
+  }
+  use {
+    "nvim-lualine/lualine.nvim"
+  }
+  use {
+    "lukas-reineke/indent-blankline.nvim",
+  }
+  use {
+    "justinmk/vim-sneak"
+  }
+  use {
+    "neovim/nvim-lspconfig"
+  }
+  use {
+    "williamboman/mason.nvim"
+  }
+  use {
+    "williamboman/mason-lspconfig.nvim"
+  }
+  use {
+    "WhoIsSethDaniel/mason-tool-installer.nvim"
+  }
+  use {
+    "hrsh7th/nvim-cmp"
+  }
+  use {
+    "hrsh7th/cmp-nvim-lsp"
+  }
+  use {
+    "hrsh7th/cmp-buffer"
+  }
+  use {
+    "hrsh7th/cmp-path"
+  }
+  use {
+    "saadparwaiz1/cmp_luasnip"
+  }
+  use {
+    "hrsh7th/cmp-nvim-lsp-signature-help"
+  }
+  use {
+    "L3MON4D3/LuaSnip"
+  }
+  use {
+    "iamcco/markdown-preview.nvim",
+    run = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+    ft = { "markdown" },
+    cmd = { "MarkdownPreview" }
+  }
+  use {
+    "lewis6991/impatient.nvim"
+  }
+  use {
+    "numToStr/Comment.nvim"
+  }
+  use {
+    "NTBBloodbath/rest.nvim"
+  }
+  use {
+    "sunjon/shade.nvim"
+  }
+  use {
+    "onsails/lspkind.nvim"
+  }
+  use {
+    "akinsho/toggleterm.nvim"
+  }
+  use {
+    "windwp/nvim-ts-autotag"
+  }
+  use {
+    "kyazdani42/nvim-web-devicons"
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

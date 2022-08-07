@@ -9,7 +9,6 @@ brightnessctl -> needed for brightness control
 xdg-desktop-portal-wlr -> wayland stuff
 xdg-user-dirs -> user direcotries
 xorg-xwayland -> non-wayland application support
-i3status -> minimal bar
 exa -> cool and fast ls replacement
 thunar -> file manager
 gruvbox-dark-gtk -> gruvbox gtk theme
@@ -31,12 +30,14 @@ mpv -> minimal video player, required by ani-cli
 sway -> window manager
 swaybg -> for swaywm background
 swaylock -> lock screen
+ttf-fira-code -> font for terminal
 noto-fonts -> fonts for general ui
 noto-fonts-emoji -> google's emojis
+ttf-nerd-fonts-symbols -> some icons needed
 pipewire -> we need sound don't we ?
 pipewire-pulse -> pulse configuration
 pavucontrol -> sound control gui
-wofi -> application launcher
+dmenu -> application launcher
 zathura -> pdf reader
 zathura-pdf-mupdf -> pdf plugin for zathura
 libreoffice-fresh -> office suite
@@ -57,3 +58,5 @@ python-pip -> nice to have
 vimiv -> image viewer
 neofetch -> pretty system info
 libva-mesa-driver -> gallium video decode driver
+gnu-netcat -> for termbin pastebin
+python-wheel -> needed for pip packages 

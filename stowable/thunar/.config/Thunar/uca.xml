@@ -4,8 +4,8 @@
 	<icon>utilities-terminal</icon>
 	<name>Open a Floating Terminal Here</name>
 	<unique-id>1645184356713445-1</unique-id>
-	<command>DISPLAY=:0.0 alacritty --class=floating_terminal</command>
-	<description>Opens a floating terminal with DISPLAY=:0.0 set</description>
+	<command>DISPLAY=:0 kitty --class=floating_terminal</command>
+	<description>Opens a floating terminal with DISPLAY=:0 set</description>
 	<patterns>*</patterns>
 	<startup-notify/>
 	<directories/>

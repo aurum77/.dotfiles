@@ -43,6 +43,12 @@ vim.api.nvim_create_autocmd("FocusLost", {
   group = change_line_number_style_group
 })
 
+local autoread_group = vim.api.nvim_create_augroup("AutoreadGroup", { clear = true })
+vim.api.nvim_create_autocmd("CursorHold", {
+  pattern = "*",
+  command = "checktime"
+})
+
 
 local per_filetype_indentation_group = vim.api.nvim_create_augroup("PerFiletypeIndentation", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {

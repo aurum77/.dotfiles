@@ -1,16 +1,18 @@
 local status_ok, lspconfig = pcall(require, "lspconfig")
+
 if not status_ok then
   return
 end
 
-local signs = { Error = "E", Warn = "W", Hint = "H", Info = "I" }
+local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
+
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
   vim.lsp.handlers.hover, {
-  border = "single"
+  border = "none",
 }
 )
 
@@ -44,43 +46,43 @@ end
 
 lspconfig.tsserver.setup {
   capabilities = capabilities,
-  on_attach = on_attach
+  on_attach = on_attach,
 }
 
 lspconfig.jedi_language_server.setup {
   capabilities = capabilities,
-  on_attach = on_attach
+  on_attach = on_attach,
 }
 
-lspconfig.ccls.setup {
+lspconfig.clangd.setup {
   capabilities = capabilities,
-  on_attach = on_attach
+  on_attach = on_attach,
 }
 
 lspconfig.jdtls.setup {
   capabilities = capabilities,
-  on_attach = on_attach
+  on_attach = on_attach,
 }
 
 lspconfig.html.setup {
   capabilities = capabilities,
-  on_attach = on_attach
+  on_attach = on_attach,
 }
 
 lspconfig.cssls.setup {
   capabilities = capabilities,
-  on_attach = on_attach
+  on_attach = on_attach,
 }
 
-lspconfig.omnisharp.setup {
+lspconfig.jsonls.setup {
   capabilities = capabilities,
-  on_attach = on_attach
+  on_attach = on_attach,
 }
 
 lspconfig.emmet_ls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
-  filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'javascript', 'typescript' },
+  filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'javascript', 'typescript', 'css', 'sass', 'scss', 'less' },
 }
 
 lspconfig.sumneko_lua.setup {

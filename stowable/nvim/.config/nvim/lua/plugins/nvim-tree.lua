@@ -1,4 +1,5 @@
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
+
 if not status_ok then
   return
 end
@@ -23,32 +24,29 @@ nvim_tree.setup {
     enable = false,
   },
   hijack_unnamed_buffer_when_opening = false,
-  open_on_setup = true,
+  open_on_setup = false,
   renderer = {
     root_folder_modifier = ":t",
     symlink_destination = false,
     icons = {
+      webdev_colors = true,
       show = {
-        folder = false,
-        file = false
+        folder = true,
+        file = true,
+        git = true,
       },
-      symlink_arrow = " -> ",
       padding = " ",
       glyphs = {
-        folder = {
-          arrow_closed = ">",
-          arrow_open = "v"
-        },
         git = {
-          unstaged = "U",
-          staged = "S",
-          unmerged = "UM",
-          renamed = "R",
-          untracked = "UT",
-          deleted = "D",
-          ignored = "I"
-        }
-      },
+          unstaged = "",
+          staged = "",
+          unmerged = "",
+          renamed = "",
+          untracked = "",
+          deleted = "",
+          ignored = "",
+        },
+      }
     },
     indent_markers = {
       enable = true,
@@ -76,24 +74,26 @@ nvim_tree.setup {
         -- { key = "c", cb = tree_cb "cut" },
         -- { key = "p", cb = tree_cb "paste" },
         { key = "f", action = "" },
+        { key = "<C-t>", action = "" },
       },
     },
   },
   diagnostics = {
+    icons = {
+      error = "",
+      warning = "",
+      hint = "",
+      info = "",
+    },
+
     enable = true,
     show_on_dirs = true,
-    icons = {
-      error = "E",
-      warning = "W",
-      hint = "H",
-      info = "I",
-    },
   },
   actions = {
     open_file = {
       window_picker = {
         enable = true,
-        chars = "HJKLASDF",
+        chars = "JKLASDF",
       },
     },
   },
