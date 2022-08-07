@@ -5,4 +5,3 @@ include $HOME/.config/sway/config.d/keymaps.conf
 include $HOME/.config/sway/config.d/window.conf
 include $HOME/.config/sway/config.d/systemd.conf
 include $HOME/.config/sway/config.d/settings.conf
-
