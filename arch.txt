@@ -2,7 +2,6 @@ git -> to clone paru
 cpupower-gui -> gui for cpupower
 gammastep -> night light 
 systemd-zram -> enable zram
-visual-studio-code-bin -> decent code editor
 firefox -> browser
 stow -> dotfile deployment
 brightnessctl -> needed for brightness control
@@ -13,7 +12,6 @@ exa -> cool and fast ls replacement
 thunar -> file manager
 gruvbox-dark-gtk -> gruvbox gtk theme
 gruvbox-dark-icons-gtk -> gruvbox icon theme
-capitaine-cursors -> nice cursors
 xsettingsd -> theming for applications using xwayland
 grim -> wayland screenshots
 slurp -> allows taking coordinates of areas in wayland for screenshots
@@ -26,7 +24,7 @@ mate-calc -> self explanatory
 gnome-keyring -> keyring
 seahorse -> gui for keyrings
 playerctl -> media sound control
-mpv -> minimal video player, required by ani-cli
+mpv -> minimal video player
 sway -> window manager
 swaybg -> for swaywm background
 swaylock -> lock screen
@@ -42,11 +40,12 @@ zathura -> pdf reader
 zathura-pdf-mupdf -> pdf plugin for zathura
 libreoffice-fresh -> office suite
 superproductivity-bin -> pomodoro/todo app
-alacritty -> GPU accelerated terminal emulator
+kitty -> GPU accelerated terminal emulator
 man-db -> manual pages
 man-pages -> > manual pages
 htop -> system info
 nodejs -> nice to have
+neovim -> l33t
 yarn -> needed for nvim
 python-pip -> needed for nvim
 python-pynvim -> needed for nvim
