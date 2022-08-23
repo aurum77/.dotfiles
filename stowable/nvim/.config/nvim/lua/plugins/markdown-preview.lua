@@ -1,7 +1,10 @@
-vim.api.nvim_exec([[
+vim.api.nvim_exec(
+	[[
 function OpenMarkdownPreview (url)
   execute "silent ! firefox --new-window " . a:url
   endfunction
-  ]], false)
+  ]],
+	false
+)
 
-vim.g.mkdp_browserfunc = 'OpenMarkdownPreview'
+vim.g.mkdp_browserfunc = "OpenMarkdownPreview"

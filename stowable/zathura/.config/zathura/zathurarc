@@ -1,4 +1,4 @@
-set font "Fira Code 11"
+set font "Noto Sans Mono 11"
 set statusbar-home-tilde true
 set selection-clipboard clipboard
 
@@ -40,5 +40,5 @@ set render-loading-fg           "#EBDBB2" # fg
 # Recolor book content's color
 set recolor-lightcolor          "#1D2021" # bg
 set recolor-darkcolor           "#EBDBB2" # fg
+
 set recolor                     "true"
-# set recolor-keephue             true      # keep original color

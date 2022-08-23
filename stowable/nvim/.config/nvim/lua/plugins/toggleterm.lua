@@ -1,9 +1,9 @@
 local status_ok, toggleterm = pcall(require, "toggleterm")
 
 if not status_ok then
-    return
+	return
 end
 
-toggleterm.setup {
-    shade_terminals = false,
-}
+toggleterm.setup({
+	shade_terminals = false,
+})

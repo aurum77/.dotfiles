@@ -1,0 +1,6 @@
+[Added Associations]
+text/plain=nvim.desktop;
+application/octet-stream=nvim.desktop;
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
+application/json=nvim.desktop;
+text/html=nvim.desktop;

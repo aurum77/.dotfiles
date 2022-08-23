@@ -14,6 +14,9 @@ export XDG_CURRENT_DESKTOP=sway
 export _JAVA_AWT_WM_NONREPARENTING=1
 # Only show the last 3 directories on the path prompt
 export PROMPT_DIRTRIM=3
+# fzf colors
+export FZF_DEFAULT_OPTS="--color fg:#ebdbb2,bg:#1d2021,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f,info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54"
+
 # Add java to path if installed
 if [[ -f /etc/profile.d/jre.sh ]];
   then

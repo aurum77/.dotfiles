@@ -1,9 +1,17 @@
 local status_ok, mason_tool_installer = pcall(require, "mason-tool-installer")
 
 if not status_ok then
-  return
+	return
 end
 
-mason_tool_installer.setup {
-  ensure_installed = {},
-}
+mason_tool_installer.setup({
+	ensure_installed = {
+		"prettier",
+		"clang-format",
+		"black",
+		"stylua",
+		"jq",
+		"codelldb",
+		"node-debug2-adapter",
+	},
+})

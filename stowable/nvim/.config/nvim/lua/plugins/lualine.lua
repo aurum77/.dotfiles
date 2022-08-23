@@ -1,163 +1,141 @@
 local status_ok, lualine = pcall(require, "lualine")
 
 if not status_ok then
-  return
+	return
 end
 
-local colors = {
-  bg0_h  = "#1D2021",
-  bg0    = "#282828",
-  bg1    = "#3C3836",
-  bg2    = "#504945",
-  fg     = "#EBDBB2",
-  yellow = "#D79921",
-  blue   = "#458588",
-  aqua   = "#689D6A",
-  gray   = "#A89984",
-  orange = "#D65D0E",
-}
-
 local conditions = {
-  buffer_not_empty = function()
-    return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
-  end,
-  hide_in_width = function()
-    return vim.fn.winwidth(0) > 100
-  end,
-  check_git_workspace = function()
-    local filepath = vim.fn.expand('%:p:h')
-    local gitdir = vim.fn.finddir('.git', filepath .. ';')
-    return gitdir and #gitdir > 0 and #gitdir < #filepath
-  end,
+	buffer_not_empty = function()
+		return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
+	end,
+	hide_in_width = function()
+		return vim.fn.winwidth(0) > 100
+	end,
+	check_git_workspace = function()
+		local filepath = vim.fn.expand("%:p:h")
+		local gitdir = vim.fn.finddir(".git", filepath .. ";")
+		return gitdir and #gitdir > 0 and #gitdir < #filepath
+	end,
 }
 
-local lsp = { function()
-  local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-  local clients = vim.lsp.get_active_clients()
-  if next(clients) == nil then
-    return ''
-  end
-  for _, client in ipairs(clients) do
-    local filetypes = client.config.filetypes
-    if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-      return client.name
-    end
-  end
-  return ''
-end,
-  icon = 'LSP:',
-  cond = conditions.hide_in_width,
+local lsp = {
+	function()
+		local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+		local clients = vim.lsp.get_active_clients()
+		if next(clients) == nil then
+			return ""
+		end
+		for _, client in ipairs(clients) do
+			local filetypes = client.config.filetypes
+			if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+				return client.name
+			end
+		end
+		return ""
+	end,
+	cond = conditions.hide_in_width,
 }
 
-local mode = {
-  "mode",
-}
 local filesize = {
-  'filesize',
-  fmt = string.upper,
+	"filesize",
+	fmt = string.upper,
 }
 
 local filetype = {
-  "filetype",
-  icon_only = true,
-  colored = false
+	"filetype",
+	icon_only = true,
+	colored = false,
 }
 
 local filename = {
-  "filename",
-  path = 1,
-  symbols = {
-    modified = ' ',
-    readonly = ' ',
-  },
-  cond = conditions.buffer_not_empty,
+	"filename",
+	path = 1,
+	symbols = {
+		modified = " ",
+		readonly = " ",
+	},
+	cond = conditions.buffer_not_empty,
 }
 
 local diff = {
-  "diff",
-  symbols = { added = " ", modified = " ", removed = " " },
-  cond = conditions.hide_in_width,
+	"diff",
+	symbols = { added = " ", modified = " ", removed = " " },
+	cond = conditions.hide_in_width,
 }
 
 local diagnostics = {
-  "diagnostics",
-  update_in_insert = true,
-  symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
+	"diagnostics",
+	update_in_insert = true,
+	symbols = { error = " ", warn = " ", info = " ", hint = " " },
 }
 
 local encoding = {
-  "encoding",
-  fmt = string.upper,
-  cond = conditions.hide_in_width
+	"encoding",
+	fmt = string.upper,
+	cond = conditions.hide_in_width,
 }
 
 local fileformat = {
-  "fileformat",
-  icons_enabled = false,
-  fmt = string.upper
+	"fileformat",
+	icons_enabled = true,
+	symbols = {
+		unix = "LF",
+		dos = "CRLF",
+		mac = "CR",
+	},
 }
 
 local branch = {
-  'branch',
-  icon = '',
+	"branch",
+	icon = "",
 }
 
-lualine.setup {
-  options = {
-    globalstatus = true,
-    icons_enabled = true,
-    component_separators = '',
-    section_separators = '',
-    theme = {
-      normal = {
-        a = { bg = colors.bg1, fg = colors.fg },
-        b = { bg = colors.bg2, fg = colors.fg, gui = 'bold' },
-        c = { bg = colors.bg2, fg = colors.fg, gui = 'bold' },
-        z = { bg = colors.bg1, fg = colors.fg },
-      },
-      insert = {
-        a = { bg = colors.bg1, fg = colors.fg },
-        b = { bg = colors.blue, fg = colors.bg0_h, gui = 'bold' },
-        c = { bg = colors.blue, fg = colors.bg0_h, gui = 'bold' },
-        z = { bg = colors.bg1, fg = colors.fg },
-      },
-      visual = {
-        a = { bg = colors.bg1, fg = colors.fg },
-        b = { bg = colors.orange, fg = colors.bg0_h, gui = 'bold' },
-        c = { bg = colors.orange, fg = colors.bg0_h, gui = 'bold' },
-        z = { bg = colors.bg1, fg = colors.fg },
-      },
-      command = {
-        a = { bg = colors.bg1, fg = colors.fg },
-        b = { bg = colors.aqua, fg = colors.bg0_h, gui = 'bold' },
-        c = { bg = colors.aqua, fg = colors.bg0_h, gui = 'bold' },
-        z = { bg = colors.bg1, fg = colors.fg },
-      },
-    },
-    -- visual => orange
-    -- insert = blue
-    -- normal gray
-    -- theme = "gruvbox"
-  },
-
-  sections = {
-    lualine_a = { diagnostics },
-    lualine_b = { mode, filesize, lsp },
-    lualine_c = { "%=", filetype, filename },
-    lualine_x = { "progress" },
-    lualine_y = { encoding, fileformat, branch },
-    lualine_z = { diff },
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = {},
-  },
-  extensions = { "nvim-tree", "toggleterm" },
+local colors = {
+	bg0_h = "#1D2021",
+	bg0 = "#282828",
+	bg1 = "#3C3836",
+	bg2 = "#504945",
+	fg = "#EBDBB2",
+	yellow = "#D79921",
+	blue = "#458588",
+	aqua = "#689D6A",
+	gray = "#A89984",
+	orange = "#D65D0E",
 }
+
+lualine.setup({
+	options = {
+		globalstatus = true,
+		icons_enabled = true,
+		component_separators = "",
+		section_separators = "",
+		theme = {
+			normal = {
+				a = { bg = colors.bg1, fg = colors.fg },
+				b = { bg = colors.bg2, fg = colors.fg },
+				c = { bg = colors.bg2, fg = colors.fg },
+				z = { bg = colors.bg1, fg = colors.fg },
+			},
+		},
+	},
+	sections = {
+		lualine_a = {},
+		lualine_b = { branch, diff, diagnostics, filename, filesize },
+		lualine_c = {},
+		lualine_x = {},
+		lualine_y = { encoding, fileformat, lsp, "progress", "location" },
+		lualine_z = {},
+	},
+	inactive_sections = {
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = {},
+		lualine_x = {},
+		lualine_y = {},
+		lualine_z = {},
+	},
+	extensions = { "nvim-tree", "toggleterm" },
+})
 
 -- Eviine config for lualine
 -- Author: shadmansaleh
