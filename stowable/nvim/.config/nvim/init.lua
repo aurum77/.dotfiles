@@ -27,9 +27,11 @@ require("plugins.nvim-surround")
 require("plugins.nvim-dap")
 require("plugins.nvim-dap-ui")
 require("plugins.gitsigns")
+require("plugins.fidget")
 
 -- Core settings
 require("core.options")
 require("core.colorscheme")
 require("core.keymaps")
 require("core.autocommands")
+require("core.globals")

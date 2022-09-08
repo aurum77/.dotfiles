@@ -20,9 +20,11 @@ alias c='clear'
 # git specific aliases
 alias ga='git add '
 alias gd='git diff '
+alias gds='git diff --staged'
 alias gc='git commit '
-alias gcl='git clone '
+alias gcm='git commit -m '
 alias gl='git log '
+alias glo='git log --oneline'
 alias gst='git status '
 
 # termbin pastebin

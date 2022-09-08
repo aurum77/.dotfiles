@@ -15,7 +15,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # Only show the last 3 directories on the path prompt
 export PROMPT_DIRTRIM=3
 # fzf colors
-export FZF_DEFAULT_OPTS="--color fg:#ebdbb2,bg:#1d2021,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f,info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54"
+export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
 
 # Add java to path if installed
 if [[ -f /etc/profile.d/jre.sh ]];

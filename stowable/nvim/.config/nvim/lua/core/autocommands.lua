@@ -28,11 +28,11 @@ vim.api.nvim_create_autocmd("WinLeave", {
 
 -- Disable relative line numbers on focus leave and window focus
 local change_line_number_style_group = vim.api.nvim_create_augroup("LineNumberStyle", { clear = true })
-vim.api.nvim_create_autocmd("WinEnter", {
+vim.api.nvim_create_autocmd({ "WinEnter", "InsertLeave" }, {
 	command = "lua if not vim.opt.number['_value'] == false then vim.opt.relativenumber = true end",
 	group = change_line_number_style_group,
 })
-vim.api.nvim_create_autocmd("WinLeave", {
+vim.api.nvim_create_autocmd({ "WinLeave", "InsertEnter" }, {
 	command = "lua vim.opt.relativenumber = false",
 	group = change_line_number_style_group,
 })
@@ -51,27 +51,7 @@ vim.api.nvim_create_autocmd("CursorHold", {
 	command = "checktime",
 })
 
-local colorizer_group = vim.api.nvim_create_augroup("ColorizerAttach", { clear = true })
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "*",
-	command = "ColorizerAttachToBuffer",
-})
-vim.api.nvim_create_autocmd("BufWrite", {
-	command = "ColorizerAttachToBuffer",
-})
-vim.api.nvim_create_autocmd("BufWinEnter", {
-	command = "ColorizerAttachToBuffer",
-})
-
 local sign_column_toggle_group = vim.api.nvim_create_augroup("SignColumnToggleGroup", { clear = true })
 vim.api.nvim_create_autocmd("TermEnter", {
-  command = "set signcolumn=no"
+	command = "set signcolumn=no",
 })
-
-function _TOGGLE_BACKGROUND()
-	if vim.api.nvim_get_option("background") == "dark" then
-  vim.api.nvim_set_option('background', 'light')
-elseif vim.api.nvim_get_option("background") == "light" then
-  vim.api.nvim_set_option('background', 'dark')
-	end
-end

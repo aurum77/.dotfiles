@@ -13,6 +13,7 @@ formatter.setup({
 		css = { require("formatter.filetypes.css").prettier },
 		javascript = { require("formatter.filetypes.javascript").prettier },
 		javascriptreact = { require("formatter.filetypes.javascriptreact").prettier },
+		markdown = { require("formatter.filetypes.markdown").prettier },
 		c = { require("formatter.filetypes.c").clangformat },
 		json = { require("formatter.filetypes.json").jq },
 		python = { require("formatter.filetypes.python").black },

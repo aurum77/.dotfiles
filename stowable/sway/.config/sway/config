@@ -1,7 +1,7 @@
 include /etc/sway/config.d/*
-include $HOME/.config/sway/config.d/definitions.conf
+include $HOME/.config/sway/config.d/variables.conf
 include $HOME/.config/sway/config.d/theme.conf
 include $HOME/.config/sway/config.d/keymaps.conf
-include $HOME/.config/sway/config.d/window.conf
+include $HOME/.config/sway/config.d/window_rules.conf
 include $HOME/.config/sway/config.d/systemd.conf
 include $HOME/.config/sway/config.d/settings.conf

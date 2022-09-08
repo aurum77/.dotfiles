@@ -20,9 +20,6 @@ map("n", "<Leader>qa", "<Cmd>qa!<CR>", opts)
 -- Toggle terminal
 map("n", "<C-t>", "<Cmd>ToggleTerm<CR>", opts)
 
--- Start external terminal
-map("n", "T", "<Cmd>silent !kitty --class=floating_terminal --detach $PWD &<CR>", opts)
-
 -- Clear highlights
 map("n", "<Leader>h", "<Cmd>nohlsearch<CR>", opts)
 
@@ -51,9 +48,6 @@ map("n", "<Leader>cc", "<Cmd>!cc -ansi %:p -o /tmp/%:r; /tmp/%:r<CR>", opts)
 
 -- Formatting
 map("n", "<Leader>f", "<Cmd>Format<CR>", opts)
-
--- Toggle between dark and light mode
-map("n", "<F1>", "<Cmd>lua _TOGGLE_BACKGROUND()<CR>", opts)
 
 -- Rest.nvim
 map("n", "<Leader>rr", "<Plug>RestNvim", opts)
@@ -87,3 +81,4 @@ map("t", "<C-l>", [[<Cmd>wincmd l<CR>]], opts)
 -- Insert mode
 -- Escape insert mode
 map("i", "fd", "<ESC>", opts)
+map("i", "<C-c>", "<ESC>", opts)

@@ -33,7 +33,7 @@ end
 packer.init({
 	display = {
 		open_fn = function()
-			return require("packer.util").float({ border = "single" })
+			return require("packer.util").float({ border = "none" })
 		end,
 	},
 	profile = {
@@ -104,6 +104,12 @@ return packer.startup(function(use)
 		"hrsh7th/cmp-nvim-lsp-signature-help",
 	})
 	use({
+		"hrsh7th/cmp-nvim-lua",
+	})
+	use({
+		"hrsh7th/cmp-emoji",
+	})
+	use({
 		"L3MON4D3/LuaSnip",
 	})
 	use({
@@ -136,9 +142,6 @@ return packer.startup(function(use)
 		"mhartington/formatter.nvim",
 	})
 	use({
-		"hrsh7th/cmp-emoji",
-	})
-	use({
 		"kylechui/nvim-surround",
 	})
 	use({
@@ -148,16 +151,25 @@ return packer.startup(function(use)
 		"rcarriga/nvim-dap-ui",
 	})
 	use({
-		"ellisonleao/gruvbox.nvim",
-	})
-	use({
 		"windwp/nvim-ts-autotag",
 	})
 	use({
-		"norcalli/nvim-colorizer.lua",
+		"lewis6991/gitsigns.nvim",
 	})
 	use({
-		"lewis6991/gitsigns.nvim",
+		"Mofiqul/dracula.nvim",
+	})
+	use({
+		"j-hui/fidget.nvim",
+	})
+	use({
+		-- "aurum77/live-server.nvim",
+		"$HOME/code/lua/live-server.nvim",
+		run = function()
+			require("live_server.util").install()
+		end,
+		ft = { "html" },
+		cmd = { "LiveServerStart" },
 	})
 
 	-- Automatically set up your configuration after cloning packer.nvim

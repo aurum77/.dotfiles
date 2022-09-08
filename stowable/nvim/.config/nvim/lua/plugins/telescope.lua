@@ -4,17 +4,6 @@ if not status_ok then
 	return
 end
 
-local borderchars = {
-	"━",
-	"┃",
-	"━",
-	"┃",
-	"┏",
-	"┓",
-	"┛",
-	"┗",
-}
-
 telescope.setup({
 	defaults = {
 		file_ignore_patterns = {
@@ -25,7 +14,6 @@ telescope.setup({
 		layout_config = {
 			horizontal = { prompt_position = "bottom", results_width = 0.6 },
 		},
-		border = true,
-		borderchars = borderchars,
+		border = false,
 	},
 })

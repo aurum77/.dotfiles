@@ -6,17 +6,6 @@ end
 
 local lspkind = require("lspkind")
 
-local border = {
-	{ "┏", "FloatBorder" },
-	{ "━", "FloatBorder" },
-	{ "┓", "FloatBorder" },
-	{ "┃", "FloatBorder" },
-	{ "┛", "FloatBorder" },
-	{ "━", "FloatBorder" },
-	{ "┗", "FloatBorder" },
-	{ "┃", "FloatBorder" },
-}
-
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -35,7 +24,8 @@ cmp.setup({
 				path = "[Path]",
 				buffer = "[Buffer]",
 				emoji = "[Emoji]",
-				["nvim_lsp_signature_help"] = "[Sign]",
+				nvim_lsp_signature_help = "[Sign]",
+				nvim_lua = "[API]",
 			},
 		}),
 	},
@@ -46,7 +36,6 @@ cmp.setup({
 		["<S-Tab>"] = cmp.mapping.select_prev_item(),
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
-		-- ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 
 		["<CR>"] = function(fallback)
 			-- Don't block <CR> if signature help is active
@@ -69,20 +58,12 @@ cmp.setup({
 		end,
 	}),
 	sources = cmp.config.sources({
+		{ name = "nvim_lua" },
 		{ name = "nvim_lsp" },
-		{ name = "luasnip" },
 		{ name = "path" },
-		{ name = "buffer" },
+		{ name = "luasnip" },
+		{ name = "buffer", keyword_length = 5 },
 		{ name = "nvim_lsp_signature_help" },
 		{ name = "emoji" },
 	}),
-	window = {
-		documentation = {
-			border = border,
-		},
-		completion = {
-			border = border,
-		},
-	},
-
 })

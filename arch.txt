@@ -10,8 +10,6 @@ xdg-user-dirs -> user direcotries
 xorg-xwayland -> non-wayland application support
 exa -> cool and fast ls replacement
 thunar -> file manager
-gruvbox-dark-gtk -> gruvbox gtk theme
-gruvbox-dark-icons-gtk -> gruvbox icon theme
 xsettingsd -> theming for applications using xwayland
 grim -> wayland screenshots
 slurp -> allows taking coordinates of areas in wayland for screenshots
@@ -28,10 +26,8 @@ mpv -> minimal video player
 sway -> window manager
 swaybg -> for swaywm background
 swaylock -> lock screen
-ttf-fira-code -> font for terminal
 noto-fonts -> fonts for general ui
 noto-fonts-emoji -> google's emojis
-ttf-nerd-fonts-symbols -> cool terminal glyphs
 pipewire -> we need sound don't we ?
 pipewire-pulse -> pulse configuration
 pavucontrol -> sound control gui
@@ -53,10 +49,10 @@ ripgrep -> needed for nvim
 unzip -> needed for nvim
 wget -> needed for nvim
 npm -> needed for nvim
-python-pip -> nice to have
 tidy -> needed for nvim
 tar -> needed for nvim
 gzip -> needed for nvim
+python-pip -> nice to have
 fzf -> cool fuzzy finder
 vimiv -> image viewer
 neofetch -> pretty system info
