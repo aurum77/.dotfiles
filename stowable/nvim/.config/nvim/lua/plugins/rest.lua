@@ -14,7 +14,7 @@ rest.setup({
 	-- Highlight request on run
 	highlight = {
 		enabled = true,
-		timeout = 250,
+		timeout = 100,
 	},
 	result = {
 		-- toggle showing URL, HTTP info, headers at top the of result window

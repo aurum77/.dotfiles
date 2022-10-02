@@ -9,11 +9,12 @@ mason_lspconfig.setup({
 		"html-lsp",
 		"css-lsp",
 		"typescript-language-server",
-		"emmet-ls",
 		"clangd",
 		"jedi-language-server",
 		"json-lsp",
 		"lua-language-server",
+		"emmet-ls",
+    "tailwindcss-language-server",
 	},
 	automatic_installation = true,
 })

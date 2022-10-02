@@ -4,6 +4,16 @@ if not status_ok then
 	return
 end
 
+local border = {
+	{ "┏", "FloatBorder" },
+	{ "━", "FloatBorder" },
+	{ "┓", "FloatBorder" },
+	{ "┃", "FloatBorder" },
+	{ "┛", "FloatBorder" },
+	{ "━", "FloatBorder" },
+	{ "┗", "FloatBorder" },
+	{ "┃", "FloatBorder" },
+}
 local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
@@ -11,7 +21,7 @@ for type, icon in pairs(signs) do
 end
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-	border = NONE,
+	border = border,
 })
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -82,40 +92,35 @@ lspconfig.jsonls.setup({
 lspconfig.emmet_ls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-	filetypes = {
-		"html",
-		"typescriptreact",
-		"javascriptreact",
-		"javascript",
-		"typescript",
-		"css",
-		"sass",
-		"scss",
-		"less",
-	},
+	filetypes = { "html" },
+})
+
+lspconfig.tailwindcss.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
 })
 
 lspconfig.sumneko_lua.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = 'LuaJIT',
-      },
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
-      -- Do not send telemetry data containing a randomized but unique identifier
-      telemetry = {
-        enable = false,
-      },
-    },
-  },
+	settings = {
+		Lua = {
+			runtime = {
+				-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+				version = "LuaJIT",
+			},
+			diagnostics = {
+				-- Get the language server to recognize the `vim` global
+				globals = { "vim" },
+			},
+			workspace = {
+				-- Make the server aware of Neovim runtime files
+				library = vim.api.nvim_get_runtime_file("", true),
+			},
+			-- Do not send telemetry data containing a randomized but unique identifier
+			telemetry = {
+				enable = false,
+			},
+		},
+	},
 })

@@ -33,7 +33,7 @@ end
 packer.init({
 	display = {
 		open_fn = function()
-			return require("packer.util").float({ border = "none" })
+			return require("packer.util").float({ border = "single" })
 		end,
 	},
 	profile = {
@@ -69,9 +69,6 @@ return packer.startup(function(use)
 	})
 	use({
 		"lukas-reineke/indent-blankline.nvim",
-	})
-	use({
-		"justinmk/vim-sneak",
 	})
 	use({
 		"neovim/nvim-lspconfig",
@@ -157,9 +154,6 @@ return packer.startup(function(use)
 		"lewis6991/gitsigns.nvim",
 	})
 	use({
-		"Mofiqul/dracula.nvim",
-	})
-	use({
 		"j-hui/fidget.nvim",
 	})
 	use({
@@ -168,8 +162,21 @@ return packer.startup(function(use)
 		run = function()
 			require("live_server.util").install()
 		end,
-		ft = { "html" },
-		cmd = { "LiveServerStart" },
+	})
+	use({
+		"ellisonleao/gruvbox.nvim",
+	})
+	use({
+		"norcalli/nvim-colorizer.lua",
+	})
+	use({
+		"ggandor/leap.nvim",
+	})
+	use({
+		"ThePrimeagen/vim-be-good",
+	})
+	use({
+		"uga-rosa/ccc.nvim",
 	})
 
 	-- Automatically set up your configuration after cloning packer.nvim

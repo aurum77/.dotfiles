@@ -39,10 +39,17 @@ nvim_web_devicons.set_icon({
 		color = "#569cd6",
 		name = "DAP_Watches",
 	},
-	make = {
+	["spec.js"] = {
 		icon = "ﭧ",
-		color = "#569cd6",
-		name = "Makefile",
+		color = "#cbcb41",
+		cterm_color = 180,
+		name = "JsSpec",
+	},
+	["test.js"] = {
+		icon = "ﭧ",
+		color = "#cbcb41",
+		cterm_color = 180,
+		name = "JsTest",
 	},
 })
 

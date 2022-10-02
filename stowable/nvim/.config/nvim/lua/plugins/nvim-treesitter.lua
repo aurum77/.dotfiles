@@ -17,6 +17,7 @@ configs.setup({
 		"css",
 		"http",
 		"json",
+		"jsonc",
 		"bash",
 	},
 	highlight = {

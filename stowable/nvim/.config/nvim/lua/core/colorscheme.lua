@@ -1,27 +1,18 @@
-local status_ok, dracula = pcall(require, "dracula")
-
-if not status_ok then
-	return
-end
-
-dracula.setup({
-	transparent_bg = true,
-	italic_comment = true,
+require("gruvbox").setup({
+	italic = false,
 })
 
-vim.cmd([[colorscheme dracula]])
+vim.cmd([[colorscheme gruvbox]])
 
-vim.api.nvim_set_hl(0, "SneakScope", { fg = dracula.colors().bright_yellow, bg = dracula.colors().bg })
-vim.api.nvim_set_hl(
-	0,
-	"SneakLabel",
-	{ fg = dracula.colors().bright_yellow, bg = dracula.colors().selection, bold = true }
-)
-vim.api.nvim_set_hl(0, "SneakLabelMask", {})
-vim.api.nvim_set_hl(0, "PMenuSel", { fg = dracula.colors().bg, bg = dracula.colors().purple })
-vim.api.nvim_set_hl(0, "VertSplit", { fg = dracula.colors().selection })
-vim.api.nvim_set_hl(0, "NvimTreeVertSplit", { fg = dracula.colors().selection })
-vim.api.nvim_set_hl(0, "NvimTreeIndentMarker", { fg = dracula.colors().purple })
-vim.api.nvim_set_hl(0, "FidgetTask", { fg = dracula.colors().comment, bg = "NONE" })
-vim.api.nvim_set_hl(0, "CursorLineNr", { bg = dracula.colors().selection })
-vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", { fg = dracula.colors().comment })
+local colors = require("core.colors").palette
+
+vim.api.nvim_set_hl(0, "TreesitterContext", { bg = colors.bg1, bold = true })
+vim.api.nvim_set_hl(0, "TelescopeSelectionCaret", { fg = colors.ltorange })
+vim.api.nvim_set_hl(0, "TelescopeMultiSelection", { fg = colors.fg0 })
+vim.api.nvim_set_hl(0, "TelescopeMatching", { fg = colors.ltyellow, bold = true })
+vim.api.nvim_set_hl(0, "LeapLabelPrimary", { bg = colors.aqua, fg = colors.bg0, bold = true })
+vim.api.nvim_set_hl(0, "LeapLabelSecondary", { bg = colors.blue, fg = colors.bg0, bold = true })
+vim.api.nvim_set_hl(0, "VertSplit", { fg = colors.bg1  })
+vim.api.nvim_set_hl(0, "PMenu", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", { fg = colors.ltblue })
+

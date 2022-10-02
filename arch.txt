@@ -54,8 +54,9 @@ tar -> needed for nvim
 gzip -> needed for nvim
 python-pip -> nice to have
 fzf -> cool fuzzy finder
-vimiv -> image viewer
+imv -> image viewer
 neofetch -> pretty system info
 libva-mesa-driver -> gallium video decode driver
 gnu-netcat -> for termbin pastebin
 python-wheel -> needed for pip packages 
+tokei -> count lines of code blazingly fast 

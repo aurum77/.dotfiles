@@ -21,10 +21,10 @@ map("n", "<Leader>qa", "<Cmd>qa!<CR>", opts)
 map("n", "<C-t>", "<Cmd>ToggleTerm<CR>", opts)
 
 -- Clear highlights
-map("n", "<Leader>h", "<Cmd>nohlsearch<CR>", opts)
+map("n", "<Leader>hh", "<Cmd>nohlsearch<CR>", opts)
 
 -- File save bind
-map("n", "<Leader>fw", "<Cmd>wa<CR>", opts)
+map("n", "<Leader>fw", "<Cmd>w<CR>", opts)
 
 -- telescope.nvim
 map("n", "<Leader>ff", "<Cmd>Telescope find_files<CR>", opts)
@@ -34,20 +34,14 @@ map("n", "<Leader>f;", "<Cmd>Telescope commands<CR>", opts)
 map("n", "<Leader>fh", "<Cmd>Telescope help_tags<CR>", opts)
 map("n", "<Leader>fm", "<Cmd>Telescope keymaps<CR>", opts)
 
-map("n", "<C-p>", "<Plug>MarkdownPreviewToggle", opts)
-
 -- nvim-tree
 map("n", "<Leader>e", "<Cmd>NvimTreeToggle<CR>", opts)
-
--- vim-sneak
-map("n", "f", "<Plug>Sneak_s", opts)
-map("n", "F", "<Plug>Sneak_S", opts)
 
 -- Compile and run single C file with ansi standard
 map("n", "<Leader>cc", "<Cmd>!cc -ansi %:p -o /tmp/%:r; /tmp/%:r<CR>", opts)
 
 -- Formatting
-map("n", "<Leader>f", "<Cmd>Format<CR>", opts)
+map("n", "<C-f>", "<Cmd>Format<CR>", opts)
 
 -- Rest.nvim
 map("n", "<Leader>rr", "<Plug>RestNvim", opts)
@@ -67,6 +61,16 @@ map("n", "<Leader>dl", "<Cmd>lua require'dap'.run_last()<CR>", opts)
 
 -- nvim-dap-ui
 map("n", "<Leader>dd", "<Cmd>lua require'dapui'.toggle()<CR>", opts)
+
+-- plenary.nvim
+map("n", "<Leader>rt", "<Plug>PlenaryTestFile", opts)
+
+-- Center cursor on scroll up or down
+map("n", "<C-d>", "<C-d>zz", opts)
+map("n", "<C-u>", "<C-u>zz", opts)
+
+-- Toggle light theme
+map("n", "<F1>", "<Cmd>lua _TOGGLE_BACKGROUND()<CR>", opts)
 
 -- Terminal mode
 -- toggleterm.nvim

@@ -6,7 +6,7 @@ end
 
 mason.setup({
 	ui = {
-		border = "none",
+		border = "single",
 		icons = {
 			package_installed = "✓",
 			package_pending = "o",

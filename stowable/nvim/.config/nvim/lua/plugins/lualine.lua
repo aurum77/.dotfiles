@@ -4,12 +4,14 @@ if not status_ok then
 	return
 end
 
+local colors = require'core.colors'.palette
+
 local conditions = {
 	buffer_not_empty = function()
 		return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
 	end,
 	hide_in_width = function()
-		return vim.fn.winwidth(0) > 100
+		return vim.fn.winwidth(0) > 120
 	end,
 	check_git_workspace = function()
 		local filepath = vim.fn.expand("%:p:h")
@@ -33,7 +35,7 @@ local lsp = {
 		end
 		return ""
 	end,
-	cond = conditions.hide_in_width,
+	-- cond = conditions.hide_in_width,
 }
 
 local filesize = {
@@ -60,7 +62,7 @@ local filename = {
 local diff = {
 	"diff",
 	symbols = { added = " ", modified = " ", removed = " " },
-	cond = conditions.hide_in_width,
+	-- cond = conditions.hide_in_width,
 }
 
 local diagnostics = {
@@ -72,25 +74,25 @@ local diagnostics = {
 local encoding = {
 	"encoding",
 	fmt = string.upper,
-	cond = conditions.hide_in_width,
+	-- cond = conditions.hide_in_width,
 }
 
 local fileformat = {
 	"fileformat",
 	icons_enabled = true,
+  fmt = string.upper,
 	symbols = {
 		unix = "LF",
 		dos = "CRLF",
 		mac = "CR",
 	},
+	-- cond = conditions.hide_in_width,
 }
 
 local branch = {
 	"branch",
 	icon = "",
 }
-
-local colors = require("dracula").colors()
 
 lualine.setup({
 	options = {
@@ -100,17 +102,17 @@ lualine.setup({
 		section_separators = "",
 		theme = {
 			normal = {
-				a = { bg = colors.selection, fg = colors.fg },
-				b = { bg = colors.selection, fg = colors.fg },
-				c = { bg = colors.selection, fg = colors.fg },
-				x = { bg = colors.selection, fg = colors.fg },
-				y = { bg = colors.selection, fg = colors.fg },
-				z = { bg = colors.selection, fg = colors.fg },
+				a = { bg = colors.bg1, fg = colors.fg },
+				b = { bg = colors.bg1, fg = colors.fg },
+				c = { bg = colors.bg1, fg = colors.fg },
+				x = { bg = colors.bg1, fg = colors.fg },
+				y = { bg = colors.bg1, fg = colors.fg },
+				z = { bg = colors.bg1, fg = colors.fg },
 			},
 		},
 	},
 	sections = {
-		lualine_a = { branch, diff, diagnostics, filename, filesize },
+		lualine_a = { branch, filesize, diff, diagnostics },
 		lualine_b = {},
 		lualine_c = {},
 		lualine_x = {},
