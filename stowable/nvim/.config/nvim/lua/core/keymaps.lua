@@ -18,7 +18,7 @@ map("n", "<Leader>qw", "<Cmd>wqa!<CR>", opts)
 map("n", "<Leader>qa", "<Cmd>qa!<CR>", opts)
 
 -- Toggle terminal
-map("n", "<C-t>", "<Cmd>ToggleTerm<CR>", opts)
+map("n", "<C-t>", "<Cmd>ToggleTerm size=40 direction=vertical<CR>", opts)
 
 -- Clear highlights
 map("n", "<Leader>hh", "<Cmd>nohlsearch<CR>", opts)

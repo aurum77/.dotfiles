@@ -4,7 +4,7 @@ if not status_ok then
 	return
 end
 
-local colors = require'core.colors'.palette
+local colors = require("core.colors").palette
 
 local conditions = {
 	buffer_not_empty = function()
@@ -80,7 +80,7 @@ local encoding = {
 local fileformat = {
 	"fileformat",
 	icons_enabled = true,
-  fmt = string.upper,
+	fmt = string.upper,
 	symbols = {
 		unix = "LF",
 		dos = "CRLF",

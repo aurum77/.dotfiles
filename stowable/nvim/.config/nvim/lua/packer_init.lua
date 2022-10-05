@@ -178,6 +178,9 @@ return packer.startup(function(use)
 	use({
 		"uga-rosa/ccc.nvim",
 	})
+  use({
+    "folke/trouble.nvim"
+  })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

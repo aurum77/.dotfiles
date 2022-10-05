@@ -19,6 +19,7 @@ configs.setup({
 		"json",
 		"jsonc",
 		"bash",
+    "tsx",
 	},
 	highlight = {
 		enable = true,

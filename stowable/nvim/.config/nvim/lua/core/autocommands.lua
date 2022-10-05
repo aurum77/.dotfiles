@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 
 -- Don't draw cursorline if not focused
 local cursor_highlight_group = vim.api.nvim_create_augroup("CursorHighlight", { clear = true })
-vim.api.nvim_create_autocmd("WinEnter", {
+vim.api.nvim_create_autocmd({ "WinEnter", "User TelescopeFindPre" }, {
 	command = "lua vim.opt.cursorline = true",
 	group = cursor_highlight_group,
 })
@@ -28,7 +28,7 @@ vim.api.nvim_create_autocmd("WinLeave", {
 
 -- Disable relative line numbers on focus leave and window focus
 local change_line_number_style_group = vim.api.nvim_create_augroup("LineNumberStyle", { clear = true })
-vim.api.nvim_create_autocmd({ "WinEnter", "InsertLeave" }, {
+vim.api.nvim_create_autocmd({ "WinEnter", "InsertLeave", "User TelescopeFindPre" }, {
 	command = "lua if not vim.opt.number['_value'] == false then vim.opt.relativenumber = true end",
 	group = change_line_number_style_group,
 })

@@ -48,7 +48,7 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "gi", "<Cmd>Telescope lsp_implementations<CR>", bufopts)
 	vim.keymap.set("n", "gd", "<Cmd>Telescope lsp_definitions<CR>", bufopts)
 	vim.keymap.set("n", "gr", "<Cmd>Telescope lsp_references<CR>", bufopts)
-	vim.keymap.set("n", "<Leader>fd", "<Cmd>Telescope diagnostics<CR>", bufopts)
+	vim.keymap.set("n", "<Leader>fd", "<Cmd>TroubleToggle<CR>", bufopts)
 end
 
 lspconfig.tsserver.setup({

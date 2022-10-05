@@ -30,6 +30,7 @@ require("plugins.fidget")
 require("plugins.live-server")
 require("plugins.leap")
 require("plugins.ccc")
+require("plugins.trouble")
 
 -- Core settings
 require("core.options")
