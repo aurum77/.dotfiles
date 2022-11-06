@@ -30,6 +30,13 @@ alias gst='git status '
 # termbin pastebin
 alias tb="nc termbin.com 9999"
 
+# Dotnet code generator
+alias dac="dotnet-aspnet-codegenerator "
+
+# Set governor
+alias powersave="sudo cpupower frequency-set --governor powersave 2 > /dev/null"
+alias performance="sudo cpupower frequency-set --governor performance 2 > /dev/null"
+
 # Enables directory change without using cd
 shopt -s autocd
 

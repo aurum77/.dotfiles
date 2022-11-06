@@ -11,7 +11,7 @@ local conditions = {
 		return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
 	end,
 	hide_in_width = function()
-		return vim.fn.winwidth(0) > 120
+		return vim.fn.winwidth(0) > 100
 	end,
 	check_git_workspace = function()
 		local filepath = vim.fn.expand("%:p:h")
@@ -35,7 +35,7 @@ local lsp = {
 		end
 		return ""
 	end,
-	-- cond = conditions.hide_in_width,
+	cond = conditions.hide_in_width,
 }
 
 local filesize = {
@@ -74,7 +74,7 @@ local diagnostics = {
 local encoding = {
 	"encoding",
 	fmt = string.upper,
-	-- cond = conditions.hide_in_width,
+	cond = conditions.hide_in_width,
 }
 
 local fileformat = {
@@ -86,7 +86,7 @@ local fileformat = {
 		dos = "CRLF",
 		mac = "CR",
 	},
-	-- cond = conditions.hide_in_width,
+	cond = conditions.hide_in_width,
 }
 
 local branch = {
@@ -112,7 +112,7 @@ lualine.setup({
 		},
 	},
 	sections = {
-		lualine_a = { branch, filesize, diff, diagnostics },
+		lualine_a = { branch, filesize, filename, diff, diagnostics },
 		lualine_b = {},
 		lualine_c = {},
 		lualine_x = {},

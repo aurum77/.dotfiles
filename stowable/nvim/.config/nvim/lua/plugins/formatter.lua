@@ -20,5 +20,6 @@ formatter.setup({
 		jsonc = { require("formatter.filetypes.json").prettier },
 		python = { require("formatter.filetypes.python").black },
 		lua = { require("formatter.filetypes.lua").stylua },
+		cs = { require("formatter.filetypes.cs").dotnetformat },
 	},
 })

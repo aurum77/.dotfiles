@@ -1,5 +1,4 @@
 git -> to clone paru
-cpupower-gui -> gui for cpupower
 gammastep -> night light 
 systemd-zram -> enable zram
 firefox -> browser
@@ -35,20 +34,17 @@ dmenu -> application launcher
 zathura -> pdf reader
 zathura-pdf-mupdf -> pdf plugin for zathura
 libreoffice-fresh -> office suite
-superproductivity-bin -> pomodoro/todo app
 kitty -> GPU accelerated terminal emulator
 man-db -> manual pages
 man-pages -> > manual pages
 htop -> system info
-nodejs -> nice to have
-neovim -> l33t
-yarn -> needed for nvim
+nodejs-lts-gallium -> web dev
+npm -> web dev
+neovim -> development
 python-pip -> needed for nvim
-python-pynvim -> needed for nvim
 ripgrep -> needed for nvim
 unzip -> needed for nvim
 wget -> needed for nvim
-npm -> needed for nvim
 tidy -> needed for nvim
 tar -> needed for nvim
 gzip -> needed for nvim

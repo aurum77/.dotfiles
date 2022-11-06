@@ -6,15 +6,16 @@ end
 
 mason_lspconfig.setup({
 	ensure_installed = {
-		"html-lsp",
-		"css-lsp",
-		"typescript-language-server",
+		"html",
+		"cssls",
+		"tsserver",
 		"clangd",
-		"jedi-language-server",
-		"json-lsp",
-		"lua-language-server",
-		"emmet-ls",
-    "tailwindcss-language-server",
+		"jedi_language_server",
+		"jsonls",
+		"sumneko_lua",
+		"emmet_ls",
+    "tailwindcss",
+    "csharp_ls",
 	},
 	automatic_installation = true,
 })

@@ -19,13 +19,14 @@ configs.setup({
 		"json",
 		"jsonc",
 		"bash",
-    "tsx",
+		"tsx",
+		"c_sharp",
 	},
 	highlight = {
 		enable = true,
 		disable = {},
 	},
-  autotag = {
-    enable = true,
-  }
+	autotag = {
+		enable = true,
+	},
 })
