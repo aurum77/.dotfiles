@@ -69,9 +69,6 @@ map("n", "<Leader>rt", "<Plug>PlenaryTestFile", opts)
 map("n", "<C-d>", "<C-d>zz", opts)
 map("n", "<C-u>", "<C-u>zz", opts)
 
--- Toggle light theme
-map("n", "<F1>", "<Cmd>lua _TOGGLE_BACKGROUND()<CR>", opts)
-
 -- Terminal mode
 -- toggleterm.nvim
 map("t", "<C-t>", "<Cmd>ToggleTerm<CR>", opts)

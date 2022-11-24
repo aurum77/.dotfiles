@@ -31,3 +31,4 @@ vim.opt.fillchars = {
 	foldsep = "│",
 	foldclose = "▸",
 }
+vim.lsp.set_log_level("debug")

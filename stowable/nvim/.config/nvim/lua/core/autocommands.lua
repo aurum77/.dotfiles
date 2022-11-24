@@ -63,14 +63,3 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 		vim.opt_local.filetype = "jsonc"
 	end,
 })
-
-function _TOGGLE_BACKGROUND()
-	if vim.api.nvim_get_option("background") == "dark" then
-		vim.api.nvim_set_option("background", "light")
-	elseif vim.api.nvim_get_option("background") == "light" then
-		vim.api.nvim_set_option("background", "dark")
-		vim.cmd([[
-    source ~/.config/nvim/lua/core/colorscheme.lua
-  ]])
-	end
-end

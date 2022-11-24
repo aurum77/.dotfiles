@@ -177,8 +177,11 @@ return packer.startup(function(use)
 	use({
 		"uga-rosa/ccc.nvim",
 	})
+	use({
+		"folke/trouble.nvim",
+	})
   use({
-    "folke/trouble.nvim"
+    "rafamadriz/friendly-snippets"
   })
 
 	-- Automatically set up your configuration after cloning packer.nvim

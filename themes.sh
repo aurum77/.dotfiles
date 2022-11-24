@@ -3,7 +3,7 @@ mkdir $HOME/.themes/
 
 git clone https://github.com/jmattheis/gruvbox-dark-gtk.git $HOME/.themes/gruvbox-dark-gtk
 git clone https://github.com/jmattheis/gruvbox-dark-icons-gtk.git $HOME/.icons/gruvbox-dark-icons-gtk
-wget https://github.com/be5invis/Iosevka/releases/download/v16.3.6/ttf-iosevka-16.3.6.zip -O /tmp/ttf-iosevka.zip
+wget https://github.com/be5invis/Iosevka/releases/download/v16.4.0/ttf-iosevka-16.4.0.zip -O /tmp/ttf-iosevka.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/NerdFontsSymbolsOnly.zip -O /tmp/ttf-symbols.zip
 
 unzip -q /tmp/ttf-iosevka.zip -d $HOME/.fonts/

@@ -64,6 +64,7 @@ lspconfig.tsserver.setup({
 		"typescriptreact",
 		"typescript.tsx",
 	},
+  root_dir = function() return vim.loop.cwd() end
 })
 
 lspconfig.jedi_language_server.setup({

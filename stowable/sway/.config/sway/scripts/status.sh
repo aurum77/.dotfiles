@@ -12,7 +12,7 @@ do
   bat=$(cat /sys/class/power_supply/BAT*/capacity)
   vol=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}')
   mute=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')
-  ssid=$(nmcli -t -f name connection show --active)
+  ssid=$(nmcli -t -f name connection show --active | head -n 1)
   ssid=${ssid:-'no connection'}
   quality=$(nmcli -f IN-USE,SIGNAL device wifi | grep '*' | awk '{print $2}')
   media=$(playerctl metadata --format "{{trunc(title, 40)}}" 2> /dev/null | sed 's/|/:/')
