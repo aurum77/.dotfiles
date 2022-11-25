@@ -5,14 +5,14 @@ if not status_ok then
 end
 
 local borderchars = {
-	"━",
-	"┃",
-	"━",
-	"┃",
-	"┏",
-	"┓",
-	"┛",
-	"┗",
+	" ",
+	" ",
+	" ",
+	" ",
+	" ",
+	" ",
+	" ",
+	" ",
 }
 
 telescope.setup({
@@ -26,6 +26,6 @@ telescope.setup({
 			horizontal = { prompt_position = "bottom", results_width = 0.6 },
 		},
 		border = true,
-    borderchars = borderchars,
+		borderchars = borderchars,
 	},
 })

@@ -5,16 +5,6 @@ if not status_ok then
 end
 
 local lspkind = require("lspkind")
-local border = {
-	{ "┏", "FloatBorder" },
-	{ "━", "FloatBorder" },
-	{ "┓", "FloatBorder" },
-	{ "┃", "FloatBorder" },
-	{ "┛", "FloatBorder" },
-	{ "━", "FloatBorder" },
-	{ "┗", "FloatBorder" },
-	{ "┃", "FloatBorder" },
-}
 local luasnip = require("luasnip")
 
 local check_backspace = function()
@@ -100,14 +90,6 @@ cmp.setup({
 			end
 		end,
 	}),
-	window = {
-		completion = {
-			border = border,
-		},
-		documentation = {
-			border = border,
-		},
-	},
 	sources = cmp.config.sources({
 		{ name = "nvim_lua" },
 		{ name = "nvim_lsp" },

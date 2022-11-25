@@ -14,7 +14,6 @@ fidget.setup({
 	},
 	window = {
 		relative = "editor",
-    border = "single",
 		blend = 0,
 	},
 })

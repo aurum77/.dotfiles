@@ -4,27 +4,11 @@ if not status_ok then
 	return
 end
 
-require("lspconfig.ui.windows").default_options.border = "single"
-
-local border = {
-	{ "┏", "FloatBorder" },
-	{ "━", "FloatBorder" },
-	{ "┓", "FloatBorder" },
-	{ "┃", "FloatBorder" },
-	{ "┛", "FloatBorder" },
-	{ "━", "FloatBorder" },
-	{ "┗", "FloatBorder" },
-	{ "┃", "FloatBorder" },
-}
 local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
-
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-	border = border,
-})
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -90,12 +74,6 @@ lspconfig.cssls.setup({
 lspconfig.jsonls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-})
-
-lspconfig.emmet_ls.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	filetypes = { "html" },
 })
 
 lspconfig.tailwindcss.setup({

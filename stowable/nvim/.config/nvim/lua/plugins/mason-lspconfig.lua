@@ -13,7 +13,6 @@ mason_lspconfig.setup({
 		"jedi_language_server",
 		"jsonls",
 		"sumneko_lua",
-		"emmet_ls",
     "tailwindcss",
     "csharp_ls",
 	},
