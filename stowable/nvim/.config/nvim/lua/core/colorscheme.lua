@@ -7,9 +7,9 @@ vim.cmd([[colorscheme gruvbox]])
 local colors = require("core.colors").palette
 
 vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = colors.bg1 })
-vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { bg = colors.bg0 })
-vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { bg = colors.bg0 })
-vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { fg = colors.bg0 })
+vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { bg = colors.bg1 })
+vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { bg = colors.bg1 })
+vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { fg = colors.bg1 })
 vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { bg = colors.bg1 })
 vim.api.nvim_set_hl(0, "TelescopeResultsTitle", { fg = colors.bg1 })
 vim.api.nvim_set_hl(0, "TelescopePromptBorder", { bg = colors.bg1 })
