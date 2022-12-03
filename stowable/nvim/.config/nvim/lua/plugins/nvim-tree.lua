@@ -23,9 +23,9 @@ nvim_tree.setup({
 	hijack_directories = {
 		enable = false,
 	},
-  git = {
-    ignore = false,
-  },
+	git = {
+		ignore = false,
+	},
 	hijack_unnamed_buffer_when_opening = true,
 	open_on_setup = true,
 	renderer = {
@@ -65,8 +65,8 @@ nvim_tree.setup({
 		-- width = 40,
 		-- height = 30,
 		side = "left",
-    number = true,
-    relativenumber = true,
+		number = true,
+		relativenumber = true,
 		mappings = {
 			list = {
 				{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },

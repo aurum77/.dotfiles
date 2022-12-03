@@ -1,6 +1,7 @@
 git -> to clone paru
 gammastep -> night light 
-systemd-zram -> enable zram
+zram-generator -> enable zram
+zram-generator-defaults -> enable zram
 firefox -> browser
 stow -> dotfile deployment
 brightnessctl -> needed for brightness control
@@ -56,3 +57,5 @@ libva-mesa-driver -> gallium video decode driver
 gnu-netcat -> for termbin pastebin
 python-wheel -> needed for pip packages 
 tokei -> count lines of code blazingly fast 
+cpupower -> governor control
+dotnet-sdk-6.0 -> c#

@@ -7,7 +7,7 @@ end
 fidget.setup({
 	text = {
 		spinner = "dots",
-    done = ""
+		done = "",
 	},
 	align = {
 		bottom = true,

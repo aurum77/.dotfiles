@@ -13,8 +13,8 @@ mason_lspconfig.setup({
 		"jedi_language_server",
 		"jsonls",
 		"sumneko_lua",
-    "tailwindcss",
-    "csharp_ls",
+		"tailwindcss",
+		"csharp_ls",
 	},
 	automatic_installation = true,
 })

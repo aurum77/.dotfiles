@@ -11,7 +11,5 @@ mason_tool_installer.setup({
 		"black",
 		"stylua",
 		"jq",
-		"codelldb",
-		"node-debug2-adapter",
 	},
 })

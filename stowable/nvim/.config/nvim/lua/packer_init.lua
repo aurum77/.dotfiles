@@ -142,12 +142,6 @@ return packer.startup(function(use)
 		"kylechui/nvim-surround",
 	})
 	use({
-		"mfussenegger/nvim-dap",
-	})
-	use({
-		"rcarriga/nvim-dap-ui",
-	})
-	use({
 		"windwp/nvim-ts-autotag",
 	})
 	use({
@@ -180,9 +174,9 @@ return packer.startup(function(use)
 	use({
 		"folke/trouble.nvim",
 	})
-  use({
-    "rafamadriz/friendly-snippets"
-  })
+	use({
+		"rafamadriz/friendly-snippets",
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

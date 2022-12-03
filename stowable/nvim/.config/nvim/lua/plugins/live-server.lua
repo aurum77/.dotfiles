@@ -6,6 +6,6 @@ end
 live_server.setup({
 	port = 7777,
 	browser_command = "firefox",
-  quiet = false,
+	quiet = false,
 	no_css_inject = true,
 })
