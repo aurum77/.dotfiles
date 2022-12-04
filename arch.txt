@@ -59,3 +59,4 @@ python-wheel -> needed for pip packages
 tokei -> count lines of code blazingly fast 
 cpupower -> governor control
 dotnet-sdk-6.0 -> c#
+aspnet-runtime-6.0 -> asp.net
