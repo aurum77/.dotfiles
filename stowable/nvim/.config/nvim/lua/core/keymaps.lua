@@ -48,26 +48,15 @@ map("n", "<Leader>rr", "<Plug>RestNvim", opts)
 map("n", "<Leader>rl", "<Plug>RestNvimLast", opts)
 map("n", "<Leader>rp", "<Plug>RestNvimPreview", opts)
 
--- nvim-dap
-map("n", "<F5>", "<Cmd>lua require'dap'.continue()<CR>", opts)
-map("n", "<F10>", "<Cmd>lua require'dap'.step_over()<CR>", opts)
-map("n", "<F11>", "<Cmd>lua require'dap'.step_into()<CR>", opts)
-map("n", "<F12>", "<Cmd>lua require'dap'.step_out()<CR>", opts)
-map("n", "<Leader>b", "<Cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
-map("n", "<Leader>B", "<Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
-map("n", "<Leader>lp", "<Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", opts)
-map("n", "<Leader>dr", "<Cmd>lua require'dap'.repl.open()<CR>", opts)
-map("n", "<Leader>dl", "<Cmd>lua require'dap'.run_last()<CR>", opts)
-
--- nvim-dap-ui
-map("n", "<Leader>dd", "<Cmd>lua require'dapui'.toggle()<CR>", opts)
-
 -- plenary.nvim
 map("n", "<Leader>rt", "<Plug>PlenaryTestFile", opts)
 
 -- Center cursor on scroll up or down
 map("n", "<C-d>", "<C-d>zz", opts)
 map("n", "<C-u>", "<C-u>zz", opts)
+
+-- Remove help bind
+map("n", "<F1>", "<NOP>", opts)
 
 -- Terminal mode
 -- toggleterm.nvim
