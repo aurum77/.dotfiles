@@ -117,7 +117,7 @@ lualine.setup({
 		lualine_c = {},
 		lualine_x = {},
 		lualine_y = {},
-		lualine_z = { encoding, fileformat, lsp, "progress", "location" },
+		lualine_z = { encoding, fileformat, "progress", "location" },
 	},
 	inactive_sections = {
 		lualine_a = {},
