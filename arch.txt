@@ -1,7 +1,6 @@
 git -> to clone paru
 gammastep -> night light 
-zram-generator -> enable zram
-zram-generator-defaults -> enable zram
+systemd-zram -> enable zram
 firefox -> browser
 stow -> dotfile deployment
 brightnessctl -> needed for brightness control
@@ -31,7 +30,7 @@ noto-fonts-emoji -> google's emojis
 pipewire -> we need sound don't we ?
 pipewire-pulse -> pulse configuration
 pavucontrol -> sound control gui
-dmenu -> application launcher
+wofi -> application launcher
 zathura -> pdf reader
 zathura-pdf-mupdf -> pdf plugin for zathura
 libreoffice-fresh -> office suite
@@ -60,3 +59,5 @@ tokei -> count lines of code blazingly fast
 cpupower -> governor control
 dotnet-sdk-6.0 -> c#
 aspnet-runtime-6.0 -> asp.net
+docker -> containers
+docker-compose -> containers
