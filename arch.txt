@@ -31,6 +31,7 @@ pipewire -> we need sound don't we ?
 pipewire-pulse -> pulse configuration
 pavucontrol -> sound control gui
 wofi -> application launcher
+waybar -> info bar for sway
 zathura -> pdf reader
 zathura-pdf-mupdf -> pdf plugin for zathura
 libreoffice-fresh -> office suite

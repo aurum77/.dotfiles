@@ -1,0 +1,57 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "height": 40,
+  "modules-left": ["sway/workspaces"],
+  "modules-center": [],
+  "modules-right": ["custom/media", "memory", "network", "pulseaudio", "battery", "custom/clock"],
+  "sway/workspaces": {
+    "format": "{name}",
+    "disable-scroll-wraparound": true
+  },
+  "custom/media": {
+    "exec": "playerctl metadata --format \"{{trunc(title, 50)}}\" 2> /dev/null",
+    "interval": 5,
+    "tooltip": false
+  },
+  "memory": {
+    "interval": 5,
+    "format": " {used:0.2f} GB",
+    "on-click": "/usr/bin/kitty --class floating_terminal --execute /usr/bin/htop",
+    "tooltip": false
+  },
+  "network": {
+    "interval": 3,
+    "format-wifi": "  {essid} {signalStrength:3d}%",
+    "format-ethernet": " {ifname}",
+    "format-disconnected": " Disconnected",
+    "on-click": "/usr/bin/kitty --class floating_terminal --execute /usr/bin/nmtui",
+    "tooltip": false
+  },
+  "pulseaudio": {
+    "scroll-step": 5,
+    "format": "{icon} {volume:3d}%",
+    "format-muted": "婢 muted",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+    "on-click-right": "pavucontrol",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "tooltip": false
+  },
+  "battery": {
+    "interval": 2,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity:3d}%",
+    "format-icons": ["", "", "", "", ""],
+    "format-charging": "ﮣ {icon} {capacity}%"
+  },
+  "custom/clock": {
+    "exec": "LANG=tr_TR.UTF-8 date '+%d %B %A, %H:%M'",
+    "interval": 60,
+    "tooltip": false
+  }
+}

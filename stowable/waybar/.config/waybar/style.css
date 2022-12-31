@@ -1,0 +1,54 @@
+* {
+  font-family: Iosevka Extended, Symbols Nerd Font;
+  font-size: 14px;
+  transition-duration: 0.3s;
+}
+
+#waybar {
+  background-color: #282828;
+  opacity: 0.95;
+}
+
+#workspaces {
+  margin: 8px;
+  margin-left: 0px;
+}
+
+#workspaces button {
+  margin: 0px 8px;
+  background-color: #3c3836;
+  opacity: 0.95;
+  border-radius: 20px;
+}
+
+#workspaces button.hover {
+  background-color: #b86767;
+}
+
+#workspaces button.focused {
+  background-color: #665c54;
+  color: #ebdbb2;
+  border-radius: 3px;
+}
+
+#workspaces button.urgent {
+  background-color: #fb4934;
+}
+
+#pulseaudio.muted {
+  background-color: #fb4934;
+  color: #282828;
+}
+
+#custom-media,
+#memory,
+#network,
+#pulseaudio,
+#battery,
+#custom-clock {
+  padding: 0 10px 0;
+  margin: 8px 8px;
+  border-radius: 20px;
+  background-color: #3c3836;
+  color: #d5c4a1;
+}
