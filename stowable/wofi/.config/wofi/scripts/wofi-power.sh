@@ -1,8 +1,8 @@
 #!/bin/bash
 
-entries="Shutdown\nReboot\nLogout\nHibernate\nSuspend\nLock"
+entries=" Shutdown\n Reboot\n Logout\n Hibernate\n Suspend\n Lock"
 
-selected=$(echo -e $entries | wofi --show dmenu -i --lines=7 --width=15% --hide-scroll --cache-file=/dev/null --prompt="Power Options" | awk '{print tolower($1)}')
+selected=$(echo -e $entries | wofi --show dmenu -i --lines=7 --width=15% --hide-scroll --cache-file=/dev/null --prompt="Power Options" | awk '{print tolower($2)}')
 
 case $selected in
   shutdown)
