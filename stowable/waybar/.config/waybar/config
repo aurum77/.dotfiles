@@ -1,5 +1,5 @@
 {
-  "layer": "top",
+  "layer": "bottom",
   "position": "bottom",
   "height": 40,
   "modules-left": ["sway/workspaces"],
@@ -10,19 +10,19 @@
     "disable-scroll-wraparound": true
   },
   "custom/media": {
-    "exec": "playerctl metadata --format \"{{trunc(title, 50)}}\" 2> /dev/null",
+    "exec": "playerctl metadata --format \" {{trunc(title, 50)}}\" 2> /dev/null",
     "interval": 5,
     "tooltip": false
   },
   "memory": {
     "interval": 5,
-    "format": " {used:0.2f} GB",
+    "format": " {used:0.2f} GB",
     "on-click": "/usr/bin/kitty --class floating_terminal --execute /usr/bin/htop",
     "tooltip": false
   },
   "network": {
     "interval": 3,
-    "format-wifi": "  {essid} {signalStrength:3d}%",
+    "format-wifi": "  {essid}  說 {signalStrength}%",
     "format-ethernet": " {ifname}",
     "format-disconnected": " Disconnected",
     "on-click": "/usr/bin/kitty --class floating_terminal --execute /usr/bin/nmtui",
@@ -31,7 +31,7 @@
   "pulseaudio": {
     "scroll-step": 5,
     "format": "{icon} {volume:3d}%",
-    "format-muted": "婢 muted",
+    "format-muted": "婢",
     "format-icons": {
       "default": ["", "", ""]
     },
@@ -47,10 +47,11 @@
     },
     "format": "{icon} {capacity:3d}%",
     "format-icons": ["", "", "", "", ""],
-    "format-charging": "ﮣ {icon} {capacity}%"
+    "format-charging": "ﮣ {icon} {capacity}%",
+    "format-full": "ﮣ"
   },
   "custom/clock": {
-    "exec": "LANG=tr_TR.UTF-8 date '+%d %B %A, %H:%M'",
+    "exec": "LANG=tr_TR.UTF-8 date '+ %d %B %A  羽 %H:%M'",
     "interval": 60,
     "tooltip": false
   }

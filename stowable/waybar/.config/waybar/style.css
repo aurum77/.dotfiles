@@ -6,7 +6,6 @@
 
 #waybar {
   background-color: #282828;
-  opacity: 0.95;
 }
 
 #workspaces {
@@ -17,7 +16,6 @@
 #workspaces button {
   margin: 0px 8px;
   background-color: #3c3836;
-  opacity: 0.95;
   border-radius: 20px;
 }
 
@@ -33,9 +31,45 @@
 
 #workspaces button.urgent {
   background-color: #fb4934;
+  color: #282828;
 }
 
 #pulseaudio.muted {
+  background-color: #fb4934;
+  color: #282828;
+}
+
+#battery.full {
+  background-color: #b8bb26;
+  color: #282828;
+}
+
+#battery.charging {
+  background-color: #83a598;
+  color: #282828;
+}
+
+#battery.warning {
+  background-color: #fe8019;
+  color: #282828;
+}
+
+#battery.critical {
+  background-color: #fb4934;
+  color: #282828;
+}
+
+#network.wifi {
+  background-color: #83a598;
+  color: #282828;
+}
+
+#network.ethernet {
+  background-color: #b8bb26;
+  color: #282828;
+}
+
+#network.disconnected {
   background-color: #fb4934;
   color: #282828;
 }
