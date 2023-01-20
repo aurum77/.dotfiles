@@ -1,6 +1,7 @@
 local map = vim.api.nvim_set_keymap
 local opts = { silent = true }
 
+
 -- Set space as leader
 map("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -18,7 +19,7 @@ map("n", "<Leader>qw", "<Cmd>wqa!<CR>", opts)
 map("n", "<Leader>qa", "<Cmd>qa!<CR>", opts)
 
 -- Toggle terminal
-map("n", "<C-t>", "<Cmd>ToggleTerm size=40 direction=vertical<CR>", opts)
+map("n", "<C-t>", "<Cmd>ToggleTerm direction=float<CR>", opts)
 
 -- Clear highlights
 map("n", "<Leader>hh", "<Cmd>nohlsearch<CR>", opts)
@@ -58,6 +59,9 @@ map("n", "<C-u>", "<C-u>zz", opts)
 
 -- Remove help bind
 map("n", "<F1>", "<NOP>", opts)
+map("i", "<F1>", "<NOP>", opts)
+map("v", "<F1>", "<NOP>", opts)
+map("x", "<F1>", "<NOP>", opts)
 
 -- Terminal mode
 -- toggleterm.nvim

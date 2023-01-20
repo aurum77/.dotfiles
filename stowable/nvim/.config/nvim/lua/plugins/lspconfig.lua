@@ -85,15 +85,20 @@ lspconfig.jsonls.setup({
 	on_attach = on_attach,
 })
 
-lspconfig.tailwindcss.setup({
+-- lspconfig.csharp_ls.setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- })
+
+lspconfig.omnisharp.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
 
-lspconfig.csharp_ls.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
+-- lspconfig.emmet_ls.setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- })
 
 lspconfig.sumneko_lua.setup({
 	capabilities = capabilities,

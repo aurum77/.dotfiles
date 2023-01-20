@@ -21,6 +21,7 @@ vim.opt.autoread = true
 vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
 vim.opt.mouse = ""
+vim.opt.cmdheight = 0
 vim.opt.fillchars = {
 	vert = "│", -- alternatives │
 	fold = " ",

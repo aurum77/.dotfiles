@@ -2,7 +2,7 @@ require("gruvbox").setup({
 	italic = false,
 })
 
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd.colorscheme("gruvbox")
 
 local colors = require("core.colors").palette
 

@@ -39,6 +39,7 @@ kitty -> GPU accelerated terminal emulator
 man-db -> manual pages
 man-pages -> > manual pages
 htop -> system info
+nvtop -> gpu info
 nodejs-lts-gallium -> web dev
 npm -> web dev
 neovim -> development
@@ -60,5 +61,13 @@ tokei -> count lines of code blazingly fast
 cpupower -> governor control
 dotnet-sdk-6.0 -> c#
 aspnet-runtime-6.0 -> asp.net
+dotnet-sdk -> c#
+aspnet-runtime -> asp.net
 docker -> containers
 docker-compose -> containers
+kanshi -> display profiles
+fuse2 -> appimage support
+p7zip -> extract 7zip
+unrar -> extract rar
+flatpak -> sandboxed applications
+dbeaver -> database gui

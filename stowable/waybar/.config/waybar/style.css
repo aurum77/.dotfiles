@@ -1,11 +1,32 @@
 * {
   font-family: Iosevka Extended, Symbols Nerd Font;
+  font-weight: 600;
   font-size: 14px;
   transition-duration: 0.3s;
 }
 
+#custom-media,
+#memory,
+#network,
+#battery,
+#pulseaudio,
+#custom-weather,
+#custom-time {
+  padding: 0 10px 0;
+  margin: 8px 6px;
+  border-radius: 15px;
+  background-color: #3c3836;
+  color: #d5c4a1;
+}
+
 #waybar {
   background-color: #282828;
+  opacity: 0.95;
+}
+
+#custom-time {
+  background-color: #8ec07c;
+  color: #282828;
 }
 
 #workspaces {
@@ -65,7 +86,7 @@
 }
 
 #network.ethernet {
-  background-color: #b8bb26;
+  background-color: #fabd2f;
   color: #282828;
 }
 
@@ -74,15 +95,7 @@
   color: #282828;
 }
 
-#custom-media,
-#memory,
-#network,
-#pulseaudio,
-#battery,
-#custom-clock {
-  padding: 0 10px 0;
-  margin: 8px 8px;
-  border-radius: 20px;
-  background-color: #3c3836;
-  color: #d5c4a1;
+#memory {
+  background-color: #8ec07c;
+  color: #282828;
 }

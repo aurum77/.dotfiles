@@ -2,17 +2,20 @@
   "layer": "bottom",
   "position": "bottom",
   "height": 40,
-  "modules-left": ["sway/workspaces"],
-  "modules-center": [],
-  "modules-right": ["custom/media", "memory", "network", "pulseaudio", "battery", "custom/clock"],
+  "modules-left": ["custom/weather", "pulseaudio", "custom/media"],
+  "modules-center": ["sway/workspaces"],
+  "modules-right": ["network", "battery", "custom/time"],
   "sway/workspaces": {
     "format": "{name}",
     "disable-scroll-wraparound": true
   },
   "custom/media": {
-    "exec": "playerctl metadata --format \" {{trunc(title, 50)}}\" 2> /dev/null",
+    "exec": "playerctl metadata --format \" {{title}}\" 2> /dev/null",
     "interval": 5,
-    "tooltip": false
+    "on-click": "playerctl play-pause",
+    "max-length": 30,
+    "escape": true,
+    "tooltip": true,
   },
   "memory": {
     "interval": 5,
@@ -22,21 +25,10 @@
   },
   "network": {
     "interval": 3,
-    "format-wifi": "  {essid}  說 {signalStrength}%",
+    "format-wifi": "  {essid}: {signalStrength:3d}%",
     "format-ethernet": " {ifname}",
     "format-disconnected": " Disconnected",
-    "on-click": "/usr/bin/kitty --class floating_terminal --execute /usr/bin/nmtui",
-    "tooltip": false
-  },
-  "pulseaudio": {
-    "scroll-step": 5,
-    "format": "{icon} {volume:3d}%",
-    "format-muted": "婢",
-    "format-icons": {
-      "default": ["", "", ""]
-    },
-    "on-click-right": "pavucontrol",
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click": "/usr/bin/kitty --class floating_terminal --execute /usr/bin/nmtui-connect",
     "tooltip": false
   },
   "battery": {
@@ -50,8 +42,26 @@
     "format-charging": "ﮣ {icon} {capacity}%",
     "format-full": "ﮣ"
   },
-  "custom/clock": {
-    "exec": "LANG=tr_TR.UTF-8 date '+ %d %B %A  羽 %H:%M'",
+  "pulseaudio": {
+    "scroll-step": 5,
+    "format": "{icon} {volume:3d}%",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+    },
+    "on-click-right": "pavucontrol",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "tooltip": false
+  },
+  "custom/weather": {
+    "exec": "$HOME/.config/waybar/scripts/weather.sh",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+    "interval": 3600
+  },
+  "custom/time": {
+    "exec": "LANG=tr_TR.UTF-8 date '+ %d %B %A   %H:%M'",
     "interval": 60,
     "tooltip": false
   }

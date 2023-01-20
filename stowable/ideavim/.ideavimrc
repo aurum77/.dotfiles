@@ -1,3 +1,14 @@
+# Settings
 imap fd <ESC>
 set number
 set relativenumber
+
+# Keybinds
+let mapleader = " "
+map <leader>ff <Action>(GotoFile)
+
+# Plugins
+set highlightedyank
+let g:highlightedyank_highlight_duration = "100"
+
+set sneak

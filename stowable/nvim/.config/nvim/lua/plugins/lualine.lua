@@ -99,14 +99,14 @@ lualine.setup({
 		globalstatus = true,
 		icons_enabled = true,
 		component_separators = "",
-		section_separators = "",
+		section_separators = { left = "", right = "" },
 		theme = {
 			normal = {
 				a = { bg = colors.bg1, fg = colors.fg },
-				b = { bg = colors.bg1, fg = colors.fg },
-				c = { bg = colors.bg1, fg = colors.fg },
-				x = { bg = colors.bg1, fg = colors.fg },
-				y = { bg = colors.bg1, fg = colors.fg },
+				b = { bg = colors.bg0, fg = colors.fg },
+				c = { bg = colors.bg0, fg = colors.fg },
+				x = { bg = colors.bg0, fg = colors.fg },
+				y = { bg = colors.bg0, fg = colors.fg },
 				z = { bg = colors.bg1, fg = colors.fg },
 			},
 		},
@@ -117,7 +117,7 @@ lualine.setup({
 		lualine_c = {},
 		lualine_x = {},
 		lualine_y = {},
-		lualine_z = { encoding, fileformat, "progress", "location" },
+		lualine_z = { encoding, fileformat, "progress", "location"},
 	},
 	inactive_sections = {
 		lualine_a = {},
