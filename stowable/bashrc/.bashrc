@@ -35,6 +35,7 @@ alias dac="dotnet-aspnet-codegenerator "
 
 # Set governor
 alias powersave="sudo cpupower frequency-set --governor powersave 2 > /dev/null"
+alias schedutil="sudo cpupower frequency-set --governor schedutil 2 > /dev/null"
 alias performance="sudo cpupower frequency-set --governor performance 2 > /dev/null"
 
 # Enables directory change without using cd

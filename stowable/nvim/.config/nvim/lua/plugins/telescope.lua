@@ -5,14 +5,14 @@ if not status_ok then
 end
 
 local borderchars = {
-	" ",
-	" ",
-	" ",
-	" ",
-	" ",
-	" ",
-	" ",
-	" ",
+	"─",
+	"│",
+	"─",
+	"│",
+	"┌",
+	"┐",
+	"┘",
+	"└",
 }
 
 telescope.setup({

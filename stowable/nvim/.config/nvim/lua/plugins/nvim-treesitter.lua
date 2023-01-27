@@ -21,6 +21,7 @@ configs.setup({
 		"bash",
 		"tsx",
 		"c_sharp",
+		"go",
 	},
 	highlight = {
 		enable = true,

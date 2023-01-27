@@ -18,8 +18,14 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export MOZ_ENABLE_WAYLAND=1
 # Only show the last 3 directories on the path prompt
 export PROMPT_DIRTRIM=3
-# fzf colors
-export FZF_DEFAULT_OPTS="--height 100% --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f,info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54"
+# Download go modules to somewhere acceptable
+export GOPATH=$HOME/.go
+# fzf config
+export FZF_DEFAULT_OPTS=" \
+--height 100% \
+--color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#e78284 \
+--color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf \
+--color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284"
 
 # Start ssh-agent if it's not running
 if ! pgrep ssh-agent 1> /dev/null;

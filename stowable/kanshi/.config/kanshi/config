@@ -3,6 +3,6 @@ profile {
 }
 
 profile {
-  output eDP-1 disable
-  output HDMI-A-1 mode 1920x1080
+  output eDP-1 mode 1920x1080 scale 1.25 position 300,500
+  output HDMI-A-1 mode 1920x1080 position 1920,0
 }

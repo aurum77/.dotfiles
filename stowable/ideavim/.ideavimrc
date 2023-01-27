@@ -12,3 +12,13 @@ set highlightedyank
 let g:highlightedyank_highlight_duration = "100"
 
 set sneak
+set ignorecase
+set smartcase
+
+map <C-d> <C-d>zz
+map <C-u> <C-u>zz
+
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l

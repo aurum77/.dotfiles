@@ -4,7 +4,8 @@ if not status_ok then
 	return
 end
 
-local colors = require("core.colors").palette
+-- local colors = require("core.colors").palette
+local colors = require("catppuccin.palettes").get_palette("frappe")
 
 local conditions = {
 	buffer_not_empty = function()
@@ -98,26 +99,17 @@ lualine.setup({
 	options = {
 		globalstatus = true,
 		icons_enabled = true,
+		section_separators = "",
 		component_separators = "",
-		section_separators = { left = "", right = "" },
-		theme = {
-			normal = {
-				a = { bg = colors.bg1, fg = colors.fg },
-				b = { bg = colors.bg0, fg = colors.fg },
-				c = { bg = colors.bg0, fg = colors.fg },
-				x = { bg = colors.bg0, fg = colors.fg },
-				y = { bg = colors.bg0, fg = colors.fg },
-				z = { bg = colors.bg1, fg = colors.fg },
-			},
-		},
+		theme = "catppuccin",
 	},
 	sections = {
-		lualine_a = { branch, filesize, filename, diff, diagnostics },
-		lualine_b = {},
-		lualine_c = {},
-		lualine_x = {},
-		lualine_y = {},
-		lualine_z = { encoding, fileformat, "progress", "location"},
+		lualine_a = { "mode" },
+		lualine_b = { branch, diff, diagnostics },
+		lualine_c = { filename },
+		lualine_x = { lsp, encoding, fileformat },
+		lualine_y = { "progress" },
+		lualine_z = { "location" },
 	},
 	inactive_sections = {
 		lualine_a = {},

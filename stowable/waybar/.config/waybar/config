@@ -1,68 +1,78 @@
 {
   "layer": "bottom",
-  "position": "bottom",
-  "height": 40,
-  "modules-left": ["custom/weather", "pulseaudio", "custom/media"],
-  "modules-center": ["sway/workspaces"],
-  "modules-right": ["network", "battery", "custom/time"],
-  "sway/workspaces": {
-    "format": "{name}",
-    "disable-scroll-wraparound": true
-  },
-  "custom/media": {
-    "exec": "playerctl metadata --format \" {{title}}\" 2> /dev/null",
-    "interval": 5,
-    "on-click": "playerctl play-pause",
-    "max-length": 30,
-    "escape": true,
-    "tooltip": true,
-  },
-  "memory": {
-    "interval": 5,
-    "format": " {used:0.2f} GB",
-    "on-click": "/usr/bin/kitty --class floating_terminal --execute /usr/bin/htop",
-    "tooltip": false
-  },
-  "network": {
-    "interval": 3,
-    "format-wifi": "  {essid}: {signalStrength:3d}%",
-    "format-ethernet": " {ifname}",
-    "format-disconnected": " Disconnected",
-    "on-click": "/usr/bin/kitty --class floating_terminal --execute /usr/bin/nmtui-connect",
-    "tooltip": false
-  },
-  "battery": {
-    "interval": 2,
-    "states": {
-      "warning": 30,
-      "critical": 15
+    "position": "bottom",
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["custom/weather", "custom/media", "network", "pulseaudio", "battery", "custom/time"],
+    "sway/workspaces": {
+      "format": "{name}",
+      "disable-scroll-wraparound": true
     },
-    "format": "{icon} {capacity:3d}%",
-    "format-icons": ["", "", "", "", ""],
-    "format-charging": "ﮣ {icon} {capacity}%",
-    "format-full": "ﮣ"
-  },
-  "pulseaudio": {
-    "scroll-step": 5,
-    "format": "{icon} {volume:3d}%",
-    "format-muted": "",
-    "format-icons": {
-      "default": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+    "custom/media": {
+      "format": "{icon}",
+      "return-type": "json",
+      "format-icons": {
+        "Playing": "",
+        "Paused": "",
+      },
+      "exec": "playerctl -a metadata --format '{\"tooltip\": \"{{markup_escape(artist)}} - {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+      "on-click": "playerctl play-pause",
     },
-    "on-click-right": "pavucontrol",
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "tooltip": false
-  },
-  "custom/weather": {
-    "exec": "$HOME/.config/waybar/scripts/weather.sh",
-    "return-type": "json",
-    "format": "{}",
-    "tooltip": true,
-    "interval": 3600
-  },
-  "custom/time": {
-    "exec": "LANG=tr_TR.UTF-8 date '+ %d %B %A   %H:%M'",
-    "interval": 60,
-    "tooltip": false
-  }
+    "memory": {
+      "interval": 5,
+      "format": " {used:0.2f} GB",
+      "on-click": "/usr/bin/kitty --class floating_terminal --execute /usr/bin/htop",
+      "tooltip": false
+    },
+    "network": {
+      "interval": 3,
+      "format-wifi": "  {signalStrength:3d}%",
+      "format-ethernet": " {ifname}",
+      "format-disconnected": " Disconnected",
+      "on-click": "/usr/bin/kitty --class floating_terminal --execute /usr/bin/nmtui-connect",
+      "tooltip": true,
+      "tooltip-format-wifi": "{essid}: {signalStrength:3d}%",
+      "tooltip-format-ethernet": "{ifname}",
+    },
+    "battery": {
+      "interval": 2,
+      "states": {
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{icon} {capacity:3d}%",
+      "format-icons": ["", "", "", "", ""],
+      "format-charging": "ﮣ {icon} {capacity}%",
+      "format-full": "ﮣ"
+    },
+    "pulseaudio": {
+      "scroll-step": 5,
+      "format": "{icon} {volume:3d}%",
+      "format-muted": "婢",
+      "format-icons": {
+        "default": ["墳"]
+      },
+      "on-click-right": "pavucontrol",
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "tooltip": false
+    },
+    "custom/weather": {
+      "exec": "$HOME/.config/waybar/scripts/weather.sh",
+      "return-type": "json",
+      "format": "{}",
+      "tooltip": true,
+      "interval": 3600
+    },
+    "custom/time": {
+      "exec": "LANG=tr_TR.UTF-8 date '+{\"text\": \" %d/%m/%y  %H:%M\", \"tooltip\": \"%d %B %A, %Y - %H:%M\"'}",
+      "interval": 60,
+      "format": "{}",
+      "return-type": "json",
+      "tooltip": true,
+      "escape": true
+    },
+    "sway/window": {
+      "format": "{}",
+      "max-length": 75,
+    }
 }

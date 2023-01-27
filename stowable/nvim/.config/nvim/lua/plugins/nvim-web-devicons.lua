@@ -34,6 +34,11 @@ nvim_web_devicons.set_icon({
 		color = "#569cd6",
 		name = "DAP_Stacks",
 	},
+	go = {
+		icon = "",
+		color = "#2596be",
+		name = "go",
+	},
 	dapui_watches = {
 		icon = "",
 		color = "#569cd6",

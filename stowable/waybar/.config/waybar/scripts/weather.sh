@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# get_weather.sh
+# weather.sh
 for i in {1..5}
 do
     text=$(curl -s "https://wttr.in/?format=1")
