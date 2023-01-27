@@ -3,7 +3,7 @@
     "position": "bottom",
     "modules-left": ["sway/workspaces"],
     "modules-center": ["sway/window"],
-    "modules-right": ["custom/weather", "custom/media", "network", "pulseaudio", "battery", "custom/time"],
+    "modules-right": ["custom/weather", "custom/media", "memory", "network", "pulseaudio", "battery", "custom/time"],
     "sway/workspaces": {
       "format": "{name}",
       "disable-scroll-wraparound": true
@@ -15,12 +15,18 @@
         "Playing": "",
         "Paused": "",
       },
+      "memory": {
+        "interval": 5,
+        "format": " {used:0.2f} GB",
+        "on-click": "/usr/bin/kitty --id task_manager --execute /usr/bin/htop",
+        "tooltip": false
+      },
       "exec": "playerctl -a metadata --format '{\"tooltip\": \"{{markup_escape(artist)}} - {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
       "on-click": "playerctl play-pause",
     },
     "memory": {
       "interval": 5,
-      "format": " {used:0.2f} GB",
+      "format": " {used:0.2f} GiB",
       "on-click": "/usr/bin/kitty --class floating_terminal --execute /usr/bin/htop",
       "tooltip": false
     },
