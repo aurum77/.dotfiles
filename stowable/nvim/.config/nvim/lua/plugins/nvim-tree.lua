@@ -27,7 +27,6 @@ nvim_tree.setup({
 		ignore = false,
 	},
 	hijack_unnamed_buffer_when_opening = true,
-	open_on_setup = true,
 	renderer = {
 		root_folder_modifier = ":t",
 		symlink_destination = false,

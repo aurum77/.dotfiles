@@ -1,7 +1,7 @@
 @import "frappe.css";
 
 * {
-  font-family: Iosevka, Symbols Nerd Font;
+  font-family: Iosevka, Material Design Icons Desktop;
   font-weight: 600;
   font-size: 14px;
   transition-duration: 0.2s;
@@ -16,7 +16,7 @@
 #custom-time {
   padding: 0 10px 0;
   margin: 8px 6px;
-  border-radius: 20px;
+  border-radius: 0px;
   background-color: @surface0;
   color: @text;
 }
@@ -24,11 +24,6 @@
 #waybar {
   background-color: @base;
   opacity: 0.95;
-}
-
-#custom-time {
-  background-color: @teal;
-  color: @mantle;
 }
 
 #custom-media.Playing {
@@ -44,7 +39,7 @@
   margin: 0px 6px;
   padding: 4px 0px;
   background-color: @surface0;
-  border-radius: 20px;
+  border-radius: 0px;
 }
 
 #workspaces button.hover {
@@ -83,16 +78,6 @@
 
 #battery.critical {
   background-color: @red;
-  color: @mantle;
-}
-
-#network.wifi {
-  background-color: @teal;
-  color: @mantle;
-}
-
-#network.ethernet {
-  background-color: @yellow;
   color: @mantle;
 }
 

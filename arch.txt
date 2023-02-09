@@ -71,6 +71,6 @@ p7zip -> extract 7zip
 unrar -> extract rar
 flatpak -> sandboxed applications
 dbeaver -> database gui
-papirus-icon-theme -> icons
 gtk-engine-murrine -> theme
 dunst -> notifications
+polkit-gnome -> polkit

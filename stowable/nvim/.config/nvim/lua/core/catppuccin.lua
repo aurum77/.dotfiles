@@ -4,10 +4,13 @@ require("catppuccin").setup({
 		dark = "frappe",
 	},
 	dim_inactive = {
-		enabled = true,
+		enabled = false,
 		shade = "dark",
 		percentage = 0.15,
 	},
+  color_overrides = {
+
+  }
 })
 
 vim.cmd.colorscheme("catppuccin-frappe")

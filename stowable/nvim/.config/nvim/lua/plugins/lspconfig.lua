@@ -75,10 +75,10 @@ lspconfig.jedi_language_server.setup({
 	on_attach = on_attach,
 })
 
-lspconfig.clangd.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
+-- lspconfig.clangd.setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- })
 
 lspconfig.html.setup({
 	capabilities = capabilities,
@@ -112,10 +112,10 @@ lspconfig.omnisharp.setup({
 	on_attach = on_attach,
 })
 
-lspconfig.gopls.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
+-- lspconfig.gopls.setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- })
 
 
 -- lspconfig.emmet_ls.setup({
