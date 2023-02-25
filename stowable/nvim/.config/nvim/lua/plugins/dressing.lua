@@ -7,7 +7,8 @@ end
 dressing.setup({
 	input = {
 		enabled = true,
-    border = "single",
+    -- border = "single",
+    border = "none",
     win_options = {
       winblend = 0,
       wrap = false,

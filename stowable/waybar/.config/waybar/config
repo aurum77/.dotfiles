@@ -3,7 +3,7 @@
   "position": "bottom",
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": ["sway/window"],
-  "modules-right": ["custom/weather", "custom/media", "memory", "network", "pulseaudio", "custom/time", "battery"],
+  "modules-right": ["custom/weather", "custom/media", "memory", "network", "pulseaudio",  "battery", "custom/time"],
   "sway/workspaces": {
     "format": "{name}",
     "disable-scroll-wraparound": true
@@ -12,8 +12,8 @@
     "format": "{icon}",
     "return-type": "json",
     "format-icons": {
-      "Playing": "󰏦",
-      "Paused": "󰐍"
+      "Playing": "󰏤",
+      "Paused": "󰐊"
     },
     "exec": "playerctl -a metadata --format '{\"tooltip\": \"{{markup_escape(artist)}} - {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
     "on-click": "playerctl play-pause"
@@ -44,13 +44,12 @@
       "critical": 15
     },
     "format": "{icon} {capacity:3d}%",
-    "format-icons": { 
+    "format-full": "{icon}",
+    "format-icons": {
       "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰂀", "󰂀", "󰂁", "󰂂", "󰁹"],
       "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋"],
       "full": "󰚥"
-    },
-    "format-charging": "{icon} {capacity:3d}%",
-    "format-full": "{icon}"
+    }
   },
   "pulseaudio": {
     "scroll-step": 5,
@@ -81,6 +80,10 @@
   },
   "sway/window": {
     "format": "{}",
-    "max-length": 75
+    "max-length": 75,
+    "tooltip": false,
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "$1"
+    }
   }
 }

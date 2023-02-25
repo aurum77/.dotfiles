@@ -5,6 +5,9 @@ if not status_ok then
 end
 
 gitsigns.setup({
+	preview_config = {
+		border = "none",
+	},
 	on_attach = function(bufnr)
 		local gs = package.loaded.gitsigns
 

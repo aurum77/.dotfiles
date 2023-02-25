@@ -19,8 +19,8 @@ cmp.setup({
 		end,
 	},
 	window = {
-		completion = cmp.config.window.bordered({border = "single"}),
-		documentation = cmp.config.window.bordered({border = "single"}),
+		-- completion = cmp.config.window.bordered({border = "single"}),
+		-- documentation = cmp.config.window.bordered({border = "single"}),
 	},
 	view = {
 		entries = { name = "custom", selection_order = "near_cursor" },
@@ -107,3 +107,21 @@ cmp.setup({
 		{ name = "emoji" },
 	}),
 })
+
+  -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+  cmp.setup.cmdline({ '/', '?' }, {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+      { name = 'buffer' }
+    }
+  })
+
+  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+  cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+      { name = 'path' }
+    }, {
+      { name = 'cmdline' }
+    })
+  })

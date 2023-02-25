@@ -4,7 +4,7 @@ if not status_ok then
 	return
 end
 
-require('lspconfig.ui.windows').default_options.border = 'single'
+-- require("lspconfig.ui.windows").default_options.border = "single"
 
 local border = {
 	{ "┌", "FloatBorder" },
@@ -23,9 +23,9 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-	border = border,
-})
+-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+-- 	border = border,
+-- })
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -74,11 +74,10 @@ lspconfig.jedi_language_server.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
-
--- lspconfig.clangd.setup({
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
--- })
+require'lspconfig'.gdscript.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
 
 lspconfig.html.setup({
 	capabilities = capabilities,
@@ -102,28 +101,17 @@ lspconfig.jsonls.setup({
 	on_attach = on_attach,
 })
 
--- lspconfig.csharp_ls.setup({
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
--- })
-
-lspconfig.omnisharp.setup({
+lspconfig.bashls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
 
--- lspconfig.gopls.setup({
+-- lspconfig.omnisharp.setup({
 -- 	capabilities = capabilities,
 -- 	on_attach = on_attach,
 -- })
 
-
--- lspconfig.emmet_ls.setup({
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
--- })
-
-lspconfig.sumneko_lua.setup({
+lspconfig.lua_ls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = {
@@ -147,3 +135,24 @@ lspconfig.sumneko_lua.setup({
 		},
 	},
 })
+
+-- lspconfig.clangd.setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- })
+
+-- lspconfig.csharp_ls.setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- })
+
+-- lspconfig.gopls.setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- })
+
+-- lspconfig.emmet_ls.setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- })
+

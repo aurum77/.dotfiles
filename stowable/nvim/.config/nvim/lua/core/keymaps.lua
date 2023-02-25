@@ -63,6 +63,9 @@ map("i", "<F1>", "<NOP>", opts)
 map("v", "<F1>", "<NOP>", opts)
 map("x", "<F1>", "<NOP>", opts)
 
+-- Remove help bind
+map("n", "J", "<Cmd>Gitsigns blame_line<CR>", opts)
+
 -- Terminal mode
 -- toggleterm.nvim
 map("t", "<C-t>", "<Cmd>ToggleTerm<CR>", opts)

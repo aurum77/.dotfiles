@@ -11,5 +11,6 @@ mason_tool_installer.setup({
 		"black",
 		"stylua",
 		"jq",
+    "shfmt"
 	},
 })

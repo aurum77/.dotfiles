@@ -15,7 +15,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
 	vim.cmd([[packadd packer.nvim]])
 end
 
--- Autocomand that reloads neovim whenever you save the plugins.lua file
 vim.cmd([[
 augroup packer_user_config
 autocmd!
@@ -33,7 +32,7 @@ end
 packer.init({
 	display = {
 		open_fn = function()
-			return require("packer.util").float()
+			return require("packer.util").float({ border = "none" })
 		end,
 	},
 	profile = {
@@ -107,6 +106,9 @@ return packer.startup(function(use)
 		"hrsh7th/cmp-emoji",
 	})
 	use({
+		"hrsh7th/cmp-cmdline",
+	})
+	use({
 		"L3MON4D3/LuaSnip",
 	})
 	use({
@@ -156,9 +158,12 @@ return packer.startup(function(use)
 			require("live_server.util").install()
 		end,
 	})
-	use({
-		"ellisonleao/gruvbox.nvim",
-	})
+	-- use({
+	-- 	"$HOME/code/lua/live-server.nvim",
+	-- 	run = function()
+	-- 		require("live_server.util").install()
+	-- 	end,
+	-- })
 	use({
 		"norcalli/nvim-colorizer.lua",
 	})
@@ -177,7 +182,9 @@ return packer.startup(function(use)
 	use({
 		"stevearc/dressing.nvim",
 	})
-use { "catppuccin/nvim", as = "catppuccin" }
+  use({
+    "ellisonleao/gruvbox.nvim"
+  })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

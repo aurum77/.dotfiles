@@ -59,10 +59,6 @@ gnu-netcat -> for termbin pastebin
 python-wheel -> needed for pip packages 
 tokei -> count lines of code blazingly fast 
 cpupower -> governor control
-dotnet-sdk-6.0 -> c#
-aspnet-runtime-6.0 -> asp.net
-dotnet-sdk -> c#
-aspnet-runtime -> asp.net
 docker -> containers
 docker-compose -> containers
 kanshi -> display profiles
@@ -74,3 +70,7 @@ dbeaver -> database gui
 gtk-engine-murrine -> theme
 dunst -> notifications
 polkit-gnome -> polkit
+fakeroot -> aur
+make -> aur
+gcc -> treesitter
+which -> find path of a program

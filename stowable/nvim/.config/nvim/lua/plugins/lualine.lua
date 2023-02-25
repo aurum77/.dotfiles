@@ -4,8 +4,7 @@ if not status_ok then
 	return
 end
 
--- local colors = require("core.colors").palette
-local colors = require("catppuccin.palettes").get_palette("frappe")
+local gruvbox = require('gruvbox.palette').colors
 
 local conditions = {
 	buffer_not_empty = function()
@@ -101,15 +100,24 @@ lualine.setup({
 		icons_enabled = true,
 		section_separators = "",
 		component_separators = "",
-		theme = "catppuccin",
+		theme = {
+			normal = {
+				a = { bg = gruvbox.dark1, fg = gruvbox.light1 },
+				b = { bg = gruvbox.dark0, fg = gruvbox.light1 },
+				c = { bg = gruvbox.dark0, fg = gruvbox.light1 },
+				x = { bg = gruvbox.dark0, fg = gruvbox.light1 },
+				y = { bg = gruvbox.dark0, fg = gruvbox.light1 },
+				z = { bg = gruvbox.dark1, fg = gruvbox.light1 },
+			},
+    }
 	},
 	sections = {
-		lualine_a = { "mode" },
-		lualine_b = { branch, diff, diagnostics },
-		lualine_c = { filetype, filename, filesize },
-		lualine_x = { lsp, encoding, fileformat },
-		lualine_y = { "progress" },
-		lualine_z = { "location" },
+		lualine_a = { branch, diff, diagnostics, filetype, filename, filesize },
+		lualine_b = {},
+		lualine_c = {},
+		lualine_x = {},
+		lualine_y = {},
+		lualine_z = { lsp, encoding, fileformat, "progress", "location" },
 	},
 	inactive_sections = {
 		lualine_a = {},

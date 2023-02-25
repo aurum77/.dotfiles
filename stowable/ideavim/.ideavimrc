@@ -2,10 +2,7 @@
 imap fd <ESC>
 set number
 set relativenumber
-
-# Keybinds
-let mapleader = " "
-map <leader>ff <Action>(GotoFile)
+set clipboard=unnamedplus
 
 # Plugins
 set highlightedyank
@@ -15,6 +12,12 @@ set sneak
 set ignorecase
 set smartcase
 
+# Keybinds
+let mapleader = " "
+map <leader>ff <Action>(GotoFile)
+map <leader>fw <Action>(SaveDocument)
+map <leader>fg <Action>(FindInPath)
+
 map <C-d> <C-d>zz
 map <C-u> <C-u>zz
 
@@ -22,3 +25,5 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+map <C-f> <Action>(ReformatCode)

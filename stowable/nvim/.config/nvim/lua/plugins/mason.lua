@@ -8,7 +8,7 @@ mason.setup({
 	ui = {
 		icons = {
 			package_installed = "✓",
-			package_pending = "o",
+			package_pending = "",
 			package_uninstalled = "✗",
 		},
 	},

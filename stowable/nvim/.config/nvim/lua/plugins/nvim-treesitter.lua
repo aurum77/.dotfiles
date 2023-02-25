@@ -5,24 +5,6 @@ if not status_ok then
 end
 
 configs.setup({
-	ensure_installed = {
-		"javascript",
-		"lua",
-		"markdown",
-		"python",
-		"typescript",
-		"c",
-		"cpp",
-		"html",
-		"css",
-		"http",
-		"json",
-		"jsonc",
-		"bash",
-		"tsx",
-		"c_sharp",
-		"go",
-	},
 	highlight = {
 		enable = true,
 		disable = {},
@@ -30,4 +12,5 @@ configs.setup({
 	autotag = {
 		enable = true,
 	},
+	auto_install = true,
 })

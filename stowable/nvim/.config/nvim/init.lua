@@ -33,7 +33,7 @@ require("plugins.dressing")
 
 -- Core settings
 require("core.options")
-require("core.catppuccin")
+require("core.theme")
 require("core.keymaps")
 require("core.autocommands")
 require("core.globals")

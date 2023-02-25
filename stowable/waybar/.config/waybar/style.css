@@ -1,4 +1,4 @@
-@import "frappe.css";
+@import "gruvbox.css";
 
 * {
   font-family: Iosevka, Material Design Icons Desktop;
@@ -10,6 +10,8 @@
 #network,
 #battery,
 #pulseaudio,
+#mode,
+#window,
 #memory,
 #custom-media,
 #custom-weather,
@@ -17,71 +19,46 @@
   padding: 0 10px 0;
   margin: 8px 6px;
   border-radius: 0px;
-  background-color: @surface0;
-  color: @text;
+  background-color: @dark1;
+  color: @light1;
 }
 
 #waybar {
-  background-color: @base;
+  background-color: @dark0;
   opacity: 0.95;
+  color: @light1;
 }
 
-#custom-media.Playing {
-  background-color: @blue;
-  color: @mantle;
+window#waybar.empty #window {
+  padding: 0px;
+  margin: 8px 6px;
+  background-color: transparent;
 }
 
 #workspaces {
-  margin: 8px;
+  margin-top: 8px;
+  margin-right: 8px;
+  margin-bottom: 8px;
 }
 
 #workspaces button {
   margin: 0px 6px;
-  padding: 4px 0px;
-  background-color: @surface0;
+  padding: 4px 4px;
+  background-color: @dark1;
   border-radius: 0px;
-}
-
-#workspaces button.hover {
-  background-color: @surface1;
+  color: @light1;
 }
 
 #workspaces button.focused {
-  background-color: @sapphire;
-  color: @mantle;
+  background-color: @neutral_aqua;
+  color: @dark0;
 }
 
 #workspaces button.urgent {
-  background-color: @red;
-  color: @mantle;
+  background-color: @neutral_red;
+  color: @dark0;
 }
 
-#pulseaudio.muted {
-  background-color: @red;
-  color: @mantle;
-}
-
-#battery.full {
-  background-color: @green;
-  color: @mantle;
-}
-
-#battery.charging {
-  background-color: @teal;
-  color: @mantle;
-}
-
-#battery.warning {
-  background-color: @yellow;
-  color: @mantle;
-}
-
-#battery.critical {
-  background-color: @red;
-  color: @mantle;
-}
-
-#network.disconnected {
-  background-color: @red;
-  color: @mantle;
+#window {
+  color: @light1;
 }

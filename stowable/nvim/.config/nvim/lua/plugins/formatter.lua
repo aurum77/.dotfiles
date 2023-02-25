@@ -21,5 +21,6 @@ formatter.setup({
 		python = { require("formatter.filetypes.python").black },
 		lua = { require("formatter.filetypes.lua").stylua },
 		cs = { require("formatter.filetypes.cs").dotnetformat },
+		sh = { require("formatter.filetypes.sh").shfmt },
 	},
 })
