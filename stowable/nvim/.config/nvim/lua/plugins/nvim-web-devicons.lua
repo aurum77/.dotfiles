@@ -56,6 +56,24 @@ nvim_web_devicons.set_icon({
 		cterm_color = 180,
 		name = "JsTest",
 	},
+  ["tsx"] = {
+    icon = "",
+    color = "#519aba",
+    cterm_color = "74",
+    name = "Tsx",
+  },
+  ["test.tsx"] = {
+    icon = "",
+    color = "#519aba",
+    cterm_color = "74",
+    name = "TypeScriptReactTest",
+  },
+  ["spec.tsx"] = {
+    icon = "",
+    color = "#519aba",
+    cterm_color = "74",
+    name = "TypeScriptReactSpec",
+  },
 })
 
 nvim_web_devicons.setup({})

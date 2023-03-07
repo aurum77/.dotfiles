@@ -21,11 +21,11 @@ export PROMPT_DIRTRIM=3
 # Download go modules to somewhere acceptable
 export GOPATH=$HOME/.go
 # fzf config
-export FZF_DEFAULT_OPTS=" \
+export FZF_DEFAULT_OPTS="
 --height 100% \
---color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#e78284 \
---color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf \
---color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284"
+--color=bg+:#3c3836,bg:#282828,spinner:#fabd2f,hl:#fabd2f \
+--color=fg:#ebdbb2,header:#665c54,info:#83a598,pointer:#83a598 \
+--color=marker:#fe8019,fg+:#ebdbb2,prompt:#bdae93,hl+:#fabd2f"
 
 # Start ssh-agent if it's not running
 if ! pgrep ssh-agent 1> /dev/null;

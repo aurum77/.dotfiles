@@ -27,6 +27,8 @@ alias gl='git log '
 alias glo='git log --oneline'
 alias gst='git status '
 
+alias dp='imv ~/pics/dp.png'
+
 # termbin pastebin
 alias tb="nc termbin.com 9999"
 

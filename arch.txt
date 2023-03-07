@@ -74,3 +74,4 @@ fakeroot -> aur
 make -> aur
 gcc -> treesitter
 which -> find path of a program
+android-tools -> useful

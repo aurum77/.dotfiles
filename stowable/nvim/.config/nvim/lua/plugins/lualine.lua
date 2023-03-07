@@ -112,12 +112,12 @@ lualine.setup({
     }
 	},
 	sections = {
-		lualine_a = { branch, diff, diagnostics, filetype, filename, filesize },
+		lualine_a = { branch, filetype, filename, filesize, diagnostics },
 		lualine_b = {},
 		lualine_c = {},
 		lualine_x = {},
 		lualine_y = {},
-		lualine_z = { lsp, encoding, fileformat, "progress", "location" },
+		lualine_z = { diff, encoding, fileformat, "progress", "location" },
 	},
 	inactive_sections = {
 		lualine_a = {},

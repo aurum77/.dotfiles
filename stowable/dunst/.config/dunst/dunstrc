@@ -33,18 +33,18 @@ corner_radius = 0
 
 mouse_left_click = close_current
 
-frame_color = "#8CAAEE"
+frame_color = "#458588"
 separator_color= frame
 
 [urgency_low]
-background = "#303446"
-foreground = "#C6D0F5"
+background = "#282828"
+foreground = "#EBDBB2"
 
 [urgency_normal]
-background = "#303446"
-foreground = "#C6D0F5"
+background = "#282828"
+foreground = "#EBDBB2"
 
 [urgency_critical]
-background = "#303446"
-foreground = "#C6D0F5"
-frame_color = "#EF9F76"
+background = "#282828"
+foreground = "#EBDBB2"
+frame_color = "#CC241D"

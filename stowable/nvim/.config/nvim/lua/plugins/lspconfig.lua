@@ -54,6 +54,57 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "<Leader>fd", "<Cmd>TroubleToggle<CR>", bufopts)
 end
 
+lspconfig.jsonls.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+lspconfig.bashls.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+lspconfig.tailwindcss.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+lspconfig.jedi_language_server.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+lspconfig.gdscript.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+lspconfig.html.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+
+lspconfig.emmet_ls.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = {
+    "html"
+  }
+})
+
+lspconfig.cssls.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		css = {
+			lint = {
+        -- Don't error out when using tailwind
+				unknownAtRules = "ignore",
+			},
+		},
+	},
+})
+
 lspconfig.tsserver.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
@@ -69,47 +120,6 @@ lspconfig.tsserver.setup({
 		return vim.loop.cwd()
 	end,
 })
-
-lspconfig.jedi_language_server.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-require'lspconfig'.gdscript.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
-lspconfig.html.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
-lspconfig.cssls.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	settings = {
-		css = {
-			lint = {
-				unknownAtRules = "ignore",
-			},
-		},
-	},
-})
-
-lspconfig.jsonls.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
-lspconfig.bashls.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- lspconfig.omnisharp.setup({
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
--- })
 
 lspconfig.lua_ls.setup({
 	capabilities = capabilities,
@@ -136,6 +146,11 @@ lspconfig.lua_ls.setup({
 	},
 })
 
+-- lspconfig.omnisharp.setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- })
+
 -- lspconfig.clangd.setup({
 -- 	capabilities = capabilities,
 -- 	on_attach = on_attach,
@@ -150,9 +165,3 @@ lspconfig.lua_ls.setup({
 -- 	capabilities = capabilities,
 -- 	on_attach = on_attach,
 -- })
-
--- lspconfig.emmet_ls.setup({
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
--- })
-

@@ -1,4 +1,4 @@
-set font "Iosevka Extended 11"
+set font "Iosevka 10"
 set statusbar-home-tilde true
 set selection-clipboard clipboard
 
