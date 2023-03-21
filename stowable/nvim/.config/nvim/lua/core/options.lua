@@ -23,6 +23,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
 vim.opt.mouse = ""
 vim.opt.cmdheight = 0
+vim.opt.helpheight = 7777
 vim.opt.fillchars = {
 	vert = "│", -- alternatives │
 	fold = " ",

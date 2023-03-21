@@ -75,3 +75,5 @@ make -> aur
 gcc -> treesitter
 which -> find path of a program
 android-tools -> useful
+dotnet-sdk-6.0 -> dootnet
+aspnet-runtime-6.0 -> dootnet

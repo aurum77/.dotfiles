@@ -19,7 +19,7 @@ map("n", "<Leader>qw", "<Cmd>wqa!<CR>", opts)
 map("n", "<Leader>qa", "<Cmd>qa!<CR>", opts)
 
 -- Toggle terminal
-map("n", "<C-t>", "<Cmd>ToggleTerm direction=float<CR>", opts)
+map("n", "<C-t>", "<Cmd>ToggleTerm<CR>", opts)
 
 -- Clear highlights
 map("n", "<Leader>hh", "<Cmd>nohlsearch<CR>", opts)

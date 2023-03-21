@@ -45,7 +45,7 @@ swap_offset=$(filefrag -v /swapfile | head -4 | tail +4 | awk {'print substr($4,
 echo swap offset is $swap_offset
 
 echo adding swap to fstab
-echo '/swapfile   none    swap    defaults    0   0' | tee -a /etc/fstab 2 >/dev/null
+echo '/swapfile   none    swap    defaults    0   0' | tee -a /etc/fstab 2>/dev/null
 
 # this is rather lazy
 echo adding resume hook to mkinitcpio.conf

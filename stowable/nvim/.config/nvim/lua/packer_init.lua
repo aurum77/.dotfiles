@@ -165,6 +165,9 @@ return packer.startup(function(use)
 	-- 	end,
 	-- })
 	use({
+		"$HOME/code/lua/dotnet.nvim",
+	})
+	use({
 		"norcalli/nvim-colorizer.lua",
 	})
 	use({
