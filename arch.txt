@@ -40,7 +40,7 @@ man-db -> manual pages
 man-pages -> > manual pages
 htop -> system info
 nvtop -> gpu info
-nodejs-lts-gallium -> web dev
+nodejs-lts-hydrogen -> web dev
 npm -> web dev
 neovim -> development
 python-pip -> needed for nvim
@@ -77,3 +77,4 @@ which -> find path of a program
 android-tools -> useful
 dotnet-sdk-6.0 -> dootnet
 aspnet-runtime-6.0 -> dootnet
+tlp -> power management

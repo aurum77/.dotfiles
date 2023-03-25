@@ -1,10 +1,14 @@
 require("gruvbox").setup({
-	italic = false,
+	italic = {
+		strings = false,
+		operators = false,
+		comments = true,
+	},
 })
 
 vim.cmd.colorscheme("gruvbox")
 
-local gruvbox = require('gruvbox.palette').colors
+local gruvbox = require("gruvbox.palette").colors
 
 vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = gruvbox.dark1 })
 vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { bg = gruvbox.dark1 })
