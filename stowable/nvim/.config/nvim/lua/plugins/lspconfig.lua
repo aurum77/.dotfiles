@@ -23,10 +23,6 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
--- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
--- 	border = border,
--- })
-
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
@@ -69,7 +65,7 @@ lspconfig.tailwindcss.setup({
 	on_attach = on_attach,
 })
 
-lspconfig.pyright.setup({
+lspconfig.jedi_language_server.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
@@ -84,13 +80,17 @@ lspconfig.html.setup({
 	on_attach = on_attach,
 })
 
+lspconfig.prismals.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
 
 lspconfig.emmet_ls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = {
-    "html"
-  }
+		"html",
+	},
 })
 
 lspconfig.cssls.setup({
@@ -99,7 +99,7 @@ lspconfig.cssls.setup({
 	settings = {
 		css = {
 			lint = {
-        -- Don't error out when using tailwind
+				-- Don't error out when using tailwind
 				unknownAtRules = "ignore",
 			},
 		},
@@ -151,11 +151,6 @@ lspconfig.omnisharp.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
-
--- lspconfig.jedi_language_server.setup({
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
--- })
 
 -- lspconfig.clangd.setup({
 -- 	capabilities = capabilities,

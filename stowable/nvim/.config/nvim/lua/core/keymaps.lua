@@ -66,6 +66,10 @@ map("x", "<F1>", "<NOP>", opts)
 -- Remove help bind
 map("n", "J", "<Cmd>Gitsigns blame_line<CR>", opts)
 
+-- Lsp bindings
+map("n", "<Leader>lr", "<Cmd>LspRestart<CR>", opts)
+map("n", "<Leader>lm", "<Cmd>Mason<CR>", opts)
+
 -- Terminal mode
 -- toggleterm.nvim
 map("t", "<C-t>", "<Cmd>ToggleTerm<CR>", opts)

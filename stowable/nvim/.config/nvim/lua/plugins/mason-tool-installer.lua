@@ -6,11 +6,11 @@ end
 
 mason_tool_installer.setup({
 	ensure_installed = {
-		"prettier",
-		"clang-format",
 		"black",
-		"stylua",
+		"clang-format",
 		"jq",
+		"prettier",
+		"stylua",
     "shfmt"
 	},
 })

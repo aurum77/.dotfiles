@@ -30,6 +30,7 @@ require("plugins.leap")
 require("plugins.ccc")
 require("plugins.trouble")
 require("plugins.dressing")
+require("plugins.gx")
 
 -- Core settings
 require("core.options")

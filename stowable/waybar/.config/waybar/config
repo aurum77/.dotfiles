@@ -3,7 +3,7 @@
   "position": "bottom",
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": ["sway/window"],
-  "modules-right": ["custom/weather", "custom/media", "memory", "network", "pulseaudio",  "battery", "custom/time"],
+  "modules-right": ["tray", "custom/weather", "custom/media", "memory", "network", "pulseaudio",  "battery", "custom/time"],
   "sway/workspaces": {
     "format": "{name}",
     "disable-scroll-wraparound": true
@@ -85,5 +85,9 @@
     "rewrite": {
       "(.*) — Mozilla Firefox": "$1"
     }
+  },
+  "tray": {
+    "icon-size": 17,
+    "spacing": 10
   }
 }
