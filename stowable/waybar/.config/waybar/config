@@ -2,7 +2,7 @@
   "layer": "bottom",
   "position": "bottom",
   "modules-left": ["sway/workspaces", "sway/mode"],
-  "modules-center": ["sway/window"],
+  "modules-center": [],
   "modules-right": ["tray", "custom/weather", "custom/media", "memory", "network", "pulseaudio",  "battery", "custom/time"],
   "sway/workspaces": {
     "format": "{name}",
@@ -78,16 +78,8 @@
     "tooltip": true,
     "escape": true
   },
-  "sway/window": {
-    "format": "{}",
-    "max-length": 75,
-    "tooltip": false,
-    "rewrite": {
-      "(.*) — Mozilla Firefox": "$1"
-    }
-  },
   "tray": {
     "icon-size": 17,
-    "spacing": 10
+    "spacing": 25
   }
 }

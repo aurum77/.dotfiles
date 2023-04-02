@@ -78,3 +78,4 @@ android-tools -> useful
 dotnet-sdk-6.0 -> dootnet
 aspnet-runtime-6.0 -> dootnet
 tlp -> power management
+ttf-jetbrains-mono -> terminal font

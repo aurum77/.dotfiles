@@ -15,12 +15,10 @@ git clone https://github.com/jmattheis/gruvbox-dark-icons-gtk.git $HOME/.icons/g
 
 # Get the latest fonts
 echo "Getting fonts"
-wget -q --show-progress $(curl -s https://api.github.com/repos/be5invis/Iosevka/releases/latest |  jq --raw-output '.assets[] | select(.name | test("^(ttf-iosevka)-\\d+\\.\\d\\.\\d\\.zip$")) .browser_download_url') -O /tmp/ttf-iosevka.zip
 wget -q --show-progress $(curl -s https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest |  jq --raw-output '.assets[] | select(.name | test("^(NerdFontsSymbolsOnly).zip$")) .browser_download_url') -O /tmp/ttf-symbols.zip
 git clone https://github.com/Templarian/MaterialDesign-Font /tmp/material-fonts
 
 echo "Installing fonts"
-unzip -q /tmp/ttf-iosevka.zip -d $HOME/.fonts/
 unzip -q /tmp/ttf-symbols.zip -d /tmp/ttf-symbols/
 mv /tmp/ttf-symbols/Symbols-2048-em\ Nerd\ Font\ Complete.ttf $HOME/.fonts/
 mv /tmp/material-fonts/MaterialDesignIconsDesktop.ttf $HOME/.fonts/

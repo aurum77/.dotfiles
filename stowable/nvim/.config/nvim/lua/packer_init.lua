@@ -168,9 +168,6 @@ return packer.startup(function(use)
 		"norcalli/nvim-colorizer.lua",
 	})
 	use({
-		"ggandor/leap.nvim",
-	})
-	use({
 		"ThePrimeagen/vim-be-good",
 	})
 	use({
