@@ -55,7 +55,6 @@ fzf -> cool fuzzy finder
 imv -> image viewer
 neofetch -> pretty system info
 libva-mesa-driver -> gallium video decode driver
-gnu-netcat -> for termbin pastebin
 python-wheel -> needed for pip packages 
 tokei -> count lines of code blazingly fast 
 cpupower -> governor control

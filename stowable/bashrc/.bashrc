@@ -29,12 +29,6 @@ alias gst='git status '
 
 alias dp='imv ~/pics/dp.png'
 
-# termbin pastebin
-alias tb="nc termbin.com 9999"
-
-# Dotnet code generator
-alias dac="dotnet-aspnet-codegenerator "
-
 # Set governor
 alias powersave="sudo cpupower frequency-set --governor powersave 2 > /dev/null"
 alias schedutil="sudo cpupower frequency-set --governor schedutil 2 > /dev/null"
@@ -45,4 +39,4 @@ shopt -s autocd
 
 # Source fzf config
 source /usr/share/fzf/completion.bash
-source /usr/share/fzf/key-bindings.bash 
+source /usr/share/fzf/key-bindings.bash
