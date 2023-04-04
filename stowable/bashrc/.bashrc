@@ -26,6 +26,7 @@ alias gcm='git commit -m '
 alias gl='git log '
 alias glo='git log --oneline'
 alias gst='git status '
+alias gp='git push '
 
 alias dp='imv ~/pics/dp.png'
 
