@@ -1,0 +1,73 @@
+git -> to clone paru
+gammastep -> night light 
+systemd-zram -> enable zram
+firefox -> browser
+stow -> dotfile deployment
+brightnessctl -> needed for brightness control
+xdg-desktop-portal-wlr -> wayland stuff
+xdg-user-dirs -> user direcotries
+xorg-x11-server-Xwayland -> non-wayland application support
+exa -> cool and fast ls replacement
+Thunar -> file manager
+xsettingsd -> theming for applications using xwayland
+grim -> wayland screenshots
+slurp -> allows taking coordinates of areas in wayland for screenshots
+wf-recorder -> record video 
+gvfs-mtp -> support for mtp devices
+wl-clipboard -> clipboard for wayland
+jq -> needed for parsing the swaymsg json
+bash-completion -> self explanatory
+mate-calc -> self explanatory
+gnome-keyring -> keyring
+seahorse -> gui for keyrings
+playerctl -> media sound control
+mpv -> minimal video player
+sway -> window manager
+sway-systemd -> sway systemd integration
+swaybg -> for swaywm background
+swaylock -> lock screen
+google-noto-fonts-common -> fonts for general ui
+google-noto-emoji-fonts -> google's emojis
+pipewire -> we need sound don't we ?
+-- pipewire-pulse -> pulse configuration
+pavucontrol -> sound control gui
+wofi -> application launcher
+waybar -> info bar for sway
+zathura -> pdf reader
+zathura-pdf-mupdf -> pdf plugin for zathura
+libreoffice -> office suite
+kitty -> GPU accelerated terminal emulator
+man-db -> manual pages
+man-pages -> > manual pages
+htop -> system info
+nvtop -> gpu info
+nodejs18 -> web dev
+neovim -> development
+python-pip -> needed for nvim
+ripgrep -> needed for nvim
+unzip -> needed for nvim
+wget -> needed for nvim
+tidy -> needed for nvim
+tar -> needed for nvim
+gzip -> needed for nvim
+fzf -> cool fuzzy finder
+imv -> image viewer
+neofetch -> pretty system info
+libva-vdpau-driver -> video decode driver
+tokei -> count lines of code blazingly fast 
+podman -> containers
+-- docker-compose -> containers
+kanshi -> display profiles
+fuse2fs -> appimage support
+p7zip -> extract 7zip
+unrar -> extract rar
+flatpak -> sandboxed applications
+-- dbeaver -> database gui
+gtk-murrine-engine -> theme
+dunst -> notifications
+polkit-gnome -> polkit
+gcc -> treesitter
+which -> find path of a program
+dotnet6.0 -> dootnet
+tlp -> power management
+jetbrains-mono-fonts -> terminal font

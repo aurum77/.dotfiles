@@ -182,9 +182,15 @@ return packer.startup(function(use)
 	use({
 		"ellisonleao/gruvbox.nvim",
 	})
-  use({
-    "chrishrb/gx.nvim"
-  })
+	use({
+		"chrishrb/gx.nvim",
+	})
+	use({
+		"$HOME/code/lua/dotnet.nvim",
+	})
+	use({
+		"folke/neodev.nvim",
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
