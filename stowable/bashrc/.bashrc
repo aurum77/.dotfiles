@@ -30,6 +30,10 @@ alias gp='git push '
 
 alias dp='imv ~/pics/dp.png'
 
+# Set governor
+alias powersave="sudo cpupower frequency-set --governor powersave 2 > /dev/null"
+alias performance="sudo cpupower frequency-set --governor performance 2 > /dev/null"
+
 # Enables directory change without using cd
 shopt -s autocd
 

@@ -24,7 +24,7 @@
 }
 
 #waybar {
-  opacity: 0.95;
+  opacity: 1;
   color: @light1;
 }
 
@@ -40,8 +40,8 @@ window#waybar.empty #window {
 }
 
 #workspaces button {
-  margin: 0px 6px;
-  padding: 4px 4px;
+  margin: 0px 4px;
+  padding: 2px 2px;
   border-radius: 0px;
   background-color: @dark1;
   color: @light1;

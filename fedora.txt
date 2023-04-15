@@ -26,7 +26,7 @@ sway-systemd -> sway systemd integration
 swaybg -> for swaywm background
 swaylock -> lock screen
 google-noto-fonts-common -> fonts for general ui
-google-noto-emoji-fonts -> google's emojis
+twitter-twemoji-fonts -> goo emojis
 pipewire -> we need sound don't we ?
 pipewire-pulseaudio -> pulse configuration
 pavucontrol -> sound control gui
