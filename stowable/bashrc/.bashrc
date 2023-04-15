@@ -34,5 +34,7 @@ alias dp='imv ~/pics/dp.png'
 shopt -s autocd
 
 # Source fzf config
-source /usr/share/fzf/completion.bash
-source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/shell/key-bindings.bash
+
+# Source bash completion
+source /etc/profile.d/bash_completion.sh

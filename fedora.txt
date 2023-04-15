@@ -1,6 +1,5 @@
 git -> to clone paru
 gammastep -> night light 
-systemd-zram -> enable zram
 firefox -> browser
 stow -> dotfile deployment
 brightnessctl -> needed for brightness control
@@ -29,7 +28,7 @@ swaylock -> lock screen
 google-noto-fonts-common -> fonts for general ui
 google-noto-emoji-fonts -> google's emojis
 pipewire -> we need sound don't we ?
--- pipewire-pulse -> pulse configuration
+pipewire-pulseaudio -> pulse configuration
 pavucontrol -> sound control gui
 wofi -> application launcher
 waybar -> info bar for sway
@@ -41,7 +40,7 @@ man-db -> manual pages
 man-pages -> > manual pages
 htop -> system info
 nvtop -> gpu info
-nodejs18 -> web dev
+nodejs -> web dev
 neovim -> development
 python-pip -> needed for nvim
 ripgrep -> needed for nvim
@@ -56,18 +55,17 @@ neofetch -> pretty system info
 libva-vdpau-driver -> video decode driver
 tokei -> count lines of code blazingly fast 
 podman -> containers
--- docker-compose -> containers
 kanshi -> display profiles
-fuse2fs -> appimage support
+fuse -> appimage support
 p7zip -> extract 7zip
 unrar -> extract rar
 flatpak -> sandboxed applications
--- dbeaver -> database gui
 gtk-murrine-engine -> theme
 dunst -> notifications
 polkit-gnome -> polkit
 gcc -> treesitter
+gcc-c++ -> treesitter
 which -> find path of a program
-dotnet6.0 -> dootnet
+dotnet-sdk-6.0 -> dootnet
 tlp -> power management
 jetbrains-mono-fonts -> terminal font

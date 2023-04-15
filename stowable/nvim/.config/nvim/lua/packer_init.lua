@@ -34,6 +34,7 @@ packer.init({
 		open_fn = function()
 			return require("packer.util").float({ border = "none" })
 		end,
+    working_sym = '󰑓', -- The symbol for a plugin being installed/updated
 	},
 	profile = {
 		enable = true,
@@ -184,9 +185,6 @@ return packer.startup(function(use)
 	})
 	use({
 		"chrishrb/gx.nvim",
-	})
-	use({
-		"$HOME/code/lua/dotnet.nvim",
 	})
 	use({
 		"folke/neodev.nvim",
