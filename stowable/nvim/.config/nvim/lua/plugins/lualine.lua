@@ -94,13 +94,6 @@ local branch = {
 	icon = "",
 }
 
-local mode = {
-	"mode",
-	fmt = function(str)
-    return string:sub(1, 1)
-  end
-}
-
 lualine.setup({
 	options = {
 		globalstatus = true,
@@ -121,7 +114,7 @@ lualine.setup({
 	},
 	sections = {
 		-- filetype,
-		lualine_a = { mode },
+		lualine_a = {"mode" },
 		lualine_b = { branch },
 		lualine_c = { diagnostics },
 		lualine_x = { diff, fileformat },
