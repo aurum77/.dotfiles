@@ -28,10 +28,25 @@ alias glo='git log --oneline'
 alias gst='git status '
 alias gp='git push '
 
-alias dp='imv ~/pics/dp.png'
+dap() {
+  dotnet add "$1" package "$2"
+}
+
+dar() {
+  dotnet add "$1" reference "$2"
+}
+
+dn() {
+  dotnet new "$1" -n "$2"
+}
+
+dsa() {
+  dotnet sln add "$1"
+}
 
 # Set governor
 alias powersave="sudo cpupower frequency-set --governor powersave 2 > /dev/null"
+alias schedutil="sudo cpupower frequency-set --governor schedutil 2 > /dev/null"
 alias performance="sudo cpupower frequency-set --governor performance 2 > /dev/null"
 
 # Enables directory change without using cd

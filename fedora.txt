@@ -67,5 +67,7 @@ gcc -> treesitter
 gcc-c++ -> treesitter
 which -> find path of a program
 dotnet-sdk-6.0 -> dootnet
+dotnet-sdk-7.0 -> dootnet for csharp_ls
 tlp -> power management
 jetbrains-mono-fonts -> terminal font
+android-tools -> adb etc.

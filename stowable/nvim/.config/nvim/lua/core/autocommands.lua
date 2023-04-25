@@ -17,11 +17,11 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 
 -- Don't draw cursorline if not focused
 local cursor_highlight_group = vim.api.nvim_create_augroup("CursorHighlight", { clear = true })
-vim.api.nvim_create_autocmd({ "WinEnter", "User TelescopeFindPre" }, {
+vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter", "User TelescopeFindPre" }, {
 	command = "lua vim.opt.cursorline = true",
 	group = cursor_highlight_group,
 })
-vim.api.nvim_create_autocmd("WinLeave", {
+vim.api.nvim_create_autocmd({ "BufLeave", "WinLeave" }, {
 	command = "lua vim.opt.cursorline = false",
 	group = cursor_highlight_group,
 })

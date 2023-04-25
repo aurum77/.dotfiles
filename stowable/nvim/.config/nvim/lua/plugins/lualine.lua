@@ -4,7 +4,7 @@ if not status_ok then
 	return
 end
 
-local gruvbox = require('gruvbox.palette').colors
+local gruvbox = require("gruvbox.palette").colors
 
 local conditions = {
 	buffer_not_empty = function()
@@ -25,7 +25,7 @@ local lsp = {
 		local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
 		local clients = vim.lsp.get_active_clients()
 		if next(clients) == nil then
-			return ""
+			return "no ls"
 		end
 		for _, client in ipairs(clients) do
 			local filetypes = client.config.filetypes
@@ -45,13 +45,13 @@ local filesize = {
 
 local filetype = {
 	"filetype",
-	icon_only = true,
+	icon_only = false,
 	colored = false,
 }
 
 local filename = {
 	"filename",
-	path = 1,
+	path = 0,
 	symbols = {
 		modified = " ",
 		readonly = " ",
@@ -94,30 +94,39 @@ local branch = {
 	icon = "",
 }
 
+local mode = {
+	"mode",
+	fmt = function(str)
+    return string:sub(1, 1)
+  end
+}
+
 lualine.setup({
 	options = {
 		globalstatus = true,
 		icons_enabled = true,
 		section_separators = "",
 		component_separators = "",
-		theme = {
-			normal = {
-				a = { bg = gruvbox.dark1, fg = gruvbox.light1 },
-				b = { bg = gruvbox.dark0, fg = gruvbox.light1 },
-				c = { bg = gruvbox.dark0, fg = gruvbox.light1 },
-				x = { bg = gruvbox.dark0, fg = gruvbox.light1 },
-				y = { bg = gruvbox.dark0, fg = gruvbox.light1 },
-				z = { bg = gruvbox.dark1, fg = gruvbox.light1 },
-			},
-    }
+		-- theme = {
+		-- 	normal = {
+		-- 		a = { bg = gruvbox.dark1, fg = gruvbox.light1 },
+		-- 		b = { bg = gruvbox.dark0, fg = gruvbox.light1 },
+		-- 		c = { bg = gruvbox.dark0, fg = gruvbox.light1 },
+		-- 		x = { bg = gruvbox.dark0, fg = gruvbox.light1 },
+		-- 		y = { bg = gruvbox.dark0, fg = gruvbox.light1 },
+		-- 		z = { bg = gruvbox.dark1, fg = gruvbox.light1 },
+		-- 	},
+		-- },
+		theme = "auto",
 	},
 	sections = {
-		lualine_a = { branch, filetype, filename, filesize, diagnostics },
-		lualine_b = {},
-		lualine_c = {},
-		lualine_x = {},
-		lualine_y = {},
-		lualine_z = { diff, encoding, fileformat, "progress", "location" },
+		-- filetype,
+		lualine_a = { mode },
+		lualine_b = { branch },
+		lualine_c = { diagnostics },
+		lualine_x = { diff, fileformat },
+		lualine_y = { "progress", lsp },
+		lualine_z = { filetype, "location" },
 	},
 	inactive_sections = {
 		lualine_a = {},

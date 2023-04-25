@@ -42,9 +42,8 @@ cmp.setup({
 	mapping = cmp.mapping.preset.insert({
 		["<C-b>"] = cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
-		["<Tab>"] = cmp.mapping.select_next_item(),
-		["<S-Tab>"] = cmp.mapping.select_prev_item(),
-		--[[
+		-- ["<Tab>"] = cmp.mapping.select_next_item(),
+		-- ["<S-Tab>"] = cmp.mapping.select_prev_item(),
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
@@ -73,8 +72,7 @@ cmp.setup({
 			"i",
 			"s",
 		}),
-    ]]
-		--
+
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
 		["<CR>"] = function(fallback)

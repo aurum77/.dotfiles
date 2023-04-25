@@ -34,7 +34,7 @@ packer.init({
 		open_fn = function()
 			return require("packer.util").float({ border = "none" })
 		end,
-    working_sym = '󰑓', -- The symbol for a plugin being installed/updated
+		working_sym = "󰑓", -- The symbol for a plugin being installed/updated
 	},
 	profile = {
 		enable = true,
@@ -153,18 +153,21 @@ return packer.startup(function(use)
 	use({
 		"j-hui/fidget.nvim",
 	})
-	use({
-		"aurum77/live-server.nvim",
-		run = function()
-			require("live_server.util").install()
-		end,
-	})
 	-- use({
-	-- 	"$HOME/code/lua/live-server.nvim",
+	-- 	"aurum77/live-server.nvim",
 	-- 	run = function()
 	-- 		require("live_server.util").install()
 	-- 	end,
 	-- })
+	use({
+		"$HOME/code/lua/live-server.nvim",
+		run = function()
+			require("live_server.util").install()
+		end,
+	})
+	use({
+		"$HOME/code/lua/dotnet.nvim",
+	})
 	use({
 		"norcalli/nvim-colorizer.lua",
 	})
@@ -189,6 +192,21 @@ return packer.startup(function(use)
 	use({
 		"folke/neodev.nvim",
 	})
+	use({
+		"rafamadriz/friendly-snippets",
+	})
+	use({
+		"utilyre/barbecue.nvim",
+		requires = {
+			"SmiteshP/nvim-navic",
+		},
+	})
+	use({
+		"ahmedkhalf/project.nvim",
+	})
+  use({
+    "rcarriga/nvim-notify"
+  })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

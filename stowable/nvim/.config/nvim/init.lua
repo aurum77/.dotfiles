@@ -1,6 +1,13 @@
 -- Packer
 require("packer_init")
 
+-- Core settings
+require("core.options")
+require("core.theme")
+require("core.keymaps")
+require("core.autocommands")
+require("core.globals")
+
 -- Plugin specific settings
 require("plugins.lualine")
 require("plugins.nvim-autopairs")
@@ -31,10 +38,6 @@ require("plugins.ccc")
 require("plugins.trouble")
 require("plugins.dressing")
 require("plugins.gx")
-
--- Core settings
-require("core.options")
-require("core.theme")
-require("core.keymaps")
-require("core.autocommands")
-require("core.globals")
+require("plugins.barbecue")
+require("plugins.project")
+require("plugins.notify")

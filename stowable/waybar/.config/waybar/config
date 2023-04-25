@@ -43,7 +43,7 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon} {capacity:3d}%",
+    "format": "{icon} {capacity:3d}%, {time}",
     "format-full": "{icon}",
     "format-icons": {
       "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰂀", "󰂀", "󰂁", "󰂂", "󰁹"],

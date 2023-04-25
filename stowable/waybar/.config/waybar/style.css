@@ -37,11 +37,12 @@ window#waybar.empty #window {
   margin-top: 6px;
   margin-right: 6px;
   margin-bottom: 6px;
+  margin-left:4px;
 }
 
 #workspaces button {
   margin: 0px 4px;
-  padding: 2px 2px;
+  padding: 3px 3px;
   border-radius: 0px;
   background-color: @dark1;
   color: @light1;

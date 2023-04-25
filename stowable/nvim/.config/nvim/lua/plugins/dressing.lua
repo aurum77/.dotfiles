@@ -4,6 +4,17 @@ if not status_ok then
 	return
 end
 
+local telescope_borderchars = {
+	" ",
+	" ",
+	" ",
+	" ",
+	" ",
+	" ",
+	" ",
+	" ",
+}
+
 dressing.setup({
 	input = {
 		enabled = true,
@@ -14,4 +25,10 @@ dressing.setup({
       wrap = false,
     },
 	},
+  select = {
+    telescope = require('telescope.themes').get_dropdown({
+      border = true,
+      borderchars = telescope_borderchars,
+    })
+  }
 })

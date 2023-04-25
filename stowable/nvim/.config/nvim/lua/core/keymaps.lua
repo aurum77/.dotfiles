@@ -19,7 +19,7 @@ map("n", "<Leader>qw", "<Cmd>wqa!<CR>", opts)
 map("n", "<Leader>qa", "<Cmd>qa!<CR>", opts)
 
 -- Toggle terminal
-map("n", "<C-t>", "<Cmd>ToggleTerm<CR>", opts)
+map("n", "<C-`>", "<Cmd>ToggleTerm<CR>", opts)
 
 -- Clear highlights
 map("n", "<Leader>hh", "<Cmd>nohlsearch<CR>", opts)
@@ -34,6 +34,7 @@ map("n", "<Leader>f.", "<Cmd>Telescope live_grep hidden=true<CR>", opts)
 map("n", "<Leader>f;", "<Cmd>Telescope commands<CR>", opts)
 map("n", "<Leader>fh", "<Cmd>Telescope help_tags<CR>", opts)
 map("n", "<Leader>fm", "<Cmd>Telescope keymaps<CR>", opts)
+map("n", "<Leader>fp", "<Cmd>Telescope projects<CR>", opts)
 map("n", "<Leader><Leader>", "<Cmd>Telescope buffers<CR>", opts)
 
 -- nvim-tree
@@ -68,11 +69,13 @@ map("n", "J", "<Cmd>Gitsigns blame_line<CR>", opts)
 
 -- Lsp bindings
 map("n", "<Leader>lr", "<Cmd>LspRestart<CR>", opts)
+map("n", "<Leader>li", "<Cmd>LspInfo<CR>", opts)
 map("n", "<Leader>lm", "<Cmd>Mason<CR>", opts)
+map("n", "<Leader>ls", "<Cmd>Telescope lsp_document_symbols<CR>", opts)
 
 -- Terminal mode
 -- toggleterm.nvim
-map("t", "<C-t>", "<Cmd>ToggleTerm<CR>", opts)
+map("t", "<C-`>", "<Cmd>ToggleTerm<CR>", opts)
 map("t", "<ESC>", [[<C-\><C-n>]], opts)
 map("t", "fd", [[<C-\><C-n>]], opts)
 map("t", "<C-h>", [[<Cmd>wincmd h<CR>]], opts)
