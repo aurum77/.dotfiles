@@ -153,18 +153,18 @@ return packer.startup(function(use)
 	use({
 		"j-hui/fidget.nvim",
 	})
-	-- use({
-	-- 	"aurum77/live-server.nvim",
-	-- 	run = function()
-	-- 		require("live_server.util").install()
-	-- 	end,
-	-- })
 	use({
-		"$HOME/code/lua/live-server.nvim",
+		"aurum77/live-server.nvim",
 		run = function()
 			require("live_server.util").install()
 		end,
 	})
+	-- use({
+	-- 	"$HOME/code/lua/live-server.nvim",
+	-- 	run = function()
+	-- 		require("live_server.util").install()
+	-- 	end,
+	-- })
 	use({
 		"$HOME/code/lua/dotnet.nvim",
 	})

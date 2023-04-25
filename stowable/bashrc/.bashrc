@@ -53,7 +53,4 @@ alias performance="sudo cpupower frequency-set --governor performance 2 > /dev/n
 shopt -s autocd
 
 # Source fzf config
-source /usr/share/fzf/shell/key-bindings.bash
-
-# Source bash completion
-source /etc/profile.d/bash_completion.sh
+source /usr/share/fzf/key-bindings.bash
