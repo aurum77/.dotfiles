@@ -34,6 +34,7 @@ packer.init({
 		open_fn = function()
 			return require("packer.util").float({ border = "none" })
 		end,
+		prompt_border = "none",
 		working_sym = "󰑓", -- The symbol for a plugin being installed/updated
 	},
 	profile = {
@@ -204,9 +205,9 @@ return packer.startup(function(use)
 	use({
 		"ahmedkhalf/project.nvim",
 	})
-  use({
-    "rcarriga/nvim-notify"
-  })
+	use({
+		"rcarriga/nvim-notify",
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

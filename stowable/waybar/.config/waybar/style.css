@@ -1,7 +1,7 @@
 @import "gruvbox.css";
 
 * {
-  font-family: Jetbrains Mono, Material Design Icons Desktop;
+  font-family: JetBrains Mono;
   font-weight: 600;
   font-size: 14px;
   transition-duration: 0.2s;

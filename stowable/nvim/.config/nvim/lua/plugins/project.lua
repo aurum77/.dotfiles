@@ -5,6 +5,7 @@ if not status_ok then
 end
 
 project_nvim.setup({
-  patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "*.sln", ".luarc.json" },
-  silent_chdir = false,
+	patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "*.sln", ".luarc.json" },
+	silent_chdir = false,
+	ignore_lsp = { "jsonls" },
 })

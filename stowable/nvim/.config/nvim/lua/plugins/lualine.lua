@@ -25,12 +25,12 @@ local lsp = {
 		local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
 		local clients = vim.lsp.get_active_clients()
 		if next(clients) == nil then
-			return "no ls"
+			return "󰅩 lsp"
 		end
 		for _, client in ipairs(clients) do
 			local filetypes = client.config.filetypes
 			if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-				return client.name
+				return "󰅩 " .. client.name
 			end
 		end
 		return ""
@@ -45,7 +45,7 @@ local filesize = {
 
 local filetype = {
 	"filetype",
-	icon_only = false,
+	icon_only = true,
 	colored = false,
 }
 
@@ -53,8 +53,8 @@ local filename = {
 	"filename",
 	path = 0,
 	symbols = {
-		modified = " ",
-		readonly = " ",
+		modified = "",
+		readonly = "",
 	},
 	cond = conditions.buffer_not_empty,
 }
@@ -68,7 +68,7 @@ local diff = {
 local diagnostics = {
 	"diagnostics",
 	update_in_insert = true,
-	symbols = { error = " ", warn = " ", info = " ", hint = " " },
+	symbols = { error = " ", warn = " ", info = " ", hint = " " },
 }
 
 local encoding = {
@@ -98,28 +98,20 @@ lualine.setup({
 	options = {
 		globalstatus = true,
 		icons_enabled = true,
-		section_separators = "",
-		component_separators = "",
-		-- theme = {
-		-- 	normal = {
-		-- 		a = { bg = gruvbox.dark1, fg = gruvbox.light1 },
-		-- 		b = { bg = gruvbox.dark0, fg = gruvbox.light1 },
-		-- 		c = { bg = gruvbox.dark0, fg = gruvbox.light1 },
-		-- 		x = { bg = gruvbox.dark0, fg = gruvbox.light1 },
-		-- 		y = { bg = gruvbox.dark0, fg = gruvbox.light1 },
-		-- 		z = { bg = gruvbox.dark1, fg = gruvbox.light1 },
-		-- 	},
-		-- },
+		-- section_separators = "",
+		-- component_separators = "",
+		component_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 		theme = "auto",
 	},
 	sections = {
 		-- filetype,
-		lualine_a = {"mode" },
-		lualine_b = { branch },
-		lualine_c = { diagnostics },
+		lualine_a = { "mode" },
+		lualine_b = { filename },
+		lualine_c = { branch, diagnostics },
 		lualine_x = { diff, fileformat },
 		lualine_y = { "progress", lsp },
-		lualine_z = { filetype, "location" },
+		lualine_z = { "location" },
 	},
 	inactive_sections = {
 		lualine_a = {},

@@ -104,10 +104,11 @@ nvim_tree.setup({
 		ignore = false,
 	},
 	renderer = {
-		root_folder_modifier = ":t",
+root_folder_label = false,
 		symlink_destination = false,
 		icons = {
 			webdev_colors = true,
+      git_placement = "after",
 			show = {
 				folder = true,
 				file = true,
@@ -124,6 +125,9 @@ nvim_tree.setup({
 					deleted = "",
 					ignored = "",
 				},
+        folder = {
+          empty = ""
+        }
 			},
 		},
 		indent_markers = {
@@ -146,7 +150,7 @@ nvim_tree.setup({
 	diagnostics = {
 		icons = {
 			error = "",
-			warning = "",
+			warning = "",
 			hint = "",
 			info = "",
 		},

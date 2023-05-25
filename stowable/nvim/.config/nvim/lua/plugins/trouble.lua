@@ -7,7 +7,7 @@ end
 trouble.setup({
 	signs = {
 		error = " ",
-		warning = " ",
+		warning = " ",
 		information = " ",
 		hint = " ",
 	},

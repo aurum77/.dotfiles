@@ -28,9 +28,9 @@
     "interval": 3,
     "format": "{icon}",
     "format-icons": {
-      "wifi": ["󰤟", "󰤢", "󰤥", "󰤨"],
-      "ethernet": "󰈀  {ifname}",
-      "diconnected": "󰇧  Disconnected"
+      "wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+      "ethernet": "󰌗 {ifname}",
+      "diconnected": " Disconnected"
     },
     "on-click": "/usr/bin/kitty --class floating_terminal --execute /usr/bin/nmtui-connect",
     "tooltip": true,
@@ -46,9 +46,9 @@
     "format": "{icon} {capacity:3d}%, {time}",
     "format-full": "{icon}",
     "format-icons": {
-      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰂀", "󰂀", "󰂁", "󰂂", "󰁹"],
-      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋"],
-      "full": "󰚥"
+      "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      "full": "󱐋"
     }
   },
   "pulseaudio": {

@@ -65,7 +65,6 @@ fuse2 -> appimage support
 p7zip -> extract 7zip
 unrar -> extract rar
 flatpak -> sandboxed applications
-dbeaver -> database gui
 gtk-engine-murrine -> theme
 dunst -> notifications
 polkit-gnome -> polkit
@@ -78,3 +77,4 @@ dotnet-sdk-6.0 -> dootnet
 aspnet-runtime-6.0 -> dootnet
 tlp -> power management
 ttf-jetbrains-mono -> terminal font
+dbeaver -> db browser

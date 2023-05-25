@@ -1,6 +1,6 @@
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local opts = { silent = true }
-
+local utils = require("core.utils")
 
 -- Set space as leader
 map("", "<Space>", "<Nop>", opts)
@@ -33,15 +33,12 @@ map("n", "<Leader>fg", "<Cmd>Telescope live_grep<CR>", opts)
 map("n", "<Leader>f.", "<Cmd>Telescope live_grep hidden=true<CR>", opts)
 map("n", "<Leader>f;", "<Cmd>Telescope commands<CR>", opts)
 map("n", "<Leader>fh", "<Cmd>Telescope help_tags<CR>", opts)
-map("n", "<Leader>fm", "<Cmd>Telescope keymaps<CR>", opts)
+map("n", "<Leader>fk", "<Cmd>Telescope keymaps<CR>", opts)
 map("n", "<Leader>fp", "<Cmd>Telescope projects<CR>", opts)
 map("n", "<Leader><Leader>", "<Cmd>Telescope buffers<CR>", opts)
 
 -- nvim-tree
 map("n", "<Leader>e", "<Cmd>NvimTreeToggle<CR>", opts)
-
--- Compile and run single C file with ansi standard
-map("n", "<Leader>cc", "<Cmd>!cc -ansi %:p -o /tmp/%:r; /tmp/%:r<CR>", opts)
 
 -- Formatting
 map("n", "<C-f>", "<Cmd>Format<CR>", opts)
@@ -58,11 +55,11 @@ map("n", "<Leader>rt", "<Plug>PlenaryTestFile", opts)
 map("n", "<C-d>", "<C-d>zz", opts)
 map("n", "<C-u>", "<C-u>zz", opts)
 
--- Remove help bind
-map("n", "<F1>", "<NOP>", opts)
-map("i", "<F1>", "<NOP>", opts)
-map("v", "<F1>", "<NOP>", opts)
-map("x", "<F1>", "<NOP>", opts)
+-- Remove help bind, make it change the theme instead
+map("n", "<F1>", "<NOP>", { silent = true, callback = utils.toggle_theme })
+map("i", "<F1>", "<NOP>", { silent = true, callback = utils.toggle_theme })
+map("v", "<F1>", "<NOP>", { silent = true, callback = utils.toggle_theme })
+map("x", "<F1>", "<NOP>", { silent = true, callback = utils.toggle_theme })
 
 -- Remove help bind
 map("n", "J", "<Cmd>Gitsigns blame_line<CR>", opts)
@@ -73,17 +70,21 @@ map("n", "<Leader>li", "<Cmd>LspInfo<CR>", opts)
 map("n", "<Leader>lm", "<Cmd>Mason<CR>", opts)
 map("n", "<Leader>ls", "<Cmd>Telescope lsp_document_symbols<CR>", opts)
 
+-- Trouble.nvim
+map("n", "<Leader>fa", "<Cmd>TroubleToggle workspace_diagnostics<CR>", opts)
+map("n", "<Leader>fd", "<Cmd>TroubleToggle document_diagnostics<CR>", opts)
+
 -- Terminal mode
 -- toggleterm.nvim
 map("t", "<C-`>", "<Cmd>ToggleTerm<CR>", opts)
+map("i", "<C-`>", "<Cmd>ToggleTerm<CR>", opts)
 map("t", "<ESC>", [[<C-\><C-n>]], opts)
 map("t", "fd", [[<C-\><C-n>]], opts)
-map("t", "<C-h>", [[<Cmd>wincmd h<CR>]], opts)
-map("t", "<C-j>", [[<Cmd>wincmd j<CR>]], opts)
-map("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opts)
-map("t", "<C-l>", [[<Cmd>wincmd l<CR>]], opts)
+map("t", "<C-l>", "<C-l>", opts)
 
 -- Insert mode
 -- Escape insert mode
 map("i", "fd", "<ESC>", opts)
 map("i", "<C-c>", "<ESC>", opts)
+
+map("n", "<C-.>", "<Cmd>DotnetProject<CR>", opts)

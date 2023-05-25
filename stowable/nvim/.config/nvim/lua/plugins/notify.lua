@@ -9,9 +9,10 @@ vim.notify = require("notify")
 notify.setup({
 	fps = 72,
 	level = 2,
-	minimum_width = 50,
-	render = "default",
+	min_width = 50,
+	render = "compact",
 	stages = "fade_in_slide_out",
+  background_color = "#282828",
 	timeout = 4000,
-	top_down = true,
+	top_down = false,
 })

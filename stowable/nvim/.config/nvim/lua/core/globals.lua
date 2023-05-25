@@ -1,4 +1,4 @@
 P = function(v)
-	print(vim.inspect(v))
+	print(vim.print(v))
 	return v
 end

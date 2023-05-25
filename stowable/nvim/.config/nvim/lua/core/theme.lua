@@ -10,8 +10,8 @@ vim.cmd.colorscheme("gruvbox")
 
 local gruvbox = require("gruvbox.palette").colors
 
-vim.api.nvim_set_hl(0, "FidgetTask", { bg = gruvbox.dark0, fg = gruvbox.dark0 })
-vim.api.nvim_set_hl(0, "FidgetTitle", { bg = gruvbox.dark0, fg = gruvbox.bright_yellow, bold = true })
+-- vim.api.nvim_set_hl(0, "FidgetTask", { bg = "NONE", fg = "NONE" })
+-- vim.api.nvim_set_hl(0, "FidgetTitle", { bg = gruvbox.dark0, fg = gruvbox.bright_yellow, bold = true })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = gruvbox.dark1, fg = gruvbox.light1 })
 vim.api.nvim_set_hl(0, "FloatTitle", { bg = gruvbox.dark1, fg = gruvbox.bright_yellow })
 vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", { fg = gruvbox.bright_blue })
