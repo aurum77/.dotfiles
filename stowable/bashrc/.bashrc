@@ -8,23 +8,24 @@ PS1="\[\033[1;34m\]\w \[\033[0;36m\]\$( git branch 2> /dev/null | sed -e '/^[^*]
 
 # Aliases
 alias sudo='sudo '
-alias l='exa'
-alias ls='exa'
-alias la='exa -a'
-alias ll='exa -la'
-alias tree='exa --tree'
-alias v='nvim'
-alias vc='nvim $HOME/.config/nvim'
+alias l='exa '
+alias ls='exa '
+alias la='exa -a '
+alias ll='exa -la '
+alias tree='exa --tree '
+alias v='nvim '
+alias vc='nvim $HOME/.config/nvim '
 alias c='clear'
+alias z='zathura '
 
 # git specific aliases
 alias ga='git add '
 alias gd='git diff '
-alias gds='git diff --staged'
+alias gds='git diff --staged '
 alias gcl='git clone '
 alias gcm='git commit -m '
 alias gl='git log '
-alias glo='git log --oneline'
+alias glo='git log --oneline '
 alias gst='git status '
 alias gp='git push '
 

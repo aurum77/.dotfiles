@@ -6,6 +6,6 @@ end
 
 barbecue.setup({
 	create_autocmd = true,
-	show_modified = true,
+	show_modified = false,
 	exclude_filetypes = { "toggleterm", "NvimTree" },
 })

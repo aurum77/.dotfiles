@@ -6,7 +6,7 @@ end
 
 -- require("lspconfig.ui.windows").default_options.border = "single"
 
-local map = vim.keymap.set
+local utils = require("core.utils")
 
 local border = {
 	{ "┌", "FloatBorder" },
@@ -28,66 +28,60 @@ end
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local on_attach = function(client, bufnr)
-	-- Mappings.
-	-- See `:help vim.lsp.*` for documentation on any of the below functions
-	local bufopts = { noremap = true, silent = true, buffer = bufnr }
-	map("n", "gD", vim.lsp.buf.declaration, bufopts)
-	map("n", "K", vim.lsp.buf.hover, bufopts)
-	map("n", "<Leader>k", vim.lsp.buf.signature_help, bufopts)
-	map("n", "<Leader>wa", vim.lsp.buf.add_workspace_folder, bufopts)
-	map("n", "<Leader>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
-	map("n", "<Leader>wl", function()
-		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-	end, bufopts)
-	map("n", "<Leader>D", vim.lsp.buf.type_definition, bufopts)
-	map("n", "<Leader>rn", vim.lsp.buf.rename, bufopts)
-	map("n", "<Leader>ca", vim.lsp.buf.code_action, bufopts)
-	map("n", "gi", "<Cmd>Telescope lsp_implementations<CR>", bufopts)
-	map("n", "gd", "<Cmd>Telescope lsp_definitions<CR>", bufopts)
-	map("n", "gr", "<Cmd>Telescope lsp_references<CR>", bufopts)
-	map("n", "<Leader>fa", "<Cmd>TroubleToggle<CR>", bufopts)
-	map("n", "<Leader>fd", "<Cmd>TroubleToggle document_diagnostics<CR>", bufopts)
-end
-
 lspconfig.jsonls.setup({
 	capabilities = capabilities,
-	on_attach = on_attach,
+	on_attach = utils.on_attach,
 })
 
 lspconfig.bashls.setup({
 	capabilities = capabilities,
-	on_attach = on_attach,
+	on_attach = utils.on_attach,
 })
 
 lspconfig.tailwindcss.setup({
 	capabilities = capabilities,
-	on_attach = on_attach,
+	on_attach = utils.on_attach,
 })
 
 lspconfig.jedi_language_server.setup({
 	capabilities = capabilities,
-	on_attach = on_attach,
+	on_attach = utils.on_attach,
 })
 
 -- lspconfig.gdscript.setup({
 -- 	capabilities = capabilities,
--- 	on_attach = on_attach,
+-- 	on_attach = utils.on_attach,
 -- })
 
 lspconfig.html.setup({
 	capabilities = capabilities,
-	on_attach = on_attach,
+	on_attach = utils.on_attach,
 })
 
 lspconfig.prismals.setup({
 	capabilities = capabilities,
-	on_attach = on_attach,
+	on_attach = utils.on_attach,
+})
+
+-- lspconfig.dartls.setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = utils.on_attach,
+-- })
+
+lspconfig.phpactor.setup({
+	capabilities = capabilities,
+	on_attach = utils.on_attach,
+})
+
+lspconfig.omnisharp.setup({
+	capabilities = capabilities,
+	on_attach = utils.on_attach,
+  enable_import_completion = true,
 })
 
 lspconfig.emmet_ls.setup({
 	capabilities = capabilities,
-	on_attach = on_attach,
+	on_attach = utils.on_attach,
 	filetypes = {
 		"html",
 	},
@@ -95,7 +89,7 @@ lspconfig.emmet_ls.setup({
 
 lspconfig.cssls.setup({
 	capabilities = capabilities,
-	on_attach = on_attach,
+	on_attach = utils.on_attach,
 	settings = {
 		css = {
 			lint = {
@@ -108,7 +102,7 @@ lspconfig.cssls.setup({
 
 lspconfig.tsserver.setup({
 	capabilities = capabilities,
-	on_attach = on_attach,
+	on_attach = utils.on_attach,
 	filetypes = {
 		"javascript",
 		"javascriptreact",
@@ -124,7 +118,7 @@ lspconfig.tsserver.setup({
 
 lspconfig.lua_ls.setup({
 	capabilities = capabilities,
-	on_attach = on_attach,
+	on_attach = utils.on_attach,
 	settings = {
 		Lua = {
 			runtime = {
@@ -147,33 +141,12 @@ lspconfig.lua_ls.setup({
 	},
 })
 
-lspconfig.omnisharp.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-  enable_import_completion = true,
-})
-
-lspconfig.dartls.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
-lspconfig.phpactor.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
 -- lspconfig.clangd.setup({
 -- 	capabilities = capabilities,
--- 	on_attach = on_attach,
--- })
-
--- lspconfig.csharp_ls.setup({
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
+-- 	on_attach = utils.on_attach,
 -- })
 
 -- lspconfig.gopls.setup({
 -- 	capabilities = capabilities,
--- 	on_attach = on_attach,
+-- 	on_attach = utils.on_attach,
 -- })

@@ -28,7 +28,7 @@
     "interval": 3,
     "format": "{icon}",
     "format-icons": {
-      "wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+      "wifi": ["󰤮", "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
       "ethernet": "󰌗 {ifname}",
       "diconnected": " Disconnected"
     },
@@ -38,7 +38,7 @@
     "tooltip-format-ethernet": "{ifname}"
   },
   "battery": {
-    "interval": 2,
+    "interval": 30,
     "states": {
       "warning": 30,
       "critical": 15

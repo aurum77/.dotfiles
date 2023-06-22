@@ -22,7 +22,7 @@ vim.api.nvim_create_autocmd({ "BufLeave", "WinLeave" }, {
 
 -- Disable relative line numbers on focus leave and window focus
 local change_line_number_style_group = vim.api.nvim_create_augroup("LineNumberStyle", { clear = true })
-vim.api.nvim_create_autocmd({ "WinEnter", "InsertLeave", "User TelescopeFindPre" }, {
+vim.api.nvim_create_autocmd({ "WinEnter", "InsertLeave", "FocusGained", "User TelescopeFindPre" }, {
 	callback = function()
 		if not vim.opt.number["_value"] == false then
 			vim.opt.relativenumber = true
@@ -30,21 +30,7 @@ vim.api.nvim_create_autocmd({ "WinEnter", "InsertLeave", "User TelescopeFindPre"
 	end,
 	group = change_line_number_style_group,
 })
-vim.api.nvim_create_autocmd({ "WinLeave", "InsertEnter" }, {
-	callback = function()
-		vim.opt.relativenumber = false
-	end,
-	group = change_line_number_style_group,
-})
-vim.api.nvim_create_autocmd("FocusGained", {
-	callback = function()
-		if not vim.opt.number["_value"] == false then
-			vim.opt.relativenumber = true
-		end
-	end,
-	group = change_line_number_style_group,
-})
-vim.api.nvim_create_autocmd("FocusLost", {
+vim.api.nvim_create_autocmd({ "WinLeave", "InsertEnter", "FocusLost" }, {
 	callback = function()
 		vim.opt.relativenumber = false
 	end,

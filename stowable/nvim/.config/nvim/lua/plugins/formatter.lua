@@ -10,7 +10,7 @@ formatter.setup({
 
 	filetype = {
 		c = { require("formatter.filetypes.c").clangformat },
-		cs = { require("formatter.filetypes.cs").dotnetformat },
+		cs = { require("core.formatters").csharpier },
 		css = { require("formatter.filetypes.css").prettier },
 		html = { require("formatter.filetypes.html").prettier },
 		javascript = { require("formatter.filetypes.javascript").prettier },
@@ -22,5 +22,6 @@ formatter.setup({
 		sh = { require("formatter.filetypes.sh").shfmt },
 		typescript = { require("formatter.filetypes.typescript").prettier },
 		typescriptreact = { require("formatter.filetypes.typescript").prettier },
+		dart = { require("formatter.filetypes.dart").dartformat },
 	},
 })

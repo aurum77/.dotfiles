@@ -29,5 +29,3 @@ telescope.setup({
 		borderchars = borderchars,
 	},
 })
-
-telescope.load_extension('projects')
