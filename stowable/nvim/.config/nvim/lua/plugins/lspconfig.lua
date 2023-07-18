@@ -68,11 +68,6 @@ lspconfig.prismals.setup({
 -- 	on_attach = utils.on_attach,
 -- })
 
-lspconfig.phpactor.setup({
-	capabilities = capabilities,
-	on_attach = utils.on_attach,
-})
-
 lspconfig.omnisharp.setup({
 	capabilities = capabilities,
 	on_attach = utils.on_attach,

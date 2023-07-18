@@ -19,6 +19,8 @@ telescope.setup({
 	defaults = {
 		file_ignore_patterns = {
 			"node_modules",
+			"^bin$",
+			"^obj$",
 		},
 		selection_caret = " ",
 		prompt_prefix = " 󰭎  ",

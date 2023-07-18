@@ -153,7 +153,7 @@ return packer.startup(function(use)
 	})
 	use({
 		"j-hui/fidget.nvim",
-		tag = "legacy",
+		branch = "legacy",
 	})
 	use({
 		"aurum77/live-server.nvim",
