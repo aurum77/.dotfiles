@@ -147,6 +147,9 @@ return packer.startup(function(use)
 	})
 	use({
 		"windwp/nvim-ts-autotag",
+		requires = {
+			"nvim-treesitter/nvim-treesitter",
+		},
 	})
 	use({
 		"lewis6991/gitsigns.nvim",
@@ -168,10 +171,10 @@ return packer.startup(function(use)
 	-- 	end,
 	-- })
 	use({
-		"$HOME/code/lua/dotnet.nvim",
+		"norcalli/nvim-colorizer.lua",
 	})
 	use({
-		"norcalli/nvim-colorizer.lua",
+		"$HOME/code/lua/dotnet.nvim",
 	})
 	use({
 		"ThePrimeagen/vim-be-good",

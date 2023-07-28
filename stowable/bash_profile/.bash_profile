@@ -27,6 +27,12 @@ export FZF_DEFAULT_OPTS="
 --color=fg:#ebdbb2,header:#665c54,info:#83a598,pointer:#83a598 \
 --color=marker:#fe8019,fg+:#ebdbb2,prompt:#bdae93,hl+:#fabd2f"
 
+NPM_PACKAGES="${HOME}/.npm-packages"
+export PATH="$PATH:$NPM_PACKAGES/bin"
+# Preserve MANPATH if you already defined it somewhere in your config.
+# Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
+export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
+
 # Start ssh-agent if it's not running
 if ! pgrep ssh-agent 1> /dev/null;
   then
