@@ -22,7 +22,7 @@ gnome-keyring -> keyring
 seahorse -> gui for keyrings
 playerctl -> media sound control
 mpv -> minimal video player
-sway -> window manager
+swayfx -> window manager
 swaybg -> for swaywm background
 swaylock -> lock screen
 noto-fonts -> fonts for general ui

@@ -23,5 +23,6 @@ formatter.setup({
 		typescript = { require("formatter.filetypes.typescript").prettier },
 		typescriptreact = { require("formatter.filetypes.typescript").prettier },
 		dart = { require("formatter.filetypes.dart").dartformat },
+		go = { require("formatter.filetypes.go").gofmt },
 	},
 })

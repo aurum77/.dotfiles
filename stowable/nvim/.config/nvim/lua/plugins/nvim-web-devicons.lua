@@ -5,19 +5,14 @@ if not status_ok then
 end
 nvim_web_devicons.set_icon({
 	http = {
-		icon = "爵",
+		icon = "󰖟",
 		color = "#569cd6",
 		name = "HTTP",
 	},
 	httpResult = {
-		icon = "爵",
+		icon = "󰖟",
 		color = "#569cd6",
 		name = "HTTP_Result",
-	},
-	packer = {
-		icon = "",
-		color = "#569cd6",
-		name = "Packer",
 	},
 	dapui_scopes = {
 		icon = "",
