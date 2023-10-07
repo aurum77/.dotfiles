@@ -15,6 +15,12 @@ function M.on_attach(client, bufnr)
 	-- Mappings.
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
+	if client.name == "omnisharp" then
+		map("n", "gd", "<Cmd>lua require('omnisharp_extended').telescope_lsp_definitions()<CR>", bufopts)
+	else
+		map("n", "gd", "<Cmd>Telescope lsp_definitions<CR>", bufopts)
+	end
+
 	map("n", "gD", vim.lsp.buf.declaration, bufopts)
 	map("n", "K", vim.lsp.buf.hover, bufopts)
 	map("n", "<Leader>k", vim.lsp.buf.signature_help, bufopts)
@@ -27,10 +33,11 @@ function M.on_attach(client, bufnr)
 	map("n", "<Leader>rn", vim.lsp.buf.rename, bufopts)
 	map("n", "<Leader>ca", vim.lsp.buf.code_action, bufopts)
 	map("n", "gi", "<Cmd>Telescope lsp_implementations<CR>", bufopts)
-	map("n", "gd", "<Cmd>Telescope lsp_definitions<CR>", bufopts)
 	map("n", "gr", "<Cmd>Telescope lsp_references<CR>", bufopts)
 	map("n", "<Leader>fa", "<Cmd>TroubleToggle<CR>", bufopts)
 	map("n", "<Leader>fd", "<Cmd>TroubleToggle document_diagnostics<CR>", bufopts)
 end
+
+M.keymap_opts = { silent = true }
 
 return M

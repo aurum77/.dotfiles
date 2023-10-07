@@ -69,7 +69,9 @@ lspconfig.prismals.setup({
 -- })
 
 lspconfig.omnisharp.setup({
-	cmd = {"dotnet", "/home/borab/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll"},
+	handlers = {
+		["textDocument/definition"] = require("omnisharp_extended").handler,
+	},
 	capabilities = capabilities,
 	on_attach = utils.on_attach,
 	enable_import_completion = true,
@@ -142,7 +144,7 @@ lspconfig.lua_ls.setup({
 -- 	on_attach = utils.on_attach,
 -- })
 
-lspconfig.gopls.setup({
-	capabilities = capabilities,
-	on_attach = utils.on_attach,
-})
+-- lspconfig.gopls.setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = utils.on_attach,
+-- })

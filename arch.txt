@@ -7,7 +7,7 @@ brightnessctl -> needed for brightness control
 xdg-desktop-portal-wlr -> wayland stuff
 xdg-user-dirs -> user direcotries
 xorg-xwayland -> non-wayland application support
-exa -> cool and fast ls replacement
+eza -> cool and fast ls replacement
 thunar -> file manager
 xsettingsd -> theming for applications using xwayland
 grim -> wayland screenshots
@@ -22,7 +22,7 @@ gnome-keyring -> keyring
 seahorse -> gui for keyrings
 playerctl -> media sound control
 mpv -> minimal video player
-swayfx -> window manager
+sway -> window manager
 swaybg -> for swaywm background
 swaylock -> lock screen
 noto-fonts -> fonts for general ui

@@ -8,6 +8,7 @@ require("gruvbox").setup({
 
 vim.cmd.colorscheme("gruvbox")
 
+--[[
 local gruvbox = require("gruvbox.palette").colors
 
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = gruvbox.dark1, fg = gruvbox.light1 })
@@ -33,3 +34,4 @@ vim.api.nvim_set_hl(0, "TroubleSignHint", { bg = "NONE", fg = gruvbox.bright_aqu
 vim.api.nvim_set_hl(0, "TroubleSignInformation", { bg = "NONE", fg = gruvbox.bright_aqua })
 vim.api.nvim_set_hl(0, "TroubleSignOther", { bg = "NONE", fg = gruvbox.bright_blue })
 vim.api.nvim_set_hl(0, "VertSplit", { fg = gruvbox.dark1 })
+]]--

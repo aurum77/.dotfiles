@@ -1,5 +1,5 @@
 local map = vim.keymap.set
-local opts = { silent = true }
+local opts = require("core.utils").keymap_opts
 local utils = require("core.utils")
 
 -- Set space as leader

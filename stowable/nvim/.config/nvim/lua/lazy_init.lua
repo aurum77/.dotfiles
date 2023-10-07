@@ -20,9 +20,9 @@ require("lazy").setup({
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		config = function()
-			require("plugins.indent-blankline")
-			vim.cmd.colorscheme("gruvbox")
+			require("plugins.ibl")
 			require("core.theme")
+			vim.cmd.colorscheme("gruvbox")
 		end,
 	},
 	{
@@ -265,6 +265,16 @@ require("lazy").setup({
 		event = "LspAttach",
 		config = function()
 			require("plugins.fidget")
+		end,
+	},
+	{
+		"Hoffs/omnisharp-extended-lsp.nvim",
+	},
+	{
+		"Wansmer/symbol-usage.nvim",
+		event = "BufReadPre", -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
+		config = function()
+			require("symbol-usage").setup()
 		end,
 	},
 }, {
