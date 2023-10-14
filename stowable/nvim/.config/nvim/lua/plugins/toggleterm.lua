@@ -7,5 +7,5 @@ end
 toggleterm.setup({
 	shade_terminals = false,
 	direction = "float",
-  autochdir = true,
+	autochdir = true,
 })

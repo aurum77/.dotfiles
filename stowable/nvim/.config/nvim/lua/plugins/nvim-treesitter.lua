@@ -16,5 +16,5 @@ treesitter_configs.setup({
 	sync_install = false,
 	ensure_installed = {},
 	ignore_install = {},
-  modules = {}
+	modules = {},
 })

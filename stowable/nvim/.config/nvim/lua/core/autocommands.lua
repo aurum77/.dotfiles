@@ -7,7 +7,7 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 
 -- Don't draw cursorline if not focused
 local cursor_highlight_group = vim.api.nvim_create_augroup("CursorHighlight", { clear = true })
-vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter", "User TelescopeFindPre" }, {
+vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter", --[["User TelescopeFindPre"]] }, {
 	callback = function()
 		vim.opt.cursorline = true
 	end,
@@ -22,7 +22,7 @@ vim.api.nvim_create_autocmd({ "BufLeave", "WinLeave" }, {
 
 -- Disable relative line numbers on focus leave and window focus
 local change_line_number_style_group = vim.api.nvim_create_augroup("LineNumberStyle", { clear = true })
-vim.api.nvim_create_autocmd({ "WinEnter", "InsertLeave", "FocusGained", "User TelescopeFindPre" }, {
+vim.api.nvim_create_autocmd({ "WinEnter", "InsertLeave", "FocusGained", --[["User TelescopeFindPre" ]] }, {
 	callback = function()
 		if not vim.opt.number["_value"] == false then
 			vim.opt.relativenumber = true

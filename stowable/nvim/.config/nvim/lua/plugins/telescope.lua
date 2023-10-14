@@ -4,17 +4,6 @@ if not status_ok then
 	return
 end
 
-local borderchars = {
-	" ",
-	" ",
-	" ",
-	" ",
-	" ",
-	" ",
-	" ",
-	" ",
-}
-
 telescope.setup({
 	defaults = {
 		file_ignore_patterns = {
@@ -22,12 +11,11 @@ telescope.setup({
 			"^bin$",
 			"^obj$",
 		},
-		selection_caret = " ",
+		selection_caret = "  ",
 		prompt_prefix = " 󰭎  ",
 		layout_config = {
 			horizontal = { prompt_position = "bottom", results_width = 0.6 },
 		},
 		border = true,
-		borderchars = borderchars,
 	},
 })

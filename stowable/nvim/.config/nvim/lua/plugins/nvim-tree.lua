@@ -90,9 +90,9 @@ nvim_tree.setup({
 	filters = {
 		dotfiles = true,
 		custom = {
-      "^bin$",
-      "^obj$"
-    },
+			"^bin$",
+			"^obj$",
+		},
 	},
 	hijack_directories = {
 		enable = false,
@@ -101,11 +101,13 @@ nvim_tree.setup({
 		ignore = false,
 	},
 	renderer = {
+		-- root_folder_label = ":t",
 		root_folder_label = false,
-		symlink_destination = false,
+		symlink_destination = true,
 		icons = {
 			webdev_colors = true,
 			git_placement = "after",
+      symlink_arrow = "  ",
 			show = {
 				folder = true,
 				file = true,
@@ -123,14 +125,17 @@ nvim_tree.setup({
 					ignored = "",
 				},
 				folder = {
-					empty = "",
+					default = "",
+					open = "",
+					empty = "",
+					empty_open = "",
 				},
 			},
 		},
 		indent_markers = {
 			enable = true,
 			icons = {
-				corner = "└",
+				corner = "╰",
 				edge = "│",
 				none = " ",
 			},

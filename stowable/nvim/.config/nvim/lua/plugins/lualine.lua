@@ -4,7 +4,7 @@ if not status_ok then
 	return
 end
 
--- local gruvbox = require("gruvbox.palette").colors
+local gruvbox = require("gruvbox").palette
 
 local conditions = {
 	buffer_not_empty = function()
@@ -102,7 +102,16 @@ lualine.setup({
 		-- component_separators = "",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
-		theme = "auto",
+		theme = {
+			normal = {
+				a = { bg = gruvbox.dark1, fg = gruvbox.light0 },
+				b = { bg = gruvbox.dark1, fg = gruvbox.light2 },
+				c = { bg = gruvbox.dark1, fg = gruvbox.light3 },
+				x = { bg = gruvbox.dark1, fg = gruvbox.light3 },
+				y = { bg = gruvbox.dark1, fg = gruvbox.light2 },
+				z = { bg = gruvbox.dark1, fg = gruvbox.light0 },
+			},
+		},
 	},
 	sections = {
 		lualine_a = { filetype, filename },

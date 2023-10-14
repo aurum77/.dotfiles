@@ -18,8 +18,6 @@ wl-clipboard -> clipboard for wayland
 jq -> needed for parsing the swaymsg json
 bash-completion -> self explanatory
 mate-calc -> self explanatory
-gnome-keyring -> keyring
-seahorse -> gui for keyrings
 playerctl -> media sound control
 mpv -> minimal video player
 sway -> window manager

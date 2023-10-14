@@ -2,11 +2,11 @@ set font "JetBrains Mono 10"
 set statusbar-home-tilde true
 set selection-clipboard clipboard
 
-set notification-error-bg       "#1D2021" # bg
+set notification-error-bg       "#282828" # bg
 set notification-error-fg       "#FB4934" # bright:red
-set notification-warning-bg     "#1D2021" # bg
+set notification-warning-bg     "#282828" # bg
 set notification-warning-fg     "#FABD2F" # bright:yellow
-set notification-bg             "#1D2021" # bg
+set notification-bg             "#282828" # bg
 set notification-fg             "#B8BB26" # bright:green
 
 set completion-bg               "#504945" # bg2
@@ -22,7 +22,7 @@ set index-fg                    "#EBDBB2" # fg
 set index-active-bg             "#83A598" # bright:blue
 set index-active-fg             "#504945" # bg2
 
-set inputbar-bg                 "#1D2021" # bg
+set inputbar-bg                 "#282828" # bg
 set inputbar-fg                 "#EBDBB2" # fg
 
 set statusbar-bg                "#504945" # bg2
@@ -31,14 +31,14 @@ set statusbar-fg                "#EBDBB2" # fg
 set highlight-color             "#FABD2F" # bright:yellow
 set highlight-active-color      "#FE8019" # bright:orange
 
-set default-bg                  "#1D2021" # bg
+set default-bg                  "#282828" # bg
 set default-fg                  "#EBDBB2" # fg
 set render-loading              true
-set render-loading-bg           "#1D2021" # bg
+set render-loading-bg           "#282828" # bg
 set render-loading-fg           "#EBDBB2" # fg
 
 # Recolor book content's color
-set recolor-lightcolor          "#1D2021" # bg
+set recolor-lightcolor          "#282828" # bg
 set recolor-darkcolor           "#EBDBB2" # fg
 
 set recolor                     "true"

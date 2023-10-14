@@ -11,7 +11,7 @@ mason_tool_installer.setup({
 		"jq",
 		"prettier",
 		"stylua",
-    "shfmt",
-    "csharpier",
+		"shfmt",
+		"csharpier",
 	},
 })

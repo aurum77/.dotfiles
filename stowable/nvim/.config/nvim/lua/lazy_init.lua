@@ -21,8 +21,8 @@ require("lazy").setup({
 		"lukas-reineke/indent-blankline.nvim",
 		config = function()
 			require("plugins.ibl")
-			require("core.theme")
 			vim.cmd.colorscheme("gruvbox")
+			require("core.theme")
 		end,
 	},
 	{
@@ -57,7 +57,7 @@ require("lazy").setup({
 				end,
 			},
 		},
-		event = "InsertEnter",
+		event = "BufEnter",
 	},
 	{
 		"kyazdani42/nvim-tree.lua",
@@ -280,5 +280,8 @@ require("lazy").setup({
 }, {
 	install = {
 		colorscheme = { "gruvbox" },
+	},
+	ui = {
+		border = "rounded",
 	},
 })

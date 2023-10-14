@@ -4,20 +4,9 @@ if not status_ok then
 	return
 end
 
--- require("lspconfig.ui.windows").default_options.border = "single"
+require("lspconfig.ui.windows").default_options.border = "rounded"
 
 local utils = require("core.utils")
-
-local border = {
-	{ "┌", "FloatBorder" },
-	{ "─", "FloatBorder" },
-	{ "┐", "FloatBorder" },
-	{ "│", "FloatBorder" },
-	{ "┘", "FloatBorder" },
-	{ "─", "FloatBorder" },
-	{ "└", "FloatBorder" },
-	{ "│", "FloatBorder" },
-}
 
 local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 for type, icon in pairs(signs) do
@@ -25,52 +14,67 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
+local handlers = { ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+	border = "rounded",
+}) }
+
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 lspconfig.jsonls.setup({
 	capabilities = capabilities,
 	on_attach = utils.on_attach,
+	handlers = handlers,
 })
 
 lspconfig.bashls.setup({
 	capabilities = capabilities,
 	on_attach = utils.on_attach,
+	handlers = handlers,
 })
 
 lspconfig.tailwindcss.setup({
 	capabilities = capabilities,
 	on_attach = utils.on_attach,
+	handlers = handlers,
 })
 
 lspconfig.jedi_language_server.setup({
 	capabilities = capabilities,
 	on_attach = utils.on_attach,
+	handlers = handlers,
 })
 
 -- lspconfig.gdscript.setup({
 -- 	capabilities = capabilities,
 -- 	on_attach = utils.on_attach,
+-- 	handlers = handlers
 -- })
 
 lspconfig.html.setup({
 	capabilities = capabilities,
 	on_attach = utils.on_attach,
+	handlers = handlers,
 })
 
-lspconfig.prismals.setup({
-	capabilities = capabilities,
-	on_attach = utils.on_attach,
-})
+-- lspconfig.prismals.setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = utils.on_attach,
+-- 	handlers = handlers,
+-- })
 
 -- lspconfig.dartls.setup({
 -- 	capabilities = capabilities,
 -- 	on_attach = utils.on_attach,
+-- 	handlers = handlers
 -- })
 
 lspconfig.omnisharp.setup({
 	handlers = {
 		["textDocument/definition"] = require("omnisharp_extended").handler,
+		["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+			border = "rounded",
+		}),
 	},
 	capabilities = capabilities,
 	on_attach = utils.on_attach,
@@ -80,6 +84,7 @@ lspconfig.omnisharp.setup({
 lspconfig.emmet_ls.setup({
 	capabilities = capabilities,
 	on_attach = utils.on_attach,
+	handlers = handlers,
 	filetypes = {
 		"html",
 	},
@@ -88,6 +93,7 @@ lspconfig.emmet_ls.setup({
 lspconfig.cssls.setup({
 	capabilities = capabilities,
 	on_attach = utils.on_attach,
+	handlers = handlers,
 	settings = {
 		css = {
 			lint = {
@@ -101,6 +107,7 @@ lspconfig.cssls.setup({
 lspconfig.tsserver.setup({
 	capabilities = capabilities,
 	on_attach = utils.on_attach,
+	handlers = handlers,
 	filetypes = {
 		"javascript",
 		"javascriptreact",
@@ -117,6 +124,7 @@ lspconfig.tsserver.setup({
 lspconfig.lua_ls.setup({
 	capabilities = capabilities,
 	on_attach = utils.on_attach,
+	handlers = handlers,
 	settings = {
 		Lua = {
 			runtime = {
@@ -142,9 +150,11 @@ lspconfig.lua_ls.setup({
 -- lspconfig.clangd.setup({
 -- 	capabilities = capabilities,
 -- 	on_attach = utils.on_attach,
+-- 	handlers = handlers
 -- })
 
--- lspconfig.gopls.setup({
--- 	capabilities = capabilities,
--- 	on_attach = utils.on_attach,
--- })
+lspconfig.gopls.setup({
+	capabilities = capabilities,
+	on_attach = utils.on_attach,
+	handlers = handlers
+})

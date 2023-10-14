@@ -6,12 +6,12 @@ end
 
 local banned_messages = { "No information available" }
 vim.notify = function(msg, ...)
-  for _, banned in ipairs(banned_messages) do
-    if msg == banned then
-      return
-    end
-  end
-  return require("notify")(msg, ...)
+	for _, banned in ipairs(banned_messages) do
+		if msg == banned then
+			return
+		end
+	end
+	return require("notify")(msg, ...)
 end
 
 notify.setup({
@@ -20,7 +20,7 @@ notify.setup({
 	min_width = 50,
 	render = "compact",
 	stages = "fade_in_slide_out",
-  background_color = "#282828",
+	background_color = "#282828",
 	timeout = 4000,
 	top_down = false,
 })

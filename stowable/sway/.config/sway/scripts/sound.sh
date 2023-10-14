@@ -4,7 +4,7 @@
 # $ ./sound.sh down
 # $ ./sound.sh mute
 
-soundlimit=125
+soundlimit=150
 
 function get_volume {
   pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}'

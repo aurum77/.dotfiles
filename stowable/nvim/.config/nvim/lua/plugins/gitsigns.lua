@@ -10,7 +10,7 @@ gitsigns.setup({
 	},
 	on_attach = function(bufnr)
 		local gs = package.loaded.gitsigns
-    local keymap_opts = require("core.utils").keymap_opts
+		local keymap_opts = require("core.utils").keymap_opts
 		local function map(mode, l, r, opts)
 			opts = opts or {}
 			opts.buffer = bufnr
