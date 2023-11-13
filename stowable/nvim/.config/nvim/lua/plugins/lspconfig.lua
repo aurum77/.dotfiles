@@ -153,8 +153,8 @@ lspconfig.lua_ls.setup({
 -- 	handlers = handlers
 -- })
 
-lspconfig.gopls.setup({
-	capabilities = capabilities,
-	on_attach = utils.on_attach,
-	handlers = handlers
-})
+-- lspconfig.gopls.setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = utils.on_attach,
+-- 	handlers = handlers
+-- })

@@ -7,8 +7,8 @@ function M.toggle_theme()
 		vim.opt.background = "light"
 	else
 		vim.opt.background = "dark"
-		vim.cmd("so " .. vim.fn.stdpath("config") .. "/lua/core/theme.lua")
 	end
+  vim.cmd("so " .. vim.fn.stdpath("config") .. "/lua/core/theme.lua")
 end
 
 function M.on_attach(client, bufnr)

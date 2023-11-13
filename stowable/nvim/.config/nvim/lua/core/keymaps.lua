@@ -19,7 +19,7 @@ map("n", "<Leader>qw", "<Cmd>wqa!<CR>", opts)
 map("n", "<Leader>qa", "<Cmd>qa!<CR>", opts)
 
 -- Toggle terminal
-map("n", "<C-`>", "<Cmd>ToggleTerm<CR>", opts)
+map("n", "<C-t>", "<Cmd>ToggleTerm<CR>", opts)
 
 -- Clear highlights
 map("n", "<Leader>hh", "<Cmd>nohlsearch<CR>", opts)
@@ -75,8 +75,8 @@ map("n", "<Leader>fd", "<Cmd>TroubleToggle document_diagnostics<CR>", opts)
 
 -- Terminal mode
 -- toggleterm.nvim
-map("t", "<C-`>", "<Cmd>ToggleTerm<CR>", opts)
-map("i", "<C-`>", "<Cmd>ToggleTerm<CR>", opts)
+map("t", "<C-t>", "<Cmd>ToggleTerm<CR>", opts)
+map("i", "<C-t>", "<Cmd>ToggleTerm<CR>", opts)
 map("t", "<ESC>", [[<C-\><C-n>]], opts)
 map("t", "fd", [[<C-\><C-n>]], opts)
 map("t", "<C-l>", "<C-l>", opts)

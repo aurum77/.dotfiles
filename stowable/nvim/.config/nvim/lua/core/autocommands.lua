@@ -1,3 +1,7 @@
+local timer = vim.loop.new_timer()
+local theme = require("core.theme")
+local nvim_tree_api = require("nvim-tree.api")
+
 -- Highlight on yank
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 	callback = function()
@@ -7,7 +11,10 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 
 -- Don't draw cursorline if not focused
 local cursor_highlight_group = vim.api.nvim_create_augroup("CursorHighlight", { clear = true })
-vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter", --[["User TelescopeFindPre"]] }, {
+vim.api.nvim_create_autocmd({
+	"BufEnter",
+	"WinEnter", --[["User TelescopeFindPre"]]
+}, {
 	callback = function()
 		vim.opt.cursorline = true
 	end,
@@ -22,7 +29,11 @@ vim.api.nvim_create_autocmd({ "BufLeave", "WinLeave" }, {
 
 -- Disable relative line numbers on focus leave and window focus
 local change_line_number_style_group = vim.api.nvim_create_augroup("LineNumberStyle", { clear = true })
-vim.api.nvim_create_autocmd({ "WinEnter", "InsertLeave", "FocusGained", --[["User TelescopeFindPre" ]] }, {
+vim.api.nvim_create_autocmd({
+	"WinEnter",
+	"InsertLeave",
+	"FocusGained", --[["User TelescopeFindPre" ]]
+}, {
 	callback = function()
 		if not vim.opt.number["_value"] == false then
 			vim.opt.relativenumber = true
@@ -80,7 +91,31 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 		end
 
 		-- open the tree
-		require("nvim-tree.api").tree.open()
+		nvim_tree_api.tree.open()
 	end,
 	group = open_nvim_tree_group,
+})
+
+local colorscheme_hook = vim.api.nvim_create_augroup("ColorschemeHook", { clear = true })
+vim.api.nvim_create_autocmd("ColorScheme", {
+	callback = function()
+    theme.override_highlights()
+	end,
+	group = colorscheme_hook,
+})
+
+local startup_colorscheme_hook = vim.api.nvim_create_augroup("StartupColorschemeHook", { clear = true })
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		-- fix colorscheme
+		timer:start(
+			0,
+			0,
+			vim.schedule_wrap(function()
+				theme.setup_theme()
+				theme.override_highlights()
+			end)
+		)
+	end,
+	group = startup_colorscheme_hook,
 })

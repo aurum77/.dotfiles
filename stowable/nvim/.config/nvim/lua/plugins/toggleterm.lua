@@ -8,4 +8,7 @@ toggleterm.setup({
 	shade_terminals = false,
 	direction = "float",
 	autochdir = true,
+	float_opts = {
+		border = "rounded",
+	},
 })

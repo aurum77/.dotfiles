@@ -15,15 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{
 		"ellisonleao/gruvbox.nvim",
-		priority = 1000,
-	},
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		config = function()
-			require("plugins.ibl")
-			vim.cmd.colorscheme("gruvbox")
-			require("core.theme")
-		end,
+		lazy = false,
 	},
 	{
 		"akinsho/flutter-tools.nvim",
@@ -205,7 +197,7 @@ require("lazy").setup({
 		"norcalli/nvim-colorizer.lua",
 	},
 	{
-		dir = "~/code/nvim/dotnet.nvim",
+		dir = "~/Projects/dotnet.nvim",
 		config = function()
 			require("plugins.dotnet")
 		end,
@@ -276,6 +268,20 @@ require("lazy").setup({
 		config = function()
 			require("symbol-usage").setup()
 		end,
+	},
+	{
+		"f-person/auto-dark-mode.nvim",
+		config = {
+			update_interval = 2500,
+			set_dark_mode = function()
+				vim.api.nvim_set_option("background", "dark")
+				vim.cmd("colorscheme gruvbox")
+			end,
+			set_light_mode = function()
+				vim.api.nvim_set_option("background", "light")
+				vim.cmd("colorscheme gruvbox")
+			end,
+		},
 	},
 }, {
 	install = {
