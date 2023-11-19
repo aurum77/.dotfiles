@@ -201,7 +201,7 @@ require("lazy").setup({
 		config = function()
 			require("plugins.dotnet")
 		end,
-		ft = { "cs", "solution" },
+		-- ft = { "cs", "solution" },
 	},
 	{
 		"ThePrimeagen/vim-be-good",
@@ -266,22 +266,40 @@ require("lazy").setup({
 		"Wansmer/symbol-usage.nvim",
 		event = "BufReadPre", -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
 		config = function()
-			require("symbol-usage").setup()
+			require("plugins.symbol_usage")
 		end,
 	},
 	{
 		"f-person/auto-dark-mode.nvim",
-		config = {
-			update_interval = 2500,
-			set_dark_mode = function()
-				vim.api.nvim_set_option("background", "dark")
-				vim.cmd("colorscheme gruvbox")
-			end,
-			set_light_mode = function()
-				vim.api.nvim_set_option("background", "light")
-				vim.cmd("colorscheme gruvbox")
-			end,
+		config = function()
+			require("plugins.auto_dark_mode")
+		end,
+	},
+	{
+		"mfussenegger/nvim-dap",
+		config = function()
+			require("plugins.dap")
+		end,
+		dependencies = {
+			{
+				"rcarriga/nvim-dap-ui",
+				config = function()
+					require("dapui").setup()
+				end,
+			},
+			{
+				"theHamsta/nvim-dap-virtual-text",
+				config = function()
+					require("nvim-dap-virtual-text").setup()
+				end,
+			},
 		},
+	},
+	{
+		"ahmedkhalf/project.nvim",
+		config = function()
+			require("project_nvim").setup({})
+		end,
 	},
 }, {
 	install = {

@@ -13,5 +13,6 @@ mason_tool_installer.setup({
 		"stylua",
 		"shfmt",
 		"csharpier",
+    "netcoredbg"
 	},
 })

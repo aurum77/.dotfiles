@@ -32,7 +32,7 @@ local change_line_number_style_group = vim.api.nvim_create_augroup("LineNumberSt
 vim.api.nvim_create_autocmd({
 	"WinEnter",
 	"InsertLeave",
-	"FocusGained", --[["User TelescopeFindPre" ]]
+	"FocusGained",
 }, {
 	callback = function()
 		if not vim.opt.number["_value"] == false then
@@ -44,6 +44,15 @@ vim.api.nvim_create_autocmd({
 vim.api.nvim_create_autocmd({ "WinLeave", "InsertEnter", "FocusLost" }, {
 	callback = function()
 		vim.opt.relativenumber = false
+	end,
+	group = change_line_number_style_group,
+})
+vim.api.nvim_create_autocmd("User", {
+	pattern = "TelescopeFindPre",
+	callback = function()
+		if not vim.opt.number["_value"] == false then
+			vim.opt.relativenumber = true
+		end
 	end,
 	group = change_line_number_style_group,
 })
@@ -99,7 +108,7 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 local colorscheme_hook = vim.api.nvim_create_augroup("ColorschemeHook", { clear = true })
 vim.api.nvim_create_autocmd("ColorScheme", {
 	callback = function()
-    theme.override_highlights()
+		theme.override_highlights()
 	end,
 	group = colorscheme_hook,
 })

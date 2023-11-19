@@ -89,10 +89,6 @@ nvim_tree.setup({
 	hijack_unnamed_buffer_when_opening = true,
 	filters = {
 		dotfiles = true,
-		custom = {
-			"^bin$",
-			"^obj$",
-		},
 	},
 	hijack_directories = {
 		enable = false,
@@ -148,6 +144,7 @@ nvim_tree.setup({
 		side = "left",
 		number = true,
 		relativenumber = true,
+    preserve_window_proportions = true,
 	},
 	diagnostics = {
 		icons = {

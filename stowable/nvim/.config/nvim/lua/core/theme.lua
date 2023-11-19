@@ -56,6 +56,9 @@ function M.override_highlights()
 		vim.api.nvim_set_hl(0, "TroubleSignInformation", { bg = "NONE", fg = gruvbox.bright_aqua })
 		vim.api.nvim_set_hl(0, "TroubleSignOther", { bg = "NONE", fg = gruvbox.bright_blue })
 		-- Trouble
+		-- DAP
+		vim.api.nvim_set_hl(0, "debugPC", { bg = gruvbox.dark2, fg = gruvbox.bright_orange })
+		-- DAP
 	else
 		-- Internal
 		vim.api.nvim_set_hl(0, "VertSplit", { fg = gruvbox.light1 })
@@ -71,6 +74,9 @@ function M.override_highlights()
 			{ bg = gruvbox.light1, fg = gruvbox.bright_orange, bold = true }
 		)
 		-- TreesitterContext
+		-- DAP
+		vim.api.nvim_set_hl(0, "debugPC", { bg = gruvbox.light2, fg = gruvbox.bright_orange })
+		-- DAP
 	end
 end
 

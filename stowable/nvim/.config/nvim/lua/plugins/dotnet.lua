@@ -4,6 +4,4 @@ if not status_ok then
 	return
 end
 
-print("ran dotnet setup")
-
 dotnet.setup({})
