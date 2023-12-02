@@ -97,13 +97,13 @@ nvim_tree.setup({
 		ignore = false,
 	},
 	renderer = {
-		-- root_folder_label = ":t",
-		root_folder_label = false,
+		root_folder_label = ":t",
+		-- root_folder_label = false,
 		symlink_destination = true,
 		icons = {
 			webdev_colors = true,
 			git_placement = "after",
-      symlink_arrow = "  ",
+			symlink_arrow = "  ",
 			show = {
 				folder = true,
 				file = true,
@@ -144,7 +144,12 @@ nvim_tree.setup({
 		side = "left",
 		number = true,
 		relativenumber = true,
-    preserve_window_proportions = true,
+		preserve_window_proportions = true,
+		float = {
+			open_win_config = {
+				border = "rounded",
+			},
+		},
 	},
 	diagnostics = {
 		icons = {
