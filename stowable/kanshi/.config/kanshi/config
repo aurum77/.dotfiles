@@ -1,8 +1,13 @@
-profile {
+profile{
   output eDP-1 enable
 }
 
-profile {
-  output eDP-1 disable
-  output HDMI-A-1 mode 1920x1080 position 1920,0
+profile vert {
+  output eDP-1 enable mode 1920x1080 position 1920,0 transform 90 scale 1.5
+  output HDMI-A-1 mode 1920x1080 position 0,0
+}
+
+profile share {
+  output eDP-1 enable mode 1920x1080 position 1920,0 transform normal scale 1
+  output HDMI-A-1 mode 1920x1080 position 0,0
 }

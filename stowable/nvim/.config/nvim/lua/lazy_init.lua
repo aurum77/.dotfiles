@@ -15,6 +15,10 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{
 		"ellisonleao/gruvbox.nvim",
+		config = function()
+			vim.cmd.colorscheme("gruvbox")
+			require("core.theme")
+		end,
 		lazy = false,
 	},
 	{
@@ -197,11 +201,11 @@ require("lazy").setup({
 		"norcalli/nvim-colorizer.lua",
 	},
 	{
-		dir = "~/Projects/dotnet.nvim",
+		dir = "~/code/dotnet.nvim",
 		config = function()
 			require("plugins.dotnet")
 		end,
-		-- ft = { "cs", "solution" },
+		ft = { "cs", "solution" },
 	},
 	{
 		"ThePrimeagen/vim-be-good",
@@ -270,12 +274,6 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"f-person/auto-dark-mode.nvim",
-		config = function()
-			require("plugins.auto_dark_mode")
-		end,
-	},
-	{
 		"mfussenegger/nvim-dap",
 		config = function()
 			require("plugins.dap")
@@ -294,14 +292,6 @@ require("lazy").setup({
 				end,
 			},
 		},
-	},
-	{
-		"ahmedkhalf/project.nvim",
-		config = function()
-			require("project_nvim").setup({
-        manual_mode = true,
-      })
-		end,
 	},
 }, {
 	install = {

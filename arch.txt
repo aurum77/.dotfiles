@@ -76,3 +76,5 @@ aspnet-runtime-6.0 -> dootnet
 tlp -> power management
 ttf-jetbrains-mono -> terminal font
 dbeaver -> db browser
+syncthing -> sync files
+pnpm -> useful

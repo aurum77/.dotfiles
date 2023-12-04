@@ -31,11 +31,12 @@ vim.api.nvim_create_autocmd({ "BufLeave", "WinLeave" }, {
 local change_line_number_style_group = vim.api.nvim_create_augroup("LineNumberStyle", { clear = true })
 vim.api.nvim_create_autocmd({
 	"WinEnter",
+	"BufEnter",
 	"InsertLeave",
 	"FocusGained",
 }, {
 	callback = function()
-		if not vim.opt.number["_value"] == false then
+		if vim.opt.number["_value"] == true then
 			vim.opt.relativenumber = true
 		end
 	end,
@@ -50,7 +51,8 @@ vim.api.nvim_create_autocmd({ "WinLeave", "InsertEnter", "FocusLost" }, {
 vim.api.nvim_create_autocmd("User", {
 	pattern = "TelescopeFindPre",
 	callback = function()
-		if not vim.opt.number["_value"] == false then
+		print("fired telescopefindpre")
+		if vim.opt.number["_value"] == true then
 			vim.opt.relativenumber = true
 		end
 	end,
@@ -103,28 +105,4 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 		nvim_tree_api.tree.open()
 	end,
 	group = open_nvim_tree_group,
-})
-
-local colorscheme_hook = vim.api.nvim_create_augroup("ColorschemeHook", { clear = true })
-vim.api.nvim_create_autocmd("ColorScheme", {
-	callback = function()
-		theme.override_highlights()
-	end,
-	group = colorscheme_hook,
-})
-
-local startup_colorscheme_hook = vim.api.nvim_create_augroup("StartupColorschemeHook", { clear = true })
-vim.api.nvim_create_autocmd("VimEnter", {
-	callback = function()
-		-- fix colorscheme
-		timer:start(
-			0,
-			0,
-			vim.schedule_wrap(function()
-				theme.setup_theme()
-				theme.override_highlights()
-			end)
-		)
-	end,
-	group = startup_colorscheme_hook,
 })

@@ -20,6 +20,8 @@ export MOZ_ENABLE_WAYLAND=1
 export PROMPT_DIRTRIM=3
 # Download go modules to somewhere acceptable
 export GOPATH=$HOME/.go
+# Set editor
+export EDITOR=/usr/bin/nvim
 # fzf config
 export FZF_DEFAULT_OPTS="
 --height 100% \
