@@ -8,11 +8,11 @@ if [[ $status_recorder == 0 ]]; then
   exit
 fi
 
-slurp=$(slurp)
+slurp=$(slurp -b 282828aa -c 458588ff -d -F 'JetBrains Mono')
 status_slurp=$?
 
 if [[ $status_slurp == 0 ]]; then
-  wf-recorder --geometry "$slurp" --force-yuv -a -f $(xdg-user-dir VIDEOS)/$(date +'recording_%Y-%m-%d-%H%M%S.mp4')
+  wf-recorder -x yuv420p --geometry "$slurp"  -a -f $(xdg-user-dir VIDEOS)/$(date +'recording_%Y-%m-%d-%H%M%S.mp4')
 else
   exit
 fi

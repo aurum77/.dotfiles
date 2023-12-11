@@ -22,6 +22,8 @@ export PROMPT_DIRTRIM=3
 export GOPATH=$HOME/.go
 # Set editor
 export EDITOR=/usr/bin/nvim
+# Set Android sdk path
+export ANDROID_HOME=$HOME/.android_sdk
 # fzf config
 export FZF_DEFAULT_OPTS="
 --height 100% \

@@ -9,10 +9,10 @@
 
 case $1 in
 area)
-  grim -g "$(slurp -d)"
+  grim -g "$(slurp -b 282828aa -c 458588ff -d -F 'JetBrains Mono')"
   ;;
 area_copy)
-  grim -g "$(slurp -d)" - | wl-copy
+  grim -g "$(slurp -b 282828aa -c 458588ff -d -F 'JetBrains Mono')" - | wl-copy
   ;;
 window)
   window_floating=$(swaymsg -t get_tree | jq -r '.. | (.floating_nodes? // empty)[] | select(.focused) | .rect | "\(.x),\(.y) \(.width)x\(.height)"')

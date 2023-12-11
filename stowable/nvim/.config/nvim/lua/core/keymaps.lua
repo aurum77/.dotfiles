@@ -34,7 +34,6 @@ map("n", "<Leader>f.", "<Cmd>Telescope live_grep hidden=true<CR>", opts)
 map("n", "<Leader>f;", "<Cmd>Telescope commands<CR>", opts)
 map("n", "<Leader>fh", "<Cmd>Telescope help_tags<CR>", opts)
 map("n", "<Leader>fk", "<Cmd>Telescope keymaps<CR>", opts)
-map("n", "<Leader>fp", "<Cmd>Telescope projects<CR>", opts)
 map("n", "<Leader><Leader>", "<Cmd>Telescope buffers<CR>", opts)
 
 -- nvim-tree

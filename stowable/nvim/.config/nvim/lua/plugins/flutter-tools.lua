@@ -8,12 +8,13 @@ local utils = require("core.utils")
 
 flutter_tools.setup({
 	ui = {
-		border = "rounded",
+		-- border = "rounded",
 	},
 	dev_tools = {
 		auto_open_browser = true,
 	},
 	lsp = {
 		on_attach = utils.on_attach,
+		capabilities = utils.capabilities,
 	},
 })
