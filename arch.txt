@@ -1,7 +1,8 @@
 git -> to clone paru
 gammastep -> night light 
 systemd-zram -> enable zram
-firefox -> browser
+vivaldi -> browser
+vivaldi-ffmpeg-codecs -> browser codecs
 stow -> dotfile deployment
 brightnessctl -> needed for brightness control
 xdg-desktop-portal-wlr -> wayland stuff
@@ -29,7 +30,6 @@ pipewire -> we need sound don't we ?
 pipewire-pulse -> pulse configuration
 pavucontrol -> sound control gui
 wofi -> application launcher
-waybar -> info bar for sway
 zathura -> pdf reader
 zathura-pdf-mupdf -> pdf plugin for zathura
 libreoffice-fresh -> office suite
@@ -71,10 +71,9 @@ make -> aur
 gcc -> treesitter
 which -> find path of a program
 android-tools -> useful
-dotnet-sdk-6.0 -> dootnet
-aspnet-runtime-6.0 -> dootnet
+dotnet-sdk -> dootnet
+aspnet-runtime -> dootnet
 tlp -> power management
 ttf-jetbrains-mono -> terminal font
 dbeaver -> db browser
-syncthing -> sync files
-pnpm -> useful
+notion-app-electron -> notes

@@ -44,7 +44,6 @@
   "nvim-web-devicons": { "branch": "master", "commit": "5efb8bd06841f91f97c90e16de85e96d57e9c862" },
   "omnisharp-extended-lsp.nvim": { "branch": "main", "commit": "53edfb413a54c9e55dcddc9e9fa4977a897e4425" },
   "plenary.nvim": { "branch": "master", "commit": "55d9fe89e33efd26f532ef20223e5f9430c8b0c0" },
-  "project.nvim": { "branch": "main", "commit": "8c6bad7d22eef1b71144b401c9f74ed01526a4fb" },
   "rest.nvim": { "branch": "main", "commit": "84e81a19ab24ccf05c9233d34d4dfce61c233abe" },
   "symbol-usage.nvim": { "branch": "main", "commit": "6b4c65b65ce25842209348e067c4c015917acfe2" },
   "telescope.nvim": { "branch": "master", "commit": "e90fdba90d29d0284cefa4ef5833ef3e56602057" },
