@@ -51,7 +51,6 @@ vim.api.nvim_create_autocmd({ "WinLeave", "InsertEnter", "FocusLost" }, {
 vim.api.nvim_create_autocmd("User", {
 	pattern = "TelescopeFindPre",
 	callback = function()
-		print("fired telescopefindpre")
 		if vim.opt.number["_value"] == true then
 			vim.opt.relativenumber = true
 		end

@@ -2,8 +2,8 @@ profile{
   output eDP-1 enable
 }
 
-profile vert {
-  output eDP-1 enable mode 1920x1080 position 1920,0 transform 90 scale 1.25
+profile double {
+  output eDP-1 enable mode 1920x1080 position 212,1080 scale 1.25
   output HDMI-A-1 mode 1920x1080 position 0,0
 }
 

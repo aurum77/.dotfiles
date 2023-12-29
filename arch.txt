@@ -21,7 +21,7 @@ bash-completion -> self explanatory
 mate-calc -> self explanatory
 playerctl -> media sound control
 mpv -> minimal video player
-sway -> window manager
+swayfx -> window manager
 swaybg -> for swaywm background
 swaylock -> lock screen
 noto-fonts -> fonts for general ui
@@ -77,3 +77,4 @@ tlp -> power management
 ttf-jetbrains-mono -> terminal font
 dbeaver -> db browser
 notion-app-electron -> notes
+scrcpy -> view phone screen on desktop

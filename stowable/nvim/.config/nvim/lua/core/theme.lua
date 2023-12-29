@@ -13,7 +13,7 @@ local gruvbox = require("gruvbox").palette
 	vim.cmd.colorscheme("gruvbox")
 
 	-- Internal
-	vim.api.nvim_set_hl(0, "VertSplit", { fg = gruvbox.dark1 })
+	vim.api.nvim_set_hl(0, "WinSeparator", { fg = gruvbox.dark1 })
 	vim.api.nvim_set_hl(0, "SignColumn", { fg = gruvbox.dark0 })
 	vim.api.nvim_set_hl(0, "FloatBorder", { bg = gruvbox.dark0, fg = gruvbox.light1 })
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = gruvbox.dark0, fg = gruvbox.light1 })
