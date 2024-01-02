@@ -28,6 +28,7 @@ alias gl='git log '
 alias glo='git log --oneline '
 alias gst='git status '
 alias gp='git push '
+alias s="kitten ssh"
 
 # Set governor
 alias powersave="sudo cpupower frequency-set --governor powersave 2 > /dev/null"

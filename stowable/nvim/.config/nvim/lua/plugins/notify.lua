@@ -7,7 +7,7 @@ end
 local banned_messages = { "No information available", "error drawing label for" }
 vim.notify = function(msg, ...)
 	for _, banned in ipairs(banned_messages) do
-		if string.find(msg, banned) == nil then
+		if string.find(msg, banned) ~= nil then
 			return
 		end
 	end

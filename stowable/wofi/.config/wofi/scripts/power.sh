@@ -12,11 +12,11 @@ reboot)
   exec systemctl reboot
   ;;
 suspend)
-  swaylock -c 282828 &
+  swaylock -i $HOME/pics/wall.jpg &
   exec systemctl suspend
   ;;
 lock)
-  exec swaylock -c 282828
+  exec swaylock -i $HOME/pics/wall.jpg
   ;;
 logout)
   exec loginctl terminate-session $XDG_SESSION_ID

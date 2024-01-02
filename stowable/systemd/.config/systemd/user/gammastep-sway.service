@@ -5,6 +5,7 @@ BindsTo=sway-session.target
 
 [Service]
 Type=simple
+ExecStartPre=/usr/bin/sleep 5
 ExecStart=/usr/bin/gammastep -l 41:28 -t 6700:4000
 Restart=always
 

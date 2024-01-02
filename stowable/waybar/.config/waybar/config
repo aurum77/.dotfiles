@@ -1,0 +1,89 @@
+{
+  "layer": "bottom",
+  "position": "bottom",
+  "modules-left": ["sway/workspaces", "sway/mode"],
+  "modules-center": [],
+  "modules-right": ["tray", "custom/weather", "custom/media", "memory", "network", "pulseaudio", "battery", "custom/time"],
+  "sway/workspaces": {
+    "format": "{name}",
+    "disable-scroll-wraparound": true
+  },
+  "custom/media": {
+    "format": "{icon}",
+    "return-type": "json",
+    "format-icons": {
+      "Playing": "󰏤",
+      "Paused": "󰐊"
+    },
+    "exec": "playerctl -a metadata --format '{\"tooltip\": \"{{markup_escape(artist)}} - {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "playerctl play-pause"
+  },
+  "memory": {
+    "interval": 5,
+    "format": "󰘚 {used:0.1f} GB",
+    "on-click": "/usr/bin/kitty --class task_manager --execute /usr/bin/htop",
+    "tooltip": false
+  },
+  "network": {
+    "interval": 3,
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "{icon}",
+    "format-disconnected": "{icon} disconnected",
+    "format-icons": {
+      "wifi": ["󰤮", "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+      "ethernet": "󰈀",
+      "disconnected": "󰛵"
+    },
+    "on-click": "/usr/bin/kitty --class floating_terminal --execute /usr/bin/nmtui-connect",
+    "tooltip": true,
+    "tooltip-format-wifi": "{essid}: {signalStrength:3d}%",
+    "tooltip-format-ethernet": "{ifname}"
+  },
+  "battery": {
+    "interval": 30,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity:3d}%, {time}",
+    "format-full": "{icon}",
+    "format-icons": {
+      "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      "full": "󱐋"
+    }
+  },
+  "pulseaudio": {
+    "scroll-step": 5,
+    "format": "{icon}",
+    "format-muted": "󰣽",
+    "format-icons": {
+      "default": ["󰣾", "󰣴", "󰣶", "󰣸", "󰣺"]
+    },
+    "on-click-right": "pavucontrol",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "tooltip-format": "{desc} - {volume}%",
+    "tooltip": true
+  },
+  "custom/weather": {
+    "exec": "$HOME/.config/waybar/scripts/weather.sh",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+    "interval": 3600
+  },
+  "custom/time": {
+    "exec": "LANG=tr_TR.UTF-8 date '+{\"text\": \"󰃰 %d/%m/%y, %H:%M\", \"tooltip\": \"%d %B %A, %Y - %H:%M\"'}",
+    "interval": 60,
+    "format": "{}",
+    "on-click": "LANG=tr_TR.UTF-8 date +\"%d %B %A, %Y - %H:%M\" | wl-copy && notify-send \"Copied date to clipboard\"",
+    "return-type": "json",
+    "tooltip": true,
+    "escape": true
+  },
+  "tray": {
+    "icon-size": 17,
+    "spacing": 25
+  }
+}

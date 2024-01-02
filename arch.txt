@@ -75,6 +75,8 @@ dotnet-sdk -> dootnet
 aspnet-runtime -> dootnet
 tlp -> power management
 ttf-jetbrains-mono -> terminal font
-dbeaver -> db browser
-notion-app-electron -> notes
 scrcpy -> view phone screen on desktop
+remmina -> remote desktop
+freerdp -> rdp support
+waybar -> status bar for sway
+engrampa -> archive manager

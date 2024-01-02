@@ -293,6 +293,13 @@ require("lazy").setup({
 			},
 		},
 	},
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		config = function()
+			require("plugins.ibl")
+		end,
+		main = "ibl",
+	},
 }, {
 	install = {
 		colorscheme = { "gruvbox" },
