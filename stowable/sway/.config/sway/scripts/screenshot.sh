@@ -9,9 +9,11 @@
 
 case $1 in
 area)
+  pkill slurp
   grim -g "$(slurp -b 282828aa -c 458588ff -d -F 'JetBrains Mono')"
   ;;
 area_copy)
+  pkill slurp
   grim -g "$(slurp -b 282828aa -c 458588ff -d -F 'JetBrains Mono')" - | wl-copy
   ;;
 window)

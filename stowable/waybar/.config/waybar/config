@@ -3,7 +3,7 @@
   "position": "bottom",
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": [],
-  "modules-right": ["tray", "custom/weather", "custom/media", "memory", "network", "pulseaudio", "battery", "custom/time"],
+  "modules-right": ["tray", "custom/weather", "custom/media", "memory", "temperature", "network", "pulseaudio", "battery", "custom/time"],
   "sway/workspaces": {
     "format": "{name}",
     "disable-scroll-wraparound": true
@@ -23,6 +23,10 @@
     "format": "󰘚 {used:0.1f} GB",
     "on-click": "/usr/bin/kitty --class task_manager --execute /usr/bin/htop",
     "tooltip": false
+  },
+  "temperature": {
+    "thermal-zone": "/sys/class/thermal/thermal_zone0/temp",
+    "format": "󰔏 {temperatureC} °C"
   },
   "network": {
     "interval": 3,

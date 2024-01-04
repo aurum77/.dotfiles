@@ -80,3 +80,4 @@ remmina -> remote desktop
 freerdp -> rdp support
 waybar -> status bar for sway
 engrampa -> archive manager
+pacman-hook-kernel-install -> install kernel after upgrade
