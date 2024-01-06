@@ -40,6 +40,11 @@ nvim_web_devicons.set_icon({
 		color = "#569cd6",
 		name = "DAP_Watches",
 	},
+	js = {
+		icon = "",
+		color = "#F1F134",
+		name = "Javascript",
+	},
 	["spec.js"] = {
 		icon = "ﭧ",
 		color = "#cbcb41",

@@ -15,7 +15,7 @@ vim.notify = function(msg, ...)
 end
 
 notify.setup({
-	fps = 72,
+	fps = 144,
 	level = 2,
 	min_width = 50,
 	render = "compact",
