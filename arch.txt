@@ -1,7 +1,7 @@
 git -> to clone paru
 gammastep -> night light 
 systemd-zram -> enable zram
-google-chrome-stable -> browser
+google-chrome -> browser
 stow -> dotfile deployment
 brightnessctl -> needed for brightness control
 xdg-desktop-portal-wlr -> wayland stuff
