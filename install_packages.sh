@@ -1,8 +1,7 @@
 paru -Syu git \
 gammastep \
 systemd-zram \
-vivaldi \
-vivaldi-ffmpeg-codecs \
+google-chrome-stable \
 stow \
 brightnessctl \
 xdg-desktop-portal-wlr \
@@ -75,5 +74,8 @@ dotnet-sdk \
 aspnet-runtime \
 tlp \
 ttf-jetbrains-mono \
-dbeaver \
 scrcpy \
+remmina \
+freerdp \
+waybar \
+pacman-hook-kernel-install \

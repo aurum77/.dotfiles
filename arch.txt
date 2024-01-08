@@ -1,8 +1,7 @@
 git -> to clone paru
 gammastep -> night light 
 systemd-zram -> enable zram
-vivaldi -> browser
-vivaldi-ffmpeg-codecs -> browser codecs
+google-chrome-stable -> browser
 stow -> dotfile deployment
 brightnessctl -> needed for brightness control
 xdg-desktop-portal-wlr -> wayland stuff
@@ -38,7 +37,7 @@ man-db -> manual pages
 man-pages -> > manual pages
 htop -> system info
 nvtop -> gpu info
-nodejs-lts-hydrogen -> web dev
+nodejs-lts-iron -> web dev
 npm -> web dev
 neovim -> development
 python-pip -> needed for nvim
@@ -79,5 +78,4 @@ scrcpy -> view phone screen on desktop
 remmina -> remote desktop
 freerdp -> rdp support
 waybar -> status bar for sway
-engrampa -> archive manager
 pacman-hook-kernel-install -> install kernel after upgrade

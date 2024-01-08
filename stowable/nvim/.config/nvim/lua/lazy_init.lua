@@ -124,16 +124,6 @@ require("lazy").setup({
 		},
 	},
 	{
-		"iamcco/markdown-preview.nvim",
-		config = function()
-			require("plugins.markdown-preview")
-		end,
-		build = function()
-			vim.fn["mkdp#util#install"]()
-		end,
-		ft = "markdown",
-	},
-	{
 		"numToStr/Comment.nvim",
 		config = function()
 			require("plugins.comment")
