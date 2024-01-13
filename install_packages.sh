@@ -1,7 +1,7 @@
 paru -Syu git \
 gammastep \
 systemd-zram \
-google-chrome-stable \
+google-chrome \
 stow \
 brightnessctl \
 xdg-desktop-portal-wlr \
@@ -37,7 +37,7 @@ man-db \
 man-pages \
 htop \
 nvtop \
-nodejs-lts-hydrogen \
+nodejs-lts-iron \
 npm \
 neovim \
 python-pip \

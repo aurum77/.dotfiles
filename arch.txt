@@ -42,7 +42,7 @@ npm -> web dev
 neovim -> development
 python-pip -> needed for nvim
 ripgrep -> needed for nvim
-unzip -> needed for nvim
+unzip -> needed for nvim and unzip stuff
 wget -> needed for nvim
 tidy -> needed for nvim
 tar -> needed for nvim
@@ -79,3 +79,4 @@ remmina -> remote desktop
 freerdp -> rdp support
 waybar -> status bar for sway
 pacman-hook-kernel-install -> install kernel after upgrade
+zip -> zip stuff

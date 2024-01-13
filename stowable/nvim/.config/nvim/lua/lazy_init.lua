@@ -290,6 +290,15 @@ require("lazy").setup({
 		end,
 		main = "ibl",
 	},
+	{
+		"NeogitOrg/neogit",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"sindrets/diffview.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+		config = true,
+	},
 }, {
 	install = {
 		colorscheme = { "gruvbox" },

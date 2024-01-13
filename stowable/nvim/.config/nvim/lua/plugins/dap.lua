@@ -21,6 +21,11 @@ dap.configurations.cs = {
 		program = function()
 			return require("dotnet.globals").DEBUG_PROJECT
 		end,
+		env = {
+			ASPNETCORE_ENVIRONMENT = function()
+				return "Development"
+			end,
+		},
 	},
 }
 

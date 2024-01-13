@@ -62,6 +62,12 @@ lspconfig.html.setup({
 -- 	handlers = utils.handlers
 -- })
 
+lspconfig.clangd.setup({
+	capabilities = utils.capabilities,
+	on_attach = utils.on_attach,
+	handlers = utils.handlers,
+})
+
 lspconfig.omnisharp.setup({
 	capabilities = utils.capabilities,
 	on_attach = utils.omnisharp_on_attach,
