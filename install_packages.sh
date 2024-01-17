@@ -79,3 +79,4 @@ remmina \
 freerdp \
 waybar \
 pacman-hook-kernel-install \
+zip \

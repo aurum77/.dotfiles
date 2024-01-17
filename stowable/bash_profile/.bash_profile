@@ -27,6 +27,7 @@ export ANDROID_HOME=$HOME/.android_sdk
 # fzf config
 export FZF_DEFAULT_OPTS="
 --height 100% \
+--reverse \
 --color=bg+:#3c3836,bg:#282828,spinner:#fabd2f,hl:#fabd2f \
 --color=fg:#ebdbb2,header:#665c54,info:#83a598,pointer:#83a598 \
 --color=marker:#fe8019,fg+:#ebdbb2,prompt:#bdae93,hl+:#fabd2f"
