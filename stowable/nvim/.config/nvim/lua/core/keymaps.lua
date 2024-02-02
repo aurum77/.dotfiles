@@ -54,11 +54,11 @@ map("n", "<Leader>rt", "<Plug>PlenaryTestFile", opts)
 map("n", "<C-d>", "<C-d>zz", opts)
 map("n", "<C-u>", "<C-u>zz", opts)
 
--- Remove help bind, make it change the theme instead
-map("n", "<F1>", "<NOP>", { silent = true, callback = utils.toggle_theme })
-map("i", "<F1>", "<NOP>", { silent = true, callback = utils.toggle_theme })
-map("v", "<F1>", "<NOP>", { silent = true, callback = utils.toggle_theme })
-map("x", "<F1>", "<NOP>", { silent = true, callback = utils.toggle_theme })
+-- Remove help bind
+map("n", "<F1>", "<NOP>",  opts)
+map("i", "<F1>", "<NOP>",  opts)
+map("v", "<F1>", "<NOP>",  opts)
+map("x", "<F1>", "<NOP>",  opts)
 
 -- Remove help bind
 map("n", "J", "<Cmd>Gitsigns blame_line<CR>", opts)

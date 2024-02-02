@@ -1,5 +1,5 @@
 git -> to clone paru
-wlsunset -> night light 
+gammastep -> night light 
 systemd-zram -> enable zram
 firefox -> browser
 stow -> dotfile deployment
