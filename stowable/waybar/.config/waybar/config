@@ -3,7 +3,7 @@
   "position": "bottom",
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": [],
-  "modules-right": ["tray", "custom/weather", "custom/media", "memory", "temperature", "network", "pulseaudio", "battery", "custom/time"],
+  "modules-right": ["tray", "custom/weather", "custom/media", "memory", "temperature", "network", "pulseaudio", "battery", "clock"],
   "sway/workspaces": {
     "format": "{name}",
     "disable-scroll-wraparound": true
@@ -77,17 +77,12 @@
     "tooltip": true,
     "interval": 3600
   },
-  "custom/time": {
-    "exec": "LANG=tr_TR.UTF-8 date '+{\"text\": \"󰃰 %d/%m/%y, %H:%M\", \"tooltip\": \"%d %B %A, %Y - %H:%M\"'}",
-    "interval": 60,
-    "format": "{}",
-    "on-click": "LANG=tr_TR.UTF-8 date +\"%d %B %A, %Y - %H:%M\" | wl-copy && notify-send \"Copied date to clipboard\"",
-    "return-type": "json",
-    "tooltip": true,
-    "escape": true
-  },
   "tray": {
     "icon-size": 17,
     "spacing": 25
+  },
+  "clock": {
+    "format": "󰃰 {:%d/%m/%y, %H:%M}",
+    "tooltip-format": "{:%A, %B %d}"
   }
 }

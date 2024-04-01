@@ -113,13 +113,13 @@ require("lazy").setup({
 			"hrsh7th/cmp-nvim-lua",
 			"hrsh7th/cmp-emoji",
 			"hrsh7th/cmp-cmdline",
-			"rafamadriz/friendly-snippets",
 			{
 				"L3MON4D3/LuaSnip",
 				config = function()
 					require("plugins.luasnip")
 				end,
 				event = "InsertEnter",
+				dependencies = { "rafamadriz/friendly-snippets" },
 			},
 		},
 	},
@@ -306,6 +306,10 @@ require("lazy").setup({
 		build = function()
 			vim.fn["mkdp#util#install"]()
 		end,
+	},
+	{
+		"luckasRanarison/tailwind-tools.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
 	},
 }, {
 	install = {

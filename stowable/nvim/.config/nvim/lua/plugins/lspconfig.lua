@@ -72,7 +72,9 @@ lspconfig.omnisharp.setup({
 	capabilities = utils.capabilities,
 	on_attach = utils.omnisharp_on_attach,
 	handlers = utils.omnisharp_handlers,
-	enable_import_completion = true,
+  enable_import_completion = true,
+  enable_roslyn_analyzers = true,
+  analyze_open_documents_only = false,
 })
 
 lspconfig.emmet_ls.setup({
@@ -147,8 +149,8 @@ lspconfig.lua_ls.setup({
 -- 	on_attach = utils.on_attach,
 -- })
 
--- lspconfig.gopls.setup({
--- 	capabilities = utils.capabilities,
--- 	on_attach = utils.on_attach,
--- 	handlers = utils.handlers
--- })
+lspconfig.gopls.setup({
+	capabilities = utils.capabilities,
+	on_attach = utils.on_attach,
+	handlers = utils.handlers
+})

@@ -78,5 +78,6 @@ scrcpy -> view phone screen on desktop
 remmina -> remote desktop
 freerdp -> rdp support
 waybar -> status bar for sway
-pacman-hook-kernel-install -> install kernel after upgrade
 zip -> zip stuff
+go -> golang
+dbeaver -> db explorer

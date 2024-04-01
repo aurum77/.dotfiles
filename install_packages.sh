@@ -1,7 +1,7 @@
 paru -Syu git \
 gammastep \
 systemd-zram \
-google-chrome \
+firefox \
 stow \
 brightnessctl \
 xdg-desktop-portal-wlr \
@@ -78,5 +78,4 @@ scrcpy \
 remmina \
 freerdp \
 waybar \
-pacman-hook-kernel-install \
 zip \

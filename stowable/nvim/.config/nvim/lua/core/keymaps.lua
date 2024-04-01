@@ -1,6 +1,7 @@
 local map = vim.keymap.set
 local opts = require("core.utils").keymap_opts
 local utils = require("core.utils")
+local ls = require("luasnip")
 
 -- Set space as leader
 map("", "<Space>", "<Nop>", opts)
@@ -19,7 +20,7 @@ map("n", "<Leader>qw", "<Cmd>wqa!<CR>", opts)
 map("n", "<Leader>qa", "<Cmd>qa!<CR>", opts)
 
 -- Toggle terminal
-map("n", "<C-t>", "<Cmd>ToggleTerm<CR>", opts)
+map("n", "<C-`>", "<Cmd>ToggleTerm<CR>", opts)
 
 -- Clear highlights
 map("n", "<Leader>hh", "<Cmd>nohlsearch<CR>", opts)
@@ -55,10 +56,10 @@ map("n", "<C-d>", "<C-d>zz", opts)
 map("n", "<C-u>", "<C-u>zz", opts)
 
 -- Remove help bind
-map("n", "<F1>", "<NOP>",  opts)
-map("i", "<F1>", "<NOP>",  opts)
-map("v", "<F1>", "<NOP>",  opts)
-map("x", "<F1>", "<NOP>",  opts)
+map("n", "<F1>", "<NOP>", opts)
+map("i", "<F1>", "<NOP>", opts)
+map("v", "<F1>", "<NOP>", opts)
+map("x", "<F1>", "<NOP>", opts)
 
 -- Remove help bind
 map("n", "J", "<Cmd>Gitsigns blame_line<CR>", opts)
@@ -75,8 +76,8 @@ map("n", "<Leader>fd", "<Cmd>TroubleToggle document_diagnostics<CR>", opts)
 
 -- Terminal mode
 -- toggleterm.nvim
-map("t", "<C-t>", "<Cmd>ToggleTerm<CR>", opts)
-map("i", "<C-t>", "<Cmd>ToggleTerm<CR>", opts)
+map("t", "<C-`>", "<Cmd>ToggleTerm<CR>", opts)
+map("i", "<C-`>", "<Cmd>ToggleTerm<CR>", opts)
 map("t", "<ESC>", [[<C-\><C-n>]], opts)
 map("t", "fd", [[<C-\><C-n>]], opts)
 map("t", "<C-l>", "<C-l>", opts)
@@ -90,30 +91,47 @@ map("i", "<C-c>", "<ESC>", opts)
 map("n", "<Leader>pl", "<Cmd>Lazy<CR>", opts)
 
 -- DAP
-vim.keymap.set("n", "<F5>", function()
+map("n", "<F5>", function()
 	require("dap").continue()
 end)
-vim.keymap.set("n", "<F10>", function()
+map("n", "<F10>", function()
 	require("dap").step_over()
 end)
-vim.keymap.set("n", "<F11>", function()
+map("n", "<F11>", function()
 	require("dap").step_into()
 end)
-vim.keymap.set("n", "<F12>", function()
+map("n", "<F12>", function()
 	require("dap").step_out()
 end)
-vim.keymap.set("n", "<Leader>b", function()
+map("n", "<Leader>b", function()
 	require("dap").toggle_breakpoint()
 end)
-vim.keymap.set("n", "<Leader>B", function()
+map("n", "<Leader>B", function()
 	require("dap").set_breakpoint()
 end)
-vim.keymap.set("n", "<Leader>lp", function()
+map("n", "<Leader>lp", function()
 	require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
 end)
-vim.keymap.set("n", "<Leader>dr", function()
+map("n", "<Leader>dr", function()
 	require("dap").repl.open()
 end)
-vim.keymap.set("n", "<Leader>dl", function()
+map("n", "<Leader>dl", function()
 	require("dap").run_last()
 end)
+
+-- Snippets
+map({ "i" }, "<C-K>", function()
+	ls.expand()
+end, { silent = true })
+map({ "i", "s" }, "<C-L>", function()
+	ls.jump(1)
+end, { silent = true })
+map({ "i", "s" }, "<C-J>", function()
+	ls.jump(-1)
+end, { silent = true })
+
+map({ "i", "s" }, "<C-E>", function()
+	if ls.choice_active() then
+		ls.change_choice(1)
+	end
+end, { silent = true })

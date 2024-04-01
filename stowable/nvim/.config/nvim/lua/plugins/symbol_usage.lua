@@ -13,10 +13,6 @@ local function text_format(symbol)
 		table.insert(fragments, ("%s %s"):format(num, usage))
 	end
 
-	if symbol.definition and symbol.definition ~= 0 then
-		table.insert(fragments, symbol.definition .. " defs")
-	end
-
 	if symbol.implementation and symbol.implementation ~= 0 then
 		table.insert(fragments, symbol.implementation .. " impls")
 	end
