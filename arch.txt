@@ -74,10 +74,8 @@ dotnet-sdk -> dootnet
 aspnet-runtime -> dootnet
 tlp -> power management
 ttf-jetbrains-mono -> terminal font
-scrcpy -> view phone screen on desktop
 remmina -> remote desktop
 freerdp -> rdp support
 waybar -> status bar for sway
 zip -> zip stuff
 go -> golang
-dbeaver -> db explorer

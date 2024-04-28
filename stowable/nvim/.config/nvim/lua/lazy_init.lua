@@ -264,17 +264,18 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"mfussenegger/nvim-dap",
+		"rcarriga/nvim-dap-ui",
 		config = function()
-			require("plugins.dap")
+			require("dapui").setup()
 		end,
 		dependencies = {
 			{
-				"rcarriga/nvim-dap-ui",
+				"mfussenegger/nvim-dap",
 				config = function()
-					require("dapui").setup()
+					require("plugins.dap")
 				end,
 			},
+			"nvim-neotest/nvim-nio",
 			{
 				"theHamsta/nvim-dap-virtual-text",
 				config = function()

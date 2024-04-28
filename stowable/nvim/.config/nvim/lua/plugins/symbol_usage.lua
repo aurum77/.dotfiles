@@ -24,5 +24,5 @@ symbol_usage.setup({
 	text_format = text_format,
 	definition = { enabled = true },
 	implementation = { enabled = true },
-	disable = { lsp = { "dartls" } },
+	disable = { lsp = { "dartls", "tsserver" } },
 })

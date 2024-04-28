@@ -2,4 +2,4 @@
 /stowable/thunar/.config/Thunar/renamerrc
 /stowable/thunar/.config/Thunar/accels.scm
 /stowable/mpv/.config/mpv/accels.scm/watch_later
-/install.sh
+/install_packages.sh
