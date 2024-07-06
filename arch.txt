@@ -27,7 +27,7 @@ noto-fonts -> fonts for general ui
 noto-fonts-emoji -> google's emojis
 pipewire -> we need sound don't we ?
 pipewire-pulse -> pulse configuration
-pavucontrol -> sound control gui
+pulsemixer -> sound control gui
 wofi -> application launcher
 zathura -> pdf reader
 zathura-pdf-mupdf -> pdf plugin for zathura
@@ -79,3 +79,4 @@ freerdp -> rdp support
 waybar -> status bar for sway
 zip -> zip stuff
 go -> golang
+firefox-pwa-bin -> firefox PWA

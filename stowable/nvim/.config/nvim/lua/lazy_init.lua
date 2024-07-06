@@ -293,6 +293,7 @@ require("lazy").setup({
 	},
 	{
 		"NeogitOrg/neogit",
+    tag = "v1.0.0",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"sindrets/diffview.nvim",

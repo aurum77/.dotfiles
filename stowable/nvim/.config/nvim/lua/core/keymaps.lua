@@ -71,8 +71,8 @@ map("n", "<Leader>lm", "<Cmd>Mason<CR>", opts)
 map("n", "<Leader>ls", "<Cmd>Telescope lsp_document_symbols<CR>", opts)
 
 -- Trouble.nvim
-map("n", "<Leader>fa", "<Cmd>TroubleToggle workspace_diagnostics<CR>", opts)
-map("n", "<Leader>fd", "<Cmd>TroubleToggle document_diagnostics<CR>", opts)
+map("n", "<Leader>fa", "<Cmd>Trouble diagnostics toggle focus=true<CR>", opts)
+map("n", "<Leader>fd", "<Cmd>Trouble diagnostics toggle filter.buf=0 focus=true<CR>", opts)
 
 -- Terminal mode
 -- toggleterm.nvim

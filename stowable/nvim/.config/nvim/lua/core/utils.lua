@@ -27,8 +27,6 @@ function M.on_attach(client, bufnr)
 	map("n", "<Leader>ca", vim.lsp.buf.code_action, bufopts)
 	map("n", "gi", "<Cmd>Telescope lsp_implementations<CR>", bufopts)
 	map("n", "gr", "<Cmd>Telescope lsp_references<CR>", bufopts)
-	map("n", "<Leader>fa", "<Cmd>TroubleToggle<CR>", bufopts)
-	map("n", "<Leader>fd", "<Cmd>TroubleToggle document_diagnostics<CR>", bufopts)
 end
 
 function M.omnisharp_on_attach(client, bufnr)
@@ -47,8 +45,6 @@ function M.omnisharp_on_attach(client, bufnr)
 	map("n", "<Leader>ca", vim.lsp.buf.code_action, bufopts)
 	map("n", "gi", "<Cmd>Telescope lsp_implementations<CR>", bufopts)
 	map("n", "gr", "<Cmd>Telescope lsp_references<CR>", bufopts)
-	map("n", "<Leader>fa", "<Cmd>TroubleToggle<CR>", bufopts)
-	map("n", "<Leader>fd", "<Cmd>TroubleToggle document_diagnostics<CR>", bufopts)
 end
 
 M.omnisharp_handlers = {

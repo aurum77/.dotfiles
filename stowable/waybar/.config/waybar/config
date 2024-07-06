@@ -59,7 +59,7 @@
     }
   },
   "pulseaudio": {
-    "scroll-step": 5,
+    "scroll-step": 2,
     "format": "{icon}",
     "format-muted": "󰣽",
     "format-icons": {

@@ -6,7 +6,7 @@ end
 
 gitsigns.setup({
 	preview_config = {
-		border = "none",
+		border = "rounded",
 	},
 	on_attach = function(bufnr)
 		local gs = package.loaded.gitsigns
