@@ -37,7 +37,7 @@
 #workspaces button {
   margin: 0px 4px;
   padding: 3px 3px;
-  border-radius: 8px;
+  border-radius: 0px;
   background-color: @dark1;
   color: @light1;
 }

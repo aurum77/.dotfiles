@@ -20,14 +20,14 @@ bash-completion -> self explanatory
 mate-calc -> self explanatory
 playerctl -> media sound control
 mpv -> minimal video player
-swayfx -> window manager
+sway -> window manager
 swaybg -> for swaywm background
 swaylock -> lock screen
 noto-fonts -> fonts for general ui
 noto-fonts-emoji -> google's emojis
 pipewire -> we need sound don't we ?
 pipewire-pulse -> pulse configuration
-pulsemixer -> sound control gui
+pulsemixer -> sound control tui
 wofi -> application launcher
 zathura -> pdf reader
 zathura-pdf-mupdf -> pdf plugin for zathura
@@ -79,4 +79,3 @@ freerdp -> rdp support
 waybar -> status bar for sway
 zip -> zip stuff
 go -> golang
-firefox-pwa-bin -> firefox PWA
