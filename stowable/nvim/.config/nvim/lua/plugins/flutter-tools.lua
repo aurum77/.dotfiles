@@ -8,7 +8,7 @@ local utils = require("core.utils")
 
 flutter_tools.setup({
 	ui = {
-		border = "rounded",
+		border = "single",
 	},
 	dev_tools = {
 		auto_open_browser = true,

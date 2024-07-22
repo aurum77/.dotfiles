@@ -4,7 +4,7 @@ if not status_ok then
 	return
 end
 
-require("lspconfig.ui.windows").default_options.border = "rounded"
+require("lspconfig.ui.windows").default_options.border = "single"
 
 local utils = require("core.utils")
 

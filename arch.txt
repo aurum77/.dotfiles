@@ -76,6 +76,5 @@ tlp -> power management
 ttf-jetbrains-mono -> terminal font
 remmina -> remote desktop
 freerdp -> rdp support
-waybar -> status bar for sway
 zip -> zip stuff
 go -> golang

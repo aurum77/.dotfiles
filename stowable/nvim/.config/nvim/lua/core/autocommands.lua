@@ -1,5 +1,3 @@
-local timer = vim.loop.new_timer()
-local theme = require("core.theme")
 local nvim_tree_api = require("nvim-tree.api")
 
 -- Highlight on yank

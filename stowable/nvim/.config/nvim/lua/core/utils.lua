@@ -2,15 +2,6 @@ local M = {}
 
 local map = vim.keymap.set
 
-function M.toggle_theme()
-	if vim.opt.background._value == "dark" then
-		vim.opt.background = "light"
-	else
-		vim.opt.background = "dark"
-	end
-	vim.cmd("so " .. vim.fn.stdpath("config") .. "/lua/core/theme.lua")
-end
-
 function M.on_attach(client, bufnr)
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 	map("n", "gd", "<Cmd>Telescope lsp_definitions<CR>", bufopts)
@@ -50,7 +41,7 @@ end
 M.omnisharp_handlers = {
 	["textDocument/definition"] = require("omnisharp_extended").handler,
 	["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = "rounded",
+		border = "single",
 	}),
 }
 
@@ -58,7 +49,7 @@ M.capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.m
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 M.handlers = { ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-	border = "rounded",
+	border = "single",
 }) }
 
 M.keymap_opts = { silent = true }
