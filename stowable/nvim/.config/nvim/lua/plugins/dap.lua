@@ -16,10 +16,13 @@ dap.adapters.coreclr = {
 dap.configurations.cs = {
 	{
 		type = "coreclr",
-		name = "launch - netcoredbg",
+		name = "Debug .NET Project",
 		request = "launch",
+		cwd = function()
+			return require("dotnet.globals").STARTING_PROJECT_DIR
+		end,
 		program = function()
-			return require("dotnet.globals").DEBUG_PROJECT
+			return require("dotnet.globals").DEBUG_PROJECT_DLL
 		end,
 		env = {
 			ASPNETCORE_ENVIRONMENT = function()

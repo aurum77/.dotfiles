@@ -1,0 +1,53 @@
+@import "./gruvbox.css";
+
+* {
+  font-family: JetBrains Mono;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+#mode,
+#tray,
+#custom-weather,
+#custom-media,
+#memory,
+#temperature,
+#network,
+#pulseaudio,
+#battery,
+#clock {
+  padding: 0 7px 0;
+  margin: 8px 6px;
+  border-radius: 0px;
+  color: @light1;
+}
+
+#waybar {
+  opacity: 1;
+  color: @light1;
+}
+
+#workspaces {
+  margin-top: 6px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  margin-left: 4px;
+}
+
+#workspaces button {
+  margin: 0px 4px;
+  padding: 3px 3px;
+  border-radius: 0px;
+  background-color: @dark1;
+  color: @light1;
+}
+
+#workspaces button.focused {
+  background-color: @neutral_blue;
+  color: @dark0;
+}
+
+#workspaces button.urgent {
+  background-color: @bright_red;
+  color: @dark0;
+}

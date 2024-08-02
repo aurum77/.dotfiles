@@ -246,14 +246,6 @@ require("lazy").setup({
 		event = "BufEnter",
 	},
 	{
-		"j-hui/fidget.nvim",
-		tag = "legacy",
-		event = "LspAttach",
-		config = function()
-			require("plugins.fidget")
-		end,
-	},
-	{
 		"Hoffs/omnisharp-extended-lsp.nvim",
 	},
 	{
@@ -293,7 +285,7 @@ require("lazy").setup({
 	},
 	{
 		"NeogitOrg/neogit",
-    tag = "v1.0.0",
+		tag = "v1.0.0",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"sindrets/diffview.nvim",

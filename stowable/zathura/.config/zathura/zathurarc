@@ -25,7 +25,7 @@ set index-active-fg             "#504945" # bg2
 set inputbar-bg                 "#282828" # bg
 set inputbar-fg                 "#EBDBB2" # fg
 
-set statusbar-bg                "#504945" # bg2
+set statusbar-bg                "#3C3836" # bg1
 set statusbar-fg                "#EBDBB2" # fg
 
 set highlight-color             "#FABD2F" # bright:yellow
