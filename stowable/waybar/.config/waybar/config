@@ -45,12 +45,12 @@
     "tooltip-format-ethernet": "{ifname}"
   },
   "battery": {
-    "interval": 30,
+    "interval": 10,
     "states": {
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon} {capacity:3d}%, {time}",
+    "format": "{icon}{capacity:3d}%",
     "format-full": "{icon}",
     "format-icons": {
       "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
@@ -65,7 +65,7 @@
     "format-icons": {
       "default": ["󰣾", "󰣴", "󰣶", "󰣸", "󰣺"]
     },
-    "on-click-right": "pavucontrol",
+    "on-click-right": "/usr/bin/kitty --class floating_terminal --execute /usr/bin/pulsemixer",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "tooltip-format": "{desc} - {volume}%",
     "tooltip": true
@@ -82,7 +82,7 @@
     "spacing": 25
   },
   "clock": {
-    "format": "󰃰 {:%d/%m/%y, %H:%M}",
+    "format": "{:%H:%M}",
     "tooltip-format": "{:%A, %B %d}"
   }
 }

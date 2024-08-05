@@ -36,6 +36,8 @@ mouse_left_click = close_current
 frame_color = "#458588"
 separator_color= frame
 
+gap_size = 5
+
 [urgency_low]
 background = "#282828"
 foreground = "#EBDBB2"
