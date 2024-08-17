@@ -73,7 +73,6 @@ android-tools -> useful
 dotnet-sdk -> dootnet
 aspnet-runtime -> dootnet
 tlp -> power management
-ttf-jetbrains-mono -> terminal font
 remmina -> remote desktop
 freerdp -> rdp support
 zip -> zip stuff

@@ -1,7 +1,7 @@
 @import "./gruvbox.css";
 
 * {
-  font-family: JetBrains Mono;
+  font-family: Noto Sans Mono;
   font-weight: 600;
   font-size: 14px;
 }

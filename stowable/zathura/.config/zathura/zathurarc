@@ -1,4 +1,4 @@
-set font "JetBrains Mono 10"
+set font "Noto Sans Mono 10"
 set statusbar-home-tilde true
 set selection-clipboard clipboard
 
