@@ -3,7 +3,7 @@
   "position": "bottom",
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": [],
-  "modules-right": ["tray", "custom/weather", "custom/media", "memory", "temperature", "network", "pulseaudio", "battery", "clock"],
+  "modules-right": ["tray", "custom/weather", "custom/media", "memory", "temperature", "backlight", "network", "pulseaudio", "battery", "clock"],
   "sway/workspaces": {
     "format": "{name}",
     "disable-scroll-wraparound": true
@@ -27,6 +27,13 @@
   "temperature": {
     "thermal-zone": "/sys/class/thermal/thermal_zone0/temp",
     "format": "󰔏 {temperatureC} °C"
+  },
+  "backlight": {
+    "device": "amd_backlight",
+    "format": "{icon}",
+    "format-icons": ["󰛩", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
+    "scroll-step": 7,
+    "tooltip-format": "Backlight: {percent}%"
   },
   "network": {
     "interval": 3,
@@ -67,7 +74,7 @@
     },
     "on-click-right": "/usr/bin/kitty --class floating_terminal --execute /usr/bin/pulsemixer",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "tooltip-format": "{desc} - {volume}%",
+    "tooltip-format": "{desc}: {volume}%",
     "tooltip": true
   },
   "custom/weather": {

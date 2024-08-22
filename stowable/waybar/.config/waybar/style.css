@@ -15,7 +15,8 @@
 #network,
 #pulseaudio,
 #battery,
-#clock {
+#clock,
+#backlight {
   padding: 0 7px 0;
   margin: 8px 6px;
   border-radius: 0px;
