@@ -16,8 +16,8 @@ end
 
 lspconfig.jsonls.setup({
 	capabilities = utils.capabilities,
-	handlers = utils.handlers,
 	on_attach = utils.on_attach,
+	handlers = utils.handlers,
 })
 
 lspconfig.bashls.setup({
@@ -28,8 +28,8 @@ lspconfig.bashls.setup({
 
 lspconfig.tailwindcss.setup({
 	capabilities = utils.capabilities,
-	handlers = utils.handlers,
 	on_attach = utils.on_attach,
+	handlers = utils.handlers,
 })
 
 lspconfig.jedi_language_server.setup({
@@ -40,8 +40,8 @@ lspconfig.jedi_language_server.setup({
 
 -- lspconfig.gdscript.setup({
 -- 	capabilities = utils.capabilities,
--- 	handlers = utils.handlers
 -- 	on_attach = utils.on_attach,
+-- 	handlers = utils.handlers
 -- })
 
 lspconfig.html.setup({
@@ -52,8 +52,8 @@ lspconfig.html.setup({
 
 -- lspconfig.prismals.setup({
 -- 	capabilities = utils.capabilities,
--- 	handlers = utils.handlers,
 -- 	on_attach = utils.on_attach,
+-- 	handlers = utils.handlers,
 -- })
 
 -- lspconfig.dartls.setup({
@@ -61,6 +61,12 @@ lspconfig.html.setup({
 -- 	on_attach = utils.on_attach,
 -- 	handlers = utils.handlers
 -- })
+
+lspconfig.angularls.setup({
+	capabilities = utils.capabilities,
+	on_attach = utils.on_attach,
+	handlers = utils.handlers,
+})
 
 lspconfig.clangd.setup({
 	capabilities = utils.capabilities,
@@ -88,8 +94,8 @@ lspconfig.emmet_ls.setup({
 
 lspconfig.cssls.setup({
 	capabilities = utils.capabilities,
-	handlers = utils.handlers,
 	on_attach = utils.on_attach,
+	handlers = utils.handlers,
 	settings = {
 		css = {
 			lint = {
@@ -100,7 +106,7 @@ lspconfig.cssls.setup({
 	},
 })
 
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
 	capabilities = utils.capabilities,
 	on_attach = utils.on_attach,
 	handlers = utils.handlers,
@@ -119,8 +125,8 @@ lspconfig.tsserver.setup({
 
 lspconfig.lua_ls.setup({
 	capabilities = utils.capabilities,
-	handlers = utils.handlers,
 	on_attach = utils.on_attach,
+	handlers = utils.handlers,
 	settings = {
 		Lua = {
 			runtime = {
@@ -142,12 +148,6 @@ lspconfig.lua_ls.setup({
 		},
 	},
 })
-
--- lspconfig.clangd.setup({
--- 	capabilities = utils.capabilities,
--- 	handlers = utils.handlers
--- 	on_attach = utils.on_attach,
--- })
 
 lspconfig.gopls.setup({
 	capabilities = utils.capabilities,

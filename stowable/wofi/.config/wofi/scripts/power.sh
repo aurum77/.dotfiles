@@ -13,6 +13,7 @@ reboot)
   ;;
 suspend)
   swaylock -i $HOME/pics/wall.jpg &
+  sleep 2 &&
   exec systemctl suspend
   ;;
 lock)

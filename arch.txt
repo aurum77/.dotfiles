@@ -77,4 +77,3 @@ remmina -> remote desktop
 freerdp -> rdp support
 zip -> zip stuff
 go -> golang
-waybar -> statusbar
