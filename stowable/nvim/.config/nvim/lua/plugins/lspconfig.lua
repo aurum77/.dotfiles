@@ -62,12 +62,6 @@ lspconfig.html.setup({
 -- 	handlers = utils.handlers
 -- })
 
-lspconfig.angularls.setup({
-	capabilities = utils.capabilities,
-	on_attach = utils.on_attach,
-	handlers = utils.handlers,
-})
-
 lspconfig.clangd.setup({
 	capabilities = utils.capabilities,
 	on_attach = utils.on_attach,

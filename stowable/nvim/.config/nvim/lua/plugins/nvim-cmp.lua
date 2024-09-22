@@ -5,7 +5,6 @@ if not status_ok then
 end
 
 local lspkind = require("lspkind")
-local luasnip = require("luasnip")
 
 local check_backspace = function()
 	local col = vim.fn.col(".") - 1
@@ -49,30 +48,6 @@ cmp.setup({
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
 		-- ["<Tab>"] = cmp.mapping.select_next_item(),
 		-- ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-		["<C-s>"] = cmp.mapping(function(fallback)
-			if luasnip.expandable() then
-				luasnip.expand()
-			elseif luasnip.expand_or_jumpable() then
-				luasnip.expand_or_jump()
-			elseif check_backspace() then
-				fallback()
-			else
-				fallback()
-			end
-		end, {
-			"i",
-			"s",
-		}),
-		["<C-i>"] = cmp.mapping(function(fallback)
-			if luasnip.jumpable(-1) then
-				luasnip.jump(-1)
-			else
-				fallback()
-			end
-		end, {
-			"i",
-			"s",
-		}),
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
