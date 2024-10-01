@@ -1,8 +1,8 @@
 #!/bin/bash
 
-entries="shutdown\nreboot\nsuspend\nlock\nlogout"
+entries="󰐥 Shutdown\n󰜉 Reboot\n󰒲 Suspend\n󰍁 Lock\n󰍃 Logout"
 
-selected=$(echo -e $entries | wmenu -f "Noto Sans Mono 13" -b -i -p "power:" -N 282828 -N 282828 -n FBF1C7 -M 458588 -m 282828 -S 458588 -s 282828 | awk '{print tolower($1)}')
+selected=$(echo -e $entries | wofi --show dmenu -i --lines=7 --width=240 --hide-scroll --cache-file=/dev/null --prompt="Power Options" | awk '{print tolower($2)}')
 
 case $selected in
 shutdown)
@@ -14,7 +14,7 @@ reboot)
 suspend)
   swaylock -i $HOME/pics/wall.jpg &
   sleep 2 &&
-  exec systemctl suspend
+    exec systemctl suspend
   ;;
 lock)
   exec swaylock -i $HOME/pics/wall.jpg

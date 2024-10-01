@@ -1,5 +1,5 @@
 #!/bin/bash
-sed '1,/^### DATA ###$/d' $0 |  wmenu -f "Noto Sans Mono 13" -b -i -p "emoji:" -N 282828 -N 282828 -n FBF1C7 -M 458588 -m 282828 -S 458588 -s 282828 | cut -d ' ' -f 1 | tr -d '\n' | wl-copy
+sed '1,/^### DATA ###$/d' $0 | wofi --show dmenu -i --width=25% --prompt="Emoji" | cut -d ' ' -f 1 | tr -d '\n' | wl-copy
 exit
 ### DATA ###
 😀 grinning face

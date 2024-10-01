@@ -28,7 +28,6 @@ noto-fonts-emoji -> google's emojis
 pipewire -> we need sound don't we ?
 pipewire-pulse -> pulse configuration
 pulsemixer -> sound control tui
-wmenu -> application launcher
 zathura -> pdf reader
 zathura-pdf-mupdf -> pdf plugin for zathura
 libreoffice-fresh -> office suite
@@ -77,3 +76,5 @@ remmina -> remote desktop
 freerdp -> rdp support
 zip -> zip stuff
 go -> golang
+waybar -> statusbar
+wofi -> launcher

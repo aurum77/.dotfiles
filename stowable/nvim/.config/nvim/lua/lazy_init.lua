@@ -189,6 +189,7 @@ require("lazy").setup({
 	},
 	{
 		"norcalli/nvim-colorizer.lua",
+		ft = { "css", "html", "javascript", "javascriptreact", "typescript", "typescriptreact" },
 	},
 	{
 		dir = "~/code/dotnet.nvim",
