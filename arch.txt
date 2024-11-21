@@ -80,4 +80,3 @@ go -> golang
 waybar -> statusbar
 wofi -> launcher
 dbus-glib -> for tor
-rider -> .net ide
