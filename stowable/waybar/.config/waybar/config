@@ -89,7 +89,7 @@
     "spacing": 25
   },
   "clock": {
-    "format": "{:%H:%M}",
+    "format": "{:%d/%m/%Y - %H:%M}",
     "tooltip-format": "{:%A, %B %d}"
   }
 }
