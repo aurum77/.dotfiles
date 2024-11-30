@@ -131,13 +131,6 @@ require("lazy").setup({
 		event = "LspAttach",
 	},
 	{
-		"NTBBloodbath/rest.nvim",
-		config = function()
-			require("plugins.rest")
-		end,
-		ft = "http",
-	},
-	{
 		"onsails/lspkind.nvim",
 	},
 	{
