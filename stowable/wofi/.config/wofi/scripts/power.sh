@@ -17,7 +17,7 @@ suspend)
     exec systemctl suspend
   ;;
 lock)
-  exec swaylock -i $HOME/pics/wall.jpg
+  exec swaylock
   ;;
 logout)
   exec loginctl terminate-session $XDG_SESSION_ID

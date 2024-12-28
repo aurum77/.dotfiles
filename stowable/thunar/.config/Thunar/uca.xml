@@ -2,7 +2,7 @@
 <actions>
 <action>
 	<icon>utilities-terminal</icon>
-	<name>Open a Floating Terminal Here</name>
+	<name>Open Floating Terminal</name>
 	<unique-id>1645184356713445-1</unique-id>
 	<command>DISPLAY=:0 kitty --class=floating_terminal</command>
 	<description>Opens a floating terminal with DISPLAY=:0 set</description>
