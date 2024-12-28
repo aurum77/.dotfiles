@@ -25,7 +25,7 @@ swaybg -> for swaywm background
 swaylock -> lock screen
 noto-fonts -> fonts for general ui
 noto-fonts-emoji -> google's emojis
-ttf-cascadia-code-nerd -> monospace font
+ttf-nerd-fonts-symbols -> font glyphs
 pipewire -> we need sound don't we ?
 pipewire-pulse -> pulse configuration
 pulsemixer -> sound control tui
@@ -82,3 +82,5 @@ waybar -> statusbar
 wofi -> launcher
 dbus-glib -> for tor
 rider -> .net ide
+ani-cli -> anime
+bruno-bin -> api tester
