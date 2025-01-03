@@ -3,3 +3,5 @@
 	name = aurum77
 [init]
 	defaultBranch = main
+[color]
+	ui = auto
