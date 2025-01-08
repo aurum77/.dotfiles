@@ -14,6 +14,8 @@ export PATH="$PATH:$HOME/.dotnet/tools/"
 export PATH="$PATH:$HOME/.go/bin/"
 # Add go binaries to path
 export PATH="$PATH:$HOME/.dotnet/"
+# JetBrains toolbox
+export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
 # Needed for webrtc wayland screenshare
 export XDG_CURRENT_DESKTOP=sway
 # Needed for Intellij to work properly
