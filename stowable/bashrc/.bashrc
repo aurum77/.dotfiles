@@ -17,6 +17,7 @@ alias v='nvim '
 alias vc='nvim $HOME/.config/nvim '
 alias c='clear'
 alias z='zathura '
+alias gdrive='rclone mount gdrive: $HOME/docs/gdrive/ '
 
 # git specific aliases
 alias ga='git add '

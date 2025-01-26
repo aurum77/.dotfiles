@@ -71,8 +71,8 @@ make -> aur
 gcc -> treesitter
 which -> find path of a program
 android-tools -> useful
-dotnet-sdk -> dootnet
-aspnet-runtime -> dootnet
+dotnet-sdk-8.0 -> dootnet
+aspnet-runtime-8.0 -> dootnet
 tlp -> power management
 remmina -> remote desktop
 freerdp -> rdp support
@@ -83,3 +83,5 @@ wofi -> launcher
 dbus-glib -> for tor
 ani-cli -> anime
 bruno-bin -> api tester
+rclone -> mount google drive
+oha -> stress test tui

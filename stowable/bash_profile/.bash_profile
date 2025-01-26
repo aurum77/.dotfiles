@@ -4,16 +4,12 @@
 export PATH="$PATH:$HOME/.apps/flutter/bin/"
 # Add pip programs to path
 export PATH="$PATH:$HOME/.local/bin/"
-# Add ruby gems to path
-export PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin/"
 # Add symlinks to path
 export PATH="$PATH:$HOME/.symlinks/"
 # Add dotnet binaries to path
 export PATH="$PATH:$HOME/.dotnet/tools/"
 # Add go binaries to path
 export PATH="$PATH:$HOME/.go/bin/"
-# Add go binaries to path
-export PATH="$PATH:$HOME/.dotnet/"
 # JetBrains toolbox
 export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
 # Needed for webrtc wayland screenshare
