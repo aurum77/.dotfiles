@@ -1,7 +1,7 @@
 git -> to clone paru
 gammastep -> night light 
 systemd-zram -> enable zram
-firefox -> browser
+zen-browser-bin -> browser
 stow -> dotfile deployment
 brightnessctl -> needed for brightness control
 xdg-desktop-portal-wlr -> wayland stuff
@@ -71,8 +71,6 @@ make -> aur
 gcc -> treesitter
 which -> find path of a program
 android-tools -> useful
-dotnet-sdk-8.0 -> dootnet
-aspnet-runtime-8.0 -> dootnet
 tlp -> power management
 remmina -> remote desktop
 freerdp -> rdp support
@@ -82,6 +80,6 @@ waybar -> statusbar
 wofi -> launcher
 dbus-glib -> for tor
 ani-cli -> anime
-bruno-bin -> api tester
 rclone -> mount google drive
 oha -> stress test tui
+postman-bin -> api test
