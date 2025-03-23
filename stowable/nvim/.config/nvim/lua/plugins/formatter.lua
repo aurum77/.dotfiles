@@ -10,7 +10,6 @@ formatter.setup({
 
 	filetype = {
 		c = { require("formatter.filetypes.c").clangformat },
-		cs = { require("core.formatters").csharpier },
 		css = { require("formatter.filetypes.css").prettier },
 		html = { require("formatter.filetypes.html").prettier },
 		javascript = { require("formatter.filetypes.javascript").prettier },

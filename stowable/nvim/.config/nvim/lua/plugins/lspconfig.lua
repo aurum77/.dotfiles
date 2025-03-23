@@ -68,15 +68,6 @@ lspconfig.clangd.setup({
 	handlers = utils.handlers,
 })
 
-lspconfig.omnisharp.setup({
-	capabilities = utils.capabilities,
-	on_attach = utils.omnisharp_on_attach,
-	handlers = utils.omnisharp_handlers,
-	enable_import_completion = true,
-	enable_roslyn_analyzers = true,
-	analyze_open_documents_only = false,
-})
-
 lspconfig.emmet_ls.setup({
 	capabilities = utils.capabilities,
 	on_attach = utils.on_attach,

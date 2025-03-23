@@ -186,13 +186,6 @@ require("lazy").setup({
 		ft = { "css", "html", "javascript", "javascriptreact", "typescript", "typescriptreact" },
 	},
 	{
-		dir = "~/code/dotnet.nvim",
-		config = function()
-			require("plugins.dotnet")
-		end,
-		ft = { "cs", "solution" },
-	},
-	{
 		"ThePrimeagen/vim-be-good",
 		cmd = "VimBeGood",
 	},
@@ -239,9 +232,6 @@ require("lazy").setup({
 			require("plugins.notify")
 		end,
 		event = "BufEnter",
-	},
-	{
-		"Hoffs/omnisharp-extended-lsp.nvim",
 	},
 	{
 		"Wansmer/symbol-usage.nvim",
