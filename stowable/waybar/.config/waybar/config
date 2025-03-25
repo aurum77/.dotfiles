@@ -3,7 +3,7 @@
   "position": "bottom",
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": [],
-  "modules-right": ["tray", "custom/weather", "custom/media", "memory", "temperature", "backlight", "network", "pulseaudio", "battery", "clock"],
+  "modules-right": ["tray", "custom/media", "memory", "temperature", "backlight", "network", "pulseaudio", "battery", "clock"],
   "sway/workspaces": {
     "format": "{name}",
     "disable-scroll-wraparound": true
@@ -76,13 +76,6 @@
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "tooltip-format": "{desc}: {volume}%",
     "tooltip": true
-  },
-  "custom/weather": {
-    "exec": "$HOME/.config/waybar/scripts/weather.sh",
-    "return-type": "json",
-    "format": "{}",
-    "tooltip": true,
-    "interval": 3600
   },
   "tray": {
     "icon-size": 17,

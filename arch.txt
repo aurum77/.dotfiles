@@ -23,7 +23,7 @@ playerctl -> media sound control
 mpv -> minimal video player
 sway -> window manager
 swaybg -> for swaywm background
-swaylock -> lock screen
+waylock -> lock screen
 noto-fonts -> fonts for general ui
 noto-fonts-emoji -> google's emojis
 ttf-nerd-fonts-symbols -> font glyphs

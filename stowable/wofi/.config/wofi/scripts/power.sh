@@ -12,12 +12,12 @@ reboot)
   exec systemctl reboot
   ;;
 suspend)
-  swaylock -i $HOME/pics/wall.jpg &
+  waylock &
   sleep 2 &&
     exec systemctl suspend
   ;;
 lock)
-  exec swaylock
+  exec waylock
   ;;
 logout)
   exec loginctl terminate-session $XDG_SESSION_ID
