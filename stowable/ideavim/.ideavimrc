@@ -3,20 +3,19 @@ imap fd <ESC>
 set number
 set relativenumber
 set clipboard=unnamedplus
-
-# Plugins
-set highlightedyank
-let g:highlightedyank_highlight_duration = "100"
-
-set sneak
 set ignorecase
 set smartcase
+set wrap
+set highlightedyank
+let g:highlightedyank_highlight_duration = "100"
 
 # Keybinds
 let mapleader = " "
 map <leader>ff <Action>(GotoFile)
 map <leader>fw <Action>(SaveDocument)
 map <leader>fg <Action>(FindInPath)
+
+map K <Action>(ShowHoverInfo)
 
 map <C-d> <C-d>zz
 map <C-u> <C-u>zz

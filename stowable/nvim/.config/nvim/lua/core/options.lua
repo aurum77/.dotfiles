@@ -19,6 +19,7 @@ vim.opt.smartcase = true
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.hidden = true
 vim.opt.autoread = true
+vim.opt.linebreak = true
 vim.opt.signcolumn = "auto"
 vim.opt.termguicolors = true
 vim.opt.mouse = "n"
