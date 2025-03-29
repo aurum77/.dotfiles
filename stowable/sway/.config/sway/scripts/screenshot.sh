@@ -7,10 +7,12 @@
 # $ ./screenshot.sh window_copy
 # $ ./screenshot.sh screen_copy
 
+path=$(echo "$HOME/pics/screenshots/$(date +%Y%m%d_%Hh%Mm%Ss).png")
+
 case $1 in
 area)
   pkill slurp
-  grim -g "$(slurp -b 282828aa -c ebdbb2ff -d -F 'Noto Sans Mono')"
+  grim -g "$(slurp -b 282828aa -c ebdbb2ff -d -F 'Noto Sans Mono')" "$path"
   ;;
 area_copy)
   pkill slurp
@@ -20,9 +22,9 @@ window)
   window_floating=$(swaymsg -t get_tree | jq -r '.. | (.floating_nodes? // empty)[] | select(.focused) | .rect | "\(.x),\(.y) \(.width)x\(.height)"')
   window_tiled=$(swaymsg -t get_tree | jq -r '.. | (.nodes? // empty)[] | select(.focused) | .rect | "\(.x),\(.y) \(.width)x\(.height)"')
   if [[ ! -z "$window_floating" ]]; then
-    grim -g "$window_floating"
+    grim -g "$window_floating" "$path"
   else
-    grim -g "$window_tiled"
+    grim -g "$window_tiled" "$path"
   fi
   ;;
 window_copy)
@@ -35,7 +37,7 @@ window_copy)
   fi
   ;;
 screen)
-  grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')
+  grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') "$path"
   ;;
 screen_copy)
   grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy
