@@ -2,7 +2,7 @@
   "layer": "bottom",
   "position": "bottom",
   "modules-left": ["sway/workspaces", "sway/mode"],
-  "modules-center": [],
+  "modules-center": ["sway/window"],
   "modules-right": ["tray", "custom/media", "memory", "temperature", "backlight", "network", "pulseaudio", "battery", "clock"],
   "sway/workspaces": {
     "format": "{name}",

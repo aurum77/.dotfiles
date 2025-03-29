@@ -1,17 +1,18 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-# Add flutter to PATH
-export PATH="$PATH:$HOME/.apps/flutter/bin/"
 # Add pip programs to path
 export PATH="$PATH:$HOME/.local/bin/"
 # Add symlinks to path
 export PATH="$PATH:$HOME/.symlinks/"
 # Add dotnet binaries to path
 export PATH="$PATH:$HOME/.dotnet/tools/"
+# Add dotnet itself to path
+export PATH="$PATH:$HOME/.dotnet/"
 # Add go binaries to path
 export PATH="$PATH:$HOME/.go/bin/"
 # JetBrains toolbox
-export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
+export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts/"
+
 # Needed for webrtc wayland screenshare
 export XDG_CURRENT_DESKTOP=sway
 # Needed for Intellij to work properly
