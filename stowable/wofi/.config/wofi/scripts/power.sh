@@ -12,6 +12,7 @@ reboot)
   exec systemctl reboot
   ;;
 suspend)
+  playerctl pause &
   gtklock &
   sleep 2 &&
     exec systemctl suspend

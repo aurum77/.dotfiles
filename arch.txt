@@ -84,3 +84,4 @@ ani-cli -> anime
 rclone -> mount google drive
 oha -> stress test tui
 postman-bin -> api test
+bind -> dns tools
