@@ -12,12 +12,12 @@ reboot)
   exec systemctl reboot
   ;;
 suspend)
-  waylock &
+  gtklock &
   sleep 2 &&
     exec systemctl suspend
   ;;
 lock)
-  exec waylock
+  exec gtklock
   ;;
 logout)
   exec loginctl terminate-session $XDG_SESSION_ID
