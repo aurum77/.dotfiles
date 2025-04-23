@@ -50,5 +50,6 @@ fi
 
 # Start sway if tty1 is used for login
 if [[ "$(tty)" == "/dev/tty1" ]]; then
-  exec sway
+  export WLR_NO_HARDWARE_CURSORS=1
+  sway
 fi

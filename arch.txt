@@ -23,7 +23,7 @@ playerctl -> media sound control
 mpv -> minimal video player
 sway -> window manager
 swaybg -> for swaywm background
-gtklock -> lock screen
+swaylock -> lock screen
 noto-fonts -> fonts for general ui
 noto-fonts-emoji -> google's emojis
 ttf-nerd-fonts-symbols -> font glyphs
@@ -85,3 +85,4 @@ rclone -> mount google drive
 oha -> stress test tui
 postman-bin -> api test
 bind -> dns tools
+acer-wmi-battery-dkms -> battery health

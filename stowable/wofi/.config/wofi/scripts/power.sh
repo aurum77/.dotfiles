@@ -13,12 +13,12 @@ reboot)
   ;;
 suspend)
   playerctl pause &
-  gtklock &
+  swaylock &
   sleep 2 &&
     exec systemctl suspend
   ;;
 lock)
-  exec gtklock
+  exec swaylock
   ;;
 logout)
   exec loginctl terminate-session $XDG_SESSION_ID
