@@ -22,17 +22,6 @@ require("lazy").setup({
 		lazy = false,
 	},
 	{
-		"akinsho/flutter-tools.nvim",
-		config = function()
-			require("plugins.flutter-tools")
-		end,
-		ft = "dart",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"stevearc/dressing.nvim",
-		},
-	},
-	{
 		"nvim-telescope/telescope.nvim",
 		config = function()
 			require("plugins.telescope")
@@ -41,7 +30,7 @@ require("lazy").setup({
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
+		build = ":TSUpdate",
 		config = function()
 			require("plugins.nvim-treesitter")
 		end,
@@ -217,49 +206,11 @@ require("lazy").setup({
 		ft = "lua",
 	},
 	{
-		"utilyre/barbecue.nvim",
-		config = function()
-			require("plugins.barbecue")
-		end,
-		dependencies = {
-			"SmiteshP/nvim-navic",
-		},
-		event = "LspAttach",
-	},
-	{
-		"rcarriga/nvim-notify",
-		config = function()
-			require("plugins.notify")
-		end,
-		event = "BufEnter",
-	},
-	{
 		"Wansmer/symbol-usage.nvim",
 		event = "BufReadPre", -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
 		config = function()
 			require("plugins.symbol_usage")
 		end,
-	},
-	{
-		"rcarriga/nvim-dap-ui",
-		config = function()
-			require("dapui").setup()
-		end,
-		dependencies = {
-			{
-				"mfussenegger/nvim-dap",
-				config = function()
-					require("plugins.dap")
-				end,
-			},
-			"nvim-neotest/nvim-nio",
-			{
-				"theHamsta/nvim-dap-virtual-text",
-				config = function()
-					require("nvim-dap-virtual-text").setup()
-				end,
-			},
-		},
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
@@ -277,14 +228,6 @@ require("lazy").setup({
 			"nvim-telescope/telescope.nvim",
 		},
 		config = true,
-	},
-	{
-		"iamcco/markdown-preview.nvim",
-		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-		ft = { "markdown" },
-		build = function()
-			vim.fn["mkdp#util#install"]()
-		end,
 	},
 	{
 		"luckasRanarison/tailwind-tools.nvim",

@@ -6,8 +6,9 @@ require("gruvbox").setup({
 	italic = {
 		strings = false,
 		operators = false,
-		comments = true,
+		comments = false,
 	},
+	transparent_mode = true,
 })
 
 vim.cmd.colorscheme("gruvbox")
@@ -15,8 +16,8 @@ vim.cmd.colorscheme("gruvbox")
 -- Internal
 vim.api.nvim_set_hl(0, "WinSeparator", { fg = gruvbox.dark1 })
 vim.api.nvim_set_hl(0, "SignColumn", { fg = gruvbox.dark0 })
-vim.api.nvim_set_hl(0, "FloatBorder", { bg = gruvbox.dark0, fg = gruvbox.light1 })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = gruvbox.dark0, fg = gruvbox.light1 })
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE", fg = gruvbox.light1 })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE", fg = gruvbox.light1 })
 vim.api.nvim_set_hl(0, "Directory", { bg = "NONE", fg = gruvbox.bright_blue, bold = true })
 -- Internal
 -- Gitsigns
@@ -26,8 +27,8 @@ vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", { fg = gruvbox.bright_blue })
 vim.api.nvim_set_hl(0, "TelescopeMatching", { fg = gruvbox.bright_yellow, bold = true })
 vim.api.nvim_set_hl(0, "TelescopeSelection", { fg = gruvbox.bright_orange, bold = true })
 vim.api.nvim_set_hl(0, "TelescopeMultiSelection", { fg = gruvbox.light0 })
-vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = gruvbox.dark0 })
-vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { bg = gruvbox.dark0 })
+vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { bg = "NONE" })
 vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { fg = gruvbox.light1 })
 vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = gruvbox.light0 })
 vim.api.nvim_set_hl(0, "TelescopePromptNormal", { bg = "NONE", fg = gruvbox.light1 })
@@ -40,7 +41,7 @@ vim.api.nvim_set_hl(0, "TelescopeSelectionCaret", { fg = gruvbox.bright_orange }
 -- Telescope
 -- TreesitterContext
 vim.api.nvim_set_hl(0, "TreesitterContext", { bg = gruvbox.dark1, bold = true })
-vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { bg = gruvbox.dark1, fg = gruvbox.bright_orange, bold = true })
+vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { bg = gruvbox.dark1, fg = gruvbox.bright_yellow, bold = true })
 -- TreesitterContext
 -- Trouble
 vim.api.nvim_set_hl(0, "TroubleFoldIcon", { bg = "NONE", fg = gruvbox.bright_yellow })
@@ -55,5 +56,7 @@ vim.api.nvim_set_hl(0, "NvimTreeWindowPicker", { bg = gruvbox.neutral_blue, fg =
 -- nvim.tree
 vim.api.nvim_set_hl(0, "NvimTreeWindowPicker", { bg = gruvbox.neutral_blue, fg = gruvbox.dark0 })
 -- nvim.tree
---
+-- Barbecue
+vim.api.nvim_set_hl(0, "barbecue_normal", { bg = "NONE" })
+-- Barbecue
 return M

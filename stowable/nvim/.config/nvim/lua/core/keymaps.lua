@@ -135,3 +135,6 @@ map({ "i", "s" }, "<C-E>", function()
 		ls.change_choice(1)
 	end
 end, { silent = true })
+
+-- WSL Yank
+map({ "n", "v" }, "<Leader>y", '"+y', opts)

@@ -8,70 +8,62 @@ require("lspconfig.ui.windows").default_options.border = "single"
 
 local utils = require("core.utils")
 
-local signs = { Error = "", Warn = "", Hint = "", Info = "" }
-for type, icon in pairs(signs) do
-	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
+vim.diagnostic.config({
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "",
+			[vim.diagnostic.severity.WARN] = "",
+			[vim.diagnostic.severity.INFO] = "󰋼",
+			[vim.diagnostic.severity.HINT] = "",
+		},
+		texthl = {
+			[vim.diagnostic.severity.ERROR] = "Error",
+			[vim.diagnostic.severity.WARN] = "Warn",
+			[vim.diagnostic.severity.HINT] = "Hint",
+			[vim.diagnostic.severity.INFO] = "Info",
+		},
+		numhl = {
+			[vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+			[vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
+			[vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
+			[vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
+		},
+	},
+})
 
 lspconfig.jsonls.setup({
 	capabilities = utils.capabilities,
 	on_attach = utils.on_attach,
-	handlers = utils.handlers,
 })
 
 lspconfig.bashls.setup({
 	capabilities = utils.capabilities,
 	on_attach = utils.on_attach,
-	handlers = utils.handlers,
 })
 
 lspconfig.tailwindcss.setup({
 	capabilities = utils.capabilities,
 	on_attach = utils.on_attach,
-	handlers = utils.handlers,
 })
 
 lspconfig.jedi_language_server.setup({
 	capabilities = utils.capabilities,
 	on_attach = utils.on_attach,
-	handlers = utils.handlers,
 })
-
--- lspconfig.gdscript.setup({
--- 	capabilities = utils.capabilities,
--- 	on_attach = utils.on_attach,
--- 	handlers = utils.handlers
--- })
 
 lspconfig.html.setup({
 	capabilities = utils.capabilities,
 	on_attach = utils.on_attach,
-	handlers = utils.handlers,
 })
-
--- lspconfig.prismals.setup({
--- 	capabilities = utils.capabilities,
--- 	on_attach = utils.on_attach,
--- 	handlers = utils.handlers,
--- })
-
--- lspconfig.dartls.setup({
--- 	capabilities = utils.capabilities,
--- 	on_attach = utils.on_attach,
--- 	handlers = utils.handlers
--- })
 
 lspconfig.clangd.setup({
 	capabilities = utils.capabilities,
 	on_attach = utils.on_attach,
-	handlers = utils.handlers,
 })
 
 lspconfig.emmet_ls.setup({
 	capabilities = utils.capabilities,
 	on_attach = utils.on_attach,
-	handlers = utils.handlers,
 	filetypes = {
 		"html",
 	},
@@ -80,7 +72,6 @@ lspconfig.emmet_ls.setup({
 lspconfig.cssls.setup({
 	capabilities = utils.capabilities,
 	on_attach = utils.on_attach,
-	handlers = utils.handlers,
 	settings = {
 		css = {
 			lint = {
@@ -94,7 +85,6 @@ lspconfig.cssls.setup({
 lspconfig.ts_ls.setup({
 	capabilities = utils.capabilities,
 	on_attach = utils.on_attach,
-	handlers = utils.handlers,
 	filetypes = {
 		"javascript",
 		"javascriptreact",
@@ -111,7 +101,6 @@ lspconfig.ts_ls.setup({
 lspconfig.lua_ls.setup({
 	capabilities = utils.capabilities,
 	on_attach = utils.on_attach,
-	handlers = utils.handlers,
 	settings = {
 		Lua = {
 			runtime = {
@@ -137,17 +126,14 @@ lspconfig.lua_ls.setup({
 lspconfig.gopls.setup({
 	capabilities = utils.capabilities,
 	on_attach = utils.on_attach,
-	handlers = utils.handlers,
 })
 
 lspconfig.dockerls.setup({
 	capabilities = utils.capabilities,
 	on_attach = utils.on_attach,
-	handlers = utils.handlers,
 })
 
 lspconfig.docker_compose_language_service.setup({
 	capabilities = utils.capabilities,
 	on_attach = utils.on_attach,
-	handlers = utils.handlers,
 })
