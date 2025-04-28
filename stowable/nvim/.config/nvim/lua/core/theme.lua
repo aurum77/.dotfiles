@@ -50,9 +50,6 @@ vim.api.nvim_set_hl(0, "TroubleSignHint", { bg = "NONE", fg = gruvbox.bright_aqu
 vim.api.nvim_set_hl(0, "TroubleSignInformation", { bg = "NONE", fg = gruvbox.bright_aqua })
 vim.api.nvim_set_hl(0, "TroubleSignOther", { bg = "NONE", fg = gruvbox.bright_blue })
 -- Trouble
--- DAP
-vim.api.nvim_set_hl(0, "NvimTreeWindowPicker", { bg = gruvbox.neutral_blue, fg = gruvbox.dark0 })
--- DAP
 -- nvim.tree
 vim.api.nvim_set_hl(0, "NvimTreeWindowPicker", { bg = gruvbox.neutral_blue, fg = gruvbox.dark0 })
 -- nvim.tree

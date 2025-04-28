@@ -113,12 +113,12 @@ nvim_tree.setup({
 			glyphs = {
 				git = {
 					unstaged = "",
-					staged = "",
+					staged = " ",
 					unmerged = "",
-					renamed = "",
-					untracked = "",
+					renamed = " ",
+					untracked = " ",
 					deleted = "",
-					ignored = "",
+					ignored = " ",
 				},
 				folder = {
 					default = "",

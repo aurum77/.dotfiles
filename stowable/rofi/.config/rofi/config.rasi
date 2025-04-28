@@ -1,0 +1,9 @@
+configuration{
+    show-icons: false;
+    terminal: "kitty";
+    location: 0;
+    disable-history: true;
+    hide-scrollbar: true;
+}
+
+@theme "gruvbox-dark"

@@ -1,29 +1,33 @@
 git -> to clone paru
-gammastep -> night light 
+redshift -> night light 
 systemd-zram -> enable zram
 firefox -> browser
-thunderbird -> mail client
 stow -> dotfile deployment
 brightnessctl -> needed for brightness control
-xdg-desktop-portal-wlr -> wayland stuff
 xdg-user-dirs -> user direcotries
-xorg-xwayland -> non-wayland application support
 eza -> cool and fast ls replacement
 thunar -> file manager
 xsettingsd -> theming for applications using xwayland
-grim -> wayland screenshots
-slurp -> allows taking coordinates of areas in wayland for screenshots
-wf-recorder -> record video 
 gvfs-mtp -> support for mtp devices
-wl-clipboard -> clipboard for wayland
 jq -> needed for parsing the swaymsg json
 bash-completion -> self explanatory
 mate-calc -> self explanatory
 playerctl -> media sound control
 mpv -> minimal video player
-sway -> window manager
-swaybg -> for swaywm background
-swaylock -> lock screen
+picom -> compositor
+maim -> screenshots
+polybar -> statusbar
+rofi -> launcher
+xorg-server -> xserver
+xdg-desktop-portal-gtk -> desktop portal
+xclp -> clipboard
+i3 -> window manager
+feh -> set wallpaper
+lightdm -> lock screen
+lightdm-gtk-greeter -> actual lock screen ui
+lightdm-gtk-greeter-settings -> settings for actual lock screen ui
+gruvbox-dark-gtk -> gtk theme
+gruvbox-dark-icons-gtk -> gtk icon theme
 noto-fonts -> fonts for general ui
 noto-fonts-emoji -> google's emojis
 ttf-nerd-fonts-symbols -> font glyphs
@@ -50,16 +54,16 @@ tar -> needed for nvim
 gzip -> needed for nvim
 python-pip -> nice to have
 fzf -> cool fuzzy finder
-imv -> image viewer
 neofetch -> pretty system info
-libva-mesa-driver -> gallium video decode driver
+intel-media-driver -> intel video driver
+vpl-gpu-rt -> intel video driver
 python-wheel -> needed for pip packages 
 tokei -> count lines of code blazingly fast 
 cpupower -> governor control
 docker -> containers
 docker-compose -> containers
 docker-buildx -> container builds for rider
-kanshi -> display profiles
+autorandr -> display profiles
 fuse2 -> appimage support
 p7zip -> extract 7zip
 unrar -> extract rar
@@ -77,12 +81,11 @@ remmina -> remote desktop
 freerdp -> rdp support
 zip -> zip stuff
 go -> golang
-waybar -> statusbar
-wofi -> launcher
-dbus-glib -> for tor
 ani-cli -> anime
 rclone -> mount google drive
 oha -> stress test tui
-postman-bin -> api test
 bind -> dns tools
+linux-headers -> needed for acer-wmi-battery-dkms
 acer-wmi-battery-dkms -> battery health
+nvidia-open -> nvidia drivers
+optimus-manager -> select gpu
