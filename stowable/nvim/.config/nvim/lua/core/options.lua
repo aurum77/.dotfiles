@@ -35,20 +35,4 @@ vim.opt.fillchars = {
 	foldclose = "▸",
 }
 
-vim.g.clipboard = {
-	name = "WslClipboard",
-	copy = {
-		["+"] = "clip.exe",
-		["*"] = "clip.exe",
-	},
-	paste = {
-		["+"] = 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-		["*"] = 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-	},
-	cache_enabled = 0,
-}
-
----@diagnostic disable-next-line: duplicate-set-field, unused-local
-vim.ui.open = function(path, opts)
-	vim.system({"wsl-open", path})
-end
+vim.opt.clipboard = "unnamedplus"
