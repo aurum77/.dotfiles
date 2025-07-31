@@ -21,7 +21,7 @@
   "memory": {
     "interval": 5,
     "format": "󰘚 {used:0.1f} GB",
-    "on-click": "/usr/bin/kitty --class task_manager --execute /usr/bin/htop",
+    "on-click": "/usr/bin/alacritty --class task_manager --command /usr/bin/htop",
     "tooltip": false
   },
   "temperature": {
@@ -46,7 +46,7 @@
       "ethernet": "󰈀",
       "disconnected": "󰛵"
     },
-    "on-click": "/usr/bin/kitty --class floating_terminal --execute /usr/bin/nmtui-connect",
+    "on-click": "/usr/bin/alacritty --class floating_terminal --command /usr/bin/nmtui-connect",
     "tooltip": true,
     "tooltip-format-wifi": "{essid}: {signalStrength:3d}%",
     "tooltip-format-ethernet": "{ifname}"
@@ -72,7 +72,7 @@
     "format-icons": {
       "default": ["󰣾", "󰣴", "󰣶", "󰣸", "󰣺"]
     },
-    "on-click-right": "/usr/bin/kitty --class floating_terminal --execute /usr/bin/pulsemixer",
+    "on-click-right": "/usr/bin/alacritty --class floating_terminal --command /usr/bin/pulsemixer",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "tooltip-format": "{desc}: {volume}%",
     "tooltip": true
