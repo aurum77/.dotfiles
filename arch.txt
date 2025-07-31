@@ -78,8 +78,6 @@ zip -> zip stuff
 go -> golang
 waybar -> statusbar
 wofi -> launcher
-dbus-glib -> for tor
-ani-cli -> anime
 rclone -> mount google drive
 oha -> stress test tui
 postman-bin -> api test
