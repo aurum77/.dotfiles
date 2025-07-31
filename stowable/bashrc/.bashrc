@@ -32,15 +32,6 @@ alias gst='git status '
 alias gp='git push '
 alias s="kitten ssh"
 
-# Set governor
-alias powersave="sudo cpupower frequency-set --governor powersave 2 > /dev/null"
-alias schedutil="sudo cpupower frequency-set --governor schedutil 2 > /dev/null"
-alias performance="sudo cpupower frequency-set --governor performance 2 > /dev/null"
-
-# Battery health
-alias battery-save-on="echo 1 | sudo tee /sys/bus/wmi/drivers/acer-wmi-battery/health_mode"
-alias battery-save-off="echo 0 | sudo tee /sys/bus/wmi/drivers/acer-wmi-battery/health_mode"
-
 # Enables directory change without using cd
 shopt -s autocd
 

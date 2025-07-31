@@ -2,7 +2,6 @@ git -> to clone paru
 gammastep -> night light 
 systemd-zram -> enable zram
 firefox -> browser
-thunderbird -> mail client
 stow -> dotfile deployment
 brightnessctl -> needed for brightness control
 xdg-desktop-portal-wlr -> wayland stuff
@@ -51,7 +50,7 @@ gzip -> needed for nvim
 python-pip -> nice to have
 fzf -> cool fuzzy finder
 imv -> image viewer
-neofetch -> pretty system info
+fastfetch -> pretty system info
 libva-mesa-driver -> gallium video decode driver
 python-wheel -> needed for pip packages 
 tokei -> count lines of code blazingly fast 
@@ -85,4 +84,6 @@ rclone -> mount google drive
 oha -> stress test tui
 postman-bin -> api test
 bind -> dns tools
-acer-wmi-battery-dkms -> battery health
+linux-headers -> kernel module stuff
+nvidia-open -> nvidia driver
+prime-run -> nvidia prime run
