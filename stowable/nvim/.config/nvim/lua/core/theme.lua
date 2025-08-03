@@ -54,4 +54,7 @@ vim.api.nvim_set_hl(0, "TroubleSignOther", { bg = "NONE", fg = gruvbox.bright_bl
 -- nvim.tree
 vim.api.nvim_set_hl(0, "NvimTreeWindowPicker", { bg = gruvbox.neutral_blue, fg = gruvbox.dark0 })
 -- nvim.tree
+-- render-markdown
+vim.api.nvim_set_hl(0, "NvimTreeWindowPicker", { bg = "NONE" })
+-- render-markdown
 return M

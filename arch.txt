@@ -5,6 +5,7 @@ firefox -> browser
 stow -> dotfile deployment
 brightnessctl -> needed for brightness control
 xdg-desktop-portal-wlr -> wayland stuff
+xdg-desktop-portal-gtk -> stuff that the wayland stuff doesn't implement
 xdg-user-dirs -> user direcotries
 xorg-xwayland -> non-wayland application support
 eza -> cool and fast ls replacement
@@ -69,6 +70,9 @@ polkit-gnome -> polkit
 fakeroot -> aur
 make -> aur
 gcc -> treesitter
+dotnet-sdk-8.0 -> dotnet
+aspnet-targeting-pack-8.0 -> aspnet
+aspnet-runtime-8.0 -> aspnet
 which -> find path of a program
 android-tools -> useful
 tlp -> power management
@@ -84,4 +88,8 @@ postman-bin -> api test
 bind -> dns tools
 linux-headers -> kernel module stuff
 nvidia-open -> nvidia driver
+libva-nvidia-driver -> nvidia decode
+intel-media-driver -> intel decode
+gnome-keyring -> keyring
+seahorse -> keyring ui
 prime-run -> nvidia prime run

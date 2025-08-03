@@ -2,7 +2,7 @@
   "layer": "bottom",
   "position": "bottom",
   "modules-left": ["sway/workspaces", "sway/mode"],
-  "modules-center": ["sway/window"],
+  "modules-center": [],
   "modules-right": ["tray", "custom/media", "memory", "temperature", "backlight", "network", "pulseaudio", "battery", "clock"],
   "sway/workspaces": {
     "format": "{name}",
@@ -57,7 +57,7 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon} {capacity:3d}%",
+    "format": "{icon}{capacity:3d}%",
     "format-full": "{icon}",
     "format-icons": {
       "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
@@ -82,7 +82,7 @@
     "spacing": 25
   },
   "clock": {
-    "format": "{:%d/%m/%Y - %H:%M}",
+    "format": "{:%H:%M}",
     "tooltip-format": "{:%A, %B %d}"
   }
 }

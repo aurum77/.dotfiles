@@ -36,6 +36,3 @@ vim.keymap.set("x", "<F1>", "<NOP>", opts)
 -- Escape insert mode
 vim.keymap.set("i", "fd", "<ESC>", opts)
 vim.keymap.set("i", "<C-c>", "<ESC>", opts)
-
--- WSL Yank
-vim.keymap.set({ "n", "v" }, "<Leader>y", '"+y', opts)
