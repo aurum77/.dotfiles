@@ -38,7 +38,7 @@ man-db -> manual pages
 man-pages -> > manual pages
 htop -> system info
 nvtop -> gpu info
-nodejs-lts-iron -> web dev
+nodejs -> web dev
 npm -> web dev
 neovim -> development
 python-pip -> needed for nvim
@@ -70,9 +70,6 @@ polkit-gnome -> polkit
 fakeroot -> aur
 make -> aur
 gcc -> treesitter
-dotnet-sdk-8.0 -> dotnet
-aspnet-targeting-pack-8.0 -> aspnet
-aspnet-runtime-8.0 -> aspnet
 which -> find path of a program
 android-tools -> useful
 tlp -> power management
@@ -92,4 +89,4 @@ libva-nvidia-driver -> nvidia decode
 intel-media-driver -> intel decode
 gnome-keyring -> keyring
 seahorse -> keyring ui
-prime-run -> nvidia prime run
+nvidia-prime -> nvidia prime run
