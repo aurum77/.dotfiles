@@ -7,7 +7,7 @@
 # $ ./screenshot.sh window_copy
 # $ ./screenshot.sh screen_copy
 
-path=$(echo "$HOME/pics/screenshots/$(date +%Y%m%d_%Hh%Mm%Ss).png")
+path=$(echo "$HOME/pics/$(date +%Y%m%d_%Hh%Mm%Ss).png")
 
 case $1 in
 area)
