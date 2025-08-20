@@ -90,3 +90,10 @@ intel-media-driver -> intel decode
 gnome-keyring -> keyring
 seahorse -> keyring ui
 nvidia-prime -> nvidia prime run
+proton-vpn-gtk-app -> vpn
+qemu-desktop -> virtual machine
+libvirt -> virtual machine
+edk2-ovmf -> virtual machine
+dnsmasq -> virtual machine
+virt-manager -> virtual machine ui
+hwloc -> lstopo
