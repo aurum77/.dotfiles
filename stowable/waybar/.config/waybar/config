@@ -41,6 +41,7 @@
     "format-wifi": "{icon}",
     "format-ethernet": "{icon}",
     "format-disconnected": "{icon} disconnected",
+    "format-linked": "󰖂",
     "format-icons": {
       "wifi": ["󰤮", "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
       "ethernet": "󰈀",
@@ -48,8 +49,9 @@
     },
     "on-click": "/usr/bin/alacritty --class floating_terminal --command /usr/bin/nmtui-connect",
     "tooltip": true,
-    "tooltip-format-wifi": "{essid}: {signalStrength:3d}%",
-    "tooltip-format-ethernet": "{ifname}"
+    "tooltip-format-wifi": "{essid}: {signalStrength}%",
+    "tooltip-format-ethernet": "{ifname}",
+    "tooltip-format-linked": "VPN Active",
   },
   "battery": {
     "interval": 10,
