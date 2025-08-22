@@ -118,18 +118,18 @@ return {
 				glyphs = {
 					git = {
 						unstaged = "",
-						staged = "",
+						staged = " ",
 						unmerged = "",
-						renamed = "",
-						untracked = "",
-						deleted = "",
-						ignored = "",
+						renamed = " ",
+						untracked = " ",
+						deleted = " ",
+						ignored = " ",
 					},
 					folder = {
-						default = "",
-						open = "",
-						empty = "",
-						empty_open = "",
+						default = " ",
+						open = " ",
+						empty = " ",
+						empty_open = " ",
 					},
 				},
 			},
@@ -158,10 +158,10 @@ return {
 		},
 		diagnostics = {
 			icons = {
-				error = "",
-				warning = "",
-				hint = "",
-				info = "",
+				error = " ",
+				warning = " ",
+				hint = " ",
+				info = " ",
 			},
 
 			enable = true,

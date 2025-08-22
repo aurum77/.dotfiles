@@ -47,7 +47,7 @@ return {
 			path = 0,
 			symbols = {
 				modified = "",
-				readonly = "",
+				readonly = " ",
 			},
 			cond = conditions.buffer_not_empty,
 		}
@@ -84,7 +84,7 @@ return {
 
 		local branch = {
 			"branch",
-			icon = "",
+			icon = " ",
 		}
 
 		require("lualine").setup({

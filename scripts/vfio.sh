@@ -1,3 +1,4 @@
+echo "Adding boot entry with dGPU isolated"
 sudo sed -i 's/^MODULES=()/MODULES=(vfio_pci vfio vfio_iommu_type1)/' /etc/mkinitcpio.conf
 sudo mkinitcpio -P linux
 sudo cp "$(ls *linux.conf | head -n1)" /boot/loader/entries/linux-vfio.conf

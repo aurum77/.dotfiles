@@ -55,7 +55,6 @@ fastfetch -> pretty system info
 libva-mesa-driver -> gallium video decode driver
 python-wheel -> needed for pip packages 
 tokei -> count lines of code blazingly fast 
-cpupower -> governor control
 docker -> containers
 docker-compose -> containers
 docker-buildx -> container builds for rider
