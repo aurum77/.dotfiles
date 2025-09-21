@@ -7,7 +7,7 @@ echo "Starting TLP"
 sudo systemctl enable --now tlp.service
 
 echo "Starting libvirt"
-sudo systemctl enable --now libvirt.service
+sudo systemctl enable --now libvirtd.service
 
 echo "Starting default virsh network"
 sudo virsh net-start default
