@@ -7,7 +7,7 @@ return {
 			vim.keymap.set("n", "<Leader>lm", "<Cmd>Mason<CR>", opts)
 		end,
 		opts = {
-			ensure_installed = lsp
+			ensure_installed = lsp,
 		},
 		dependencies = {
 			{

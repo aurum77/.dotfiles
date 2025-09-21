@@ -1,6 +1,6 @@
 return {
 	"nvim-telescope/telescope.nvim",
-  lazy = false,
+	lazy = false,
 	init = function()
 		local opts = require("plugins.lsp.opts").opts
 		vim.keymap.set("n", "<Leader>ff", "<Cmd>Telescope find_files<CR>", opts)

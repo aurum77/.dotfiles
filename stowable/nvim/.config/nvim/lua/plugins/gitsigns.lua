@@ -5,7 +5,7 @@ return {
 			preview_config = {
 				border = "single",
 			},
-      current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
+			current_line_blame = true,
 			on_attach = function(bufnr)
 				local gs = package.loaded.gitsigns
 				local opts = require("plugins.lsp.opts").opts
