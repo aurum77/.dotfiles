@@ -36,11 +36,6 @@ return {
 			cond = conditions.hide_in_width,
 		}
 
-		local filesize = {
-			"filesize",
-			fmt = string.upper,
-		}
-
 		local filetype = {
 			"filetype",
 			icon_only = true,
@@ -110,7 +105,7 @@ return {
 				},
 			},
 			sections = {
-				lualine_a = { filename, filesize },
+				lualine_a = { filename },
 				lualine_b = { branch },
 				lualine_c = { diagnostics },
 				lualine_x = { diff, fileformat },

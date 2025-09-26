@@ -27,8 +27,6 @@ export GOPATH=$HOME/.go
 export EDITOR=/usr/bin/nvim
 # Set Android sdk path
 export ANDROID_HOME=$HOME/.android_sdk
-# Set npm package path
-export NPM_PACKAGES=$HOME/.npm_packages
 # fzf config
 export FZF_DEFAULT_OPTS="
 --height 100% \
@@ -37,7 +35,11 @@ export FZF_DEFAULT_OPTS="
 --color=fg:#ebdbb2,header:#665c54,info:#83a598,pointer:#83a598 \
 --color=marker:#fe8019,fg+:#ebdbb2,prompt:#bdae93,hl+:#fabd2f"
 
+# Set npm package path
+export NPM_PACKAGES=$HOME/.npm_packages
+
 export PATH="$PATH:$NPM_PACKAGES/bin"
+
 # Preserve MANPATH if you already defined it somewhere in your config.
 # Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
@@ -50,5 +52,6 @@ fi
 
 # Start sway if tty1 is used for login
 if [[ "$(tty)" == "/dev/tty1" ]]; then
-  sway --unsupported-gpu
+  export WLR_DRM_DEVICES=/dev/dri/card1
+  sway
 fi

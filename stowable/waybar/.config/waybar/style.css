@@ -6,6 +6,16 @@
   font-size: 14px;
 }
 
+window#waybar {
+    background: transparent;
+}
+
+window > box {
+	margin: 7px 12px;
+  background: rgba(40,40,40, 0.8);
+  border-radius: 8px;
+}
+
 #mode,
 #tray,
 #custom-weather,
@@ -24,7 +34,6 @@
 }
 
 #waybar {
-  opacity: 1;
   color: @light1;
 }
 
@@ -38,7 +47,7 @@
 #workspaces button {
   margin: 0px 4px;
   padding: 3px 3px;
-  border-radius: 0px;
+  border-radius: 4px;
   background-color: @dark1;
   color: @light1;
   transition: none;

@@ -1,5 +1,5 @@
 return {
 	"tronikelis/ts-autotag.nvim",
 	opts = {},
-	event = "VeryLazy",
+	ft = { "css", "html", "javascript", "javascriptreact", "typescript", "typescriptreact" },
 }

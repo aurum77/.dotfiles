@@ -20,7 +20,7 @@ return {
 		direction = "float",
 		autochdir = true,
 		float_opts = {
-			border = "single",
+			border = "rounded",
 		},
 	},
 }

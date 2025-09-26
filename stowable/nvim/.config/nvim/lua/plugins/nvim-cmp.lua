@@ -22,8 +22,8 @@ return {
 				end,
 			},
 			window = {
-				completion = cmp.config.window.bordered({ border = "single" }),
-				documentation = cmp.config.window.bordered({ border = "single" }),
+				completion = cmp.config.window.bordered({ border = "rounded" }),
+				documentation = cmp.config.window.bordered({ border = "rounded" }),
 			},
 			view = {
 				entries = { name = "custom", selection_order = "near_cursor" },

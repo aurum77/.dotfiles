@@ -25,7 +25,6 @@ return {
 				horizontal = { prompt_position = "bottom", results_width = 0.6 },
 			},
 			border = true,
-			borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
 		},
 	},
 }

@@ -21,7 +21,7 @@ bash-completion -> self explanatory
 mate-calc -> self explanatory
 playerctl -> media sound control
 mpv -> minimal video player
-sway -> window manager
+swayfx -> window manager
 swaybg -> for swaywm background
 swaylock -> lock screen
 noto-fonts -> fonts for general ui
@@ -82,8 +82,8 @@ rclone -> mount google drive
 oha -> stress test tui
 postman-bin -> api test
 bind -> dns tools
-linux-headers -> kernel module stuff
-nvidia-open -> nvidia driver
+linux-lts-headers -> kernel module stuff
+nvidia-open-lts -> nvidia driver
 libva-nvidia-driver -> nvidia decode
 intel-media-driver -> intel decode
 gnome-keyring -> keyring
@@ -96,3 +96,4 @@ edk2-ovmf -> virtual machine
 dnsmasq -> virtual machine
 virt-manager -> virtual machine ui
 hwloc -> lstopo
+readest -> book reader

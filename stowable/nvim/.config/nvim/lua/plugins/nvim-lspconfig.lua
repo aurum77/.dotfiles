@@ -8,7 +8,7 @@ return {
 		vim.keymap.set("n", "gd", "<Cmd>Telescope lsp_definitions<CR>", opts)
 		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 		vim.keymap.set("n", "K", function()
-			vim.lsp.buf.hover({ border = "single" })
+			vim.lsp.buf.hover({ border = "rounded" })
 		end, opts)
 		vim.keymap.set("n", "<Leader>wl", function()
 			print(vim.inspect(vim.lsp.buf.list_workspace_folders()))

@@ -3,7 +3,7 @@ return {
 	init = function()
 		require("gitsigns").setup({
 			preview_config = {
-				border = "single",
+				border = "rounded",
 			},
 			current_line_blame = true,
 			on_attach = function(bufnr)
