@@ -96,4 +96,3 @@ edk2-ovmf -> virtual machine
 dnsmasq -> virtual machine
 virt-manager -> virtual machine ui
 hwloc -> lstopo
-readest -> book reader

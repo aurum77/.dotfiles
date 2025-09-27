@@ -1,20 +1,10 @@
 profile {
-  output eDP-1 enable mode 1920x1080@60Hz
+  output eDP-1 enable mode 1920x1080@144
 }
 
 profile double {
-    output DP-1 mode 2560x1440@164.835Hz position 0,0
+    output DP-1 mode 2560x1440@144 position 0,0
     output eDP-1 mode 1920x1080@144 position 2560,580 scale 1.25
-}
-
-profile double_nvidia {
-    output HDMI-A-2 mode 2560x1440@144 position 0,0
-    output eDP-1 mode 1920x1080@144 position 2560,580 scale 1.25
-}
-
-profile single_nvidia {
-  output HDMI-A-2 mode 2560x1440 position 0,0
-  output eDP-1 disable
 }
 
 profile share {

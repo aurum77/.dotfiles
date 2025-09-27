@@ -7,11 +7,11 @@
 }
 
 window#waybar {
-    background: transparent;
+  background: transparent;
 }
 
 window > box {
-	margin: 7px 12px;
+  margin: 7px 11px;
   background: rgba(40,40,40, 0.8);
   border-radius: 8px;
 }
