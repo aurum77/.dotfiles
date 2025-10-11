@@ -21,7 +21,7 @@ bash-completion -> self explanatory
 mate-calc -> self explanatory
 playerctl -> media sound control
 mpv -> minimal video player
-swayfx -> window manager
+sway -> window manager
 swaybg -> for swaywm background
 swaylock -> lock screen
 noto-fonts -> fonts for general ui

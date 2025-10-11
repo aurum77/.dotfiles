@@ -38,6 +38,5 @@
   "telescope.nvim": { "branch": "master", "commit": "b4da76be54691e854d3e0e02c36b0245f945c2c7" },
   "toggleterm.nvim": { "branch": "main", "commit": "9a88eae817ef395952e08650b3283726786fb5fb" },
   "trouble.nvim": { "branch": "main", "commit": "f176232e7759c4f8abd923c21e3e5a5c76cd6837" },
-  "ts-autotag.nvim": { "branch": "master", "commit": "06f980496633e4bee391d6c780b7544fc763865c" },
-  "wiki.vim": { "branch": "master", "commit": "75a491775b498e5eac1de9c440b67942bdeab2a6" }
+  "ts-autotag.nvim": { "branch": "master", "commit": "06f980496633e4bee391d6c780b7544fc763865c" }
 }

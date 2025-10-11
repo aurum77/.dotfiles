@@ -4,7 +4,7 @@ return {
 	opts = {
 		input = {
 			enabled = true,
-			border = "rounded",
+			border = "single",
 			relative = "editor",
 			win_options = {
 				winblend = 0,

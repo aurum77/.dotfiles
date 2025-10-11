@@ -52,6 +52,5 @@ fi
 
 # Start sway if tty1 is used for login
 if [[ "$(tty)" == "/dev/tty1" ]]; then
-  export WLR_DRM_DEVICES=/dev/dri/card1
-  sway
+  sway --unsupported-gpu
 fi

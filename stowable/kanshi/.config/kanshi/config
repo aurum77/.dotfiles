@@ -3,8 +3,8 @@ profile {
 }
 
 profile double {
-    output DP-1 mode 2560x1440@144 position 0,0
-    output eDP-1 mode 1920x1080@144 position 2560,580 scale 1.25
+    output HDMI-A-2 mode 2560x1440@144 position 0,0
+    output eDP-1 mode 1920x1080@144 position 2560,480 scale 1.25
 }
 
 profile share {
