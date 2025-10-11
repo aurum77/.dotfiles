@@ -82,8 +82,8 @@ rclone -> mount google drive
 oha -> stress test tui
 postman-bin -> api test
 bind -> dns tools
-linux-lts-headers -> kernel module stuff
-nvidia-open-lts -> nvidia driver
+linux-headers -> kernel module stuff
+nvidia-open -> nvidia driver
 libva-nvidia-driver -> nvidia decode
 intel-media-driver -> intel decode
 gnome-keyring -> keyring
