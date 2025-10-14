@@ -78,8 +78,6 @@ zip -> zip stuff
 go -> golang
 waybar -> statusbar
 wofi -> launcher
-rclone -> mount google drive
-oha -> stress test tui
 postman-bin -> api test
 bind -> dns tools
 linux-headers -> kernel module stuff

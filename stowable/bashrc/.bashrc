@@ -17,7 +17,6 @@ alias v='nvim '
 alias vc='nvim $HOME/.config/nvim '
 alias c='clear'
 alias z='zathura '
-alias gdrive='rclone mount gdrive: $HOME/docs/gdrive/ '
 
 # git specific aliases
 alias ga='git add '
@@ -30,7 +29,7 @@ alias gl='git log '
 alias glo='git log --oneline '
 alias gst='git status '
 alias gp='git push '
-alias s='kitten ssh'
+alias s='TERM="xterm-256color" kitty +kitten ssh'
 
 # Enables directory change without using cd
 shopt -s autocd
