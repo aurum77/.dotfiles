@@ -33,7 +33,7 @@ pulsemixer -> sound control tui
 zathura -> pdf reader
 zathura-pdf-mupdf -> pdf plugin for zathura
 libreoffice-fresh -> office suite
-kitty -> GPU accelerated terminal emulator
+alacritty -> GPU accelerated terminal emulator
 man-db -> manual pages
 man-pages -> > manual pages
 htop -> system info

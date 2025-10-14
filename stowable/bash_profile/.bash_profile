@@ -52,5 +52,24 @@ fi
 
 # Start sway if tty1 is used for login
 if [[ "$(tty)" == "/dev/tty1" ]]; then
-  sway --unsupported-gpu
+  echo "Select GPU to use:"
+  echo "1) Nvidia        /dev/dri/card0"
+  echo "2) Intel/Hybrid  /dev/dri/card1"
+  read -rp "Enter choice: " choice
+
+  case "$choice" in
+  1)
+    clear
+    export WLR_DRM_DEVICES=/dev/dri/card0
+    sway --unsupported-gpu
+    ;;
+  2)
+    sway --unsupported-gpu
+    ;;
+  *)
+    clear
+    export WLR_DRM_DEVICES=/dev/dri/card0
+    sway --unsupported-gpu
+    ;;
+  esac
 fi

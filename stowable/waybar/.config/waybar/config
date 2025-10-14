@@ -25,7 +25,6 @@
     "tooltip": false
   },
   "backlight": {
-    "device": "amd_backlight",
     "format": "{icon}",
     "format-icons": ["󰛩", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
     "scroll-step": 7,

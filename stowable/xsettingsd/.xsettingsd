@@ -1,3 +1,3 @@
 Net/ThemeName "gruvbox-dark-gtk"
 Net/IconThemeName "gruvbox-dark-icons-gtk"
-Gtk/FontName "Noto Sans 11"
+Gtk/FontName "JetBrains Mono NL 10"

@@ -29,7 +29,6 @@ alias gl='git log '
 alias glo='git log --oneline '
 alias gst='git status '
 alias gp='git push '
-alias s='TERM="xterm-256color" kitty +kitten ssh'
 
 # Enables directory change without using cd
 shopt -s autocd

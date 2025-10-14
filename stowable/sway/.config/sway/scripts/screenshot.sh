@@ -12,11 +12,11 @@ path=$(echo "$HOME/pics/$(date +%Y%m%d_%Hh%Mm%Ss).png")
 case $1 in
 area)
   pkill slurp
-  grim -g "$(slurp -b 282828aa -c ebdbb2ff -d -F 'Noto Sans Mono')" "$path"
+  grim -g "$(slurp -b 282828aa -c ebdbb2ff -d -F 'JetBrains Mono NL')" "$path"
   ;;
 area_copy)
   pkill slurp
-  grim -g "$(slurp -b 282828aa -c ebdbb2ff -d -F 'Noto Sans Mono')" - | wl-copy
+  grim -g "$(slurp -b 282828aa -c ebdbb2ff -d -F 'JetBrains Mono NL')" - | wl-copy
   ;;
 window)
   window_floating=$(swaymsg -t get_tree | jq -r '.. | (.floating_nodes? // empty)[] | select(.focused) | .rect | "\(.x),\(.y) \(.width)x\(.height)"')
