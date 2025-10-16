@@ -94,3 +94,5 @@ edk2-ovmf -> virtual machine
 dnsmasq -> virtual machine
 virt-manager -> virtual machine ui
 hwloc -> lstopo
+tmux -> terminal multiplexer
+tmux-plugin-manager -> tmux package manager

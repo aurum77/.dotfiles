@@ -5,7 +5,7 @@
 	<name>Open Floating Terminal</name>
 	<submenu></submenu>
 	<unique-id>1645184356713445-1</unique-id>
-	<command>kitty --class=floating_terminal</command>
+	<command>/usr/bin/alacritty --class=floating_terminal</command>
 	<description>Opens a floating terminal</description>
 	<range></range>
 	<patterns>*</patterns>

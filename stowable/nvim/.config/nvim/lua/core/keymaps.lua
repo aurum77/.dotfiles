@@ -6,11 +6,11 @@ vim.keymap.set("", "<Space>", "<Nop>", opts)
 
 -- Normal mode
 -- Split navigation and management binds
-vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
-vim.keymap.set("n", "<C-j>", "<C-w>j", opts)
-vim.keymap.set("n", "<C-k>", "<C-w>k", opts)
-vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
-vim.keymap.set("n", "<Leader>wq", "<C-w>q", opts)
+vim.keymap.set("n", "<C-h>", "<Cmd>TmuxNavigateLeft<CR>", opts)
+vim.keymap.set("n", "<C-j>", "<Cmd>TmuxNavigateDown<CR>", opts)
+vim.keymap.set("n", "<C-k>", "<Cmd>TmuxNavigateUp<CR>", opts)
+vim.keymap.set("n", "<C-l>", "<Cmd>TmuxNavigateRight<CR>", opts)
+vim.keymap.set("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<CR>", opts)
 
 -- Quit all
 vim.keymap.set("n", "<Leader>qw", "<Cmd>wqa!<CR>", opts)

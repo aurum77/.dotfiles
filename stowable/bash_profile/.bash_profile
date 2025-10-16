@@ -55,7 +55,7 @@ if [[ "$(tty)" == "/dev/tty1" ]]; then
   echo "Select GPU to use:"
   echo "1) Nvidia        /dev/dri/card0"
   echo "2) Intel/Hybrid  /dev/dri/card1"
-  read -rp "Enter choice: " choice
+  read -rp "Enter choice (default is Nvidia): " choice
 
   case "$choice" in
   1)
