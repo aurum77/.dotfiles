@@ -32,6 +32,18 @@ vim.keymap.set("i", "<F1>", "<NOP>", opts)
 vim.keymap.set("v", "<F1>", "<NOP>", opts)
 vim.keymap.set("x", "<F1>", "<NOP>", opts)
 
+-- Remove tag bind
+vim.keymap.set("n", "<C-t>", "<NOP>", opts)
+vim.keymap.set("i", "<C-t>", "<NOP>", opts)
+vim.keymap.set("v", "<C-t>", "<NOP>", opts)
+vim.keymap.set("x", "<C-t>", "<NOP>", opts)
+
+vim.keymap.set("n", "<C-w>d", function()
+	vim.diagnostic.open_float(nil, {
+		border = "single",
+	})
+end, opts)
+
 -- Insert mode
 -- Escape insert mode
 vim.keymap.set("i", "fd", "<ESC>", opts)

@@ -1,4 +1,4 @@
-set font "JetBrains Mono NL 11"
+set font "JetBrains Mono NL 10"
 set statusbar-home-tilde true
 set selection-clipboard clipboard
 
@@ -10,7 +10,7 @@ set notification-bg             "#282828" # bg
 set notification-fg             "#B8BB26" # bright:green
 
 set completion-bg               "#504945" # bg2
-set completion-fg               "#EBDBB2" # fg
+set completion-fg               "#FBF1C7" # fg0
 set completion-group-bg         "#3C3836" # bg1
 set completion-group-fg         "#928374" # gray
 set completion-highlight-bg     "#83A598" # bright:blue
@@ -18,27 +18,27 @@ set completion-highlight-fg     "#504945" # bg2
 
 # Define the color in index mode
 set index-bg                    "#504945" # bg2
-set index-fg                    "#EBDBB2" # fg
+set index-fg                    "#FBF1C7" # fg0
 set index-active-bg             "#83A598" # bright:blue
 set index-active-fg             "#504945" # bg2
 
 set inputbar-bg                 "#282828" # bg
-set inputbar-fg                 "#EBDBB2" # fg
+set inputbar-fg                 "#FBF1C7" # fg0
 
 set statusbar-bg                "#3C3836" # bg1
-set statusbar-fg                "#EBDBB2" # fg
+set statusbar-fg                "#FBF1C7" # fg0
 
-set highlight-color             "#FABD2F" # bright:yellow
-set highlight-active-color      "#FE8019" # bright:orange
+set highlight-color             rgba(254,128,25,0.3)   # bright:orange
+set highlight-active-color      rgba(250,189,47,0.5)   # bright:yellow
 
 set default-bg                  "#282828" # bg
-set default-fg                  "#EBDBB2" # fg
+set default-fg                  "#FBF1C7" # fg0
 set render-loading              true
 set render-loading-bg           "#282828" # bg
-set render-loading-fg           "#EBDBB2" # fg
+set render-loading-fg           "#FBF1C7" # fg0
 
 # Recolor book content's color
 set recolor-lightcolor          "#282828" # bg
-set recolor-darkcolor           "#EBDBB2" # fg
+set recolor-darkcolor           "#FBF1C7" # fg0
 
 set recolor                     "true"

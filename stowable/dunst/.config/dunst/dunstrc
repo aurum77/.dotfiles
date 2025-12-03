@@ -33,7 +33,7 @@ corner_radius = 0
 
 mouse_left_click = close_current
 
-frame_color = "#458588"
+frame_color = "#83A598"
 separator_color= frame
 
 gap_size = 5
@@ -49,4 +49,4 @@ foreground = "#EBDBB2"
 [urgency_critical]
 background = "#282828"
 foreground = "#EBDBB2"
-frame_color = "#CC241D"
+frame_color = "#Fb4934"

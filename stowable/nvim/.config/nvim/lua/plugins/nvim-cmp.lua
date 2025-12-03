@@ -3,7 +3,6 @@ return {
 	event = { "InsertEnter", "CmdlineEnter" },
 	config = function()
 		local cmp = require("cmp")
-		local lspkind = require("lspkind")
 
 		local check_backspace = function()
 			local col = vim.fn.col(".") - 1
@@ -22,15 +21,15 @@ return {
 				end,
 			},
 			window = {
-				completion = cmp.config.window.bordered({ border = "single" }),
+				completion = cmp.config.window.bordered({ border = "single", winhighlight = "CursorLine:PmenuSel" }),
 				documentation = cmp.config.window.bordered({ border = "single" }),
 			},
 			view = {
 				entries = { name = "custom", selection_order = "near_cursor" },
 			},
 			formatting = {
-				format = lspkind.cmp_format({
-					mode = "symbol_text",
+				format = require("lspkind").cmp_format({
+					mode = "text",
 					menu = {
 						nvim_lsp = "[LSP]",
 						luasnip = "[LuaSnip]",
@@ -97,8 +96,6 @@ return {
 				{ name = "luasnip" },
 				{ name = "buffer", keyword_length = 5 },
 				{ name = "nvim_lsp_signature_help" },
-				{ name = "emoji" },
-				{ name = "render-markdown" },
 			}),
 		})
 
@@ -127,7 +124,6 @@ return {
 		"saadparwaiz1/cmp_luasnip",
 		"hrsh7th/cmp-nvim-lsp-signature-help",
 		"hrsh7th/cmp-nvim-lua",
-		"hrsh7th/cmp-emoji",
 		"hrsh7th/cmp-cmdline",
 		"L3MON4D3/LuaSnip",
 	},

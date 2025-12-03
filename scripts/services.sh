@@ -12,3 +12,5 @@ sudo systemctl enable --now libvirtd.service
 echo "Starting default virsh network"
 sudo virsh net-start default
 sudo virsh net-autostart default
+
+sudo usermod -aG gamemode $USER

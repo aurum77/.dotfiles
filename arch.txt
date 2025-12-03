@@ -1,6 +1,5 @@
 git -> to clone paru
-gammastep -> night light 
-systemd-zram -> enable zram
+gammastep -> night light systemd-zram -> enable zram
 firefox -> browser
 stow -> dotfile deployment
 brightnessctl -> needed for brightness control
@@ -63,7 +62,6 @@ fuse2 -> appimage support
 p7zip -> extract 7zip
 unrar -> extract rar
 flatpak -> sandboxed applications
-gtk-engine-murrine -> theme
 dunst -> notifications
 polkit-gnome -> polkit
 fakeroot -> aur
@@ -76,8 +74,6 @@ remmina -> remote desktop
 freerdp -> rdp support
 zip -> zip stuff
 go -> golang
-waybar -> statusbar
-wofi -> launcher
 postman-bin -> api test
 bind -> dns tools
 linux-headers -> kernel module stuff
@@ -87,7 +83,6 @@ intel-media-driver -> intel decode
 gnome-keyring -> keyring
 seahorse -> keyring ui
 nvidia-prime -> nvidia prime run
-proton-vpn-gtk-app -> vpn
 qemu-desktop -> virtual machine
 libvirt -> virtual machine
 edk2-ovmf -> virtual machine
@@ -96,3 +91,12 @@ virt-manager -> virtual machine ui
 hwloc -> lstopo
 tmux -> terminal multiplexer
 tmux-plugin-manager -> tmux package manager
+zoxide -> cd but smarter ?
+obs-studio -> for recording dumb shit
+gamemode -> gaming
+gdu -> disk usage analysis
+cloudflare-warp-bin -> vpn
+ntfs-3g -> ntfs driver
+dmenu -> launcher
+python-setuptools -> dev stuff
+dmidecode -> vm stuff

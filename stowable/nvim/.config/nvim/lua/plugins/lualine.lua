@@ -120,7 +120,7 @@ return {
 				lualine_y = {},
 				lualine_z = {},
 			},
-			extensions = { "nvim-tree", "toggleterm" },
+			extensions = { "nvim-tree" },
 		})
 	end,
 }

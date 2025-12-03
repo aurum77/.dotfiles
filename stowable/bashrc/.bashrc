@@ -16,7 +16,7 @@ alias tree='eza --tree'
 alias v='nvim '
 alias vc='nvim $HOME/.config/nvim '
 alias c='clear'
-alias z='zathura '
+alias t='tmux '
 
 # git specific aliases
 alias ga='git add '
@@ -35,3 +35,25 @@ shopt -s autocd
 
 # Source fzf config
 source /usr/share/fzf/key-bindings.bash
+
+# tmux session numbering start from 1
+new-tmux() {
+  local next=$(tmux list-sessions 2>/dev/null | awk -F: '{print $1}' | sort -n | tail -1)
+  if [ -z "$next" ]; then
+    next=1
+  else
+    next=$((next + 1))
+  fi
+  tmux new-session -s "$next"
+}
+
+# Auto-start tmux when opening an interactive terminal
+if command -v tmux >/dev/null 2>&1; then
+  # Check: not already inside tmux, running in a real terminal, and not starting sway
+  if [ -z "$TMUX" ] && [[ "$(tty)" != /dev/tty* ]]; then
+    new-tmux
+    exit
+  fi
+fi
+
+eval "$(zoxide init --cmd cd bash)"

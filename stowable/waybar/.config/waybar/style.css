@@ -8,7 +8,6 @@
 
 #mode,
 #tray,
-#custom-weather,
 #custom-media,
 #memory,
 #temperature,
@@ -17,8 +16,8 @@
 #battery,
 #clock,
 #backlight {
-  padding: 0 7px 0;
-  margin: 8px 6px;
+  padding: 0 5px 0;
+  margin: 0px 6px;
   border-radius: 0px;
   color: @light1;
 }
@@ -28,24 +27,15 @@
   color: @light1;
 }
 
-#workspaces {
-  margin-top: 6px;
-  margin-right: 6px;
-  margin-bottom: 6px;
-  margin-left: 4px;
-}
-
 #workspaces button {
-  margin: 0px 4px;
-  padding: 3px 3px;
   border-radius: 0px;
-  background-color: @dark1;
+  background-color: @dark0;
   color: @light1;
   transition: none;
 }
 
 #workspaces button.focused {
-  background-color: @neutral_blue;
+  background-color: @bright_blue;
   color: @dark0;
   transition: none;
 }

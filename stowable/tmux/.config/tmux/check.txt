@@ -1,0 +1,13 @@
+ set -g @plugin 'b0o/tmux-autoreload'
+
+set -g @plugin 'sainnhe/tmux-fzf'
+
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+
+set -g @plugin 'spywhere/tmux-named-snapshot'
+
+set -g @plugin 'MunifTanjim/tmux-suspend'
+
+set -g @plugin 'laktak/extrakto'
+
+set -g @resurrect-strategy-nvim 'session'

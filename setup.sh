@@ -5,3 +5,4 @@ sh ./scripts/tlp.sh
 sh ./scripts/vfio.sh
 sh ./scripts/themes.sh
 sh ./scripts/services.sh
+sh ./scripts/flatpak.sh
