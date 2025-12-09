@@ -13,12 +13,6 @@ export PATH="$PATH:$HOME/.go/bin/"
 # JetBrains toolbox
 export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts/"
 
-# Needed for webrtc wayland screenshare
-export XDG_CURRENT_DESKTOP=sway
-# Needed for Intellij to work properly
-export _JAVA_AWT_WM_NONREPARENTING=1
-# Enable firefox wayland
-export MOZ_ENABLE_WAYLAND=1
 # Only show the last 3 directories on the path prompt
 export PROMPT_DIRTRIM=3
 # Download go modules to somewhere acceptable
@@ -53,24 +47,24 @@ fi
 # Start sway if tty1 is used for login
 if [[ "$(tty)" == "/dev/tty1" ]]; then
   echo "Select GPU to use:"
-  echo "1) Nvidia ex. displ. /dev/dri/card0"
-  echo "2) Intel             /dev/dri/card1"
+  echo "1) Nvidia   /dev/dri/card0"
+  echo "2) Intel    /dev/dri/card1"
   read -rp "Enter choice (default is Nvidia): " choice
 
   case "$choice" in
   1)
-    clear
-    export WLR_DRM_DEVICES=/dev/dri/card0:/dev/dri/card1
-    sway --unsupported-gpu
+    export AQ_DRM_DEVICES=/dev/dri/card0:/dev/dri/card1
     ;;
   2)
-    export WLR_DRM_DEVICES=/dev/dri/card1
-    sway
+    export AQ_DRM_DEVICES=/dev/dri/card1:/dev/dri/card0
     ;;
   *)
-    clear
-    export WLR_DRM_DEVICES=/dev/dri/card0:/dev/dri/card1
-    sway --unsupported-gpu
+    export AQ_DRM_DEVICES=/dev/dri/card0:/dev/dri/card1
     ;;
   esac
+
+  # if uwsm check may-start; then
+  #   exec uwsm start hyprland-uwsm.desktop
+  # fi
+  Hyprland >> ~/hyprland.log
 fi

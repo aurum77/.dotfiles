@@ -1,6 +1,7 @@
 flatpak install -y --noninteractive flathub net.lutris.Lutris
 flatpak install -y --noninteractive flathub com.heroicgameslauncher.hgl
-flatpak install -y --noninteractive flathub org.deluge_torrent.Deluge
+flatpak install -y --noninteractive flathub com.valvesoftware.Steam
+flatpak install -y --noninteractive flathub org.deluge_torrent.deluge
 flatpak install -y --noninteractive flathub io.dbeaver.DBeaverCommunity
 flatpak install -y --noninteractive flathub org.freedesktop.Platform.VulkanLayer.MangoHud 23.08
 flatpak install -y --noninteractive flathub org.freedesktop.Platform.VulkanLayer.MangoHud 25.08
