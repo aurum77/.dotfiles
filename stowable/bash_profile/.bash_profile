@@ -47,24 +47,22 @@ fi
 # Start sway if tty1 is used for login
 if [[ "$(tty)" == "/dev/tty1" ]]; then
   echo "Select GPU to use:"
-  echo "1) Nvidia   /dev/dri/card0"
-  echo "2) Intel    /dev/dri/card1"
+  echo "1) Nvidia ex. displ. /dev/dri/card0"
+  echo "2) Intel             /dev/dri/card1"
   read -rp "Enter choice (default is Nvidia): " choice
 
   case "$choice" in
   1)
-    export AQ_DRM_DEVICES=/dev/dri/card0:/dev/dri/card1
+    export WLR_DRM_DEVICES=/dev/dri/card0:/dev/dri/card1
+    sway --unsupported-gpu
     ;;
   2)
-    export AQ_DRM_DEVICES=/dev/dri/card1:/dev/dri/card0
+    export WLR_DRM_DEVICES=/dev/dri/card1
+    sway
     ;;
   *)
-    export AQ_DRM_DEVICES=/dev/dri/card0:/dev/dri/card1
+    export WLR_DRM_DEVICES=/dev/dri/card0:/dev/dri/card1
+    sway --unsupported-gpu
     ;;
   esac
-
-  # if uwsm check may-start; then
-  #   exec uwsm start hyprland-uwsm.desktop
-  # fi
-  Hyprland >> ~/hyprland.log
 fi

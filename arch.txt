@@ -1,5 +1,6 @@
-git -> to clone paru
-gammastep -> night light systemd-zram -> enable zram
+git -> to clone yay
+gammastep -> night light
+systemd-zram -> enable zram
 firefox -> browser
 stow -> dotfile deployment
 brightnessctl -> needed for brightness control
@@ -25,6 +26,7 @@ swaybg -> for swaywm background
 swaylock -> lock screen
 noto-fonts -> fonts for general ui
 noto-fonts-emoji -> google's emojis
+ttf-jetbrains-mono -> font
 ttf-nerd-fonts-symbols -> font glyphs
 pipewire -> we need sound don't we ?
 pipewire-pulse -> pulse configuration
@@ -74,6 +76,8 @@ remmina -> remote desktop
 freerdp -> rdp support
 zip -> zip stuff
 go -> golang
+waybar -> statusbar
+wofi -> launcher
 postman-bin -> api test
 bind -> dns tools
 linux-headers -> kernel module stuff
@@ -97,6 +101,5 @@ gamemode -> gaming
 gdu -> disk usage analysis
 cloudflare-warp-bin -> vpn
 ntfs-3g -> ntfs driver
-dmenu -> launcher
 python-setuptools -> dev stuff
 dmidecode -> vm stuff
