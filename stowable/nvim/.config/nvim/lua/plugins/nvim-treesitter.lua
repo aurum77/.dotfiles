@@ -19,6 +19,9 @@ return {
 		local configs = require("nvim-treesitter.configs")
 		---@diagnostic disable-next-line: missing-fields
 		configs.setup({
+      ignore_install = {
+        "html"
+      },
 			highlight = {
 				enable = true,
 			},

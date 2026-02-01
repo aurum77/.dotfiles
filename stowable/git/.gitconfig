@@ -1,14 +1,7 @@
 [user]
   email = 58880138+aurum77@users.noreply.github.com
   name = aurum77
-  signingKey = ~/.ssh/id_ed25519.pub
 [init]
   defaultBranch = main
 [color]
   ui = auto
-[core]
-  autocrlf = input
-[gpg]
-format = ssh
-[commit]
-gpgsign = true

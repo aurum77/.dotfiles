@@ -20,6 +20,7 @@ return {
 		vim.keymap.set("n", "gr", "<Cmd>Telescope lsp_references<CR>", opts)
 	end,
 	config = function()
+		local opts = require("plugins.lsp.opts")
 		local lsp = require("plugins.lsp.utils").get_lsp()
 
 		vim.diagnostic.config({
@@ -46,9 +47,5 @@ return {
 		})
 
 		vim.lsp.enable(lsp)
-
-		vim.lsp.config("*", {
-			capabilities = lsp.capabilities,
-		})
 	end,
 }

@@ -53,7 +53,6 @@ python-pip -> nice to have
 fzf -> cool fuzzy finder
 imv -> image viewer
 fastfetch -> pretty system info
-libva-mesa-driver -> gallium video decode driver
 python-wheel -> needed for pip packages 
 tokei -> count lines of code blazingly fast 
 docker -> containers
@@ -61,7 +60,6 @@ docker-compose -> containers
 docker-buildx -> container builds for rider
 kanshi -> display profiles
 fuse2 -> appimage support
-p7zip -> extract 7zip
 unrar -> extract rar
 flatpak -> sandboxed applications
 dunst -> notifications
@@ -99,7 +97,7 @@ zoxide -> cd but smarter ?
 obs-studio -> for recording dumb shit
 gamemode -> gaming
 gdu -> disk usage analysis
-cloudflare-warp-bin -> vpn
 ntfs-3g -> ntfs driver
 python-setuptools -> dev stuff
 dmidecode -> vm stuff
+postgresql-libs -> dev stuff

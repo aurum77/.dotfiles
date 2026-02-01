@@ -18,24 +18,6 @@ return {
 			end,
 		}
 
-		local lsp = {
-			function()
-				local buf_ft = vim.api.nvim_get_option_value("filetype", { buf = 0 })
-				local clients = vim.lsp.get_clients()
-				if next(clients) == nil then
-					return ""
-				end
-				for _, client in ipairs(clients) do
-					local filetypes = client.config.filetypes
-					if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-						return client.name
-					end
-				end
-				return ""
-			end,
-			cond = conditions.hide_in_width,
-		}
-
 		local filetype = {
 			"filetype",
 			icon_only = true,
@@ -109,7 +91,7 @@ return {
 				lualine_b = { branch },
 				lualine_c = { diagnostics },
 				lualine_x = { diff, fileformat },
-				lualine_y = { "progress", lsp },
+				lualine_y = { "progress" },
 				lualine_z = { "location" },
 			},
 			inactive_sections = {

@@ -1,5 +1,6 @@
 [global]
 monitor = 0
+timeout = 10
 follow = mouse
 origin = bottom-right
 offset = 15x15

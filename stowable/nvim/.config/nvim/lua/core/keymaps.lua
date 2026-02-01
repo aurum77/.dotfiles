@@ -12,6 +12,12 @@ vim.keymap.set("n", "<C-k>", "<Cmd>TmuxNavigateUp<CR>", opts)
 vim.keymap.set("n", "<C-l>", "<Cmd>TmuxNavigateRight<CR>", opts)
 vim.keymap.set("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<CR>", opts)
 
+vim.keymap.set("n", "<C-w>h", "<Cmd>TmuxNavigateLeft<CR>", opts)
+vim.keymap.set("n", "<C-w>j", "<Cmd>TmuxNavigateDown<CR>", opts)
+vim.keymap.set("n", "<C-w>k", "<Cmd>TmuxNavigateUp<CR>", opts)
+vim.keymap.set("n", "<C-w>l", "<Cmd>TmuxNavigateRight<CR>", opts)
+vim.keymap.set("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<CR>", opts)
+
 -- Quit all
 vim.keymap.set("n", "<Leader>qw", "<Cmd>wqa!<CR>", opts)
 vim.keymap.set("n", "<Leader>qa", "<Cmd>qa!<CR>", opts)

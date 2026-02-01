@@ -1,7 +1,7 @@
 local nvim_tree_api = require("nvim-tree.api")
 
 -- Highlight on yank
-vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
 		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 100 })
 	end,
@@ -9,10 +9,7 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 
 -- Don't draw cursorline if not focused
 local cursor_highlight_group = vim.api.nvim_create_augroup("CursorHighlight", { clear = true })
-vim.api.nvim_create_autocmd({
-	"BufEnter",
-	"WinEnter", --[["User TelescopeFindPre"]]
-}, {
+vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
 	callback = function()
 		vim.opt.cursorline = true
 	end,
@@ -74,7 +71,7 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 })
 
 local open_nvim_tree_group = vim.api.nvim_create_augroup("OpenNvimTreeGroup", { clear = true })
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
+vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function(data)
 		-- buffer is a [No Name]
 		local no_name = data.file == "" and vim.bo[data.buf].buftype == ""

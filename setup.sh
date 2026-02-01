@@ -6,3 +6,5 @@ sh ./scripts/vfio.sh
 sh ./scripts/themes.sh
 sh ./scripts/services.sh
 sh ./scripts/flatpak.sh
+sh ./scripts/tpm.sh
+sh ./scripts/npm_pkg.sh

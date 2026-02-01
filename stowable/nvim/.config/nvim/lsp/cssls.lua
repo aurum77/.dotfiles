@@ -1,4 +1,4 @@
-return {
+vim.lsp.config("cssls", {
 	settings = {
 		css = {
 			lint = {
@@ -7,4 +7,4 @@ return {
 			},
 		},
 	},
-}
+})

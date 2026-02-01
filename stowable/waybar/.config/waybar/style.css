@@ -17,9 +17,9 @@
 #clock,
 #backlight {
   padding: 0 5px 0;
-  margin: 0px 6px;
+  margin: 0px 5px;
   border-radius: 0px;
-  color: @light1;
+  color: @light0;
 }
 
 #waybar {
