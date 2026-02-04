@@ -38,6 +38,10 @@ vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { fg = gruvbox.light0 })
 vim.api.nvim_set_hl(0, "TelescopeResultsTitle", { fg = gruvbox.light1 })
 vim.api.nvim_set_hl(0, "TelescopeSelectionCaret", { fg = gruvbox.bright_orange })
 -- Telescope
+-- TreesitterContext
+vim.api.nvim_set_hl(0, "TreesitterContext", { bg = gruvbox.dark1, bold = true })
+vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { bg = gruvbox.dark1, fg = gruvbox.bright_yellow, bold = true })
+-- TreesitterContext
 -- Trouble
 vim.api.nvim_set_hl(0, "TroubleFoldIcon", { bg = "NONE", fg = gruvbox.bright_yellow })
 vim.api.nvim_set_hl(0, "TroubleSignError", { bg = "NONE", fg = gruvbox.bright_red })
