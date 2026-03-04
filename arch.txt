@@ -68,10 +68,7 @@ fakeroot -> aur
 make -> aur
 gcc -> treesitter
 which -> find path of a program
-android-tools -> useful
 tlp -> power management
-remmina -> remote desktop
-freerdp -> rdp support
 zip -> zip stuff
 go -> golang
 waybar -> statusbar
@@ -85,10 +82,6 @@ intel-media-driver -> intel decode
 gnome-keyring -> keyring
 seahorse -> keyring ui
 tmux -> terminal multiplexer
-zoxide -> cd but smarter ?
-obs-studio -> for recording dumb shit
 gamemode -> gaming
 gdu -> disk usage analysis
 ntfs-3g -> ntfs driver
-python-setuptools -> dev stuff
-postgresql-libs -> dev stuff
