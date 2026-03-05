@@ -9,7 +9,6 @@
     "custom/media",
     "memory",
     "memory#swap",
-    "backlight",
     "network",
     "pulseaudio",
     "battery",
@@ -45,12 +44,6 @@
     "on-click": "/usr/bin/alacritty --class task_manager -e /usr/bin/htop",
     "tooltip": false
   },
-  "backlight": {
-    "format": "light: {percent}%",
-    "scroll-step": 7,
-    "tooltip-format": "Backlight: {percent}%"
-  },
-
   "network": {
     "interval": 3,
     "format": "net",
@@ -97,7 +90,6 @@
   },
 
   "clock": {
-    "format": "{:%H:%M}",
-    "tooltip-format": "{:%A, %B %d}"
+    "format": "{:%B %d, %H:%M}",
   }
 }

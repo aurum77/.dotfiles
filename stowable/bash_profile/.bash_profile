@@ -52,7 +52,7 @@ if [[ "$(tty)" == "/dev/tty1" ]]; then
 
   case "$choice" in
   1)
-    export WLR_DRM_DEVICES=/dev/dri/card0:/dev/dri/card1
+    export WLR_DRM_DEVICES=/dev/dri/card0
     sway --unsupported-gpu
     ;;
   2)
@@ -60,7 +60,7 @@ if [[ "$(tty)" == "/dev/tty1" ]]; then
     sway
     ;;
   *)
-    export WLR_DRM_DEVICES=/dev/dri/card0:/dev/dri/card1
+    export WLR_DRM_DEVICES=/dev/dri/card0
     sway --unsupported-gpu
     ;;
   esac

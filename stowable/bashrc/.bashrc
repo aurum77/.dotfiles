@@ -55,5 +55,3 @@ if command -v tmux >/dev/null 2>&1; then
     exit
   fi
 fi
-
-eval "$(zoxide init --cmd cd bash)"

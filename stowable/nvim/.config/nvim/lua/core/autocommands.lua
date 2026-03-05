@@ -93,3 +93,36 @@ vim.api.nvim_create_autocmd("VimEnter", {
 	end,
 	group = open_nvim_tree_group,
 })
+
+local tmux_neovim_enter_group = vim.api.nvim_create_augroup("TmuxNeovimEnterGroup", { clear = true })
+vim.api.nvim_create_autocmd("VimEnter", {
+ callback = function()
+  vim.schedule(function()
+   local cwd = vim.fn.getcwd()
+   os.execute(string.format(
+    [[
+          tmux \
+          split-window -v -p 15 -c "%s" \; \
+          select-pane -t {bottom} \; \
+          split-window -h -c "%s" \; \
+          select-pane -t {bottom-left} \; \
+          select-pane -t {top} \; \
+        ]],
+    cwd,
+    cwd
+   ))
+  end)
+ end,
+ group = tmux_neovim_enter_group,
+})
+
+local tmux_neovim_leave_group = vim.api.nvim_create_augroup("TmuxNeovimLeaveGroup", { clear = true })
+vim.api.nvim_create_autocmd("VimLeavePre", {
+ callback = function()
+  local pane = os.getenv("TMUX_PANE")
+  if pane then
+   os.execute("tmux kill-pane -a -t " .. pane)
+  end
+ end,
+ group = tmux_neovim_leave_group,
+})
