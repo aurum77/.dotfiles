@@ -19,6 +19,8 @@ export PATH="$PATH:$HOME/.npm_pkg/bin"
 
 # Only show the last 3 directories on the path prompt
 export PROMPT_DIRTRIM=3
+# Add dotnet root to path
+export DOTNET_ROOT=$HOME/.dotnet/
 # Download go modules to somewhere acceptable
 export GOPATH=$HOME/.go
 # Set editor

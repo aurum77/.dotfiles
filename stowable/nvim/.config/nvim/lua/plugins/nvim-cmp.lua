@@ -32,6 +32,7 @@ return {
 		}
 
 		cmp.setup({
+			preselect = cmp.PreselectMode.None,
 			snippet = {
 				expand = function(args)
 					require("luasnip").lsp_expand(args.body)
@@ -48,7 +49,7 @@ return {
 				fields = { "abbr", "kind", "menu" },
 				format = function(entry, vim_item)
 					-- Kind icons
-					vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
+					vim_item.kind = string.format("  %s %s", kind_icons[vim_item.kind], vim_item.kind)
 					vim_item.menu = ({
 						nvim_lsp = "[LSP]",
 						luasnip = "[LuaSnip]",
