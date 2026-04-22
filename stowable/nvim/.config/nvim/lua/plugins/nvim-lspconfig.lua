@@ -2,8 +2,6 @@ return {
 	"neovim/nvim-lspconfig",
 	init = function()
 		local opts = require("plugins.lsp.opts").opts
-		vim.keymap.set("n", "<Leader>lr", "<Cmd>LspRestart<CR>", opts)
-		vim.keymap.set("n", "<Leader>li", "<Cmd>LspInfo<CR>", opts)
 		vim.keymap.set("n", "<Leader>ls", "<Cmd>Telescope lsp_document_symbols<CR>", opts)
 		vim.keymap.set("n", "gd", "<Cmd>Telescope lsp_definitions<CR>", opts)
 		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)

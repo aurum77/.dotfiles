@@ -1,1 +1,1 @@
-vim.lsp.config("basedpyright", {})
+return {}

@@ -1,1 +1,1 @@
-vim.lsp.config("eslint", {})
+return {}
