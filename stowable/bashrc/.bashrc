@@ -55,3 +55,28 @@ if command -v tmux >/dev/null 2>&1; then
     exit
   fi
 fi
+
+# pomodoro stuff
+declare -A pomo_options
+pomo_options["work"]="50"
+pomo_options["break"]="10"
+
+pomodoro() {
+  if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
+    clear
+    val=$1
+    echo $val
+    timer -f --format 24h ${pomo_options["$val"]}m 2>/dev/null
+    if [[ "$?" -eq 1 ]]; then
+      notify-send -i $HOME/.icons/gruvbox-dark-icons-gtk/16x16/apps/clock.svg "pomodoro" "$val session skipped."
+      pw-play $HOME/.dotfiles/misc/halo-skill-issue.mp3
+    elif [[ "$?" -eq 0 ]]; then
+      notify-send -i $HOME/.icons/gruvbox-dark-icons-gtk/16x16/apps/clock.svg "pomodoro" "$val session finished."
+      pw-play $HOME/.dotfiles/misc/halo-touch-grass.mp3
+    fi
+    clear
+  fi
+}
+
+alias wo="pomodoro 'work'"
+alias br="pomodoro 'break'"

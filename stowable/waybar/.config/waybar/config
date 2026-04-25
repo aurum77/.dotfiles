@@ -1,95 +1,76 @@
 {
   "layer": "bottom",
   "position": "bottom",
-
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": [],
-  "modules-right": [
-    "tray",
-    "custom/media",
-    "memory",
-    "memory#swap",
-    "network",
-    "pulseaudio",
-    "battery",
-    "clock"
-  ],
-
+  "modules-right": ["tray", "custom/media", "memory", "network", "pulseaudio", "battery", "clock"],
   "sway/workspaces": {
     "format": "{name}",
     "disable-scroll-wraparound": true
   },
-
   "custom/media": {
-    "format": "media: {icon}",
+    "format": "{icon}",
     "return-type": "json",
     "format-icons": {
-      "Playing": "playing",
-      "Paused": "paused",
-      "Stopped": "stopped"
+      "Playing": "󰏤",
+      "Paused": "󰐊"
     },
     "exec": "playerctl -a metadata --format '{\"tooltip\": \"{{markup_escape(artist)}} - {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
     "on-click": "playerctl play-pause"
   },
-
   "memory": {
     "interval": 5,
-    "format": "mem: {percentage}%",
-    "on-click": "/usr/bin/alacritty --class task_manager -e /usr/bin/htop",
-    "tooltip": false
-  },
-  "memory#swap": {
-    "interval": 5,
-    "format": "swap: {swapPercentage}%",
+    "format": "󰘚 {used:0.1f} GB",
     "on-click": "/usr/bin/alacritty --class task_manager -e /usr/bin/htop",
     "tooltip": false
   },
   "network": {
     "interval": 3,
-    "format": "net",
-    "format-wifi": "wifi: {signalStrength}%",
-    "format-ethernet": "eth",
-    "format-disconnected": "no internet",
-    "format-linked": "vpn active",
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "{icon}",
+    "format-disconnected": "{icon} disconnected",
+    "format-linked": "󰖂",
+    "format-icons": {
+      "wifi": ["󰤮", "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+      "ethernet": "󰈀",
+      "disconnected": "󰛵"
+    },
     "on-click": "/usr/bin/alacritty --class floating_terminal -e /usr/bin/nmtui-connect",
     "tooltip": true,
     "tooltip-format-wifi": "{essid}: {signalStrength}%",
     "tooltip-format-ethernet": "{ifname}",
-    "tooltip-format-linked": "vpn active"
+    "tooltip-format-linked": "VPN Active",
   },
-
   "battery": {
     "interval": 60,
-    "format": "bat: {capacity}%",
-    "format-full": "bat: full",
+    "format": "{icon} {capacity}%",
+    "format-full": "{icon}",
     "format-icons": {
-      "default": ["bat"],
-      "charging": ["charging"],
-      "full": "full"
+      "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      "full": "󱐋"
     },
-    "weighted-average": true
+    "weighted_average": true
   },
-
   "pulseaudio": {
     "scroll-step": 2,
-    "format": "vol: {volume}%",
-    "format-muted": "vol: muted",
+    "format": "{icon}",
+    "format-muted": "󰣽",
     "format-icons": {
-      "default": ["vol"]
+      "default": ["󰣾", "󰣴", "󰣶", "󰣸", "󰣺"]
     },
     "on-click-right": "/usr/bin/alacritty --class floating_terminal -e /usr/bin/pulsemixer",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "tooltip-format": "{desc}: {volume}%",
     "tooltip": true
   },
-
   "tray": {
     "icon-size": 17,
-    "spacing": 20,
-    "reverse-direction": true
+    "spacing": 25
   },
-
   "clock": {
-    "format": "{:%B %d, %H:%M}",
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%A, %B %d}"
   }
 }

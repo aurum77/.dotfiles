@@ -78,9 +78,12 @@ bind -> dns tools
 linux-headers -> kernel module stuff
 nvidia-open -> nvidia driver
 libva-nvidia-driver -> nvidia decode
+nvidia-utils -> nvidia decode
 intel-media-driver -> intel decode
 gnome-keyring -> keyring
 tmux -> terminal multiplexer
 gamemode -> gaming
 gdu -> disk usage analysis
 ntfs-3g -> ntfs driver
+timer-bin -> timer for pomodoro
+tree-sitter-cli -> treesitter

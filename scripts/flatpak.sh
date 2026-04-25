@@ -1,4 +1,4 @@
-# flatpak install -y --noninteractive flathub net.lutris.Lutris
+flatpak install -y --noninteractive flathub net.lutris.Lutris
 # flatpak install -y --noninteractive flathub com.heroicgameslauncher.hgl
 # flatpak install -y --noninteractive flathub com.valvesoftware.Steam
 flatpak install -y --noninteractive flathub org.deluge_torrent.deluge

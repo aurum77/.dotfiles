@@ -1,36 +1,32 @@
 vim.loader.enable()
-
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-	if vim.v.shell_error ~= 0 then
-		vim.api.nvim_echo({
-			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-			{ out, "WarningMsg" },
-			{ "\nPress any key to exit..." },
-		}, true, {})
-		vim.fn.getchar()
-		os.exit(1)
-	end
-end
-vim.opt.rtp:prepend(lazypath)
-
 vim.g.mapleader = " "
 
-require("lazy").setup({
-	{ import = "plugins" },
-}, {
-	install = {
-		colorscheme = { "gruvbox" },
-	},
-	ui = {
-		border = "single",
-	},
-})
+require("plugins.gruvbox")
+require("plugins.lualine")
+require("plugins.plenary")
+require("plugins.telescope")
+require("plugins.dressing")
+require("plugins.formatter")
+require("plugins.nvim-lspconfig")
+require("plugins.nvim-cmp")
+require("plugins.mason")
+require("plugins.mason-lspconfig")
+require("plugins.mason-tool-installer")
+require("plugins.luasnip")
+require("plugins.friendly-snippets")
+require("plugins.gitsigns")
+require("plugins.trouble")
+require("plugins.nvim-tree")
+require("plugins.nvim-web-devicons")
+require("plugins.fidget")
+require("plugins.tree-sitter-manager")
+require("plugins.nvim-ts-autotag")
+require("plugins.nvim-treesitter-context")
+require("plugins.nvim-autopairs")
+require("plugins.vim-tmux-navigator")
 
--- Core settings
 require("core.options")
+require("core.theme")
 require("core.keymaps")
 require("core.autocommands")
 require("core.globals")

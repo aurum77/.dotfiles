@@ -9,3 +9,4 @@ sh ./scripts/services.sh
 sh ./scripts/flatpak.sh
 sh ./scripts/tpm.sh
 sh ./scripts/npm_pkg.sh
+sh ./scripts/links.sh
