@@ -1,4 +1,5 @@
-local opts = { silent = true }
+local lsp = require("plugins.lsp.opts")
+local opts = lsp.opts
 
 -- Set space as leader
 vim.keymap.set("", "<Space>", "<Nop>", opts)
