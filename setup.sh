@@ -1,3 +1,4 @@
+sudo pacman -S fakeroot debugedit
 sh ./scripts/update_install.sh
 sh ./scripts/paru.sh
 sh ./install_packages.sh
