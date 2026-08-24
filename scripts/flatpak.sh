@@ -4,6 +4,7 @@
 flatpak install -y --noninteractive flathub org.deluge_torrent.deluge
 flatpak install -y --noninteractive flathub io.dbeaver.DBeaverCommunity
 flatpak install -y --noninteractive flathub com.stremio.Stremio
+flatpak install -y --noninteractive flathub org.freedesktop.Platform.GL.nvidia-610-57-04
 flatpak install -y --noninteractive flathub com.protonvpn.www
 # flatpak install -y --noninteractive flathub org.freedesktop.Platform.VulkanLayer.MangoHud 23.08
 # flatpak install -y --noninteractive flathub org.freedesktop.Platform.VulkanLayer.MangoHud 25.08

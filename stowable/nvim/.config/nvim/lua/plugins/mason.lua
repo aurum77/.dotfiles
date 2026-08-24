@@ -44,6 +44,7 @@ return {
 							"prettier",
 							"stylua",
 							"shfmt",
+							"netcoredbg",
 						},
 					})
 				end,

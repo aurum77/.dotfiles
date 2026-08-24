@@ -22,9 +22,6 @@ vim.keymap.set("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<CR>", opts)
 vim.keymap.set("n", "<Leader>qw", "<Cmd>wqa!<CR>", opts)
 vim.keymap.set("n", "<Leader>qa", "<Cmd>qa!<CR>", opts)
 
--- Clear highlights
-vim.keymap.set("n", "<Leader>hh", "<Cmd>nohlsearch<CR>", opts)
-
 -- Save all
 vim.keymap.set("n", "<Leader>fw", "<Cmd>wa!<CR>", opts)
 

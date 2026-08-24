@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+declare -A pomo_options=(
+    [work]=50
+    [break]=10
+)
+
+pomodoro() {
+    local val="$1"
+    local duration="${pomo_options[$val]}"
+
+    if [[ -z "$duration" ]]; then
+        echo "Usage: pomodoro {work|break}"
+        return 1
+    fi
+
+    clear
+    echo "$val"
+
+    timer -f -n $val --format 24h "${duration}m" 2>/dev/null
+    local status=$?
+
+    if [[ "$status" -eq 1 ]]; then
+        notify-send \
+            -i "$HOME/.icons/gruvbox-dark-icons-gtk/16x16/apps/clock.svg" \
+            "pomodoro" \
+            "$val session skipped."
+
+        pw-play "$HOME/.dotfiles/misc/halo-skill-issue.mp3"
+
+    elif [[ "$status" -eq 0 ]]; then
+        notify-send \
+            -i "$HOME/.icons/gruvbox-dark-icons-gtk/16x16/apps/clock.svg" \
+            "pomodoro" \
+            "$val session finished."
+
+        pw-play "$HOME/.dotfiles/misc/halo-round-over.mp3"
+    fi
+
+    clear
+}
+
+case "$1" in
+    work)
+        pomodoro work
+        ;;
+    break)
+        pomodoro break
+        ;;
+    *)
+        echo "Usage: pomodoro {work|break}"
+        exit 1
+        ;;
+esac

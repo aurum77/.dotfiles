@@ -18,6 +18,37 @@ return {
 			end,
 		}
 
+		-- clock: minute-boundary redraw
+		local clock_timer
+		if clock_timer then
+			clock_timer:stop()
+			clock_timer:close()
+		end
+		clock_timer = vim.uv.new_timer()
+		clock_timer:start(
+			0,
+			1000,
+			vim.schedule_wrap(function()
+				if tonumber(os.date("%S")) == 0 then
+					vim.cmd("redrawstatus")
+				end
+			end)
+		)
+		vim.api.nvim_create_autocmd("VimLeavePre", {
+			callback = function()
+				if clock_timer and not clock_timer:is_closing() then
+					clock_timer:stop()
+					clock_timer:close()
+				end
+			end,
+		})
+
+		local clock = {
+			function()
+				return os.date("%H:%M")
+			end,
+		}
+
 		local filetype = {
 			"filetype",
 			icon_only = true,
@@ -90,7 +121,7 @@ return {
 				lualine_a = { filename },
 				lualine_b = { branch },
 				lualine_c = { diagnostics },
-				lualine_x = { diff, fileformat },
+				lualine_x = { diff, clock, fileformat },
 				lualine_y = { "progress" },
 				lualine_z = { "location" },
 			},

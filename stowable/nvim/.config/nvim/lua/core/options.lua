@@ -24,6 +24,7 @@ vim.opt.termguicolors = true
 vim.opt.mouse = "n"
 vim.opt.cmdheight = 1
 vim.opt.helpheight = 7777
+vim.opt.clipboard = "unnamedplus"
 vim.opt.fillchars = {
 	vert = "│", -- alternatives │
 	fold = " ",
@@ -34,5 +35,3 @@ vim.opt.fillchars = {
 	foldsep = "│",
 	foldclose = "▸",
 }
-
-vim.opt.clipboard = "unnamedplus"

@@ -45,9 +45,9 @@
     },
     {
       "type": "packages",
-      "format": "{} (pacman)",
+      "format": "{pacman} (pacman), {flatpak-all} (flatpak)",
       "key": "██ Packages:",
-      "keyColor": "95",
+      "keyColor": "95"
     },
     {
       "type": "terminal",
