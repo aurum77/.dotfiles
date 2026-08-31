@@ -24,9 +24,8 @@ mpv -> minimal video player
 sway -> window manager
 swaybg -> for swaywm background
 swaylock -> lock screen
-noto-fonts -> fonts for general ui
+noto-fonts -> fonts
 noto-fonts-emoji -> google's emojis
-ttf-jetbrains-mono -> font
 ttf-nerd-fonts-symbols -> font glyphs
 pipewire -> we need sound don't we ?
 pipewire-pulse -> pulse configuration
