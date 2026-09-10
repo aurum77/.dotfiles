@@ -16,8 +16,7 @@ return {
 			"markdown",
 			"tsx",
 			"typescript",
-			"yaml",
-			"c_sharp",
+			"yaml"
 		})
 	end,
 }

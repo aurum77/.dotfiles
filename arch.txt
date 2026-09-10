@@ -74,8 +74,8 @@ waybar -> statusbar
 wofi -> launcher
 postman-bin -> api test
 bind -> dns tools
-linux-headers -> kernel module stuff
-nvidia-open -> nvidia driver
+linux-lts-headers -> kernel module stuff
+nvidia-open-lts -> nvidia driver
 libva-nvidia-driver -> nvidia decode
 nvidia-utils -> nvidia decode
 intel-media-driver -> intel decode
