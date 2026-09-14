@@ -23,13 +23,13 @@ return {
 				name = "Javascript",
 			},
 			["spec.js"] = {
-				icon = "ﭧ",
+				icon = "",
 				color = "#cbcb41",
 				cterm_color = 180,
 				name = "JsSpec",
 			},
 			["test.js"] = {
-				icon = "ﭧ",
+				icon = "",
 				color = "#cbcb41",
 				cterm_color = 180,
 				name = "JsTest",

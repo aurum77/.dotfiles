@@ -26,6 +26,7 @@ swaybg -> for swaywm background
 swaylock -> lock screen
 noto-fonts -> fonts
 noto-fonts-emoji -> google's emojis
+ttf-jetbrains-mono -> font
 ttf-nerd-fonts-symbols -> font glyphs
 pipewire -> we need sound don't we ?
 pipewire-pulse -> pulse configuration
@@ -74,8 +75,8 @@ waybar -> statusbar
 wofi -> launcher
 postman-bin -> api test
 bind -> dns tools
-linux-lts-headers -> kernel module stuff
-nvidia-open-lts -> nvidia driver
+linux-headers -> kernel module stuff
+nvidia-open -> nvidia driver
 libva-nvidia-driver -> nvidia decode
 nvidia-utils -> nvidia decode
 intel-media-driver -> intel decode

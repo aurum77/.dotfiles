@@ -1,5 +1,5 @@
 image=$HOME/pics/wall.jpg
-font=Noto Sans Mono
+font=JetBrains Mono NL
 color=282828
 layout-bg-color=fbf1c7
 layout-border-color=282828

@@ -8,7 +8,7 @@ if [[ $status_recorder == 0 ]]; then
   exit
 fi
 
-slurp=$(slurp -b 282828aa -c 458588ff -d -F 'Noto Sans Mono')
+slurp=$(slurp -b 282828aa -c 458588ff -d -F 'JetBrains Mono NL')
 status_slurp=$?
 
 if [[ $status_slurp == 0 ]]; then

@@ -41,16 +41,16 @@ shape = "Block"
 size = 11.0
 
 [font.normal]
-family = "Noto Sans Mono"
+family = "JetBrains Mono NL"
 
 [font.bold]
-family = "Noto Sans Mono"
+family = "JetBrains Mono NL"
 
 [font.italic]
-family = "Noto Sans Mono"
+family = "JetBrains Mono NL"
 
 [font.bold_italic]
-family = "Noto Sans Mono"
+family = "JetBrains Mono NL"
 
 [scrolling]
 history = 1000
