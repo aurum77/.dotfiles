@@ -51,3 +51,36 @@ end, opts)
 -- Escape insert mode
 vim.keymap.set("i", "fd", "<ESC>", opts)
 vim.keymap.set("i", "<C-c>", "<ESC>", opts)
+
+vim.keymap.set("n", "<C-t>", function()
+	if not vim.env.TMUX then
+		return
+	end
+
+	local cwd = vim.fn.getcwd()
+	local pane = vim.env.TMUX_PANE
+
+	vim.fn.system({
+		"tmux",
+		"split-window",
+		"-v",
+		"-p",
+		"20",
+		"-t",
+		pane,
+		"-c",
+		cwd,
+	})
+
+	vim.fn.system({
+		"tmux",
+		"split-window",
+		"-h",
+		"-t",
+		"{bottom}",
+		"-c",
+		cwd,
+	})
+
+	vim.fn.system({ "tmux", "select-pane", "-t", "{bottom-left}" })
+end, { desc = "Create tmux bottom splits" })
