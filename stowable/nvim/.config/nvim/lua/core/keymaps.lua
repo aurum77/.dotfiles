@@ -65,7 +65,7 @@ vim.keymap.set("n", "<C-t>", function()
 		"split-window",
 		"-v",
 		"-p",
-		"20",
+		"15",
 		"-t",
 		pane,
 		"-c",

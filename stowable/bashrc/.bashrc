@@ -36,22 +36,24 @@ shopt -s autocd
 # Source fzf config
 source /usr/share/fzf/key-bindings.bash
 
-# tmux session numbering start from 1
+# Create a numbered tmux session
 new-tmux() {
-  local next=$(tmux list-sessions 2>/dev/null | awk -F: '{print $1}' | sort -n | tail -1)
-  if [ -z "$next" ]; then
-    next=1
-  else
-    next=$((next + 1))
+  local next=1
+  local last
+
+  last=$(tmux list-sessions -F '#{session_name}' 2>/dev/null |
+    awk '/^[0-9]+$/ { if ($0 > max) max = $0 } END { print max }')
+
+  if [[ -n "$last" ]]; then
+    next=$((last + 1))
   fi
-  tmux new-session -s "$next"
+
+  exec tmux new-session -s "$next"
 }
 
-# Auto-start tmux when opening an interactive terminal
-if command -v tmux >/dev/null 2>&1; then
-  # Check: not already inside tmux, running in a real terminal, and not starting sway
-  if [ -z "$TMUX" ] && [[ "$(tty)" != /dev/tty* ]]; then
+# Auto-start tmux in interactive terminals
+if [[ $- == *i* ]] && command -v tmux >/dev/null 2>&1; then
+  if [[ -z "$TMUX" && -t 0 && -t 1 && "$(tty)" != /dev/tty* ]]; then
     new-tmux
-    exit
   fi
 fi
